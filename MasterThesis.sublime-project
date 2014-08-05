@@ -1,4 +1,10 @@
 {
+            "options":
+            {
+            "root": "main.tex",
+            "pdf": "Thesis MA Rol"
+
+            },
 	"folders":
 	[
 		{
