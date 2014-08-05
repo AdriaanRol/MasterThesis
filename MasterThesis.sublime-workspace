@@ -1,0 +1,602 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"sol",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"pack en",
+				"Package Control: Enable Package"
+			],
+			[
+				"pakl",
+				"Package Control: List Packages"
+			],
+			[
+				"keyb us",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"sidebar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"solar",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"solarized",
+				"Preferences: SolarizedToggle Settings – User"
+			],
+			[
+				"inst p",
+				"Package Control: Install Package"
+			],
+			[
+				"pakc list ",
+				"Package Control: List Packages"
+			],
+			[
+				"pack li",
+				"Package Control: List Packages"
+			],
+			[
+				"list p",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pref br",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pack list ",
+				"Package Control: List Packages"
+			],
+			[
+				"pack l",
+				"Package Control: List Packages"
+			],
+			[
+				"pref us",
+				"Preferences: Settings - User"
+			],
+			[
+				"new view",
+				"File: New View into File"
+			],
+			[
+				"KEYB US",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"USER ",
+				"Preferences: Settings - User"
+			],
+			[
+				"todo",
+				"TodoReview: Project Files"
+			],
+			[
+				"new vi",
+				"File: New View into File"
+			],
+			[
+				"new vie",
+				"File: New View into File"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"com",
+				"GitGutter: Compare Against HEAD"
+			],
+			[
+				"compar",
+				"GitGutter: Compare Against HEAD"
+			],
+			[
+				"pref user",
+				"Preferences: Settings - User"
+			],
+			[
+				"git",
+				"GitGutter: Compare Against HEAD"
+			],
+			[
+				"pack cont  en",
+				"Package Control: Enable Package"
+			],
+			[
+				"pack con en",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"enabl ",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis ",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack control dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack cont dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wrap ",
+				"Word Wrap: Toggle"
+			],
+			[
+				"minim",
+				"View: Toggle Minimap"
+			],
+			[
+				"todo re",
+				"TodoReview: Project Files"
+			],
+			[
+				"todo rew",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"tod",
+				"TodoReview: Project Files"
+			],
+			[
+				"todor",
+				"TodoReview: Project Files"
+			],
+			[
+				"projc",
+				"Project: Add Folder"
+			],
+			[
+				"projec ",
+				"Project: Refresh Folders"
+			],
+			[
+				"todore",
+				"TodoReview: Project Files"
+			],
+			[
+				"todo ",
+				"TodoReview: Project Files"
+			],
+			[
+				"tododre",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"pack con inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package insta",
+				"Package Control: Install Package"
+			],
+			[
+				"keyb ",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"inst pack ",
+				"Package Control: Install Package"
+			],
+			[
+				"instal pack ",
+				"Package Control: Install Package"
+			],
+			[
+				"pack ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"pylint ",
+				"Preferences: SublimeLinter Key Bindings – Default"
+			],
+			[
+				"pack contr list",
+				"Package Control: List Packages"
+			],
+			[
+				"sublim linter ",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"sublime linter",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"synt vb",
+				"Set Syntax: VBScript"
+			],
+			[
+				"syntax vbs",
+				"Set Syntax: VBScript"
+			],
+			[
+				"pack inst ",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax ",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"syntax bas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"pack on li",
+				"Package Control: List Packages"
+			],
+			[
+				"sublime linter ",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"inst ",
+				"Package Control: Install Package"
+			],
+			[
+				"pref brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pref",
+				"Preferences: Settings - User"
+			],
+			[
+				"pac inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 261.0,
+		"history":
+		[
+			"self.view.settings().get(\"color_scheme\")",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Solarized Toggle/SolarizedToggle.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/SolarizedToggle.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/ToggleTheme.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/measurement2/adwin_ssro/dynamicaldecoupling.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/teleportation/parameters.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/testing/sequence_packing_for_awg5014.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/test_scripts/lde_spinspin_v7-testing-after-pulsing.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/weak_msmts_and_old_SSRO/weak_measurements_sweepTau.py",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/scripts/laser_scan/multiple_scans.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/tools/magnet_tools.py",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/GitGutter.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/GitGutter/GitGutter.sublime-settings",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/ADwin_Codes/adwin_pro_2_lt2/C13_single_lt2.bas",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/test_scripts/lde_spinspin_v8-testing-afterpulsing.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/ADwin_Codes/adwin_pro_2_lt2/lt2_teleportation_o.bas",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/deprecated/lde_spinspin_v8.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/teleportation/BSM/BSM_sequences_baks.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/adwin_ssro/lde_protocol_reps_vs_CR_pulsar_MBI.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/instruments/tpqi_optimiz0r.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/cython/PQ_T2_tools/T2_tools_src/T2_tools.pyx",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/hardware/Labjack/src/u6.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/hardware/Labjack/src/u3.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/teleportation/testing/T2_tools_files/T2_tools.pyx",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/DiamondMeasurement.sublime-project",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/ADwin_Codes/adwin_gold_2_lt1/lt1_teleportation_control.bas",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/teleportation/HH/T2_tools_files/T2_tools.pyx",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/Default (OSX).sublime-keymap",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/QEC/dynamical_decoupling_script.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/calib/DT-670.txt",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt1_scripts/setup/msmt_params.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/bell/old/parameters_bak.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/bell/params_lt1.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/bell/params.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/instruments/ParallaxServoController.py",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/scripts/QEC_data_analysis/meas_B_loop_analysis.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/deprecated/ssro_measurement_preselect.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/examples/measurement1_example.py",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/scripts/mbi/mbi_electron_decoupling_analysis.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/ADwin_Codes/adwin_gold_2_lt1/init_data.bas",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/instruments/ADwin_linescanner.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/instruments/ADwin_Gold_II.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/instruments/adwin.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/instruments/ADwin_counter.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt1_scripts/testing/test_adwin_awg_communication.bas",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/ADwin_Codes/adwin_pro_2_lt2/cr_backup.inc",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/ADwin_Codes/adwin_gold_2_lt1/cr_green_boosta.inc",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/lt2_scripts/test_scripts/awg_djump_table.py",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/measurement2/adwin_ssro/pulsar_mbi_espin.py",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/scripts/QEC/MC_Simulations_Adriaan/Mast_C_addressability_Sim.py",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/scripts/matplotlibrc",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/lib/qec/hyperfine_params.py",
+		"/Users/Adriaan/Documents/teamdiamond/analysis/lib/qec/nuclear_spin_characterisation.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/pulsar/example_sequence_qtlab.py",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/measurement dll/pq_tttr/lib/i386-win32/libimppq_tttr_functions.a",
+		"/Users/Adriaan/Documents/teamdiamond/measurement/LICENSE"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"+k",
+			"cmd+k+b",
+			"color_theme",
+			"scheme",
+			"self",
+			"self.params[",
+			"mode =",
+			"success",
+			"CR_Check",
+			"CR_check",
+			"el_after_init = '1'",
+			"'passive_elt'",
+			"type =='passive",
+			"initialize_carb",
+			"init_state",
+			"C_int_Electron_X",
+			".el_sta",
+			".append",
+			"k ",
+			"Gate_seq",
+			"gate_seq",
+			".el_state_before_gate",
+			"panel",
+			"focus",
+			"tab",
+			"track_phase_evelution",
+			"parenthe",
+			"g.",
+			"dec_duration",
+			"Gate",
+			"dec_duration ",
+			"dec_duration",
+			"THT",
+			"wait_time",
+			"|0>'",
+			"passive_elt",
+			"wait",
+			"WAIT GATE",
+			"'MBI'",
+			"'mbi'",
+			"'MBI'",
+			"'mbi'",
+			"mbi",
+			"el_state_after_gate",
+			"Carbon_ind",
+			"[i]",
+			"i",
+			"ic",
+			"'C1_freq_0'   :",
+			"HEAD",
+			"conflict",
+			"freq",
+			"IF",
+			"ELSE IF",
+			"ELSEIF",
+			"ELIF",
+			"+=",
+			"mbi_timer",
+			"mbi_timertimer",
+			"timer",
+			"ELSE",
+			"TODO_MAR",
+			"TODO",
+			"TODO _MAR",
+			"TODO",
+			"dyn",
+			"dynam",
+			"dyn",
+			"dynamicaldec",
+			"TODO",
+			"single",
+			" : ",
+			": ",
+			"select",
+			"column",
+			"Carbon_ind",
+			"par_seq_",
+			"par_1",
+			"C_int_Ren_a_",
+			"'swap'",
+			"MBI_single_C13"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "MasterThesis.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"mstparams",
+				"measurement/scripts/lt2_scripts/setup/msmt_params.py"
+			],
+			[
+				"todo",
+				"TodoReview"
+			],
+			[
+				"dyndec",
+				"measurement/lib/measurement2/adwin_ssro/dynamicaldecoupling.py"
+			],
+			[
+				"measparam",
+				"measurement/scripts/lt2_scripts/setup/msmt_params.py"
+			],
+			[
+				"magnet",
+				"measurement/lib/tools/magnet_tools.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 296.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
