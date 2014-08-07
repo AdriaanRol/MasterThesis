@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Childress2013Diamond}
 L.~Childress and R.~Hanson.
@@ -15,6 +15,12 @@ M.W. Doherty, N.B. Manson, P.~Delaney, F.~Jelezko, J.~Wrachtrup, and L.C.L.
   Hollenberg.
 \newblock The nitrogen-vacancy colour centre in diamond.
 \newblock page 101, 2 2013.
+
+\bibitem{Feynman1982Simulating}
+Richard~P. Feynman.
+\newblock Simulating physics with computers.
+\newblock {\em International Journal of Theoretical Physics}, 21(6-7):467--488,
+  6 1982.
 
 \bibitem{Jelezko2004Observation}
 F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
@@ -33,6 +39,13 @@ L.~Robledo, L.~Childress, H.~Bernien, B.~Hensen, P.F.A. Alkemade, and
 \newblock High-fidelity projective read-out of a solid-state spin quantum
   register.
 \newblock {\em Nature}, 477(7366):574--8, 9 2011.
+
+\bibitem{Shor1994Algorithms}
+P.W. Shor.
+\newblock Algorithms for quantum computation: discrete logarithms and
+  factoring.
+\newblock In {\em Proceedings 35th Annual Symposium on Foundations of Computer
+  Science}, pages 124--134. IEEE Comput. Soc. Press, 1994.
 
 \bibitem{Taminiau2012Detectiona}
 T.~H. Taminiau, J.~J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.~V.
@@ -53,5 +66,12 @@ T.~H.~TH Taminiau, J.~Cramer, T.~van~der Sar, V.~V. Dobrovitski, and R.~Hanson.
 \newblock Universal control and error correction in multi-qubit spin registers
   in diamond.
 \newblock {\em Nature Nanotechnology}, 2(February):2--7, 9 2014.
+
+\bibitem{Vandersypen2001Experimental}
+L~M Vandersypen, Matthias Steffen, Gregory Breyta, Costantino~S Yannoni, Mark~H
+  Sherwood, and Isaac~L Chuang.
+\newblock Experimental realization of shor's quantum factoring algorithm using
+  nuclear magnetic resonance.
+\newblock {\em Nature}, 414(6866):883--7, 2001.
 
 \end{thebibliography}
