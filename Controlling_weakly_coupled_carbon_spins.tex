@@ -2,6 +2,35 @@
 
 \chapter{Weakly Coupled Carbon Spins}
 
+In a similar fashion the state of a Carbon--13 atom can be controlled by switching an additional term in the Hamiltonian on and off. The Hamiltonian of the nuclear spin depends on the electron state\cite{Taminiau2014Universal}:
+ \begin{eqnarray}
+H_0= \gamma_C B_z I_z \\
+H_1 = \gamma_C B_z I_z +H_{HF} = \gamma_C B_z I_z+ A_\parallel I_z + A_\perp I_x
+\end{eqnarray}
+
+The the hyperfine term is not present when the electron is in the $m_s = 0$ state. The hyperfine term consists of a contact term and a dipole term. For carbons with weak couplings (A$<$200kHz) the contact term is expected to be negligible and the dipole term is given by\cite{Lange2012Quantum}:
+
+\begin{equation}
+H_{dip} = \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} [ \mathbf{S \cdot I} - 3 (\mathbf S \cdot \hat{n_{hf}})(\mathbf I \cdot \hat{n_{hf}})]
+\end{equation}
+
+From this equation the parallel and orthogonal components of the Hyperfine interaction, with respect to the NV axis along the z direction, can be derived to be:
+ \begin{eqnarray}
+A_\parallel= - \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} \left(3\cdot \frac{z^2}{r^2}-1\right)\\
+ A_\perp =  -\frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
+\end{eqnarray}
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[keepaspectratio,width=0.2\textwidth,height=0.75\textheight]{./img/QuantizationAxis.png}
+\caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= -1$ state changes the quantization axis of $^{13}\mathrm{C}$ nuclear spins. For  $m_s=0$ spins precess about $\omega_L$. For  $m_s=-1$ spins precess about a distinct axis $\mathbf{\tilde{\omega}}=\mathbf{\omega_L} +\mathbf{A}$\cite{Taminiau2012Detection}}
+\label{fig:quantax}
+\end{figure}
+
+
+
+
 \section{Addressing weakly coupled carbons trough dynamical decoupling}
 \label{controllingacarbonthroughdynamicaldecoupling}
 To understand how a Carbon--13 atom can be controlled it is useful to consider three situations. In the first situation $\omega_L$ and $\mathbf{A}$ point in the same direction. In the second situation $\omega_L$ and $\mathbf{A}$ are of comparable magnitude and point in different directions, resulting in a big angle between the quantisation axes. In the last situation $A$ is small compared to  $\omega_L$ resulting in a small angle between the quantisation axes.
