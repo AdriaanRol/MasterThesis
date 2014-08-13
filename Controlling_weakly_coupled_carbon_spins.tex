@@ -1,20 +1,19 @@
 %TODO_MAR:  Status: Up for revision
 
-\chapter{Weakly Coupled Carbon Spins}
-
-In a similar fashion the state of a Carbon--13 atom can be controlled by switching an additional term in the Hamiltonian on and off. The Hamiltonian of the nuclear spin depends on the electron state\cite{Taminiau2014Universal}:
+\chapter{Weakly-coupled Carbon Spins}
+Similar to how the electronic spin state can be controlled by adding and removing a term to the Hamiltonian we can also control the state of a Carbon--13 atom. The Hamiltonian of the nuclear spin depends on the electronic spin state\citep{Taminiau2014Universal}. A hyperfine term describing the interaction between the electronic spin and the nucleus is not present when the electron is in the $m_s = 0$ state :
  \begin{eqnarray}
 H_0= \gamma_C B_z I_z \\
-H_1 = \gamma_C B_z I_z +H_{HF} = \gamma_C B_z I_z+ A_\parallel I_z + A_\perp I_x
+H_1 = \gamma_C B_z I_z +H_{\mathrm{HF}}
 \end{eqnarray}
 
-The the hyperfine term is not present when the electron is in the $m_s = 0$ state. The hyperfine term consists of a contact term and a dipole term. For carbons with weak couplings (A$<$200kHz) the contact term is expected to be negligible and the dipole term is given by\cite{Lange2012Quantum}:
+The hyperfine term consists of a contact term and a dipole term. For carbons with weak couplings \comment{TODO_MAR: Redefine weak coupling} (A$<$200kHz) the contact term is expected to be negligible and the dipole term is given by\cite{Lange2012Quantum}:
 
 \begin{equation}
-H_{dip} = \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} [ \mathbf{S \cdot I} - 3 (\mathbf S \cdot \hat{n_{hf}})(\mathbf I \cdot \hat{n_{hf}})]
+H_{\mathrm{dip}} = \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} [ \bm{S \cdot I} - 3 (\bm S \cdot \hat{n_{\mathrm{hf}}})(\bm I \cdot \hat{n_{\mathrm{hf}}})]
 \end{equation}
 
-From this equation the parallel and orthogonal components of the Hyperfine interaction, with respect to the NV axis along the z direction, can be derived to be:
+From this equation the parallel and orthogonal components of the Hyperfine interaction ($H_{\mathrm{dip}} = A_\parallel I_z + A_\perp I_x $), with respect to the NV axis along the z direction, can be derived to be:
  \begin{eqnarray}
 A_\parallel= - \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} \left(3\cdot \frac{z^2}{r^2}-1\right)\\
  A_\perp =  -\frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
@@ -24,39 +23,41 @@ A_\parallel= - \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} \left(3\cdot \
 \begin{figure}[htbp]
 \centering
 \includegraphics[keepaspectratio,width=0.2\textwidth,height=0.75\textheight]{./img/QuantizationAxis.png}
-\caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= -1$ state changes the quantization axis of $^{13}\mathrm{C}$ nuclear spins. For  $m_s=0$ spins precess about $\omega_L$. For  $m_s=-1$ spins precess about a distinct axis $\mathbf{\tilde{\omega}}=\mathbf{\omega_L} +\mathbf{A}$\cite{Taminiau2012Detection}}
+\caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= +1$ state changes the quantization axis of $^{13}\mathrm{C}$ nuclear spins. For  $m_s=0$ spins precess about $\bm{\omega_L}$. For  $m_s=+1$ spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$.}
+%removed reference to Tim's paper because it is already in the main text.
 \label{fig:quantax}
 \end{figure}
 
 
 
 
-\section{Addressing weakly coupled carbons trough dynamical decoupling}
+\section{Addressing weakly-coupled carbons trough dynamical decoupling}
 \label{controllingacarbonthroughdynamicaldecoupling}
-To understand how a Carbon--13 atom can be controlled it is useful to consider three situations. In the first situation $\omega_L$ and $\mathbf{A}$ point in the same direction. In the second situation $\omega_L$ and $\mathbf{A}$ are of comparable magnitude and point in different directions, resulting in a big angle between the quantisation axes. In the last situation $A$ is small compared to  $\omega_L$ resulting in a small angle between the quantisation axes.
+Spins precess about a quantization axis along $ \bm{\tilde{\omega}}$ with a frequency $|\bm{\tilde{\omega}}|$. We call $ \bm{\tilde{\omega}} $ the quantization-vector. When the electron is in the $m_s=0$ each nuclear spin precesses about $\bm{\tilde{\omega}} = \bm{\omega_L}$ with the Larmor frequency. The magnetic field is aligned along the quantization axis of the NV- center and defined as the z-direction.When the electron is in the $m_s=+1$ state nuclear spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$ \citep{Taminiau2012Detection}. The hyperfine interaction $\bm{A}$ depends on the position of that particular nuclear spin relative to the NV- center.
 
-When applying a decoupling sequence with N\slash 2 decoupling units of the form {$\tau - \pi -2\tau-\pi-\tau$} the nuclear spin alternately rotates around the  $\omega_L$ and the $\tilde{\omega}$ axis. The net result of one such decoupling sequence is a rotation around an axis  $\mathbf{\hat{n_i}}$ by an angle $\phi$  . Where  $\mathbf{\hat{n_i}}$  depends on the initial state of the electron~\citep{Taminiau2012Detection}.
+To understand how a Carbon--13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A}$ are of comparable magnitude and point in different directions, resulting in a big angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
 
-When $\mathbf{\omega_L}$ and $\mathbf{A}$ point in the same direction, the net rotation axes are parallel making it impossible to control the Carbon--13 atom using this decoupling sequence.
+When applying a decoupling sequence with N\slash 2 decoupling units of the form {$\tau - \pi -2\tau-\pi-\tau$}, where $\tau$ is a wait time between pulses and $\pi$ is a $\pi$-pulse that flips the electron-state, the nuclear spin alternately rotates around the  $\bm\omega_L$ and the $\bm{\tilde{\omega}}$ axis. The net result of one such decoupling sequence is a rotation around an axis $\bm{\hat{\mathrm{n_i}}}$ by an angle $\phi$. Where $\bm{\hat{\mathrm{n_i}}}$ depends on the initial state of the electron: $\bm{\hat{\mathrm{n_0}}}$ when the electron starts in $m_s = 0$ and $\bm{\hat{\mathrm{n_1}}}$ when the electron starts in $m_s = +1$~\citep{Taminiau2012Detection}.
 
-In the case where $\omega_L$ and $\mathbf{A}$ are of comparable magnitude the net rotation axes  $\mathbf{\hat{n_i}}$ are strongly dependent on the initial state for almost any inter-pulse delay $\tau$. Although this sounds nice as entanglement is almost always created, having two or more carbons with couplings comparable to the Larmor frequency creates complicated interactions.
+When $\bm{\omega_L}$ and $\bm{A}$ point in the same direction, the net rotation axis is independent of the initial electron-state making it impossible to use the electron to control the Carbon--13 atom using this decoupling sequence.
 
-When considering the case where $\mathbf{A}$ is small compared to  $\omega_L$ the net rotation axes  $\hat{n_0}$ and $\hat{n_1}$ are practically parallel and the nuclear spin undergoes an unconditional evolution. Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are antiparallel leading to a conditional rotation. The resonant condition occurs at~\citep{Taminiau2012Detection}:
+In the case where $\bm{\omega_L}$ and $\bm{A}$\comment{Change to orthogonal component?} are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. Having one of these strongly coupled carbon atoms can make it hard to selectively control other carbons as there are very few inter-pulse-delays $2\tau$ for which only the non-strongly-coupled carbon is affected.
+
+When considering the case where $\bm{|A|}$ is small compared to  $\bm{|\omega_L|}$ the net rotation axes  $\hat{n_0}$ and $\hat{n_1}$ are practically parallel and the nuclear spin undergoes an unconditional evolution. Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are anti-parallel leading to a conditional rotation\citep{Taminiau2012Detection}. The resonant condition occurs at:
 
  \begin{equation}
 \tau = \frac{(2k+1)\pi}{2 \gamma_C B_z + A_\parallel}
 \label{eq:res_dip_loc}
 \end{equation}
 
-And for $\omega_L \gg \mathbf{A}$ the dip has a width of:
+And for $\omega_L \gg |\bm{A}|$ the dip has a width of:
 
  \begin{equation}
 \Delta = \frac{A_\perp}{2\cdot (\gamma_C B_z)^2}
 \label{eq:res_dip_width}
 \end{equation}
 
-If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins. As a result, for an unpolarised nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by:
-
+If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins. As a result, for an unpolarized nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by:
 
 \begin{equation}
 P_x = (M+1)/2
@@ -64,9 +65,8 @@ P_x = (M+1)/2
 
 With for a single nuclear spin:
 
-
 \begin{equation}
-M = 1-(1 - \hat{\mathbf{n_0}} \cdot \hat{\mathbf{n_1}}) \sin^2 \frac{N\phi}{2}
+M = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac{N\phi}{2}
 \end{equation}
 
 \subsection{How many C13 can we control?}
@@ -78,7 +78,7 @@ In practice this means that the presence of a carbon that is strongly coupled (w
 
 As carbon--13 atoms are randomly distributed in the crystal the amount of weak resonances that can be addressed varies from NV to NV. By increasing the magnetic field the width and the delay-time of the resonances decreases. The downside is that it becomes harder to address these resonances as the resolution of the AWG used to apply the pulses is finite.
 
-The question wether we can address enough carbon atoms to perform 3-qubit measurement-based quantum error correction was investigated using simulations and will be discussed in the next chapter.
+The question whether we can address enough carbon atoms to perform 3-qubit measurement-based quantum error correction was investigated using simulations and will be discussed in the next chapter.
 % TODO_MAR: Change ending of this chapter to bridge to next section better
 
 \section{Characterizing the Nuclear spin environment}
