@@ -1,48 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Thesis_MA_Rol.aux
-The style file: plain.bst
+The style file: plainnat.bst
 Database file #1: Remote.bib
 Warning--empty journal in Doherty2013NitrogenVacancy
 You've used 13 entries,
-            2118 wiz_defined-function locations,
-            588 strings with 6531 characters,
-and the built_in function-call counts, 4620 in all, are:
-= -- 432
-> -- 269
-< -- 2
-+ -- 108
-- -- 94
-* -- 376
-:= -- 809
-add.period$ -- 40
+            2773 wiz_defined-function locations,
+            700 strings with 8000 characters,
+and the built_in function-call counts, 6794 in all, are:
+= -- 610
+> -- 452
+< -- 8
++ -- 155
+- -- 141
+* -- 612
+:= -- 1097
+add.period$ -- 59
 call.type$ -- 13
 change.case$ -- 83
-chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 156
-empty$ -- 312
-format.name$ -- 94
-if$ -- 931
-int.to.chr$ -- 0
-int.to.str$ -- 13
+chr.to.int$ -- 12
+cite$ -- 27
+duplicate$ -- 274
+empty$ -- 472
+format.name$ -- 156
+if$ -- 1398
+int.to.chr$ -- 2
+int.to.str$ -- 1
 missing$ -- 10
-newline$ -- 68
-num.names$ -- 26
-pop$ -- 72
+newline$ -- 92
+num.names$ -- 52
+pop$ -- 138
 preamble$ -- 1
 purify$ -- 73
 quote$ -- 0
-skip$ -- 108
+skip$ -- 212
 stack$ -- 0
-substring$ -- 235
-swap$ -- 29
+substring$ -- 195
+swap$ -- 39
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 143
 warning$ -- 1
-while$ -- 37
-width$ -- 15
-write$ -- 145
+while$ -- 50
+width$ -- 0
+write$ -- 214
 (There was 1 warning)

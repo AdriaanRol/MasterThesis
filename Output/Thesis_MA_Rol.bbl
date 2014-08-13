@@ -1,83 +1,122 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{Bernien2014Control}
+\bibitem[Bernien(2014)]{Bernien2014Control}
 H.~Bernien.
-\newblock {\em Control, Measurement and Entanglement of Remote Quantum Spin
+\newblock \emph{Control, Measurement and Entanglement of Remote Quantum Spin
   Registers in Diamond}.
 \newblock PhD thesis, Delft University of Technology, 2014.
 
-\bibitem{Childress2013Diamond}
+\bibitem[Childress and Hanson(2013)]{Childress2013Diamond}
 L.~Childress and R.~Hanson.
 \newblock Diamond nv centers for quantum computing and quantum networks.
-\newblock {\em MRS Bulletin}, 38(02):134--138, 2 2013.
+\newblock \emph{MRS Bulletin}, 38\penalty0 (02):\penalty0 134--138, 2 2013.
+\newblock ISSN 0883-7694.
+\newblock URL
+  \url{http://www.journals.cambridge.org/abstract\_S0883769413000201}.
 
-\bibitem{Lange2012Quantum}
+\bibitem[de~Lange(2012)]{Lange2012Quantum}
 G.~de~Lange.
-\newblock {\em Quantum Control and Coherence of Interacting Spins in Diamond}.
+\newblock \emph{Quantum Control and Coherence of Interacting Spins in Diamond}.
 \newblock PhD thesis, Delft University of Technology, 2012.
 
-\bibitem{Doherty2013NitrogenVacancy}
+\bibitem[Doherty et~al.(2013)Doherty, Manson, Delaney, Jelezko, Wrachtrup, and
+  Hollenberg]{Doherty2013NitrogenVacancy}
 M.W. Doherty, N.B. Manson, P.~Delaney, F.~Jelezko, J.~Wrachtrup, and L.C.L.
   Hollenberg.
 \newblock The nitrogen-vacancy colour centre in diamond.
 \newblock page 101, 2 2013.
+\newblock URL \url{http://arxiv.org/abs/1302.3288}.
 
-\bibitem{Feynman1982Simulating}
+\bibitem[Feynman(1982)]{Feynman1982Simulating}
 Richard~P. Feynman.
 \newblock Simulating physics with computers.
-\newblock {\em International Journal of Theoretical Physics}, 21(6-7):467--488,
-  6 1982.
+\newblock \emph{International Journal of Theoretical Physics}, 21\penalty0
+  (6-7):\penalty0 467--488, 6 1982.
+\newblock ISSN 0020-7748.
+\newblock URL \url{http://link.springer.com/10.1007/BF02650179}.
 
-\bibitem{Jelezko2004Observation}
+\bibitem[Jelezko et~al.(2004)Jelezko, Gaebel, Popa, Gruber, and
+  Wrachtrup]{Jelezko2004Observation}
 F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
 \newblock Observation of coherent oscillations in a single electron spin.
-\newblock {\em Physical Review Letters}, 92(7):076401, 2 2004.
+\newblock \emph{Physical Review Letters}, 92\penalty0 (7):\penalty0 076401, 2
+  2004.
+\newblock ISSN 0031-9007.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.92.076401}.
 
-\bibitem{Pfaff2013Quantum}
+\bibitem[Pfaff(2013)]{Pfaff2013Quantum}
 W.~Pfaff.
-\newblock {\em Quantum Measurement and Entanglement of Spin Quantum Bits in
+\newblock \emph{Quantum Measurement and Entanglement of Spin Quantum Bits in
   Diamond}.
 \newblock PhD thesis, Delft University of Technology, 2013.
 
-\bibitem{Robledo2011HighFidelity}
+\bibitem[Robledo et~al.(2011)Robledo, Childress, Bernien, Hensen, Alkemade, and
+  Hanson]{Robledo2011HighFidelity}
 L.~Robledo, L.~Childress, H.~Bernien, B.~Hensen, P.F.A. Alkemade, and
   R.~Hanson.
 \newblock High-fidelity projective read-out of a solid-state spin quantum
   register.
-\newblock {\em Nature}, 477(7366):574--8, 9 2011.
+\newblock \emph{Nature}, 477\penalty0 (7366):\penalty0 574--8, 9 2011.
+\newblock ISSN 1476-4687.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21937989}.
 
-\bibitem{Shor1994Algorithms}
+\bibitem[Shor(1994)]{Shor1994Algorithms}
 P.W. Shor.
 \newblock Algorithms for quantum computation: discrete logarithms and
   factoring.
-\newblock In {\em Proceedings 35th Annual Symposium on Foundations of Computer
+\newblock In \emph{Proceedings 35th Annual Symposium on Foundations of Computer
   Science}, pages 124--134. IEEE Comput. Soc. Press, 1994.
+\newblock ISBN 0-8186-6580-7.
+\newblock URL
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=365700}.
 
-\bibitem{Taminiau2012Detectiona}
+\bibitem[Taminiau et~al.(2012{\natexlab{a}})Taminiau, Wagenaar, van~der Sar,
+  Jelezko, Dobrovitski, and Hanson]{Taminiau2012Detectiona}
 T.~H. Taminiau, J.~J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.~V.
   Dobrovitski, and R.~Hanson.
 \newblock Detection and control of individual nuclear spins using a weakly
   coupled electron spin.
-\newblock {\em Physical Review Letters}, 109(13):137602, 9 2012.
+\newblock \emph{Physical Review Letters}, 109\penalty0 (13):\penalty0 137602, 9
+  2012{\natexlab{a}}.
+\newblock ISSN 0031-9007.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.109.137602}.
 
-\bibitem{Taminiau2012Detection}
+\bibitem[Taminiau et~al.(2012{\natexlab{b}})Taminiau, Wagenaar, van~der Sar,
+  Jelezko, Dobrovitski, and Hanson]{Taminiau2012Detection}
 T.~H. Taminiau, J.J.T. J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.V.~V.
   Dobrovitski, and R.~Hanson.
 \newblock Detection and control of individual nuclear spins using a weakly
   coupled electron spin.
-\newblock {\em Physical Review Letters}, 109(13):137602, 9 2012.
+\newblock \emph{Physical Review Letters}, 109\penalty0 (13):\penalty0 137602, 9
+  2012{\natexlab{b}}.
+\newblock ISSN 0031-9007.
+\newblock URL \url{http://arxiv.org/abs/1205.4128
+  http://link.aps.org/doi/10.1103/PhysRevLett.109.137602}.
 
-\bibitem{Taminiau2014Universal}
+\bibitem[Taminiau et~al.(2014)Taminiau, Cramer, van~der Sar, Dobrovitski, and
+  Hanson]{Taminiau2014Universal}
 T.~H.~TH Taminiau, J.~Cramer, T.~van~der Sar, V.~V. Dobrovitski, and R.~Hanson.
 \newblock Universal control and error correction in multi-qubit spin registers
   in diamond.
-\newblock {\em Nature Nanotechnology}, 2(February):2--7, 9 2014.
+\newblock \emph{Nature Nanotechnology}, 2\penalty0 (February):\penalty0 2--7, 9
+  2014.
+\newblock ISSN 1748-3387.
+\newblock URL \url{http://arxiv.org/abs/1309.5452
+  http://www.nature.com/doifinder/10.1038/nnano.2014.2}.
 
-\bibitem{Vandersypen2001Experimental}
+\bibitem[Vandersypen et~al.(2001)Vandersypen, Steffen, Breyta, Yannoni,
+  Sherwood, and Chuang]{Vandersypen2001Experimental}
 L~M Vandersypen, Matthias Steffen, Gregory Breyta, Costantino~S Yannoni, Mark~H
   Sherwood, and Isaac~L Chuang.
 \newblock Experimental realization of shor's quantum factoring algorithm using
   nuclear magnetic resonance.
-\newblock {\em Nature}, 414(6866):883--7, 2001.
+\newblock \emph{Nature}, 414\penalty0 (6866):\penalty0 883--7, 2001.
+\newblock ISSN 0028-0836.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/11780055}.
 
 \end{thebibliography}
