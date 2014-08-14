@@ -1,7 +1,13 @@
 %TODO_MAR:  Status: Up for revision
 
 \chapter{Weakly-coupled Carbon Spins}
-Similar to how the electronic spin state can be controlled by adding and removing a term to the Hamiltonian we can also control the state of a carbon-13 atom. The Hamiltonian of the nuclear spin depends on the electronic spin state\citep{Taminiau2014Universal}. A hyperfine term describing the interaction between the electronic spin and the nucleus is not present when the electron is in the $m_s = 0$ state :
+Similar to how the electronic spin state can be controlled by adding and removing a term to the Hamiltonian we can also control the state of a carbon-13 atom.
+This chapter will start by providing theoretical background on the hyperfine coupling between carbon spins and the NV-center, before it will explain how nuclear spins can be addressed.
+The next section will explain and show characterization of the nuclear spin environment.
+The last section will explain how carbon-spins can be controlled and will demonstrate initialization control and readout of weakly coupled carbon spins.
+\section{Hyperfine Coupling}
+The Hamiltonian of the nuclear spin depends on the electronic spin state\citep{Taminiau2014Universal}.
+A hyperfine term describing the interaction between the electronic spin and the nucleus is not present when the electron is in the $m_s = 0$ state :
  \begin{eqnarray}
 H_0= \gamma_C B_z I_z \\
 H_1 = \gamma_C B_z I_z +H_{\mathrm{HF}}
@@ -19,12 +25,14 @@ For these carbons the hyperfine-term is equal to the dipole-term and is given by
 H_{\mathrm{dip}} = \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} [ \bm{S \cdot I} - 3 (\bm S \cdot \hat{n_{\mathrm{hf}}})(\bm I \cdot \hat{n_{\mathrm{hf}}})]
 \end{equation}
 
-From this equation the parallel and orthogonal components of the Hyperfine interaction ($H_{\mathrm{dip}} = A_\parallel I_z + A_\perp I_x $), with respect to the NV axis along the z direction, can be derived to be:
+From this equation the parallel and orthogonal components of the Hyperfine interaction ($H_{\mathrm{dip}} = A_\parallel I_z + A_\perp I_x $), with respect to the NV-axis along the z direction, can be derived to be:
  \begin{eqnarray}
 A_\parallel= - \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} \left(3\cdot \frac{z^2}{r^2}-1\right)\\
  A_\perp =  -\frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
 \end{eqnarray}
 
+\section{Addressing Weakly-coupled Carbons through Dynamical Decoupling}
+\label{controllingacarbonthroughdynamicaldecoupling}
 
 \begin{figure}[htbp]
 \centering
@@ -33,11 +41,6 @@ A_\parallel= - \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} \left(3\cdot \
 \label{fig:quantax}
 \end{figure}
 
-
-
-
-\section{Addressing weakly-coupled carbons through dynamical decoupling}
-\label{controllingacarbonthroughdynamicaldecoupling}
 Spins precess about a quantization axis along $ \bm{\tilde{\omega}}$ with a frequency $|\bm{\tilde{\omega}}|$. We call $ \bm{\tilde{\omega}} $ the quantization-vector. When the electron is in the $m_s=0$ each nuclear spin precesses about $\bm{\tilde{\omega}} = \bm{\omega_L}$ with the Larmor frequency. The magnetic field is aligned along the quantization axis of the NV- center and defined as the z-direction.When the electron is in the $m_s=+1$ state nuclear spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$ \citep{Taminiau2012Detection}. The hyperfine interaction $\bm{A}$ depends on the position of that particular nuclear spin relative to the NV- center.
 
 To understand how a carbon-13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude, resulting in a large angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
