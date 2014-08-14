@@ -35,13 +35,13 @@ A_\parallel= - \frac{\mu_0 \gamma_e \gamma_C \hbar^2 }{4 \pi r^3} \left(3\cdot \
 \label{controllingacarbonthroughdynamicaldecoupling}
 Spins precess about a quantization axis along $ \bm{\tilde{\omega}}$ with a frequency $|\bm{\tilde{\omega}}|$. We call $ \bm{\tilde{\omega}} $ the quantization-vector. When the electron is in the $m_s=0$ each nuclear spin precesses about $\bm{\tilde{\omega}} = \bm{\omega_L}$ with the Larmor frequency. The magnetic field is aligned along the quantization axis of the NV- center and defined as the z-direction.When the electron is in the $m_s=+1$ state nuclear spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$ \citep{Taminiau2012Detection}. The hyperfine interaction $\bm{A}$ depends on the position of that particular nuclear spin relative to the NV- center.
 
-To understand how a Carbon--13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A}$ are of comparable magnitude and point in different directions, resulting in a big angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
+To understand how a Carbon--13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude, resulting in a large angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
 
 When applying a decoupling sequence with N\slash 2 decoupling units of the form {$\tau - \pi -2\tau-\pi-\tau$}, where $\tau$ is a wait time between pulses and $\pi$ is a $\pi$-pulse that flips the electron-state, the nuclear spin alternately rotates around the  $\bm\omega_L$ and the $\bm{\tilde{\omega}}$ axis. The net result of one such decoupling sequence is a rotation around an axis $\bm{\hat{\mathrm{n_i}}}$ by an angle $\phi$. Where $\bm{\hat{\mathrm{n_i}}}$ depends on the initial state of the electron: $\bm{\hat{\mathrm{n_0}}}$ when the electron starts in $m_s = 0$ and $\bm{\hat{\mathrm{n_1}}}$ when the electron starts in $m_s = +1$~\citep{Taminiau2012Detection}.
 
 When $\bm{\omega_L}$ and $\bm{A}$ point in the same direction, the net rotation axis is independent of the initial electron-state making it impossible to use the electron to control the Carbon--13 atom using this decoupling sequence.
 
-In the case where $\bm{\omega_L}$ and $\bm{A}$\comment{Change to orthogonal component?} are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. Having one of these strongly coupled carbon atoms can make it hard to selectively control other carbons as there are very few inter-pulse-delays $2\tau$ for which only the non-strongly-coupled carbon is affected.
+In the case where $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. Having one of these carbon atoms can make it hard to selectively control other carbons as there are very few inter-pulse-delays $2\tau$ for which only the carbon atom without the strong orthogonal-hyperfine is affected.
 
 When considering the case where $\bm{|A|}$ is small compared to  $\bm{|\omega_L|}$ the net rotation axes  $\hat{n_0}$ and $\hat{n_1}$ are practically parallel and the nuclear spin undergoes an unconditional evolution. Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are anti-parallel leading to a conditional rotation\citep{Taminiau2012Detection}. The resonant condition occurs at:
 
@@ -69,25 +69,64 @@ With for a single nuclear spin:
 M = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac{N\phi}{2}
 \end{equation}
 
-\subsection{How many C13 can we control?}
-\label{howmanyc13canwecontrol}
+\section{Characterizing the Nuclear-spin environment}
 
-In reality the electron is not interacting with one carbon but with a bath of carbon atoms. When the electron interacts with multiple carbons at the same time M is given by the product of all individual values $M_j$ for each individual spin j. In order to coherently control one carbon the electron should not entangle with any other carbon when addressing it.
+In reality the electron is not interacting with a single carbon but with a bath of carbon atoms. When the electron interacts with multiple carbons at the same time the contrast $M$ is given by the product of all individual values $M_j$ for each individual spin $j$. In order to selectively control one carbon the electron should not entangle with any other carbon when addressing it.
+%Explain how fingerprint works and how it characterizes how many carbon we can control.
+% IF selective, M goes all the way down. If a lot go to 0.5 as all coherence is lost.
 
-In practice this means that the presence of a carbon that is strongly coupled (with respect to the Larmor frequency) makes it very hard to address any other carbon as entanglement is almost always created. It also means that resonances of weakly coupled (with respect to the Larmor frequency) carbons must not overlap. This excludes those carbons that are very weakly coupled in absolute terms as resonances of these carbons are located closely together.
+To identify promising resonances for carbon control we perform a dynamical decoupling spectroscopy\citep{Taminiau2012Detection} or fingerprint. In a fingerprint experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$. A narrow dip in the fingerprint spectrum is an indication a selectively controllable carbon.
 
-As carbon--13 atoms are randomly distributed in the crystal the amount of weak resonances that can be addressed varies from NV to NV. By increasing the magnetic field the width and the delay-time of the resonances decreases. The downside is that it becomes harder to address these resonances as the resolution of the AWG used to apply the pulses is finite.
+By sweeping the number of $\pi$-pulses on such a dip it can be verified if it corresponds to a single carbon. If entanglement is created with a lot of spins at once all coherence is lost and contrast will go to 0. Only if no entanglement is created with any other carbon can the contrast be sweeped to -1. %This weird wording is used because it is possible that the response of another carbon is non existent exactly when the first one reaches -1. Maybe also add the in between case for few spins?
 
-The question whether we can address enough carbon atoms to perform 3-qubit measurement-based quantum error correction was investigated using simulations and will be discussed in the next chapter.
+% NOTE: Extremely strongly coupled carbons are not in here
+Because Carbon-13 atoms are randomly distributed in diamond there is a wide range of possible hyperfine strengths. In the ideal case the spectrum would be filled with well-separated narrow resonances. This would correspond to carbons lying mostly along the NV-axis, ensuring weak orthogonal-components of the hyperfine interaction, and a decreasing density of carbon-13 atoms the further one goes away from the NV-center. Although such a distribution would not occur naturally this ideal case can be useful in understanding fingerprints.
+%ideal nicely seperated, narrow dips
+% Interesting geometry springs to mind :) string of carbon-13 atoms in a grown diamond with increasing separation further from the diamond.
+
+Most carbon-spins have very similar hyperfine-interaction strengths as they are relatively far away from the NV-center. This causes their resonances to overlap manifesting itself as a broad feature with little coherence in the fingerprint. We identify this response as the spin-bath.
+% reality most far away -> similar strengths ->  spin bath response
+
+Spins that have a strong hyperfine-interaction relative to other spins show up outside or at the edge of the spin-bath response. Going to higher orders $k$ separates resonances further allowing for control of more spins. As computations are fundamentally limited by the coherence time there is a limit to the resonance-order that can be used to address carbons. Additionally some of the relatively strong-coupled spins also have a strong orthogonal component of the hyperfine interaction. This orthogonal-component causes a broad response, effectively blocking a large range of $\tau$ from being used to control other spins.
+
+% need the stronger
+% sometimes one that is to strong -> increase B-field
+Both these issues can be addressed by increasing the magnetic field. By increasing the magnetic field until the orthogonal hyperfine-components of all spins are small relative to the Larmor frequency the broad resonances that cause large parts of the spectrum to become useless disappear. Additionally all resonances move closer to $\tau =0$ while at the same time becoming narrower, allowing higher order resonances to be addressed within the coherence time.
+
+% to much B-field -> to narrow dips, cannot address anymore (tech limitation)
+Increasing the magnetic field will not always improve the situation. When the magnetic field is too strong the resonances become narrower than the resolution of the Arbitrary Waveform Generator used to generate the pulses that address the resonances, making it impossible to address these resonances effectively.
+There are also practical limitations to how much the magnetic field can be increased. \citep{}
+% Optimum B-field range 300-700
+
+Similarly it is not practical to increase the magnetic field to compensate for arbitrary strongly coupled carbon-spins. \comment{WHY!?}
+%sims indicate optimum B? of behouden voor appendix?
+% Additional problems with B. Stability? -> appendix. transitions in excited states?
+
+
+
+
+
+% Way to strong -> remove be pre-selecting samples
+
+
+%Rand dist -> Range coupling sterktes
+% als niet sterk orth -> parr -> mooie dip, te zwak -> veel vergelijkbare sterkte
+% -> sommige sterk orthogonaal -> fucked
+% Hogere ordes-> verder uit elkaar -> nadeel langere control times
+% en B-veld -> zwakker otrhogonaal dus mooiere dips -> nadeel smaller -> te small -> optimum
+
+
+
+
+
+
+
+% It also means that resonances of weakly coupled (with respect to the Larmor frequency) carbons must not overlap. This excludes those carbons that are very weakly coupled in absolute terms as resonances of these carbons are located closely together.
+
+% As carbon--13 atoms are randomly distributed in the crystal the amount of weak resonances that can be addressed varies from NV to NV. By increasing the magnetic field the width and the delay-time of the resonances decreases. The downside is that it becomes harder to address these resonances as the resolution of the AWG used to apply the pulses is finite.
+
 % TODO_MAR: Change ending of this chapter to bridge to next section better
 
-\section{Characterizing the Nuclear spin environment}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Section containing fingerprint measurements with identified Carbons and Ramsey measurements used to determine the coupling strengths.
 % Also note that we have very strong orthogonal components
 % T2 measurements ? Ramsey type experiments. Would require explaining what T2 is (or maybe not).
@@ -95,12 +134,13 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Fingerprint graph with dips that are being addressed and fits of these resonances
 
 
-% Table with T2*, HF_parr, HF_orth. Values can be found in QEC LT/Simultations/Hans_Sil01_Spin_Control
+% Table with T2*, HF_parr, HF_orth. Values can be found in QEC LT/Simulations/Hans_Sil01_Spin_Control
 % B_field = 304.22G
 \begin{figure}[htbp]
     \centering
     \includegraphics{Img/Truefingerprint.pdf}
-    \caption{Fingerprint of Hans Sil01 at B = 304.12G for N=32 pulses.}
+    %TODO_MAR: use annotations to add labels in the graphs using matplotlib
+    \caption{Fingerprint of Hans Sil01 at B = 304.12G for N=32 pulses.Larmor revival clearly visible. }
     \label{fig:FP}
 \end{figure}
 
@@ -115,13 +155,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     \caption{Hyperfine paramters used to fit spins 1 to 4 in \autoref{fig:FP}.}
     \label{tbl:HF_par}
 \end{table}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \begin{figure}[t]
     \begin{subfigure}[t]{0.49\textwidth}\centering
