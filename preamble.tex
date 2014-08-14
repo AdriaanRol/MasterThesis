@@ -9,7 +9,6 @@
 \usepackage{graphicx}
 \usepackage[margin=0pt,font=small,labelfont=bf,labelsep=endash]{caption}
 \usepackage{pdfpages}
-\usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{subcaption}
 \usepackage{amsthm}
@@ -31,6 +30,7 @@
 \hfuzz=10pt %disables warnings for overfull hbox upto 10pt. Used for chapter headings
 % \pdfsuppresswarningpagegroup=1 % Disables warnings for multiple pdfs with grouping on same page
 \usepackage{fancyhdr}
+\usepackage{hyperref} %Adds hyperlinks to references
 \hypersetup{
     % bookmarks=false,         % show bookmarks bar?
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
@@ -53,3 +53,4 @@
 }
 \usepackage{enumerate}
 
+\usepackage{cleveref} %Adds the cref command for clever referencing

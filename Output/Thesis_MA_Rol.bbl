@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -40,6 +40,23 @@ Richard~P. Feynman.
 \newblock ISSN 0020-7748.
 \newblock URL \url{http://link.springer.com/10.1007/BF02650179}.
 
+\bibitem[Gali(2009)]{Gali2009Identification}
+Adam Gali.
+\newblock Identification of individual { extasciicircum}\{13\}c isotopes of
+  nitrogen-vacancy center in diamond by combining the polarization studies of
+  nuclear spins and first-principles calculations.
+\newblock \emph{Physical Review B}, 80\penalty0 (24):\penalty0 241204, 12 2009.
+\newblock ISSN 1098-0121.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.80.241204}.
+
+\bibitem[Gali et~al.(2008)Gali, Fyta, and Kaxiras]{Gali2008Ab}
+Adam Gali, Maria Fyta, and Efthimios Kaxiras.
+\newblock Ab initio supercell calculations on nitrogen-vacancy center in
+  diamond: Electronic structure and hyperfine tensors.
+\newblock \emph{Physical Review B}, 77\penalty0 (15):\penalty0 155206, 4 2008.
+\newblock ISSN 1098-0121.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.77.155206}.
+
 \bibitem[Hensen(2011)]{Hensen2011MeasurementBased}
 Bas~Jorrit Hensen.
 \newblock \emph{Measurement-based Quantum Computation with the Nitrogen-Vacancy
@@ -80,6 +97,16 @@ P.W. Shor.
 \newblock ISBN 0-8186-6580-7.
 \newblock URL
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=365700}.
+
+\bibitem[Smeltzer et~al.(2011)Smeltzer, Childress, and Gali]{Smeltzer201113}
+Benjamin Smeltzer, Lilian Childress, and Adam Gali.
+\newblock 13 c hyperfine interactions in the nitrogen-vacancy centre in
+  diamond.
+\newblock \emph{New Journal of Physics}, 13\penalty0 (2):\penalty0 025021, 2
+  2011.
+\newblock ISSN 1367-2630.
+\newblock URL
+  \url{http://stacks.iop.org/1367-2630/13/i=2/a=025021?key=crossref.bdd6956722cde89a36ab3eee44a82724}.
 
 \bibitem[Taminiau et~al.(2012{\natexlab{a}})Taminiau, Wagenaar, van~der Sar,
   Jelezko, Dobrovitski, and Hanson]{Taminiau2012Detectiona}
