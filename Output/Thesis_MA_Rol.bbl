@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,12 @@ Richard~P. Feynman.
   (6-7):\penalty0 467--488, 6 1982.
 \newblock ISSN 0020-7748.
 \newblock URL \url{http://link.springer.com/10.1007/BF02650179}.
+
+\bibitem[Hensen(2011)]{Hensen2011MeasurementBased}
+Bas~Jorrit Hensen.
+\newblock \emph{Measurement-based Quantum Computation with the Nitrogen-Vacancy
+  centre in Diamond}.
+\newblock PhD thesis, Delft University of Technology, 2011.
 
 \bibitem[Jelezko et~al.(2004)Jelezko, Gaebel, Popa, Gruber, and
   Wrachtrup]{Jelezko2004Observation}
@@ -95,8 +101,8 @@ T.~H. Taminiau, J.J.T. J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.V.~V.
 \newblock \emph{Physical Review Letters}, 109\penalty0 (13):\penalty0 137602, 9
   2012{\natexlab{b}}.
 \newblock ISSN 0031-9007.
-\newblock URL \url{http://arxiv.org/abs/1205.4128
-  http://link.aps.org/doi/10.1103/PhysRevLett.109.137602}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.109.137602
+  http://arxiv.org/abs/1205.4128}.
 
 \bibitem[Taminiau et~al.(2014)Taminiau, Cramer, van~der Sar, Dobrovitski, and
   Hanson]{Taminiau2014Universal}

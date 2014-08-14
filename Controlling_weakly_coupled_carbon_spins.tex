@@ -75,8 +75,9 @@ In reality the electron is not interacting with a single carbon but with a bath 
 %Explain how fingerprint works and how it characterizes how many carbon we can control.
 % IF selective, M goes all the way down. If a lot go to 0.5 as all coherence is lost.
 
-To identify promising resonances for carbon control we perform a dynamical decoupling spectroscopy\citep{Taminiau2012Detection} or fingerprint. In a fingerprint experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$. A narrow dip in the fingerprint spectrum is an indication a selectively controllable carbon.
+To identify promising resonances for carbon control a dynamical decoupling spectroscopy\citep{Taminiau2012Detection} or fingerprint is performed. In a fingerprint experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$.
 
+A narrow dip in the fingerprint spectrum is an indication a selectively controllable carbon.
 By sweeping the number of $\pi$-pulses on such a dip it can be verified if it corresponds to a single carbon. If entanglement is created with a lot of spins at once all coherence is lost and contrast will go to 0. Only if no entanglement is created with any other carbon can the contrast be sweeped to -1. %This weird wording is used because it is possible that the response of another carbon is non existent exactly when the first one reaches -1. Maybe also add the in between case for few spins?
 
 % NOTE: Extremely strongly coupled carbons are not in here
@@ -91,14 +92,15 @@ Spins that have a strong hyperfine-interaction relative to other spins show up o
 
 % need the stronger
 % sometimes one that is to strong -> increase B-field
-Both these issues can be addressed by increasing the magnetic field. By increasing the magnetic field until the orthogonal hyperfine-components of all spins are small relative to the Larmor frequency the broad resonances that cause large parts of the spectrum to become useless disappear. Additionally all resonances move closer to $\tau =0$ while at the same time becoming narrower, allowing higher order resonances to be addressed within the coherence time.
+Both these issues can be addressed by increasing the magnetic field. By increasing the magnetic field until the orthogonal hyperfine-components of all spins are small relative to the Larmor frequency the broad resonances that cause large parts of the spectrum to become useless disappear. Additionally all resonances move closer to $\tau =0$ while at the same time becoming narrower, allowing higher order resonances to be addressed within the coherence time. % use calculations of Tim to show that number of resonances that can be addressed increases linearly with magnetic field.
 
 % to much B-field -> to narrow dips, cannot address anymore (tech limitation)
 Increasing the magnetic field will not always improve the situation. When the magnetic field is too strong the resonances become narrower than the resolution of the Arbitrary Waveform Generator used to generate the pulses that address the resonances, making it impossible to address these resonances effectively.
-There are also practical limitations to how much the magnetic field can be increased. \citep{}
-% Optimum B-field range 300-700
 
-Similarly it is not practical to increase the magnetic field to compensate for arbitrary strongly coupled carbon-spins. \comment{WHY!?}
+There are also practical limitations to how much the magnetic field can be increased. In order to control carbon-spins we must still be able to coherently initialize, control and read-out the electronic spin state. Because the transitions used for read-out and initialization depend on strain and magnetic field\citep{Hensen2011MeasurementBased}, care must be taken when measuring at different magnetic fields that states do not mix in the excited state.
+This combined with the fact that there is limited knowledge/few experiments have been performed at high magnetic field and low temperature make it more practical to settle for a moderate magnetic field.
+%Still misses point not practical to compensate for extremely strongly coupled spins.
+% Optimum B-field range 300-700
 %sims indicate optimum B? of behouden voor appendix?
 % Additional problems with B. Stability? -> appendix. transitions in excited states?
 
@@ -115,17 +117,6 @@ Similarly it is not practical to increase the magnetic field to compensate for a
 % Hogere ordes-> verder uit elkaar -> nadeel langere control times
 % en B-veld -> zwakker otrhogonaal dus mooiere dips -> nadeel smaller -> te small -> optimum
 
-
-
-
-
-
-
-% It also means that resonances of weakly coupled (with respect to the Larmor frequency) carbons must not overlap. This excludes those carbons that are very weakly coupled in absolute terms as resonances of these carbons are located closely together.
-
-% As carbon--13 atoms are randomly distributed in the crystal the amount of weak resonances that can be addressed varies from NV to NV. By increasing the magnetic field the width and the delay-time of the resonances decreases. The downside is that it becomes harder to address these resonances as the resolution of the AWG used to apply the pulses is finite.
-
-% TODO_MAR: Change ending of this chapter to bridge to next section better
 
 % Section containing fingerprint measurements with identified Carbons and Ramsey measurements used to determine the coupling strengths.
 % Also note that we have very strong orthogonal components
