@@ -65,22 +65,39 @@ And for $\omega_L \gg |\bm{A}|$ the dip has a width of:
 \label{eq:res_dip_width}
 \end{equation}
 
-If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins. As a result, for an unpolarized nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by:
+If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins. As a result, for an unpolarized nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by \cref{eq:contrast_to_probability}. The contrast $M_j$ for a single nuclear spin is given by \cref{eq:contrast_single_carbon_spin}\citep{Taminiau2012Detection}.
 
 \begin{equation}
+\label{eq:contrast_to_probability}
 P_x = (M+1)/2
 \end{equation}
 
-With for a single nuclear spin:
-
 \begin{equation}
-M = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac{N\phi}{2}
+\label{eq:contrast_single_carbon_spin}
+M_j = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac{N\phi}{2}
+\end{equation}
+
+%alpha = \tilde{\omega} \tau
+%beta = (\omega_L \tau)
+% mz = (\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}})
+\begin{equation}
+\label{eq:vec_term}
+    1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}} =  \frac{A_\perp ^2}{\tilde{\omega^2}} \frac{(1- \cos{(\tilde{\omega} \tau)})(1-\cos{(\omega_L \tau)})} {1 +\cos{(\tilde{\omega} \tau)}\cos{(\omega_L \tau)} - (\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}}) \sin{(\tilde{\omega} \tau)}\sin{(\omega_L \tau)}}
+\end{equation}
+\begin{equation}
+\label{eq:angle_term}
+    \phi =  \cos^{-1}\left(\cos(\tilde{\omega} \tau) \cos(\omega_L \tau)-\left(\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}}\right) \sin(\tilde{\omega} \tau)\sin(\omega_L \tau)\right)
 \end{equation}
 
 \section{Characterizing the Nuclear-spin environment}
 % Should add some sort of introduction as to what is in this section
 \subsection*{Dynamical Decoupling Spectroscopy}
 In reality the electron is not interacting with a single carbon but with a bath of carbon atoms. When the electron interacts with multiple carbons at the same time the contrast $M$ is given by the product of all individual values $M_j$ for each individual spin $j$. In order to selectively control one carbon the electron should not entangle with any other carbon when addressing it.
+
+\begin{equation}
+\label{eq:prod_multiple_spins}
+    M = \prod_{j}{M_j}
+\end{equation}
 %Explain how fingerprint works and how it characterizes how many carbon we can control.
 % IF selective, M goes all the way down. If a lot go to 0.5 as all coherence is lost.
 
@@ -120,24 +137,21 @@ This combined with the fact that few experiments have been performed at high mag
 
 
 \subsection*{Identifying Individual Carbon-spins}
-\Cref{fig:FP} shows the result of a fingerprint experiment on the sample studied in this thesis.
+To identify spins a dynamical decoupling spectroscopy was performed on the sample with N = 8, 16, 32 and 64 pulses. For N =8,16 and 32 this was done between $\tau = 2 \mu \mathrm{s}$  and $72 \mu \mathrm{s}$ and for N = 64 this was done up to $\tau = 52 \mu \mathrm{s}$.
+We identify distinct features in the fingerprint and try to assign different hyperfine-couplings to them such that the computed data for these spins fits the measured data as well as possible.
+The response of a single spin is computed using \cref{eq:contrast_single_carbon_spin}.
+13 spins were identified using this method.
+
+\Cref{fig:FP} shows a subset of the fingerprint data acquired for this thesis. \Cref{tbl:HF_par} shows the estimated hyperfine parameters of the 4 carbon spins with the strongest coupling.
+All estimated hyperfine parameters and a link to the full fingerprint measurements can be found in \cref{chap:Fingerprint_data_appendix}.
+
 The broad collapse due to the spin bath is clearly visible at $\tau/(4 \tau _L)$ for odd m.
-The fingerprint clearly shows some distinct peaks but the most prevalent feature of the spectrum is the strong oscillation between the spin-bath collapses. Such an oscillation can be explained by a carbon with a relatively strong orthogonal hyperfine interaction.
+The most prevalent feature of the spectrum is a strong oscillation between the spin-bath collapses.
+This oscillation can be explained by a single carbon that has a strong orthogonal hyperfine coupling, labeled spin-2 in our analysis.
+Due to the nature of spin-2 it is hard to find other carbons that can be coherently controlled.
 
-We identify spins by
-The fingerprint was analyzed by
-analytical functions
-
-We identify distinct features and try to assign hF couplings of different spins to that such that the computed data for these hf strenghts fits the measured data as good as possible.
-In this way we identify 13 spins.
-
-
-
-% identify main features
-% spin-bath
-%strongly coupled spin 2
-% Fitted with 13 spins using analytical formulas from supplements of tim's paper
-% 4 promising spins
+Nonetheless there are still some distinct peaks at the edge of the spin-bath collapse. When going to higher orders we see these peaks separate from the spin-bath response.
+We find that we can address the 4 spins listed in \cref{tbl:HF_par}. % Remove this sentence?
 
 
 % Table with T2*, HF_parr, HF_orth. Values can be found in QEC LT/Simulations/Hans_Sil01_Spin_Control
@@ -167,14 +181,14 @@ In this way we identify 13 spins.
 
 
 \begin{table}[htbp]
-    \begin{tabular}{lllll}
-    Carbon &  $A_{\parallel} $ & $A_{\perp}$ \\ \hline
-    1         & 30.0 kHz$\cdot 2 \pi$             & 80.0 kHz$\cdot 2 \pi$                \\
-    2         & 27.0 kHz$\cdot 2 \pi$             & 28.5 kHz$\cdot 2 \pi$              \\
-    3         & -51.0 kHz$\cdot 2 \pi$          & 105.0 kHz$\cdot 2 \pi$              \\
-    4         & 45.1 kHz$\cdot 2 \pi$           & 20.0 kHz$\cdot 2 \pi$                \\
+    \begin{tabular}{cllll}
+    Carbon & \quad \quad  $A_{\parallel} $ & \quad \quad $A_{\perp}$ \\ \hline
+    1         & $2 \pi \cdot$30.0 kHz             & $2 \pi \cdot$80.0 kHz                \\
+    2         & $2 \pi \cdot$27.0 kHz             & $2 \pi \cdot$28.5 kHz              \\
+    3         & $2 \pi \cdot$-51.0 kHz          & $2 \pi \cdot$105.0 kHz              \\
+    4         & $2 \pi \cdot$45.1 kHz           & $2 \pi \cdot$20.0 kHz                \\
     \end{tabular}
-    \caption{Hyperfine paramters used to fit spins 1 to 4 in \cref{fig:FP}.}
+    \caption{Estimated hyperfine parameters for spins 1 to 4 in \cref{fig:FP}.}
     \label{tbl:HF_par}
 \end{table}
 
@@ -208,7 +222,10 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \section{Controlling weakly coupled carbons trough the electronic spin}
 % Section containing theory (Gate circuits) on how to initialize and readout carbons
 
-
+Explain how carbon control works in theory.
+Explain how a conditional and unconditional gate can be performed.
+Explain initialization on gate level, refer to appendix for calculations.
+Explain Readout.
 
 
 
@@ -216,7 +233,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % TODO_MAR: Discuss naming of sec: Carbon Init&RO and Carbon Tomo
 %  Section containing experimental results (Tomographies)
 %  Should emphasize difficulty in seperating initialization and RO fidelity, what is not working? Is it working?
-
+Show results that demonstrate carbon control.
 
 
 
