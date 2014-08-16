@@ -1,6 +1,6 @@
 %TODO_MAR:  Status: Up for revision
 
-\chapter{Weakly-coupled Carbon Spins}
+\chapter{Addressing Weakly-coupled Carbon Spins}
 Similar to how the electronic spin can be controlled by adding and removing a term to the Hamiltonian we can also control the state of a weakly-coupled carbon-13 atom.
 This chapter will start by providing theoretical background on the hyperfine coupling between carbon spins and the NV-center.
 The second section will explain how nuclear spins can be addressed.
@@ -175,7 +175,7 @@ These are listed in \cref{tbl:HF_par}. % Remove this sentence?
 
 % Table with T2*, HF_parr, HF_orth. Values can be found in QEC LT/Simulations/Hans_Sil01_Spin_Control
 % B_field = 304.22G
-\begin{figure}[t]
+\begin{figure}[htbp]
 
     \begin{subfigure}[t]{\textwidth}\centering
         \centering
@@ -192,11 +192,9 @@ These are listed in \cref{tbl:HF_par}. % Remove this sentence?
         \caption{Fingerprint for N =32 pulses. }
         \label{fig:FP32}
     \end{subfigure}
-    \caption{Part of fingerprints resulting from a dynamical-decoupling-spectroscopy experiment performed at 304.12G. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.  Colored lines represent computed responses of carbon spins. Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. NOTE: labels for colored spins still coming. }
+    \caption{Part of a fingerprint resulting from a dynamical-decoupling-spectroscopy experiment performed at 304.12G. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.  Colored lines represent computed responses of carbon spins. Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. NOTE: labels for colored spins still coming. }
     \label{fig:FP}
 \end{figure}
-
-
 
 
 \begin{table}[htbp]
@@ -210,49 +208,3 @@ These are listed in \cref{tbl:HF_par}. % Remove this sentence?
     \caption{Estimated hyperfine parameters for spins 1 to 4 in \cref{fig:FP}.}
     \label{tbl:HF_par}
 \end{table}
-
-\subsection*{Measuring Precession Frequencies}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-% Ramsey experiment to measure coupling strengths
-% Needs relation between frequency and parralel component
-% spins 1 and 4 best
-
-
-\begin{figure}[htbp]
-    \begin{subfigure}[t]{0.49\textwidth}\centering
-    \includegraphics{Img/CarbonRamsey_C1.pdf}
-    \caption{Nuclear Ramsey of Carbon 1} \label{fig:CR_C1}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}\centering
-        \includegraphics{Img/CarbonRamsey_C4.pdf}
-        \caption{Nuclear Ramsey of Carbon 4}
-        \label{fig:CR_C4}
-    \end{subfigure}
-    \caption{Nuclear Ramsey experiment wit}
-\end{figure}
-
-
-
-\section{Controlling weakly coupled carbons trough the electronic spin}
-% Section containing theory (Gate circuits) on how to initialize and readout carbons
-
-Explain how carbon control works in theory.
-Explain how a conditional and unconditional gate can be performed.
-Explain initialization on gate level, refer to appendix for calculations.
-Explain Readout.
-
-
-
-\section{Carbon Initialization \& Readout}
-% TODO_MAR: Discuss naming of sec: Carbon Init&RO and Carbon Tomo
-%  Section containing experimental results (Tomographies)
-%  Should emphasize difficulty in seperating initialization and RO fidelity, what is not working? Is it working?
-Show results that demonstrate carbon control.
-
-
-
