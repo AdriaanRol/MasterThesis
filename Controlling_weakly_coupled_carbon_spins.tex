@@ -1,14 +1,47 @@
 \chapter{Controlling Weakly-coupled Carbon Spins}
+\section{Carbon control (more of a theory chapter, change title) }
+When on resonance (\cref{eq:res_dip_loc} ) the carbon rotates around on of two distinct anti-parallel axes based on the state the electron is in.
+[Need some statement that puts the axis in the equator when on resonance. Look in appendix again ]
+We define the
+
+Figure of Bloch sphere whoing n0 and n1 axis.
+A state starting of in 0 being rotated to +y and -y ($\pm $ x operation).
+Different arrow
+
+Note the bloch-sphere is a model that cannot accurately represent the dynamics of a 2-qubit system. Nonetheless it can be a useful simplification in explaining qubit control. Test
+
+
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includesvg{bloch_entangling_gate}
+%     \caption{yada yads }
+%     \label{fig:label}
+% \end{figure}
+
+Bladaiedat
+
+
 \subsection*{Measuring Precession Frequencies}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
 % Ramsey experiment to measure coupling strengths
 % Needs relation between frequency and parralel component
 % spins 1 and 4 best
+
+
+
+\begin{figure}[htbp]
+    \centering
+\mbox{
+\Qcircuit @C=1em @R=.7em {
+\lstick{\ket{0}}                        & \gate{\pi/2}  & \ctrl{1}      & \qw & \multigate{1}{T}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
+\lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{T}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&
+}
+}
+    \caption{Carbon Ramsey experiment. }
+    \label{fig:label}
+\end{figure}
 
 
 \begin{figure}[htbp]
