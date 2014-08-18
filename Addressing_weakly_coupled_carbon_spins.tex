@@ -11,17 +11,17 @@ The last section will explain how carbon-spins can be controlled and will demons
 The Hamiltonian of the nuclear spin depends on the electronic spin state and is given by \cref{eq:carbon_hamiltonian_0} when the electronic-spin is in the $m_s = 0$ state and by \cref{eq:carbon_hamiltonian_1} when in the $m_s = +1$ state for a magnetic field in the z-direction\citep{Taminiau2014Universal}.
  \begin{equation}
  \label{eq:carbon_hamiltonian_0}
-H_0= \gamma_{\mathrm{C}} B_z I_z
+H_0= \gamma_{n} B_z I_z
 \end{equation}
 \begin{equation}
  \label{eq:carbon_hamiltonian_1}
-    H_1 = \gamma_{\mathrm{C}} B_z I_z +H_{\mathrm{HF}}
+    H_1 = \gamma_{n} B_z I_z +H_{\mathrm{HF}}
 \end{equation}
-
+%Replace carbon with nuclear spin (general explanation in revised version of this section).
 The Larmor frequency for a carbon nucleus is given by  \cref{eq:carbon_larmor}.
 \begin{equation}
 \label{eq:carbon_larmor}
-\bm{\omega_L} = \gamma_{\mathrm{C}}\bm{B}
+\bm{\omega_L} = \gamma_{n}B \bm{\hat{\mathrm{z}}}
 \end{equation}
 
 The hyperfine ($H_{\mathrm{HF}}$) term consists of a contact term and a dipole term.
@@ -43,7 +43,7 @@ A_\parallel= - \frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3} \le
  A_\perp =  -\frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
 \end{eqnarray}
 
-Where $H_{\mathrm{dip}} = A_\parallel I_z + A_\perp I_x $.
+Where $H_{\mathrm{HF}} = A_\parallel I_z + A_\perp I_x $.
 
 \section{Addressing Weakly-coupled Carbons through Dynamical Decoupling}
 \label{controllingacarbonthroughdynamicaldecoupling}
@@ -51,35 +51,41 @@ Where $H_{\mathrm{dip}} = A_\parallel I_z + A_\perp I_x $.
 \begin{figure}[htbp]
 \centering
 \includegraphics[keepaspectratio,width=0.2\textwidth,height=0.75\textheight]{./img/QuantizationAxis.png}
-\caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= +1$ state changes the quantization axis of $^{13}\mathrm{C}$ nuclear spins. For  $m_s=0$ spins precess about $\bm{\omega_L}$. For  $m_s=+1$ spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$.}
+\caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= +1$ state changes the quantization axis of nuclear spins. For  $m_s=0$ all nuclear spins precess about $\bm{\omega_L}$. For  $m_s=+1$ each spin precesses about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$.}
 \label{fig:quantax}
 \end{figure}
 
-Spins precess about a quantization axis along $ \bm{\tilde{\omega}}$ with a frequency $|\bm{\tilde{\omega}}|$. We call $ \bm{\tilde{\omega}} $ the quantization-vector. When the electron is in the $m_s=0$ state each nuclear spin precesses about $\bm{\tilde{\omega}} = \bm{\omega_L}$ with the Larmor frequency. The magnetic field is aligned along the quantization axis of the NV-center and defined as the z-direction. When the electron is in the $m_s=+1$ state nuclear spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$ \citep{Taminiau2012Detection}. The hyperfine interaction $\bm{A}$ depends on the position of that particular nuclear spin relative to the NV- center.
-
-To understand how a carbon-13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude, resulting in a large angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
+When the electron is in the $m_s=0$ state each nuclear spin precesses about $\bm{\omega_L}$ with the Larmor frequency. When the electron is in the $m_s=+1$ state nuclear spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$ \citep{Taminiau2012Detection}. The hyperfine interaction $\bm{A}$ depends on the position of that particular nuclear spin relative to the NV- center.
 
 When applying a decoupling sequence with N\slash 2 decoupling units of the form {$\tau - \pi -2\tau-\pi-\tau$}, with $\tau$ a wait time between pulses, and $\pi$ a $\pi$-pulse that flips the electron-state, the nuclear spin alternately rotates around the  $\bm\omega_L$ and the $\bm{\tilde{\omega}}$ axis. The net result of one such decoupling sequence is a rotation around an axis $\bm{\hat{\mathrm{n_i}}}$ by an angle $\phi$. Where $\bm{\hat{\mathrm{n_i}}}$ depends on the initial state of the electron: $\bm{\hat{\mathrm{n_0}}}$ when the electron starts in $m_s = 0$ and $\bm{\hat{\mathrm{n_1}}}$ when the electron starts in $m_s = +1$~\citep{Taminiau2012Detection}.
 
+To understand how a carbon-13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude, resulting in a large angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
+
 When $\bm{\omega_L}$ and $\bm{A}$ point in the same direction, the net rotation axis is independent of the initial electron-state making it impossible to use the electron to control the carbon-13 atom using this decoupling sequence.
 
-In the case where $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. Having one of these carbon atoms can make it hard to selectively control other carbons as there are very few inter-pulse-delays $2\tau$ for which only the carbon atom without the strong orthogonal-hyperfine is affected.
+In the case where $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. This creates entanglement between the electron and this carbon for a wide range of inter pulse-delays $\tau$.
 
-When considering the case where $\bm{|A|}$ is small compared to  $\bm{|\omega_L|}$ the net rotation axes  $\hat{n_0}$ and $\hat{n_1}$ are practically parallel and the nuclear spin undergoes an unconditional evolution. Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are anti-parallel leading to a conditional rotation\citep{Taminiau2012Detection}. The resonant condition occurs at:
-
+When considering the case where the hyperfine interaction is much smaller than the Larmor frequency ($\omega_L \gg |\bm{A}|$), the net rotation axes  $\hat{n_0}$ and $\hat{n_1}$ are practically parallel and the nuclear spin undergoes an unconditional evolution.
+Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are anti-parallel leading to a conditional rotation\citep{Taminiau2012Detection}.
+The resonant condition is given by \cref{eq:res_dip_loc}, where $k$ is an integer and the width of the resonance is given by \cref{eq:res_dip_width}.
+% somehow state that resonance gives a dip.
  \begin{equation}
-\tau = \frac{(2k+1)\pi}{2 \gamma_{\mathrm{C}} B_z + A_\parallel}
+\tau = \frac{(2k+1)\pi}{2 \omega_L + A_\parallel}
 \label{eq:res_dip_loc}
 \end{equation}
 
 And for $\omega_L \gg |\bm{A}|$ the dip has a width of:
 
  \begin{equation}
-\Delta = \frac{A_\perp}{2\cdot (\gamma_{\mathrm{C}} B_z)^2}
+\Delta = \frac{A_\perp}{2 \omega_L^2}
 \label{eq:res_dip_width}
 \end{equation}
 
-If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins. As a result, for an unpolarized nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by \cref{eq:contrast_to_probability}. The contrast $M_j$ for a single nuclear spin is given by \cref{eq:contrast_single_carbon_spin}\citep{Taminiau2012Detection}.
+If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins.
+
+\subsection{Placeholder title for something with intrepreting dd spectroscopy }
+
+As a result, for an unpolarized nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by \cref{eq:contrast_to_probability}. The contrast $M_j$ for a single nuclear spin is given by \cref{eq:contrast_single_carbon_spin}\citep{Taminiau2012Detection}.
 
 \begin{equation}
 \label{eq:contrast_to_probability}
@@ -138,9 +144,9 @@ Spins that have a stronger than average hyperfine-interaction show up outside or
 % need the stronger
 % sometimes one that is to strong -> increase B-field
 Both these issues can be alleviated by increasing the magnetic field.
-By increasing the magnetic field the Larmor frequency can be made much larger than the orthogonal components of the hyperfine interactions causing the broad resonances to disappear.
+By increasing the magnetic field the Larmor frequency can be made much larger than the orthogonal components of the hyperfine interactions causing the broad resonances to disappear, allowing more carbon resonances to be selectively addressed.
 % until the orthogonal hyperfine-components of all spins are small relative to the Larmor frequency the broad resonances that cause large parts of the spectrum to become useless disappear.
-Additionally increasing the magnetic field causes resonances to move closer to $\tau =0$ (\cref{eq:res_dip_loc}), while at the same time becoming narrower (\cref{eq:res_dip_width}), allowing higher order resonances to be addressed within the same time-window. % use calculations of Tim to show that number of resonances that can be addressed increases linearly with magnetic field.
+% Additionally increasing the magnetic field causes resonances to move closer to $\tau =0$ (\cref{eq:res_dip_loc}), while at the same time becoming narrower (\cref{eq:res_dip_width}), allowing higher order resonances to be addressed within the same time-window. % use calculations of Tim to show that number of resonances that can be addressed increases linearly with magnetic field.
 
 % to much B-field -> to narrow dips, cannot address anymore (tech limitation)
 Increasing the magnetic field will not always improve the situation. When the magnetic field is too strong the resonances become narrower than the resolution of the Arbitrary Waveform Generator used to generate the pulses that address the resonances, making it impossible to address these resonances effectively.
@@ -163,7 +169,7 @@ The response of a single spin is computed using \cref{eq:contrast_single_carbon_
 \Cref{fig:FP} shows a subset of the fingerprint data acquired for this thesis. \Cref{tbl:HF_par} shows the estimated hyperfine parameters of the 4 carbon spins with the strongest coupling.
 All estimated hyperfine parameters and a link to the full fingerprint measurements can be found in \cref{chap:Fingerprint_data_appendix}.
 
-The broad collapse due to the spin bath is clearly visible at $\tau/(4 \tau _L)$ for odd m.
+The broad collapse due to the spin bath is clearly visible at $\tau/(4 \tau _L)$ for odd $m$, with $m \in \mathbb{N}$ .
 The most prevalent feature of the spectrum is a strong oscillation between the spin-bath collapses.
 This oscillation can be explained by a single carbon that has a strong orthogonal hyperfine coupling, labeled spin-2 in our analysis.
 Due to the nature of spin-2 it is hard to find other carbons that can be coherently controlled.
@@ -200,10 +206,10 @@ These are listed in \cref{tbl:HF_par}. % Remove this sentence?
 \begin{table}[htbp]
     \begin{tabular}{cllll}
     Carbon & \quad \quad  $A_{\parallel} $ & \quad \quad $A_{\perp}$ \\ \hline
-    1         & $2 \pi \cdot$30.0 kHz             & $2 \pi \cdot$80.0 kHz                \\
-    2         & $2 \pi \cdot$27.0 kHz             & $2 \pi \cdot$28.5 kHz              \\
+    1         & $2 \pi \cdot${ }30.0 kHz             & $2 \pi \cdot${ }80.0 kHz                \\
+    2         & $2 \pi \cdot${ }27.0 kHz             & $2 \pi \cdot${ }28.5 kHz              \\
     3         & $2 \pi \cdot$-51.0 kHz          & $2 \pi \cdot$105.0 kHz              \\
-    4         & $2 \pi \cdot$45.1 kHz           & $2 \pi \cdot$20.0 kHz                \\
+    4         & $2 \pi \cdot${ }45.1 kHz           & $2 \pi \cdot${ }20.0 kHz                \\
     \end{tabular}
     \caption{Estimated hyperfine parameters for spins 1 to 4 in \cref{fig:FP}.}
     \label{tbl:HF_par}
