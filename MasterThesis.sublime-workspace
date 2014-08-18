@@ -7,16 +7,272 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "main.tex",
+			"settings":
+			{
+				"buffer_size": 2637,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 1271,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 888,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Controlling_weakly_coupled_carbon_spins.tex",
+			"settings":
+			{
+				"buffer_size": 2661,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 203.0,
 		"selected_items":
 		[
 			[
+				"latexing us",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"pref us",
+				"Preferences: Settings - User"
+			],
+			[
+				"remov",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"rem",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"latexing reb",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"latexing re",
+				"LaTeXing: Rebuild Cache"
+			],
+			[
+				"latexing chec",
+				"LaTeXing: Check System"
+			],
+			[
+				"latexing ",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"latexing doc",
+				"LaTeXing: Documentation"
+			],
+			[
+				"remove ",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"rebui",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"syntax late",
+				"Set Syntax: LaTeXing"
+			],
+			[
+				"snippet",
+				"Snippet: Equation"
+			],
+			[
+				"latex sync",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"latx sy",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"sol too",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wrap ",
+				"Word Wrap: Toggle"
+			],
+			[
+				"solar t",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"latex fold s",
+				"LaTeXing: Fold Section"
+			],
+			[
+				"fold se",
+				"LaTeXing: Fold Section"
+			],
+			[
+				"remove",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"sol to",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"Snippet: tabl",
+				"Snippet: New table"
+			],
+			[
+				"latx clean",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"Snippet: fig",
+				"Snippet: Figure"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"latexing sy",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"pref latex",
+				"Preferences: LaTeXing Settings - Default (Extended)"
+			],
+			[
+				"pref def",
+				"Preferences: Settings - Default"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Tabular"
+			],
+			[
 				"sol",
 				"SolarizedToggle: Toggle"
+			],
+			[
+				"solar",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"todo",
+				"TodoReview: Project Files"
+			],
+			[
+				"latexing fold en",
+				"LaTeXing: Fold Environment"
+			],
+			[
+				"latexing fold",
+				"LaTeXing: Fold Section"
+			],
+			[
+				"latexing syn",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"latexing",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"pref latex de",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"pref latex ",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"pack contr ins",
+				"Package Control: Install Package"
+			],
+			[
+				"prefe latex ",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"open ",
+				"LaTeXing: Open"
+			],
+			[
+				"clean",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"latexing rem",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"latexi cle",
+				"LaTeXing: Clean Temporary Output Dictionary"
+			],
+			[
+				"keyb ",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"Snippet: lor",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"latex op",
+				"LaTeXing: Open"
+			],
+			[
+				"pref lat",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"latexing pref",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"latex ",
+				"LaTeXing: Clean Temporary Output Dictionary"
+			],
+			[
+				"user ",
+				"Preferences: Settings - User"
+			],
+			[
+				"latex ch",
+				"LaTeXing: Check System"
+			],
+			[
+				"pack l",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"list pack",
+				"Package Control: List Packages"
 			],
 			[
 				"pack en",
@@ -47,10 +303,6 @@
 				"Package Control: Disable Package"
 			],
 			[
-				"solar",
-				"SolarizedToggle: Toggle"
-			],
-			[
 				"solarized",
 				"Preferences: SolarizedToggle Settings – User"
 			],
@@ -71,24 +323,12 @@
 				"Package Control: List Packages"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
 				"pref br",
 				"Preferences: Browse Packages"
 			],
 			[
 				"pack list ",
 				"Package Control: List Packages"
-			],
-			[
-				"pack l",
-				"Package Control: List Packages"
-			],
-			[
-				"pref us",
-				"Preferences: Settings - User"
 			],
 			[
 				"new view",
@@ -101,10 +341,6 @@
 			[
 				"USER ",
 				"Preferences: Settings - User"
-			],
-			[
-				"todo",
-				"TodoReview: Project Files"
 			],
 			[
 				"new vi",
@@ -167,10 +403,6 @@
 				"Word Wrap: Toggle"
 			],
 			[
-				"wrap ",
-				"Word Wrap: Toggle"
-			],
-			[
 				"minim",
 				"View: Toggle Minimap"
 			],
@@ -217,10 +449,6 @@
 			[
 				"package insta",
 				"Package Control: Install Package"
-			],
-			[
-				"keyb ",
-				"Preferences: Key Bindings - Default"
 			],
 			[
 				"inst pack ",
@@ -299,7 +527,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 435.0
+		"width": 453.0
 	},
 	"console":
 	{
@@ -321,11 +549,53 @@
 	},
 	"file_history":
 	[
+		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
+		"/Users/Adriaan/Documents/MasterThesis/svg.sty",
+		"/Users/Adriaan/Documents/MasterThesis/Bell_state_tomography.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Electronic_spin_in_diamond.tex",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/Adriaan/Documents/MasterThesis/Addressing_weakly_coupled_carbon_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/library.bib",
+		"/Users/Adriaan/Documents/MasterThesis/Qcircuit.tex",
+		"/Users/Adriaan/Documents/MasterThesis/question.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex",
+		"/Users/Adriaan/Documents/MasterThesis/3Month_report.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P2#rgb.eps",
+		"/Users/Adriaan/Documents/MasterThesis/Deterministic_MBE.tex",
+		"/Users/Adriaan/Documents/MasterThesis/acknowledgements.tex",
+		"/Users/Adriaan/Documents/MasterThesis/main.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Introduction.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Outlook_QEC.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Entanglement_wittness.tex",
+		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P5#white.eps",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/abstract.tex",
+		"/Users/Adriaan/Documents/MasterThesis/erratum.tex",
+		"/Users/Adriaan/Documents/MasterThesis/MasterThesis.sublime-project",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P1#full color.eps",
+		"/Users/Adriaan/Documents/MasterThesis/symbols.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo/TU_P2#rgb.eps",
+		"/Users/Adriaan/Documents/MasterThesis/Remote.bib",
+		"/Users/Adriaan/Documents/MasterThesis/Output/main.toc",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor erachter/TU_d_line_P1#full color.eps",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo without colourtrap (~)/logo/TU_P1~full color.eps",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/team_diamond_logo-color.svg",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo/TU_P4#black.eps",
+		"/Users/Adriaan/Documents/MasterThesis/front.tex",
+		"/Users/Adriaan/Documents/MasterThesis/.gitignore",
+		"/usr/local/texlive/2013/texmf-dist/tex/generic/thumbpdf/thumbpdf.sty",
+		"/Users/Adriaan/Documents/MasterThesis/style.tex",
+		"/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Solarized Toggle/SolarizedToggle.sublime-settings",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/SolarizedToggle.sublime-settings",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/ToggleTheme.py",
 		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/measurement2/adwin_ssro/dynamicaldecoupling.py",
 		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/teleportation/parameters.py",
@@ -384,7 +654,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -399,6 +669,119 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"svg",
+			"build",
+			"pdflatex",
+			"svg",
+			"\\pm X",
+			"\\pi",
+			"_C",
+			"_c",
+			"_C",
+			"_c",
+			"_C",
+			"_c",
+			"_C",
+			"\\cdot",
+			"$\\cdot 2 \\pi$",
+			"quad",
+			"&",
+			"-",
+			"\\cdot $",
+			"cdot",
+			"& ",
+			":",
+			"e3",
+			"hyperfine_params",
+			"calcul",
+			"\\cref{eq",
+			"mz",
+			"beta",
+			"alpha",
+			"*",
+			"np.",
+			"paralel",
+			"mz",
+			"beta",
+			"alpha",
+			"close",
+			"cite",
+			"20",
+			"strong",
+			"20 kHz",
+			"20kHz",
+			"20",
+			"subsection",
+			"fig:FP",
+			"htbp",
+			"figure",
+			"Carbon--13",
+			"carbon",
+			"\\autoref",
+			"ref",
+			"addressable_carbon_sims",
+			"\\~",
+			"we ",
+			"we",
+			"n_i",
+			"\\tilde{n",
+			"electron state",
+			"n_i",
+			"m_s",
+			"mathbf",
+			"m_s",
+			"ms =",
+			"quantisation",
+			"omega",
+			"omega_L",
+			"HF",
+			"hf",
+			"HF",
+			"hf",
+			"HF",
+			"todo",
+			"1994",
+			"qubit",
+			"\\cite{",
+			"cite",
+			"centre",
+			"\\citep",
+			"\\ref",
+			"ref",
+			"\\ref",
+			"[t]",
+			"sub",
+			"0.45",
+			"b]",
+			"b",
+			"tex",
+			"Img/",
+			"\\begin{subfigure}",
+			"htbp",
+			"figure",
+			"\\begin{figure}",
+			"section",
+			"kHz",
+			"kH",
+			"kHz",
+			" & ",
+			"\\orth",
+			"\\par",
+			"par",
+			" & ",
+			"spell",
+			"Taminiau2012",
+			"biblio",
+			"quant",
+			"biblio",
+			"\\input",
+			"next_view",
+			"section",
+			"\\sec",
+			"auto",
+			"back",
+			",",
+			"		\"",
 			"+k",
 			"cmd+k+b",
 			"color_theme",
@@ -413,73 +796,7 @@
 			"'passive_elt'",
 			"type =='passive",
 			"initialize_carb",
-			"init_state",
-			"C_int_Electron_X",
-			".el_sta",
-			".append",
-			"k ",
-			"Gate_seq",
-			"gate_seq",
-			".el_state_before_gate",
-			"panel",
-			"focus",
-			"tab",
-			"track_phase_evelution",
-			"parenthe",
-			"g.",
-			"dec_duration",
-			"Gate",
-			"dec_duration ",
-			"dec_duration",
-			"THT",
-			"wait_time",
-			"|0>'",
-			"passive_elt",
-			"wait",
-			"WAIT GATE",
-			"'MBI'",
-			"'mbi'",
-			"'MBI'",
-			"'mbi'",
-			"mbi",
-			"el_state_after_gate",
-			"Carbon_ind",
-			"[i]",
-			"i",
-			"ic",
-			"'C1_freq_0'   :",
-			"HEAD",
-			"conflict",
-			"freq",
-			"IF",
-			"ELSE IF",
-			"ELSEIF",
-			"ELIF",
-			"+=",
-			"mbi_timer",
-			"mbi_timertimer",
-			"timer",
-			"ELSE",
-			"TODO_MAR",
-			"TODO",
-			"TODO _MAR",
-			"TODO",
-			"dyn",
-			"dynam",
-			"dyn",
-			"dynamicaldec",
-			"TODO",
-			"single",
-			" : ",
-			": ",
-			"select",
-			"column",
-			"Carbon_ind",
-			"par_seq_",
-			"par_1",
-			"C_int_Ren_a_",
-			"'swap'",
-			"MBI_single_C13"
+			"init_state"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -497,18 +814,137 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "main.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								252,
+								252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 440.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 65.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Controlling_weakly_coupled_carbon_spins.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2661,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								567,
+								567
+							]
+						],
+						"settings":
+						{
+							"_anf_new": "",
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"wrap_width": 78
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 23.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -533,6 +969,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 151.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -540,7 +980,7 @@
 	"project": "MasterThesis.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -548,6 +988,110 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"prea",
+				"preamble.tex"
+			],
+			[
+				"preamb",
+				"preamble.tex"
+			],
+			[
+				"sty",
+				"svg.sty"
+			],
+			[
+				"latexing",
+				"~/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings"
+			],
+			[
+				"pre",
+				"preamble.tex"
+			],
+			[
+				"qci",
+				"Qcircuit.tex"
+			],
+			[
+				"elec",
+				"Electronic_spin_in_diamond.tex"
+			],
+			[
+				"app",
+				"Fingerprint_data_appendix.tex"
+			],
+			[
+				"deter",
+				"Deterministic_MBE.tex"
+			],
+			[
+				"ad",
+				"Addressable_carbon_sims.tex"
+			],
+			[
+				"main",
+				"main.tex"
+			],
+			[
+				"pream",
+				"preamble.tex"
+			],
+			[
+				"q",
+				"question.tex"
+			],
+			[
+				"preab",
+				"preamble.tex"
+			],
+			[
+				"ele",
+				"Electronic_spin_in_diamond.tex"
+			],
+			[
+				"intro",
+				"Introduction.tex"
+			],
+			[
+				"control",
+				"Controlling_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"abs",
+				"abstract.tex"
+			],
+			[
+				"spin",
+				"Electronic_spin_in_diamond.tex"
+			],
+			[
+				"carbon",
+				"Controlling_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"entan",
+				"Entanglement_wittness.tex"
+			],
+			[
+				"ac",
+				"acknowledgements.tex"
+			],
+			[
+				"det",
+				"Deterministic_MBE.tex"
+			],
+			[
+				"weak",
+				"Controlling_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"",
+				"main.tex"
+			],
 			[
 				"mstparams",
 				"measurement/scripts/lt2_scripts/setup/msmt_params.py"
@@ -594,7 +1138,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 296.0,
+	"side_bar_width": 142.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
