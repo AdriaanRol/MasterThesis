@@ -42,15 +42,19 @@ All experiments were performed on a custom-build cryostat setup operating at liq
 
 The electronic ground state Hamiltonian can be written as\citep{Pfaff2013Quantum}: \comment{Do I cite wolfgang or Hannes or both?}
  \begin{equation}
-H_{GS} = \Delta {S_z}^2 + \gamma_e \mathbf{B} \cdot \mathbf{S}
+H_\mathrm{GS} = \Delta {S_\mathrm{z}}^2 + \gamma_e \mathbf{B} \cdot \mathbf{S}
 \end{equation}
 
-With zero field splitting $\Delta \approx 2.88 \mathrm{GHz}$  and gyro-magnetic ratio $\gamma_e  = 2.802$ MHz/G . In this expression the interactions with the nitrogen nucleus and the carbon spin bath are not included. By applying a magnetic field $B_z$ a long the NV axis the degeneracy of the  $m_s =\pm1$ states is lifted by the Zeeman effect. We define our electronic qubit  by the two level system with  $m_s=0:=|0\rangle$ and $m_s = +1 := |1\rangle$.
+With zero field splitting $\Delta \approx 2.88 \mathrm{GHz}$  and gyro-magnetic ratio $\gamma_e  = 2.802$ MHz/G . In this expression the interactions with the nitrogen nucleus and the carbon spin bath are not included. By applying a magnetic field $B_\mathrm{z}$ along the NV-axis the degeneracy of the  $m_s =\pm1$ states is lifted by the Zeeman effect. We define our electronic qubit  by the two level system with  $m_s=0:=|0\rangle$ and $m_s = +1 := |1\rangle$.
 
-On the Bloch-sphere the state vector rotates around the quantization axis with a frequency depending on the energy splitting between the two states; the Larmor frequency.
-For the NV-electronic spin the Larmor frequency is given by:  $\omega_L =\Delta - \gamma_e {B_z} $.
+On the Bloch-sphere the state vector rotates around the quantization-axis with a frequency depending on the energy splitting between the two states; the Larmor frequency.
+For the NV-electronic spin transition used the Larmor frequency is given by \cref{eq:larmor_electronic_spin}.
+\begin{equation}
+    \omega_L =\Delta + \gamma_e {B_\mathrm{z}}
+    \label{eq:larmor_electronic_spin}
+\end{equation}
 
-By applying an external field a term is effectively added to the Hamiltonian, changing the quantization axis and thereby its evolution. By applying microwaves with the right frequency this can be used to selectively drive the transition from the  $|0\rangle$ state to the $|1\rangle$state\citep{Jelezko2004Observation}.
+By applying an external field a term is effectively added to the Hamiltonian, changing the quantization-axis and thereby its evolution. By applying microwaves with the right frequency this can be used to selectively drive the transition from the  $|0\rangle$ state to the $|1\rangle$ state\citep{Jelezko2004Observation}.
 
 % \section{Dynamical decoupling}
 % DONT need to explain general dynamical decoupling?
