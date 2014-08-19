@@ -1,7 +1,7 @@
 .DS_Store
 *.pid
 *.pyc
-
+*.pdf
 *.aux
 *.fls
 *.idx
