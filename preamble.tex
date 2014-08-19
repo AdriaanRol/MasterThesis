@@ -1,9 +1,12 @@
 \documentclass[a4paper,10pt,twoside,openright]{report}
 \addtolength{\oddsidemargin}{-.5in}
 \addtolength{\evensidemargin}{-.5in}
-\addtolength{\textwidth}{1in}
+\addtolength{\textwidth}{3cm}
 \addtolength{\topmargin}{-.875in}
 \addtolength{\textheight}{1.75in}
+% \textwidth 16.59cm
+% \textheight 21.94cm
+
 \usepackage{amsmath}
 \usepackage{lscape}
 \usepackage{graphicx}
@@ -17,8 +20,10 @@
 \include{qcircuit} % Package used for typesetting quantum circuits. Included in directory
 \usepackage{sectsty}
 \usepackage[numbers,sort&compress]{natbib} % Natbib package, supports more fancy ways of citing
-\usepackage{bm} %Allows for boldface of greek characters in math mode.
+\usepackage{bm} %Allows for boldface of Greek characters in math mode.
 \usepackage{placeins}
+% \usepackage{layouts} %Used to print page-widths
+\usepackage{tikz} %For drawing figures. Might make compilation slow.
 \sectionfont{\sffamily\Large}
 \subsectionfont{\sffamily}
 \usepackage[Bjornstrup]{fncychap}

@@ -24,11 +24,43 @@ Add essential part that this means we can address spins that are coupled stronge
 For a typical T2* of the NV- center (reference) of (x mus) this corresponds to a coupling strenght larger than x.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics{Img/CarbonRamsey_C1.pdf}
-    \caption{Placeholder for strong weak regimes figure. Figure contains NV- center with 2 concentric circles and spin symbols to designate domains. Has inset with DESR showing line split due to Nitrogen spin or Nitrogen and Carbon spin.}
-    \label{fig:label}
+
+    \begin{subfigure}[t]{0.49 \textwidth }\centering
+        \centering
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[scale = 0.5]{Img/coupling_regimes.eps}};
+            \node[font=\tiny] at (5,4) {$A \approx \tfrac{1}{2 \pi T_{2,\mathrm{C}}^*} $};
+            \node[font=\tiny] at (4,3.1) {$A\approx \tfrac{1}{2 \pi T_{2,e}^*}$};
+            \node[font=\small] at (3.8,1.9) {$\mathbb{I}$};
+            \node[font=\small] at (4.75,1.2) {$\mathbb{II}$};
+            \node[font=\small] at (5.6,0.5) {$\mathbb{III}$};
+            %Help grid for drawing
+            % \draw[help lines,xstep=1,ystep=1] (0,0) grid (7,5);
+            % \foreach \x in {0,1,...,7} { \node [anchor=north] at (\x,0) {\x}; }
+            % \foreach \y in {0,1,...,5} { \node [anchor=east] at (0,\y) {\y}; }
+
+        \end{tikzpicture}
+        \caption{Coupling regimes }
+        \label{fig:coupling regimes}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49 \textwidth}\centering
+        \includegraphics{Img/DarkESR_2.pdf}
+        \caption{Electron Spin Resonance experiment for uninitialized and initialized Nitrogen spin.}
+        \label{fig:HF_split_levels}
+    \end{subfigure}
+    \caption{\Cref{fig:coupling regimes} shows a schematic representation of different coupling regimes for carbon-spins. In the strong-coupling regime ($\mathbb{I}$) carbons can be addressed faster than the decoherence-rate of the electronic-spin. This allows
+    the coupling strength is stronger than the decoherence-rate. This causes the splitting due to
+    % Can be addressed faster than the decoherence
+    % Causes a splitting larger than the broadness of the dip (can be distinguished and thereby addressed).
+    % Coupling strength is larger than
+    \\
+    \Cref{fig:HF_split_levels} a strongly coupled carbon-spin splits
+    Caption still needs to be written properly. Figure contains NV- center with 2 concentric circles and spin symbols to designate domains. Has inset with DESR showing line split due to Nitrogen spin or Nitrogen and Carbon spin. \cref{fig:HF_split_levels} }
+
+
 \end{figure}
+
+
 
 
 \subsubsection{The Hyperfine Interaction}
