@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -23,6 +23,16 @@ L.~Childress and R.~Hanson.
 G.~de~Lange.
 \newblock \emph{Quantum Control and Coherence of Interacting Spins in Diamond}.
 \newblock PhD thesis, Delft University of Technology, 2012.
+
+\bibitem[de~Lange et~al.(2010)de~Lange, Wang, Ristè, Dobrovitski, and
+  Hanson]{Lange2010Universal}
+G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
+\newblock Universal dynamical decoupling of a single solid-state spin from a
+  spin bath.
+\newblock \emph{Science (New York, N.Y.)}, 330\penalty0 (6000):\penalty0 60--3,
+  10 2010.
+\newblock ISSN 1095-9203.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/20829452}.
 
 \bibitem[Doherty et~al.(2013)Doherty, Manson, Delaney, Jelezko, Wrachtrup, and
   Hollenberg]{Doherty2013NitrogenVacancy}

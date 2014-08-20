@@ -10,53 +10,47 @@ Most of these spins only shift the spin by a tiny amount making it hard to disti
 Because the states of these spins fluctuate the transitions of the NV-center are continuously shifting around, effectively causing a broadening of the transitions.
 We call these very-weakly-coupled spins the spin-bath.
 
-If the coupling between a spin and the NV-center is strong enough it is possible to resolve its transitions.
+If the coupling between a spin and the NV-center is strong enough it is possible to resolve and address its transitions.
 Transitions between energy levels can be resolved if the difference between them is larger than the width of transition.
 \Cref{fig:HF_split_levels} shows the $m_s =0 \rightarrow m_s=+1$ transitions being split due to hyperfine-coupling to the nearby nitrogen.
 
 The width of the transitions is related to the rate at which the transitions shift out of resonance.
-The time before a transition shifts out of resonance is usually expressed by $T_2^*$ and measured by a Ramsey experiment.
+The time before a transition shifts out of resonance, or a signal decoheres, is usually expressed by $T_2^*$ and is measured by a Ramsey experiment, see \cref{fig:Ramsey_gijs}.
 
-In a Ramsey experiment a qubit in initialized in $\ket{0}$ before being subjected to a $\pi/2$-pulse that moves it into the XY plane of the Bloch-sphere. It freely evolves for a time $t$ before being subjected to a final $-\pi/2$ pulse.
-The final pulse will rotate the spin towards the poles depending on the phase picked up during free evolution. When reading out $\ket{0}$ this manifests itself as an oscillation. This oscillation will slowly decay because the final pulse will be more and more out of resonance with the transition the longer the free evolution time.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{Img/Ramsey_Gijs.pdf}
+    \caption{In a Ramsey experiment a qubit in initialized along the z-axis before being subjected to a $\pi/2$-pulse that moves it into the xy plane of the Bloch-sphere. It freely evolves for a time $\tau$ before being subjected to a final $\pi/2$ pulse and read out along the z-direction.
+The final pulse will rotate the spin towards the poles depending on the phase picked up during free evolution. This manifests itself as an oscillation. This oscillation will slowly decay because the final pulse will be more out of resonance with the transition the longer the free evolution time. Figure from \citep{Lange2012Quantum}.}
+    \label{fig:Ramsey_gijs}
+\end{figure}
 
 The decay of the amplitude $K$ in an electron Ramsey experiment is given by \cref{eq:Ramsey_decay}.
 \begin{equation}
-    K(t) = e^{-(\tfrac{t}{T_{2e}^*})^2}
+    K(t) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
     \label{eq:Ramsey_decay}
 \end{equation}
-
-We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The dark-Electron-Spin-Resonance (dESR) frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }. [NOTE: EXPLAIN WHAT ESR EXPERIMENT IS IN CHAPTER BEFORE]
+We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The dark-Electron-Spin-Resonance (dESR) frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
 \begin{equation}
-    \mathcal{F} \{ K(t) \} =  T_2^* \sqrt{\pi} e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
+    \mathcal{F} \{ K(\tau) \} =  T_2^* \sqrt{\pi} e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
 \end{equation}
-
-Two identical Gaussians can be resolved if the separation between their maxima is larger than their full-width-half-maximum (FWHM). The FWHM of the dESR is given by \cref{eq:FWHM}.
+Two identical Gaussians can be readily resolved if the separation between their maxima is larger than their full-width-half-maximum (FWHM).
+The FWHM of the dESR is given by \cref{eq:FWHM}.
 \begin{equation}
     2\pi \cdot \mathrm{FWHM} = 2\pi \cdot \frac{2\sqrt{\ln{2}}}{\pi T_{2e}^*}
     \label{eq:FWHM}
 \end{equation}
+
 We define a spin to be strongly coupled when it is possible to resolve its transition, that is when twice the interaction strength $A$ is larger than the FWHM of the transition:
 \begin{equation}
      2\pi \cdot A> 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}
      \label{eq:def_strongly_coupled}
  \end{equation}
 
-
-NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$ [NOTE:Needs ref] that depends on the exact configuration of the spin-environment. For a typical NV-center this means that a carbon needs to be coupled
-
-Add essential part that this means we can address spins that are coupled stronger than average. This means lowering concentration is not necessarily a solution.
-
-For a typical T2* of the NV- center (reference) of (x mus) this corresponds to a coupling strength larger than x.
-
-When the nitrogen is in a mixed state the transition is split. If the splitting caused by the interaction is bigger than the width of the resonances the resonances can be controlled. This
-
-
+NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$ [NOTE:Needs ref] that depends on the exact configuration of the spin-environment. Increasing the carbon-13 concentration generally reduces $T_{2e}^*$. For a typical NV-center this means that the coupling between the carbon and the NV-center must be larger than $2\pi\cdot$130kHz for the carbon to be directly addressable.
 \begin{figure}[htbp]
-
 \centering
     \begin{subfigure}[t]{0.49 \textwidth}\centering
-
         \begin{tikzpicture}
         \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/DarkESR_2.pdf}};
         \node (A) at (2.6,4.4) {};
@@ -84,18 +78,23 @@ When the nitrogen is in a mixed state the transition is split. If the splitting 
         \caption{Schematic representation of different coupling regimes}
         \label{fig:coupling regimes}
     \end{subfigure}
-
-    \caption{\Cref{fig:HF_split_levels} Dark-Electron-Spin-Resonance (dESR) of the $m_s =0 \rightarrow m_s = +1$ transition. The transition is shifted due to the interaction with the nearby nitrogen atom that depends on the state of the nitrogen atom. If the splitting caused by a spin is larger than the width of the resonances the spin can be addressed directly and is strongly coupled. \\
-    \Cref{fig:coupling regimes} schematically shows different coupling regimes for carbon spins. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.
-}
-
-
+    \caption{\Cref{fig:HF_split_levels} dark-Electron-Spin-Resonance (dESR) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.
+    \Cref{fig:coupling regimes} schematically shows different coupling regimes for carbon spins. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.}
 \end{figure}
 
+At first sight spin-control seems limited to strongly coupled spins as spins that are to weakly coupled cannot be addressed directly.
+It is however possible to increase the coherence time of the electron, effectively narrowing the transitions, allowing more spins to be resolved.
+
+In a spin-echo experiment a Ramsey experiment is performed with a small difference. An additional $\pi$ pulse is applied in the middle of the experiment exactly between the $pi/2$ pulses. This pulse effectively turns the nuclear-spin environment upside-down halfway trough the experiment, making the qausi-static-part of the dephasing during the first and the second part of the free evolution cancel each other out, substantially increasing coherence on short-timescales ($\tau \ll T_2 $)
+\footnote{ $T_2$ is a measure for decoherence. It is similar to $T_2^*$ but does not include variations between experiments. $T_2$ is defined as the $1/e$ time of the decay of a spin-echo experiment.}.
+On longer timescales the difference between the initial part of the evolution and the final part of the evolution becomes larger making the initial and final part no longer cancel each other out.
+
+A natural way of extending the short timescale behavior of the spin-echo to longer timescales is by applying more $\pi$-pulses. This procedure known as dynamical-decoupling can dramatically improve coherence times\citep{Lange2010Universal}.
+\Citet{Taminiau2012Detection} have used this increased coherence time to detect and control weakly-coupled carbon spins, greatly enlarging the spin-register available to the NV-center.
+\citet{Taminiau2014Universal} have already shown how this
 
 
-
-\subsubsection{The Hyperfine Interaction}
+\subsection{The Hyperfine Interaction}
 The coupling between the NV-centers electronic spin and a nuclear-spin is given by the hyperfine-interaction. The hyperfine-interaction is a spin dependent interaction that is not present for spin-0 particles such as carbon-12.
 
 For nuclear spins the Hamiltonian depends on the electronic spin-state of the NV-center.
