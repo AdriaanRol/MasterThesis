@@ -6,13 +6,14 @@
 \subsection{Coupling regimes}
 When the electronic-spin couples to a nuclear-spin the the energy levels are shifted depending on the state of the nucleus.
 In this way each spin has an individual back-action on the electronic-spin.
+
 Most of these spins only shift the spin by a tiny amount making it hard to distinguish these from each other.
 Because the states of these spins fluctuate the transitions of the NV-center are continuously shifting around, effectively causing a broadening of the transitions.
 We call these very-weakly-coupled spins the spin-bath.
 
 If the coupling between a spin and the NV-center is strong enough it is possible to resolve and address its transitions.
 Transitions between energy levels can be resolved if the difference between them is larger than the width of transition.
-\Cref{fig:HF_split_levels} shows the $m_s =0 \rightarrow m_s=+1$ transitions being split due to hyperfine-coupling to the nearby nitrogen.
+
 
 The width of the transitions is related to the rate at which the transitions shift out of resonance.
 The time before a transition shifts out of resonance, or a signal decoheres, is usually expressed by $T_2^*$ and is measured by a Ramsey experiment, see \cref{fig:Ramsey_gijs}.
@@ -30,24 +31,51 @@ The decay of the amplitude $K$ in an electron Ramsey experiment is given by \cre
     K(t) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
     \label{eq:Ramsey_decay}
 \end{equation}
-We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The dark-Electron-Spin-Resonance (dESR) frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
+We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The dark Electron-Spin-Resonance (ESR)\footnote{See \cref{fig:HF_split_levels} for an example of a dark ESR.} frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
 \begin{equation}
     \mathcal{F} \{ K(\tau) \} =  T_2^* \sqrt{\pi} e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
 \end{equation}
 Two identical Gaussians can be readily resolved if the separation between their maxima is larger than their full-width-half-maximum (FWHM).
-The FWHM of the dESR is given by \cref{eq:FWHM}.
+The FWHM of the dark ESR is given by \cref{eq:FWHM}.
 \begin{equation}
     2\pi \cdot \mathrm{FWHM} = 2\pi \cdot \frac{2\sqrt{\ln{2}}}{\pi T_{2e}^*}
     \label{eq:FWHM}
 \end{equation}
 
-We define a spin to be strongly coupled when it is possible to resolve its transition, that is when twice the interaction strength $A$ is larger than the FWHM of the transition:
+We define a spin to be strongly coupled when it is possible to readily resolve its transition.
+For a carbon-spin that is when twice the interaction strength $A$ [NOTE: $|A|$? A par? shift due to A? ] is larger than the FWHM of the transition:
 \begin{equation}
      2\pi \cdot A> 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}
      \label{eq:def_strongly_coupled}
  \end{equation}
 
-NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$ [NOTE:Needs ref] that depends on the exact configuration of the spin-environment. Increasing the carbon-13 concentration generally reduces $T_{2e}^*$. For a typical NV-center this means that the coupling between the carbon and the NV-center must be larger than $2\pi\cdot$130kHz for the carbon to be directly addressable.
+NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$\footnote{At a natural concentration of $1.1 \%$ carbon-13.} that depends on the exact configuration of the spin-environment. Increasing the carbon-13 concentration generally reduces $T_{2e}^*$.
+For a typical NV-center this means that the coupling between the carbon and the NV-center must be larger than $2\pi\cdot$130kHz for the carbon to be directly addressable.
+
+
+\subsection{The Hyperfine Interaction}
+The coupling between the NV-centers electronic spin and a nuclear-spin is given by the hyperfine-interaction. The hyperfine-interaction is a spin dependent interaction that is not present for spin-0 particles such as carbon-12.
+
+For nuclear spins the Hamiltonian depends on the electronic spin-state of the NV-center.
+For a magnetic field ($B_\mathrm{z}$) in the z-direction the Hamiltonian is given by \cref{eq:nuclear_hamiltonian_0} when the electronic-spin is in the $m_s = 0$ state, and by \cref{eq:nuclear_hamiltonian_1} when in the $m_s = +1$ state\citep{Taminiau2014Universal}. Where $\gamma_n$ is the gyro-magnetic ratio of the nucleus.
+ \begin{equation}
+ \label{eq:nuclear_hamiltonian_0}
+H_0= \gamma_{n} B_\mathrm{z} I_\mathrm{z}
+\end{equation}
+\begin{equation}
+ \label{eq:nuclear_hamiltonian_1}
+    H_1 = \gamma_{n} B_\mathrm{z} I_\mathrm{z} +H_{\mathrm{HF}}
+\end{equation}
+
+The Larmor frequency for a nucleus is given by  \cref{eq:nuclear_larmor}.
+\begin{equation}
+\label{eq:nuclear_larmor}
+\bm{\omega_L} = \gamma_{n}B_\mathrm{z} \cdot\bm{\hat{\mathrm{z}}}
+\end{equation}
+
+The hyperfine ($H_{\mathrm{HF}}$) term consists of a contact term and a dipole term.
+The contact term results from an overlap between the electronic- and nuclear- wave-functions making it negligible for all but the nuclear-spins closest to the NV-center.
+
 \begin{figure}[htbp]
 \centering
     \begin{subfigure}[t]{0.49 \textwidth}\centering
@@ -78,62 +106,25 @@ NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$ [NOTE:Need
         \caption{Schematic representation of different coupling regimes}
         \label{fig:coupling regimes}
     \end{subfigure}
-    \caption{\Cref{fig:HF_split_levels} dark-Electron-Spin-Resonance (dESR) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.
+    \caption{\Cref{fig:HF_split_levels} dark Electron-Spin-Resonance (ESR) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.
     \Cref{fig:coupling regimes} schematically shows different coupling regimes for carbon spins. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.}
 \end{figure}
 
-At first sight spin-control seems limited to strongly coupled spins as spins that are to weakly coupled cannot be addressed directly.
-It is however possible to increase the coherence time of the electron, effectively narrowing the transitions, allowing more spins to be resolved.
-
-In a spin-echo experiment a Ramsey experiment is performed with a small difference. An additional $\pi$ pulse is applied in the middle of the experiment exactly between the $pi/2$ pulses. This pulse effectively turns the nuclear-spin environment upside-down halfway trough the experiment, making the qausi-static-part of the dephasing during the first and the second part of the free evolution cancel each other out, substantially increasing coherence on short-timescales ($\tau \ll T_2 $)
-\footnote{ $T_2$ is a measure for decoherence. It is similar to $T_2^*$ but does not include variations between experiments. $T_2$ is defined as the $1/e$ time of the decay of a spin-echo experiment.}.
-On longer timescales the difference between the initial part of the evolution and the final part of the evolution becomes larger making the initial and final part no longer cancel each other out.
-
-A natural way of extending the short timescale behavior of the spin-echo to longer timescales is by applying more $\pi$-pulses. This procedure known as dynamical-decoupling can dramatically improve coherence times\citep{Lange2010Universal}.
-\Citet{Taminiau2012Detection} have used this increased coherence time to detect and control weakly-coupled carbon spins, greatly enlarging the spin-register available to the NV-center.
-\citet{Taminiau2014Universal} have already shown how this
-
-
-\subsection{The Hyperfine Interaction}
-The coupling between the NV-centers electronic spin and a nuclear-spin is given by the hyperfine-interaction. The hyperfine-interaction is a spin dependent interaction that is not present for spin-0 particles such as carbon-12.
-
-For nuclear spins the Hamiltonian depends on the electronic spin-state of the NV-center.
-For a magnetic field ($B_\mathrm{z}$) in the z-direction the Hamiltonian is given by \cref{eq:nuclear_hamiltonian_0} when the electronic-spin is in the $m_s = 0$ state, and by \cref{eq:nuclear_hamiltonian_1} when in the $m_s = +1$ state\citep{Taminiau2014Universal}. $\gamma_n$ is the gyro-magnetic ratio of the nucleus.
- \begin{equation}
- \label{eq:nuclear_hamiltonian_0}
-H_0= \gamma_{n} B_\mathrm{z} I_\mathrm{z}
-\end{equation}
-\begin{equation}
- \label{eq:nuclear_hamiltonian_1}
-    H_1 = \gamma_{n} B_\mathrm{z} I_\mathrm{z} +H_{\mathrm{HF}}
-\end{equation}
-
-The Larmor frequency for a nucleus is given by  \cref{eq:nuclear_larmor}.
-\begin{equation}
-\label{eq:nuclear_larmor}
-\bm{\omega_L} = \gamma_{n}B_\mathrm{z} \cdot\bm{\hat{\mathrm{z}}}
-\end{equation}
-
-The hyperfine ($H_{\mathrm{HF}}$) term consists of a contact term and a dipole term.
-The contact term results from an overlap between the electronic- and carbon- wave-functions making it negligible for all but the carbon-spins closest to the NV-center.
-
-
 \subsection{Strongly-coupled spins}
-Example of nitrogen as strongly coupled spin.
+An example of a strongly coupled spin is the NV-nitrogen spin.
+The strength of the coupling between the nitrogen and the electronic spin is $A_\mathrm{N} = 2\pi \cdot 2.186\quad \mathrm{MHz} $\citep{Bernien2014Control} and it acts along the NV-axis.
+\Cref{fig:HF_split_levels} clearly shows the $m_s =0 \rightarrow m_s=+1$ transitions being split due to hyperfine-coupling to the nitrogen.
+This splitting can be used to control the nitrogen.
+By first initializing in the $m_s =+1$-state and then applying a slow pulse that turns only one of the three nitrogen spin-states back to $m_s=0$ and reading out the nitrogen-spin can be initialized. By only continuing on a positive outcome the spin is initialized in the state that was rotated back to $m_s =0$. We call this measurement-based-initialization (MBI).
+The lower panel of \cref{fig:HF_split_levels} shows a dark Electron-Spin-Resonance (ESR) after nitrogen-MBI.
 
-Operaties sneller dan T2*.
-
-Tweede voorbeeld sterk gekoppelde Carbons.
-
-Hyperfine strengths between the NV-center and carbons on close-by lattice sites have been measured\citep{Smeltzer201113} and calculated\citep{Gali2008Ab,Gali2009Identification}.
-
+In a similar way strongly-coupled carbon-13 atoms can be controlled\citep{Robledo2011HighFidelity}.
+For most strongly-coupled carbons the contact term in the hyperfine is not negligible.
+For these carbons hyperfine couplings have been measured\citep{Smeltzer201113} and calculated\citep{Gali2008Ab,Gali2009Identification}.
 
 \subsection{Weakly-coupled carbon spins}
-
-For weakly-coupled carbons the contact-term of the hyperfine is negligible.
-
-MAKE PROPER SENTENCE
-hyperfine-term is equal to the dipole-term and is given by\cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum}.
+For carbons where the contact term is negligible the hyperfine-term is equal to the dipole term and is given by \cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum}. Where $S$
+For weakly-coupled carbons the contact-term of the hyperfine is generally\footnote{Only under exceptionally high carbon-13 concentrations is $T_{2e}^*$ short enough for close by carbon-13 atoms to fall under the definition of weakly coupled. } negligible.
 
 \begin{equation}
 \label{eq:dipole_component_of_hyperfine}
@@ -148,30 +139,27 @@ A_\parallel= - \frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3} \le
 
 Where $H_{\mathrm{HF}} = A_\parallel I_\mathrm{z} + A_\perp I_x $.
 
-Some bridge to that it would be nice to control them but we are limited by T2* coherence
+At first sight it seems impossible to control weakly coupled spins as their transitions are obscured by the spin-bath.
+It is however possible to increase the coherence time of the electron, stabilizing the transitions, allowing more spins to be resolved.
 
 \subsection{Extending electron coherence}
-Idea, if we can extend T2* we make dips narrower. Maybe then we could address weakly coupled carbons.
+In a spin-echo experiment a Ramsey experiment is performed with a small difference. An additional $\pi$ pulse is applied in the middle of the experiment exactly between the $pi/2$ pulses. This pulse effectively turns the nuclear-spin environment upside-down halfway trough the experiment, making the qausi-static-part of the dephasing during the first and the second part of the free evolution cancel each other out, substantially increasing coherence on short-timescales ($\tau \ll T_2 $)
+\footnote{ $T_2$ is a measure for decoherence. It is similar to $T_2^*$ but does not include variations between experiments. $T_2$ is defined as the $1/e$ time of the decay of a spin-echo experiment.}.
+On longer timescales the difference between the initial part of the evolution and the final part of the evolution becomes larger making the initial and final part no longer cancel each other out.
 
-Explain idea of spin Echo: canceling out variations between experiments. Flipping environment. Excludes qausi-static variations.
-Definition of T2.
+A natural way of extending the short timescale behavior of the spin-echo to longer timescales is by applying more $\pi$-pulses. This procedure known as dynamical-decoupling can dramatically improve coherence times \citep{Lange2010Universal}.
 
-Explain Dynamical Decoupling as being able to average out even more. Perhaps show result of our DD measurement?.
+\Citet{Taminiau2012Detection} have used this increased coherence time to detect and control weakly-coupled carbon spins, greatly enlarging the spin-register available to the NV-center.
+Later \citet{Taminiau2014Universal}  have shown that it is possible to use these carbons to implement a three-qubit quantum-error-correction protocol.
+As these experiments where performed with NV-centers at Room temperature they lack the option to do single-shot readout. An essential feature for doing measurement based quantum error correction.
 
-Pose question. What happens to weakly coupled nuclear spins? Can we distinguish them from the spin bath?
+\subsection{Dynamical decoupling spectroscopy}
+As we cannot perform an ESR experiment while decoupling a different technique must be used to resolve and address additional spins.
+In order to resolve additional spins we perform a dynamical decoupling spectroscopy resulting in a fingerprint of the nuclear-spin environment\citep{Taminiau2012Detection}.
 
-\subsection{Dynamical Decoupling Spectroscopy}
+In a dynamical decoupling spectroscopy experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$.
 
-NEEDS REWRITING TO BETTER FIT NEW FLOW
-
-To see what's happening we try to bring the electron in a coherent superposition $\ket{\mathrm{X}}$.
-We decouple it using ... sequence. We read-out along X again. Results in figure.
-
-To identify spins a dynamical decoupling spectroscopy was performed on the sample with N = 8, 16, 32 and 64 pulses. For N =8, 16 and 32 pulses this was done between $\tau = 2 \mu \mathrm{s}$  and $72 \mu \mathrm{s}$ and for N = 64 this was done up to $\tau = 52 \mu \mathrm{s}$.
-We identify distinct features in the fingerprint and try to assign different hyperfine-couplings to them such that the computed data for these spins fits the measured data as well as possible.
-The response of a single spin is computed using \cref{eq:contrast_single_carbon_spin}.
-13 spins were identified using this method.
-
+Part of a dynamical decoupling spectroscopy can be seen in \cref{fig:FP}. The spectroscopy was performed for N = 8, 16, 32 and 64 pulses. For N = 8, 16 and 32 pulses this was done between $\tau = 2 \mu \mathrm{s}$  and $72 \mu \mathrm{s}$ and for N = 64 this was done up to $\tau = 52 \mu \mathrm{s}$. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.
 
 \begin{figure}[htbp]
 
@@ -265,7 +253,7 @@ M_j = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac
 
 \section{Characterizing the Nuclear-spin environment}
 % Should add some sort of introduction as to what is in this section
-\subsection*{Dynamical Decoupling Spectroscopy}
+
 In reality the electron is not interacting with a single carbon but with a bath of carbon atoms. When the electron interacts with multiple carbons at the same time the contrast $M$ is given by the product of all individual values $M_j$ for each individual spin $j$ (\cref{eq:prod_multiple_spins}). In order to selectively control one carbon the electron should not entangle with any other carbon when addressing it.
 
 \begin{equation}
@@ -274,9 +262,6 @@ In reality the electron is not interacting with a single carbon but with a bath 
 \end{equation}
 %Explain how fingerprint works and how it characterizes how many carbon we can control.
 % IF selective, M goes all the way down. If a lot go to 0.5 as all coherence is lost.
-
-To identify promising resonances for carbon control a dynamical decoupling spectroscopy experiment is performed, resulting in a fingerprint of the nuclear-spin environment\citep{Taminiau2012Detection}.
-In a dynamical decoupling spectroscopy experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$.
 
 \subsection*{Contributions of Different Spins }% Needs a better name
 
@@ -316,6 +301,9 @@ This combined with the fact that few experiments have been performed at high mag
 
 \subsection*{Identifying Individual Carbon-spins}
 
+We identify distinct features in the fingerprint and try to assign different hyperfine-couplings to them such that the computed data for these spins fits the measured data as well as possible.
+The response of a single spin is computed using \cref{eq:contrast_single_carbon_spin}.
+13 spins were identified using this method.
 
 \Cref{fig:FP} shows a subset of the fingerprint data acquired for this thesis. \Cref{tbl:HF_par} shows the estimated hyperfine parameters of the 4 carbon spins with the strongest coupling.
 All estimated hyperfine parameters and a link to the full fingerprint measurements can be found in \cref{chap:Fingerprint_data_appendix}.
