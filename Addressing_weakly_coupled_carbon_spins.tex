@@ -123,7 +123,9 @@ For most strongly-coupled carbons the contact term in the hyperfine is not negli
 For these carbons hyperfine couplings have been measured\citep{Smeltzer201113} and calculated\citep{Gali2008Ab,Gali2009Identification}.
 
 \subsection{Weakly-coupled carbon spins}
-For carbons where the contact term is negligible the hyperfine-term is equal to the dipole term and is given by \cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum}. Where $S$
+For carbons where the contact term is negligible the hyperfine-term is equal to the dipole term and is given by \cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum}.
+With $n_\mathrm{HF}$ is a unit vector pointing from the NV-center to the nucleus and $r$ the distance between them.
+$\mathbf{S}$ and $\mathbf{I}$are the spin operators for the NV-spin and the nucleus, $\gamma_e $ the gyromagnetic ratio of the electron, $\gamma_n$ the gyromagnetic ratio of the nucleus, and $\mu_0$ the magnetic permeability.
 For weakly-coupled carbons the contact-term of the hyperfine is generally\footnote{Only under exceptionally high carbon-13 concentrations is $T_{2e}^*$ short enough for close by carbon-13 atoms to fall under the definition of weakly coupled. } negligible.
 
 \begin{equation}
@@ -136,7 +138,6 @@ From \cref{eq:dipole_component_of_hyperfine}  the parallel and orthogonal compon
 A_\parallel= - \frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3} \left(3\cdot \frac{z^2}{r^2}-1\right)\\
  A_\perp =  -\frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
 \end{eqnarray}
-
 Where $H_{\mathrm{HF}} = A_\parallel I_\mathrm{z} + A_\perp I_x $.
 
 At first sight it seems impossible to control weakly coupled spins as their transitions are obscured by the spin-bath.
@@ -155,9 +156,9 @@ As these experiments where performed with NV-centers at Room temperature they la
 
 \subsection{Dynamical decoupling spectroscopy}
 As we cannot perform an ESR experiment while decoupling a different technique must be used to resolve and address additional spins.
-In order to resolve additional spins we perform a dynamical decoupling spectroscopy resulting in a fingerprint of the nuclear-spin environment\citep{Taminiau2012Detection}.
+In order to resolve additional spins we perform a dynamical decoupling spectroscopy, resulting in a fingerprint of the nuclear-spin environment\citep{Taminiau2012Detection}.
 
-In a dynamical decoupling spectroscopy experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$.
+In a dynamical decoupling spectroscopy experiment the electron is prepared in the $|X\rangle = |0\rangle +|1\rangle$ state. It is subjected to a decoupling sequence consisting of N/2 blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, and concluded by measuring $\langle X\rangle $. The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$. $\pi$ is a $\pi$-pulse.
 
 Part of a dynamical decoupling spectroscopy can be seen in \cref{fig:FP}. The spectroscopy was performed for N = 8, 16, 32 and 64 pulses. For N = 8, 16 and 32 pulses this was done between $\tau = 2 \mu \mathrm{s}$  and $72 \mu \mathrm{s}$ and for N = 64 this was done up to $\tau = 52 \mu \mathrm{s}$. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.
 
@@ -178,17 +179,16 @@ Part of a dynamical decoupling spectroscopy can be seen in \cref{fig:FP}. The sp
         \caption{Fingerprint for N =32 pulses. }
         \label{fig:FP32}
     \end{subfigure}
-    \caption{Part of a fingerprint resulting from a dynamical-decoupling-spectroscopy experiment performed at 304.12G. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.  Colored lines represent computed responses of carbon spins. Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. NOTE: labels for colored spins still coming. }
+    \caption{Part of a fingerprint resulting from a dynamical-decoupling-spectroscopy experiment performed at 304.12G. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.  Colored lines represent computed responses of carbon spins. Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. }
     \label{fig:FP}
 \end{figure}
 
-Other Bridge paragraph
-See several broad features, narrow dips and oscillations.
-We can clearly see that it is more complicated than simply decoupling from the environment.
-Next chapter describe what
-
 \section{Addressing Weakly-coupled Carbons through Dynamical Decoupling}
 \label{controllingacarbonthroughdynamicaldecoupling}
+
+In order to understand how the features in the fingerprint from \cref{fig:FP} relate to the different spins and how this knowledge can be used to control these carbons it is necessary to understand what dynamical decoupling does to these atoms.
+
+\subsection{The effect of dynamical decoupling}
 
 \begin{figure}[htbp]
 \centering
@@ -199,17 +199,39 @@ Next chapter describe what
 
 When the electron is in the $m_s=0$ state each nuclear spin precesses about $\bm{\omega_L}$ with the Larmor frequency. When the electron is in the $m_s=+1$ state nuclear spins precess about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$ \citep{Taminiau2012Detection}. The hyperfine interaction $\bm{A}$ depends on the position of that particular nuclear spin relative to the NV- center.
 
-When applying a decoupling sequence with N\slash 2 decoupling units of the form {$\tau - \pi -2\tau-\pi-\tau$}, with $\tau$ a wait time between pulses, and $\pi$ a $\pi$-pulse that flips the electron-state, the nuclear spin alternately rotates around the  $\bm\omega_L$ and the $\bm{\tilde{\omega}}$ axis. The net result of one such decoupling sequence is a rotation around an axis $\bm{\hat{\mathrm{n_i}}}$ by an angle $\phi$. Where $\bm{\hat{\mathrm{n_i}}}$ depends on the initial state of the electron: $\bm{\hat{\mathrm{n_0}}}$ when the electron starts in $m_s = 0$ and $\bm{\hat{\mathrm{n_1}}}$ when the electron starts in $m_s = +1$~\citep{Taminiau2012Detection}.
+When applying a decoupling sequence with N\slash 2 decoupling units of the form {$\tau - \pi -2\tau-\pi-\tau$}, the nuclear spin alternately rotates around the  $\bm\omega_L$ and the $\bm{\tilde{\omega}}$ axis.
+The net result of one such decoupling sequence is a rotation around an axis $\bm{\hat{\mathrm{n_i}}}$ by an angle $\phi$.
+Where $\bm{\hat{\mathrm{n_i}}}$ depends on the initial state of the electron: $\bm{\hat{\mathrm{n_0}}}$ when the electron starts in $m_s = 0$ and $\bm{\hat{\mathrm{n_1}}}$ when the electron starts in $m_s = +1$~\citep{Taminiau2012Detection}.
+
+\begin{figure}[htbp]
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \centering
+        \includegraphics{Img/unCond_rot_taminiau.pdf}
+        \caption{Unconditional rotation.}
+        \label{fig:uncond_rot}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \centering
+        \includegraphics{Img/Cond_rot_taminiau.pdf}
+        \caption{Conditional rotation.}
+        \label{fig:cond_rot}
+    \end{subfigure}
+    \caption{\Cref{fig:uncond_rot} When the net rotation axes $\bm{\hat{\mathrm{n_0}}}$ and $\bm{\hat{\mathrm{n_1}}}$ point in the same direction the carbon experiences an unconditional rotation and cannot be controlled. \Cref{fig:cond_rot} When the net rotation axes $\bm{\hat{\mathrm{n_0}}}$ and $\bm{\hat{\mathrm{n_1}}}$ are anti-parallel the carbon experiences a conditional rotation, either around +x or -x, and can be controlled.}
+    \label{fig:conditional_and_unconditional_rotation}
+\end{figure}
+
 
 To understand how a carbon-13 atom can be controlled it is useful to consider three situations. In the first situation the $\bm{\omega_L}$ and $\bm{A}$ point in the same direction. In the second situation $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude, resulting in a large angle between the quantization axes. In the last situation $|\bm{A}|$ is small compared to  $\bm{|\omega_L|}$ resulting in a small angle between the quantization axes.
 
 When $\bm{\omega_L}$ and $\bm{A}$ point in the same direction, the net rotation axis is independent of the initial electron-state making it impossible to use the electron to control the carbon-13 atom using this decoupling sequence.
 
-In the case where $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. This creates entanglement between the electron and this carbon for a wide range of inter pulse-delays $\tau$.
+In the case where $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude the net rotation axes $\bm{\hat{\mathrm{n_i}}}$ are strongly dependent on the initial electron-state for almost any $\tau$. This creates entanglement between the electron and this carbon for a wide range of inter pulse-delays $\tau$. For future reference we say that these weakly-coupled carbons are in the \emph{complex regime}.
 
-When considering the case where the hyperfine interaction is much smaller than the Larmor frequency ($\omega_L \gg |\bm{A}|$), the net rotation axes  $\hat{n_0}$ and $\hat{n_1}$ are practically parallel and the nuclear spin undergoes an unconditional evolution.
+When considering the case where the hyperfine interaction is much smaller than the Larmor frequency ($\omega_L \gg |\bm{A}|$), the net rotation axes  $\hat{\mathrm{n_0}}$ and $\hat{\mathrm{n_1}}$ are practically parallel and the nuclear spin undergoes an unconditional evolution.
 Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are anti-parallel leading to a conditional rotation\citep{Taminiau2012Detection}.
 The resonant condition is given by \cref{eq:res_dip_loc}, where $k$ is an integer and the width of the resonance is given by \cref{eq:res_dip_width}.
+To distinguish these carbons from those in the complex regime we say that these weakly-coupled carbons are in the \emph{basic regime}.
+
 % somehow state that resonance gives a dip.
  \begin{equation}
 \tau = \frac{(2k+1)\pi}{2 \omega_L + A_\parallel}
@@ -225,9 +247,11 @@ And for $\omega_L \gg |\bm{A}|$ the dip has a width of:
 
 If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rotation of the nuclear spin generally entangles the electron and nuclear spins.
 
-\subsection{Placeholder title for something with intrepreting dd spectroscopy }
+\subsection{Response of an isolated carbon to dynamical decoupling spectroscopy}
 
-As a result, for an unpolarized nuclear spin state, the final electron spin state is a statistical mixture of $|x\rangle$ and $|-x\rangle$ when starting from the $|x\rangle$  state. Where the probability that the initial state is preserved is given by \cref{eq:contrast_to_probability}. The contrast $M_j$ for a single nuclear spin is given by \cref{eq:contrast_single_carbon_spin}\citep{Taminiau2012Detection}.
+As a result the electronic spin, starting out in $\ket{X}$, entangles with the nuclear spin for specific values of $\tau$ during a dynamical decoupling spectroscopy.
+When reading out the electronic spin along the X-axis this creates a dip in the signal.
+The probability that the initial state is preserved is given by \cref{eq:contrast_to_probability}. Where the contrast $M_j$ for a single nuclear spin is given by \cref{eq:contrast_single_carbon_spin}\citep{Taminiau2012Detection}.
 
 \begin{equation}
 \label{eq:contrast_to_probability}
@@ -251,7 +275,7 @@ M_j = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac
     \phi =  \cos^{-1}\left(\cos(\tilde{\omega} \tau) \cos(\omega_L \tau)-\left(\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}}\right) \sin(\tilde{\omega} \tau)\sin(\omega_L \tau)\right)
 \end{equation}
 
-\section{Characterizing the Nuclear-spin environment}
+\subsection{Characterizing the Nuclear-spin environment}
 % Should add some sort of introduction as to what is in this section
 
 In reality the electron is not interacting with a single carbon but with a bath of carbon atoms. When the electron interacts with multiple carbons at the same time the contrast $M$ is given by the product of all individual values $M_j$ for each individual spin $j$ (\cref{eq:prod_multiple_spins}). In order to selectively control one carbon the electron should not entangle with any other carbon when addressing it.
@@ -260,26 +284,30 @@ In reality the electron is not interacting with a single carbon but with a bath 
 \label{eq:prod_multiple_spins}
     M = \prod_{j}{M_j}
 \end{equation}
-%Explain how fingerprint works and how it characterizes how many carbon we can control.
-% IF selective, M goes all the way down. If a lot go to 0.5 as all coherence is lost.
 
-\subsection*{Contributions of Different Spins }% Needs a better name
+When entanglement is created with multiple carbons at the same time coherence is quickly lost and contrast drops to 0.
+By sweeping the number of pulses $\pi$-pules the response of an individual carbon can be distinguished from the response of multiple spins.
+Only when an individual carbon is being addressed is it possible to sweep the contrast to -1.
 
-A narrow dip in the fingerprint spectrum is an indication of a selectively addressable carbon.
-By sweeping the number of $\pi$-pulses on such a dip it can be verified if it corresponds to a \emph{single} carbon.
-If entanglement is created with a lot of spins at once all coherence is lost and contrast will go to 0.
-Only if no entanglement is created with other carbons can the contrast be sweeped to -1. %This weird wording is used because it is possible that the response of another carbon is non existent exactly when the first one reaches -1. Maybe also add the in between case for few spins?
+% A narrow dip in the fingerprint spectrum is an indication of a selectively addressable carbon.
+% By sweeping the number of $\pi$-pulses on such a dip it can be verified if it corresponds to a \emph{single} carbon.
 
-Because carbon-13 atoms are randomly distributed in diamond there is a wide range of possible hyperfine strengths.
-Most carbon-spins have very similar hyperfine-interaction strengths as they are relatively far away from the NV-center. This causes their resonances to overlap, manifesting itself as a broad feature with little coherence in the fingerprint. We identify this response as the spin-bath collapse.
-% reality most far away -> similar strengths ->  spin bath response
+Most spins are relatively far away from the NV-center and have similar hyperfine couplings causing their resonances to overlap. This causes a broad feature with low coherence known as the spin-bath collapse. This feature is clearly visible in the fingerprint (\cref{fig:FP}) at $\tau/(4\tau_L) = m$ for odd $m$, where $\tau_L$ is the Larmor period ($\tau_L = \frac{2\pi}{\omega_L} $).
 
-Spins that have a stronger than average hyperfine-interaction show up outside or at the edge of the spin-bath collapse. Going to larger $\tau$ separates resonances further as their order $k$ increases, allowing for control of more spins.
- As computations are fundamentally limited by the coherence time there is a limit to the resonance-order that can be used to address carbons.
+Spins that have a stronger than average hyperfine-interaction show up outside or at the edge of the spin-bath collapse.
+Spins that are in the basic regime show up as a narrow dip.
+Going to larger $\tau$ separates these dips further as the order of the resonance $k$ increases.
+By looking at larger $\tau$ it is possible to resolve and address more resonances.
+Several spins in the basic regime have been identified 3 of these are visible as colored lines in \cref{fig:FP}.
+As computations are fundamentally limited by the coherence time there is a limit to the resonance-order that can be used to address carbons, making it impossible to resolve all weakly coupled spins.
 
-  Some of the relatively strong-coupled spins have a strong orthogonal-component of the hyperfine interaction. This orthogonal-component causes a broad response, effectively blocking a large range of $\tau$ from being used to control other spins.
+Besides the carbons in the basic regime there are also weakly-coupled carbons that are more strongly coupled.
+When a carbon in the complex regime is present in the NV-center this manifests itself as a resonance with strong oscillations on the side. Such a feature is also clearly visible in \cref{fig:FP}. We have identified the oscillations in the fingerprint as belong to a single spin which is denoted by the red line.
 
-\subsection*{Effect of the magnetic field}
+When a weakly coupled carbon in the complex regime is present a significant part of the fingerprint spectrum is inaccessible for controlling other carbons making them an undesired feature when attempting to control weakly coupled carbon spins.
+
+
+\subsection{Effect of the magnetic field}
 % need the stronger
 % sometimes one that is to strong -> increase B-field
 Both these issues can be alleviated by increasing the magnetic field.
@@ -299,7 +327,7 @@ This combined with the fact that few experiments have been performed at high mag
 % Additional problems with B. Stability? -> appendix. transitions in excited states?
 
 
-\subsection*{Identifying Individual Carbon-spins}
+\subsection{Identifying Individual Carbon-spins}
 
 We identify distinct features in the fingerprint and try to assign different hyperfine-couplings to them such that the computed data for these spins fits the measured data as well as possible.
 The response of a single spin is computed using \cref{eq:contrast_single_carbon_spin}.
