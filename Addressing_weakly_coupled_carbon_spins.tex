@@ -173,10 +173,19 @@ Part of a dynamical decoupling spectroscopy can be seen in \cref{fig:FP}. The sp
 \begin{figure}[htbp]
 
     \begin{subfigure}[t]{\textwidth}\centering
-        \centering
-        \includegraphics{Img/fingerprint16.pdf}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/fingerprint16.pdf}};
+            \node[font=\small, text = blue] at (4.05,1.7)  {1};
+            \node[font=\small, text = green] at (9.3,2.9) {2};
+            \node[font=\small, text = red] at (5.3,2.5) {3};
+            \node[font=\small, text = cyan] at (4.0,3.35) {4};
+            % \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,3);
+            % \foreach \x in {1,2,...,10} { \node [anchor=north] at (\x,0) {\x}; }
+            % \foreach \y in {1,2,...,3} { \node [anchor=east] at (0,\y) {\y}; }
+        \end{tikzpicture}
         \caption{Fingerprint for N=16 pulses. }
         \label{fig:FP16}
+
     \end{subfigure}
 
     \begin{subfigure}[t]{\textwidth}\centering
