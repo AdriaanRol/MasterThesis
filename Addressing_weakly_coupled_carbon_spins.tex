@@ -1,13 +1,40 @@
 
 \chapter{Addressing Weakly-coupled Carbon Spins}
 
+The electronic-spin of the NV-center does not live in a vacuum but in an environment full of nuclear spins.
+To some of these spins the NV-center couples strongly, these spins can be controlled and can serve as qubits.
+To others it couples weakly these spins are a source of decoherence and cannot be controlled directly.
+
+In this chapter I will first explain what strong and weakly coupled spins are, how this relates to coherence and how coherence can be extended trough dynamical decoupling.
+In the second part of this chapter I will explain how dynamical dynamical decoupling can be used to identify and control some of these weakly coupled spins, transforming them from a source of decoherence to a resource for qubits.
+
+\begin{figure}[htbp]
+\centering
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[scale = 0.5]{Img/coupling_regimes.eps}};
+        \node[font=\tiny] at (5,4) {$A \approx \frac{\sqrt{\ln{2}}}{\pi T_{2\mathrm{C}}^*}$};
+        \node[font=\tiny] at (4,3.1) {$A\approx \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}$};
+        \node[font=\small] at (3.8,1.9) {$\mathbb{I}$};
+        \node[font=\small] at (4.75,1.2) {$\mathbb{II}$};
+        \node[font=\small] at (5.6,0.5) {$\mathbb{III}$};
+        %Help grid for drawing
+        % \draw[help lines,xstep=1,ystep=1] (0,0) grid (7,5);
+        % \foreach \x in {0,1,...,7} { \node [anchor=north] at (\x,0) {\x}; }
+        % \foreach \y in {0,1,...,5} { \node [anchor=east] at (0,\y) {\y}; }
+    \end{tikzpicture}
+    \caption{ Schematic representation of different coupling regimes. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.}
+    \label{fig:coupling regimes}
+\end{figure}
+
 \section{Coupling to the Environment}
 
+
 \subsection{Coupling regimes}
-When the electronic-spin couples to a nuclear-spin the the energy levels are shifted depending on the state of the nucleus.
+When addressing a spin qubit we usually drive transitions between energy levels.
+When the electronic-spin couples to a nuclear-spin these energy levels are shifted depending on the state of the nucleus.
 In this way each spin has an individual back-action on the electronic-spin.
 
-Most of these spins only shift the spin by a tiny amount making it hard to distinguish these from each other.
+Most of these spins only shift the spin by a tiny amount making it hard to distinguish them from each other.
 Because the states of these spins fluctuate the transitions of the NV-center are continuously shifting around, effectively causing a broadening of the transitions.
 We call these very-weakly-coupled spins the spin-bath.
 
@@ -78,36 +105,16 @@ The contact term results from an overlap between the electronic- and nuclear- wa
 
 \begin{figure}[htbp]
 \centering
-    \begin{subfigure}[t]{0.49 \textwidth}\centering
-        \begin{tikzpicture}
+    \begin{tikzpicture}
         \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/DarkESR_2.pdf}};
         \node (A) at (2.6,4.4) {};
         \node (B) at (3.92,4.4) { };
         \node (C) at (5.3,4.4) { };
         \draw[latex-latex, font=\small] (A) -- node[label =270: $A_\mathrm{N}$] {} (B);
         \draw[latex-latex, font=\small] (B) -- node[label =270: $A_\mathrm{N}$] {} (C);
-        \end{tikzpicture}
-        \caption{Electron Spin Resonance for uninitialized (top) and initialized nitrogen spin (bottom).}
-        \label{fig:HF_split_levels}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49 \textwidth }\centering
-        \begin{tikzpicture}
-            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[scale = 0.5]{Img/coupling_regimes.eps}};
-            \node[font=\tiny] at (5,4) {$A \approx \frac{\sqrt{\ln{2}}}{\pi T_{2\mathrm{C}}^*}$};
-            \node[font=\tiny] at (4,3.1) {$A\approx \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}$};
-            \node[font=\small] at (3.8,1.9) {$\mathbb{I}$};
-            \node[font=\small] at (4.75,1.2) {$\mathbb{II}$};
-            \node[font=\small] at (5.6,0.5) {$\mathbb{III}$};
-            %Help grid for drawing
-            % \draw[help lines,xstep=1,ystep=1] (0,0) grid (7,5);
-            % \foreach \x in {0,1,...,7} { \node [anchor=north] at (\x,0) {\x}; }
-            % \foreach \y in {0,1,...,5} { \node [anchor=east] at (0,\y) {\y}; }
-        \end{tikzpicture}
-        \caption{Schematic representation of different coupling regimes}
-        \label{fig:coupling regimes}
-    \end{subfigure}
-    \caption{\Cref{fig:HF_split_levels} dark Electron-Spin-Resonance (ESR) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.
-    \Cref{fig:coupling regimes} schematically shows different coupling regimes for carbon spins. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.}
+    \end{tikzpicture}
+    \caption{dark Electron Spin Resonance (ESR) for uninitialized (top) and initialized nitrogen spin (bottom) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.}
+    \label{fig:HF_split_levels}
 \end{figure}
 
 \subsection{Strongly-coupled spins}
@@ -144,15 +151,16 @@ At first sight it seems impossible to control weakly coupled spins as their tran
 It is however possible to increase the coherence time of the electron, stabilizing the transitions, allowing more spins to be resolved.
 
 \subsection{Extending electron coherence}
-In a spin-echo experiment a Ramsey experiment is performed with a small difference. An additional $\pi$ pulse is applied in the middle of the experiment exactly between the $pi/2$ pulses. This pulse effectively turns the nuclear-spin environment upside-down halfway trough the experiment, making the qausi-static-part of the dephasing during the first and the second part of the free evolution cancel each other out, substantially increasing coherence on short-timescales ($\tau \ll T_2 $)
+In a spin-echo experiment a Ramsey experiment is performed with a small difference. An additional $\pi$ pulse is applied in the middle of the experiment exactly between the $\pi/2$ pulses. This pulse effectively turns the nuclear-spin environment upside-down halfway trough the experiment, making the qausi-static-part of the dephasing during the first and the second part of the free evolution cancel each other out, substantially increasing coherence on short-timescales ($\tau \ll T_2 $)
 \footnote{ $T_2$ is a measure for decoherence. It is similar to $T_2^*$ but does not include variations between experiments. $T_2$ is defined as the $1/e$ time of the decay of a spin-echo experiment.}.
 On longer timescales the difference between the initial part of the evolution and the final part of the evolution becomes larger making the initial and final part no longer cancel each other out.
 
-A natural way of extending the short timescale behavior of the spin-echo to longer timescales is by applying more $\pi$-pulses. This procedure known as dynamical-decoupling can dramatically improve coherence times \citep{Lange2010Universal}.
+A natural way of extending the short timescale behavior of the spin-echo to longer timescales is by applying more $\pi$-pulses. This procedure known as dynamical-decoupling can dramatically improve coherence times by decoupling the central-spin from the environment\citep{Lange2010Universal}.
 
-\Citet{Taminiau2012Detection} have used this increased coherence time to detect and control weakly-coupled carbon spins, greatly enlarging the spin-register available to the NV-center.
-Later \citet{Taminiau2014Universal}  have shown that it is possible to use these carbons to implement a three-qubit quantum-error-correction protocol.
-As these experiments where performed with NV-centers at Room temperature they lack the option to do single-shot readout. An essential feature for doing measurement based quantum error correction.
+Although dynamical-decoupling improves the coherence of the central spin by decoupling from the environment, the central spin is also decoupled from other spins preventing direct two-qubit gates. It was demonstrated by \citet{Sar2012DecoherenceProtected} how to incorporate dynamical decoupling in a universal gate design by implementing Grover's algorithm.
+Using this technique \citet{Taminiau2012Detection} used the extended coherence to detect and control weakly-coupled carbon spins, before implementing three-qubit quantum-error-correction (QEC) \citep{Taminiau2014Universal}.
+
+As these experiments where performed with NV-centers at Room temperature they lack the option to do single-shot readout required to act on a measurement outcome\footnote{@Tim, I think this can be worded more concisely. Do you have any ideas?}. An essential feature for the parity measurements that form the basis of measurement-based QEC and surface codes.
 
 \subsection{Dynamical decoupling spectroscopy}
 As we cannot perform an ESR experiment while decoupling a different technique must be used to resolve and address additional spins.
@@ -192,7 +200,7 @@ In order to understand how the features in the fingerprint from \cref{fig:FP} re
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[keepaspectratio,width=0.2\textwidth,height=0.75\textheight]{./img/QuantizationAxis.png}
+\includegraphics[keepaspectratio,width=0.15\textwidth]{./img/QuantizationAxis.png}
 \caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= +1$ state changes the quantization axis of nuclear spins. For  $m_s=0$ all nuclear spins precess about $\bm{\omega_L}$. For  $m_s=+1$ each spin precesses about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$.}
 \label{fig:quantax}
 \end{figure}
@@ -229,7 +237,7 @@ In the case where $\bm{\omega_L}$ and $\bm{A_\perp}$ are of comparable magnitude
 
 When considering the case where the hyperfine interaction is much smaller than the Larmor frequency ($\omega_L \gg |\bm{A}|$), the net rotation axes  $\hat{\mathrm{n_0}}$ and $\hat{\mathrm{n_1}}$ are practically parallel and the nuclear spin undergoes an unconditional evolution.
 Only when the inter-pulse delay is precisely resonant with the spin dynamics the axes are anti-parallel leading to a conditional rotation\citep{Taminiau2012Detection}.
-The resonant condition is given by \cref{eq:res_dip_loc}, where $k$ is an integer and the width of the resonance is given by \cref{eq:res_dip_width}.
+The resonant condition is given by \cref{eq:res_dip_loc}, where $k$ is an integer and the FWHM of the Lorentzian-shaped resonance is given by \cref{eq:res_dip_width}.
 To distinguish these carbons from those in the complex regime we say that these weakly-coupled carbons are in the \emph{basic regime}.
 
 % somehow state that resonance gives a dip.
@@ -237,9 +245,6 @@ To distinguish these carbons from those in the complex regime we say that these 
 \tau = \frac{(2k+1)\pi}{2 \omega_L + A_\parallel}
 \label{eq:res_dip_loc}
 \end{equation}
-
-And for $\omega_L \gg |\bm{A}|$ the dip has a width of:
-
  \begin{equation}
 \Delta = \frac{A_\perp}{2 \omega_L^2}
 \label{eq:res_dip_width}
@@ -308,47 +313,28 @@ When a weakly coupled carbon in the complex regime is present a significant part
 
 
 \subsection{Effect of the magnetic field}
-% need the stronger
-% sometimes one that is to strong -> increase B-field
-Both these issues can be alleviated by increasing the magnetic field.
-By increasing the magnetic field the Larmor frequency can be made much larger than the orthogonal components of the hyperfine interactions causing the broad resonances to disappear, allowing more carbon resonances to be selectively addressed.
-% until the orthogonal hyperfine-components of all spins are small relative to the Larmor frequency the broad resonances that cause large parts of the spectrum to become useless disappear.
-% Additionally increasing the magnetic field causes resonances to move closer to $\tau =0$ (\cref{eq:res_dip_loc}), while at the same time becoming narrower (\cref{eq:res_dip_width}), allowing higher order resonances to be addressed within the same time-window. % use calculations of Tim to show that number of resonances that can be addressed increases linearly with magnetic field.
 
-% to much B-field -> to narrow dips, cannot address anymore (tech limitation)
-Increasing the magnetic field will not always improve the situation. When the magnetic field is too strong the resonances become narrower than the resolution of the Arbitrary Waveform Generator used to generate the pulses that address the resonances, making it impossible to address these resonances effectively.
-Simulations that were performed (see \cref{chap:addressable_carbon_sims}) indicate that for diamond with a natural concentration of carbon-13 there is a broad range between 400G and 1400G where the magnetic field is optimal.
+There are significant advantages to increasing the magnetic field when attempting to address weakly coupled carbons.
+By increasing the magnetic field the Larmor frequency can be increased, reducing the number of carbons that are in the complex regime.
+This causes the broad oscillating resonances to disappear allowing more carbons to be addressed.
 
-There are also practical limitations to how much the magnetic field can be increased. In order to control carbon-spins we must still be able to coherently initialize, control and read-out the electronic-spin-state. Because the transitions used for read-out and initialization depend on strain and magnetic field\citep{Hensen2011MeasurementBased}, care must be taken when measuring at different magnetic fields that states do not mix in the excited state.
+Although increasing the magnetic field can improve the situation it is not always possible or desired.
+When the magnetic field becomes too strong too strong the resonances become narrower than the resolution of the Arbitrary Waveform Generator used to generate the pulses that address the resonances, making it impossible to address these resonances effectively.
+Simulations were performed (see \cref{chap:addressable_carbon_sims}) that indicate that for a natural carbon-13 concentration there is a range between 400G and 1400G where the magnetic field is optimal for controlling weakly coupled spins.
+
+Besides the spin environment there are other factors affecting the choice for magnetic field.
+Because the optical transitions used for readout and initialization depend on strain and magnetic field field\citep{Hensen2011MeasurementBased}, care must be taken when measuring that states do not mix in the excited state.
 This combined with the fact that few experiments have been performed at high magnetic field and low temperature make it more practical to settle for a more moderate magnetic field of 300G.
-%Still misses point not practical to compensate for extremely strongly coupled spins.
-% Optimum B-field range 300-700
-%sims indicate optimum B? of behouden voor appendix?
-% Additional problems with B. Stability? -> appendix. transitions in excited states?
-
 
 \subsection{Identifying Individual Carbon-spins}
 
-We identify distinct features in the fingerprint and try to assign different hyperfine-couplings to them such that the computed data for these spins fits the measured data as well as possible.
-The response of a single spin is computed using \cref{eq:contrast_single_carbon_spin}.
-13 spins were identified using this method.
+We identify distinct features in the fingerprint, of which \cref{fig:FP} shows a small part,  and try to assign different hyperfine-couplings to them.
+We then compute the response for these hyperfine couplings using \cref{eq:contrast_single_carbon_spin}.
+The parameters are varied such that the computed response agrees with the data as well as possible.
+Using this method 13 distinct carbon spins where identified.
 
-\Cref{fig:FP} shows a subset of the fingerprint data acquired for this thesis. \Cref{tbl:HF_par} shows the estimated hyperfine parameters of the 4 carbon spins with the strongest coupling.
+The parameters of the 4 strongest coupled carbons are listed in \cref{tbl:HF_par} and their computed responses are visible as colored lines in \cref{fig:FP}.
 All estimated hyperfine parameters and a link to the full fingerprint measurements can be found in \cref{chap:Fingerprint_data_appendix}.
-
-The broad collapse due to the spin bath is clearly visible at $\tau/(4 \tau _L)$ for odd $m$, with $m \in \mathbb{N}$ .
-The most prevalent feature of the spectrum is a strong oscillation between the spin-bath collapses.
-This oscillation can be explained by a single carbon that has a strong orthogonal hyperfine coupling, labeled spin-2 in our analysis.
-Due to the nature of spin-2 it is hard to find other carbons that can be coherently controlled.
-
-Nonetheless there are still some distinct peaks at the edge of the spin-bath collapse. When going to higher orders we see these peaks separate from the spin-bath response.
-We find that we can address 4 spins.
-These are listed in \cref{tbl:HF_par}. % Remove this sentence?
-
-
-% Table with T2*, HF_parr, HF_orth. Values can be found in QEC LT/Simulations/Hans_Sil01_Spin_Control
-% B_field = 304.22G
-
 
 \begin{table}[htbp]
     \begin{tabular}{cllll}
