@@ -15,7 +15,4 @@
 *.toc
 *.fdb_latexmk
 
-*.sublime-project
-*.sublime-workspace
-
 *.pdf
