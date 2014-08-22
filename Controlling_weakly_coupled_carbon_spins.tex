@@ -11,49 +11,68 @@ Different arrow
 
 adf
 
-
-Note the bloch-sphere is a model that cannot accurately represent the dynamics of a 2-qubit system. Nonetheless it can be a useful simplification in explaining qubit control. Test
-
-More tests to see if it works
-
-\begin{figure}[htbp]
-    \begin{subfigure}[t]{0.32\textwidth}\centering
-    \includegraphics[scale=0.2]{Img/QuantizationAxis.png}
-    \caption{Placeholder 1 }
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}\centering
-        \includegraphics[scale=0.2]{Img/QuantizationAxis.png}
-        \caption{Placeholder for bloch sphere }
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}\centering
-        \includegraphics[scale=0.2]{Img/QuantizationAxis.png}
-        \caption{Placeholder for bloch sphere }
-    \end{subfigure}
-    \caption{Nuclear Ramsey experiment wit}
-    \label{fig:conditional_pm_x_rotation}
-\end{figure}
+\subsection{Carbon Ramsey experiment }
 
 
 
-\subsection*{Measuring Precession Frequencies}
-
-
+\subsection{Measuring Precession Frequencies/Carbon Ramsey experiment}
 % Ramsey experiment to measure coupling strengths
 % Needs relation between frequency and parralel component
 % spins 1 and 4 best
-
+Idea explain init with swap init. And from there go back to X-init. Refer to appendix for more rigorous derivation.
 
 
 \begin{figure}[htbp]
     \centering
 \mbox{
 \Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}}                        & \gate{\pi/2}  & \ctrl{1}      & \qw & \multigate{1}{T}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
-\lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{T}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&
-}
-}
+\lstick{\ket{0}}          & \gate{\pi/2}  & \ctrl{1}      & \qw & \multigate{1}{T}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
+\lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{T}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
     \caption{Carbon Ramsey experiment. }
     \label{fig:gate_circuit_nuclear_ramsey}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+\mbox{
+\Qcircuit @C=1em @R=.7em {
+\lstick{\ket{0}_e}                        & \gate{\mathrm{y}}  & \ctrl{1}       & \gate{x} &\qw          &  \meter &\qw\\
+\lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw    & \qw   & \qw       &\qw&}}
+    \caption{MBI-based initialization into $\pm \ket{\mathrm{X}}$. Initializes the carbon into $\ket{X}_C $ when $\ket{0}_e$ is measured and into $\ket{-X}_C $ when $\ket{1}_e$ is measured for the electron.}
+    \label{fig:gate_circuit_mbi_x-init}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+\mbox{
+\Qcircuit @C=1em @R=.7em {
+\lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} & \gate{x} &\ctrl{1} &  \meter &\qw\\
+\lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}     & \qw    & \gate{\pm \mathrm{y}}    & \qw       &\qw&}}
+    \caption{MBI-swap initialization into $\pm \ket{\mathrm{0}}$. Initializes the carbon into $\ket{0}_C $ when $\ket{0}_e$ is measured and into $\ket{1}_C $ when $\ket{1}_e$ is measured for the electron.}
+    \label{fig:gate_circuit_mbi_swap-init}
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+\mbox{
+\Qcircuit @C=1em @R=.7em {
+\lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{y}  &  \meter &\qw\\
+\lstick{\ket{0}_{C1}} & \qw&  \gate{\pm \mathrm{x}}  &\qw  & \qw       &\qw&\qw& \\
+\lstick{\ket{0}_{C2}}& \qw& \qw  & \gate{\pm \mathrm{x}}    & \qw      &\qw&\qw&}}
+    \caption{XX-parity-measurement}
+    \label{fig:gate_circuit_XX-parity-measurement}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+\mbox{
+\Qcircuit @C=1em @R=.7em {
+\lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} &  \meter &\qw\\
+\lstick{\ket{0}_{C1}} & \qw&  \gate{\pm \mathrm{x}}  &\qw  &\qw  & \gate{\pm \mathrm{x}} & \qw   &\qw&\qw& \\
+\lstick{\ket{0}_{C2}}& \qw& \qw  & \gate{\pm \mathrm{x}}    & \qw    &\qw& \gate{\pm \mathrm{x}}    & \qw &\qw&}}
+    \caption{General parity RO}
+    \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 
 
@@ -80,6 +99,7 @@ Explain how a conditional and unconditional gate can be performed.
 Explain initialization on gate level, refer to appendix for calculations.
 Explain Readout.
 
+\subsection{Initialized Carbon Ramsey}
 
 
 \section{Carbon Initialization \& Readout}
