@@ -10,6 +10,7 @@
 \usepackage{rotating}
 \usepackage{blindtext}
 \usepackage{tikz}
+\usetikzlibrary{arrows,calc,decorations.pathmorphing}
 \usepackage{sectsty}
 \addtolength{\oddsidemargin}{-.5in}
 \addtolength{\evensidemargin}{-.5in}
@@ -27,6 +28,13 @@
 \usepackage{layouts}
 
 \usepackage{enumerate}
+
+\tikzset{snake arrow/.style=
+{->,
+decorate,
+decoration={snake,amplitude=2mm,segment length=5mm}},
+photon/.style={decorate, decoration={snake,amplitude=2mm,segment length=5mm}, draw=red},
+}
 
 \begin{document}
 
@@ -49,23 +57,21 @@
     \begin{tikzpicture}
         \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[scale =1]{Cover_fig3.pdf}};
         % \node[anchor=south west,inner sep=0] at (0,1) {\includegraphics[width = \textwidth]{logos.pdf}};
-        \node[font=\large] at (3.8,1.9) {Michiel Adriaan Rol };
-        % \draw [orange] (-1,0) -- (1,0) -- (0,1) -- (0,-1);
-        \draw [orange]
-           (0.5,3) to [out=-40,in=140] (0.5,0)
-           to [out=-40,in=240] (1.5,0)
-           to [out=60,in=160] (2.8,0)
-           to [out=-20,in=200] (4.5,0)
-           to [out=20,in=200] (6,0.5);
-
-    % \textsc{Master of Science thesis}\\
-    % \textsc{by} \\
-    % \LARGE{\textsf{Michiel Adriaan Rol}}
-    % \end{center}
+             \draw [red,thick] (7.3,6.4) edge [photon] (8.7,6.2);% Photon arrow to address 1 carbon
+             \draw [red,thick] (9.0,5.3) edge [photon] (10.1,4.5);
+             \draw [semithick, orange, dashed]
+             (9.5,6.6)
+                to [out=45-10,in=225-10] (11.5,3.6)
+                to [out=45-10,in=225-10] (9.5,6.6);
     \end{tikzpicture}
 
 \end{figure}
 \vspace{0.15cm}
+\begin{center}
+\textsc{Master of Science thesis}\\
+\textsc{by} \\
+\LARGE{\textsf{Michiel Adriaan Rol}}
+\end{center}
 
 \begin{figure}[h]
 	\centering
@@ -84,6 +90,7 @@ Prof. Dr. Ir. R. \textsc{Hanson}
 \begin{minipage}{0.5\textwidth}
 \begin{flushright} \large
 \emph{Performed at:} \\
+\quad \\
 Quantum Transport group \\
 Faculty of Applied Sciences, TU Delft
 \end{flushright}
