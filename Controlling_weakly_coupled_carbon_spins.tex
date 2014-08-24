@@ -11,24 +11,42 @@ It will start by explaining how we can perform a parity measurement. This measur
 We will then show
 
 \section{Controlling a single-carbon}
+This section will explain how a weakly-coupled spin can be controlled using the conditional rotation of the carbon spin that occurs when on resonance (\cref{eq:res_dip_loc}).
+It will start by explaining how to do basic gate operations in the ideal case of being perfectly on resonant and not interacting with any nuclear spins.
+After that we will explain
+
+\subsection{Carbon Rabi?}
 
 \subsection{Basic gates}
-
+As was explained in section \cref{controllingacarbonthroughdynamicaldecoupling}
 \begin{figure}[htbp]
+    \begin{subfigure}[t]{0.49\textwidth}
     \centering
-\mbox{
-\Qcircuit @C=1em @R=.7em {
- \lstick{\ket{\Psi}_e} &\ctrl{1}  &\qw\\
-  \lstick{\ket{\Psi}_\mathrm{C}} &\gate{\pm \mathrm{x} }  &\qw}}
-    \caption{The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_C$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state}
-    \label{fig:gate_circuit_pm-x}
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+         \lstick{\ket{\Psi}_e} &\ctrl{1}  &\qw\\
+          \lstick{\ket{\Psi}_\mathrm{C}} &\gate{\pm \mathrm{x} }  &\qw}}
+        \caption{The conditional x-gate ($\pm\mathrm{x}$).}
+        \label{fig:gate_circuit_pm-x}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+          &\ctrl{1}  &\qw &\dstick{=} &&\qw& \ctrl{1} &\qw \\
+          &\gate{\pm \mathrm{y} }  &\qw &&& \gate{\mathrm{z}}  &\gate{\pm \mathrm{x} } &\qw}}
+        \caption{The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
+        \label{fig:gate_circuit_carbon_phase}
+    \end{subfigure}
+    \label{fig:basic_carbon_gates}
+    \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_C$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} Phases in carbon gates are implemented by letting the phase of the carbon evolve before applying a conditional x-gate.}
 \end{figure}
 
 \subsubsection{$\pm$x gate }
 \subsubsection{An unconditional gate }
 \subsubsection{A phase gate}
 
-\subsection{Addressing an uninitialized carbon}
+\subsection{Addressing an uninitialized carbon (carbon Ramsey) }
 \subsubsection{Theory, what happens if }
 \subsubsection{Experiment}
 

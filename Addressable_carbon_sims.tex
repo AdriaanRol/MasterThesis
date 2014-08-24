@@ -14,11 +14,11 @@ At the same time the width of these resonances decreases quadratically with magn
     \Delta = \frac{A_\perp }{2\omega_L^2}
 \end{equation}
 Combining these two we find that the number of resonances $N$ that fit between two orders to increase linearly with magnetic field.
-\begin{eqnarray}
+\begin{align}
 N_k -N_{k-1} = \frac{\tau_{k+1} -\tau_k} {\Delta} \\
 N_k -N_{k-1} = \frac{2\pi}{2\omega_L +A_\parallel} \cdot \frac{2\omega_L ^2}{A\perp}\\
 N_k -N_{k-1} = \frac{2\pi \omega_L}{A_\perp }
-\end{eqnarray}
+\end{align}
 
 
 
@@ -28,23 +28,23 @@ Meanwhile the time it takes to implement a $\pi/2$-gate is given by \cref{eq:num
     \label{eq:number_of_pulses}
 \end{equation}
 Using \cref{eq:contrast_single_carbon_spin}, and noting that $\hat{\mathrm{n_0}}$ and $\hat{\mathrm{n_1}}$ are anti-parallel at the resonance condition, we can find N to be:
-\begin{eqnarray}
+\begin{align}
     \frac{\pi}{4} = \frac{N_{\pi/2} \phi}{2}\\
     N_{\pi/2}=\frac{\pi}{2\phi}
-\end{eqnarray}
+\end{align}
 Where $\phi$ is given by \cref{eq:angle_term}.
 \begin{equation}
     \phi =  \cos^{-1}\left(\cos(\tilde{\omega} \tau) \cos(\omega_L \tau)-\left(\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}}\right) \sin(\tilde{\omega} \tau)\sin(\omega_L \tau)\right)
     \label{eq:angle_term_appendix}
 \end{equation}
 In the limit where $\bm{\omega_L} \gg \bm{A}$, $\omega_L \approx \tilde{\omega}$ simplifying \cref{eq:angle_term_appendix} to:
-\begin{eqnarray}
+\begin{align}
     \phi = \cos^{-1} \left(\cos^2(\omega_L \tau) -  \sin^2(\omega_L \tau) \right)\\
     \phi = \cos^{-1} \left(2 \cos(\omega_L \tau)\right)
-\end{eqnarray}
+\end{align}
 % Reinserting this in \cref{eq:number_of_pulses} we find
-% \begin{eqnarray}
+% \begin{align}
 %     T_{\pi/2} = \left(\frac{\pi}{2 \omega_L \tau}\right) \tau \\
 %     T_{\pi/2} = \frac{\pi}{2 \omega_L}\\
-% \end{eqnarray}
+% \end{align}
 % Leading to the surprising conclusion that operations become faster when increasing magnetic field in the limit of

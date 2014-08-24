@@ -4,45 +4,45 @@ The top-level auxiliary file: Thesis_MA_Rol.aux
 The style file: plainnat.bst
 Database file #1: Remote.bib
 Warning--empty journal in Doherty2013NitrogenVacancy
-You've used 19 entries,
+You've used 20 entries,
             2773 wiz_defined-function locations,
-            753 strings with 9652 characters,
-and the built_in function-call counts, 9941 in all, are:
-= -- 889
-> -- 673
-< -- 10
-+ -- 230
-- -- 210
-* -- 914
-:= -- 1611
-add.period$ -- 87
-call.type$ -- 19
-change.case$ -- 123
-chr.to.int$ -- 18
-cite$ -- 39
-duplicate$ -- 394
-empty$ -- 689
-format.name$ -- 231
-if$ -- 2037
+            758 strings with 9787 characters,
+and the built_in function-call counts, 10298 in all, are:
+= -- 917
+> -- 694
+< -- 11
++ -- 237
+- -- 216
+* -- 937
+:= -- 1668
+add.period$ -- 90
+call.type$ -- 20
+change.case$ -- 127
+chr.to.int$ -- 19
+cite$ -- 41
+duplicate$ -- 414
+empty$ -- 721
+format.name$ -- 240
+if$ -- 2112
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 15
-newline$ -- 132
-num.names$ -- 76
-pop$ -- 199
+missing$ -- 17
+newline$ -- 137
+num.names$ -- 80
+pop$ -- 212
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 112
 quote$ -- 0
-skip$ -- 301
+skip$ -- 316
 stack$ -- 0
-substring$ -- 285
-swap$ -- 50
+substring$ -- 287
+swap$ -- 51
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 209
+type$ -- 215
 warning$ -- 1
-while$ -- 73
+while$ -- 76
 width$ -- 0
-write$ -- 312
+write$ -- 324
 (There was 1 warning)
