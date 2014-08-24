@@ -1,5 +1,46 @@
 \chapter{Controlling Weakly-coupled Carbon Spins}
-\section{Carbon control (more of a theory chapter, change title) }
+[Note intro needs to be rewritten once chapter is done]\\
+Now that we have identified several promising carbon spins we will go into controlling them.
+This chapter attempts to explain first how we can control a carbon by explaining how the two different rotation axes from the last chapter can be used to implement a conditional +-X gate. A gate similar to a CNOT gate.
+Now that we understand how to implement a cnot gate we will use this to perform an experiment that we call a carbon ramsey on an unitialized state.
+AFterwards we will use this to show that we can initialize and readout by showing an initialized carbon ramsey. (1buit tomo (ramsey with more T +Z-RO?).
+From this we will also determine $T_{2 \mathrm{C}}^*$.
+
+The next section will consider two qubit control.
+It will start by explaining how we can perform a parity measurement. This measurement allows us to perform a two qubit tomography and create entanglement by projection.
+We will then show
+
+\section{Controlling a single-carbon}
+
+\subsection{Basic gates}
+
+\begin{figure}[htbp]
+    \centering
+\mbox{
+\Qcircuit @C=1em @R=.7em {
+ \lstick{\ket{\Psi}_e} &\ctrl{1}  &\qw\\
+  \lstick{\ket{\Psi}_\mathrm{C}} &\gate{\pm \mathrm{x} }  &\qw}}
+    \caption{The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_C$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state}
+    \label{fig:gate_circuit_pm-x}
+\end{figure}
+
+\subsubsection{$\pm$x gate }
+\subsubsection{An unconditional gate }
+\subsubsection{A phase gate}
+
+\subsection{Addressing an uninitialized carbon}
+\subsubsection{Theory, what happens if }
+\subsubsection{Experiment}
+
+\subsection{Controlling a single carbon}
+\subsubsection{Theory, initialization and readout}
+\subsubsection{Single qubit tomography and T2*}
+
+\section{Controlling multiple-carbons}
+\subsection{The parity measurement}
+\subsection{MBE}
+
+
 When on resonance (\cref{eq:res_dip_loc} ) the carbon rotates around on of two distinct anti-parallel axes based on the state the electron is in.
 [Need some statement that puts the axis in the equator when on resonance. Look in appendix again ]
 We define the

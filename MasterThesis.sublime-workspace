@@ -11,23 +11,15 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 2637,
+				"buffer_size": 2671,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"file": "learn_for_defence/useful_values.tex",
 			"settings":
 			{
-				"buffer_size": 1271,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 888,
+				"buffer_size": 622,
 				"line_ending": "Unix"
 			}
 		},
@@ -35,24 +27,76 @@
 			"file": "Controlling_weakly_coupled_carbon_spins.tex",
 			"settings":
 			{
-				"buffer_size": 2661,
+				"buffer_size": 6481,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "abstract.tex",
+			"settings":
+			{
+				"buffer_size": 1434,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 203.0,
+		"height": 49.0,
 		"selected_items":
 		[
 			[
-				"latexing us",
-				"Preferences: LaTeXing Settings - User"
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"pack c in",
+				"Package Control: Install Package"
+			],
+			[
+				"late sync",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"sol",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"sol to",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"list pac",
+				"Package Control: List Packages"
+			],
+			[
+				"pack con in",
+				"Package Control: Install Package"
 			],
 			[
 				"pref us",
 				"Preferences: Settings - User"
+			],
+			[
+				"min",
+				"View: Toggle Minimap"
+			],
+			[
+				"late us",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"latex set",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"new vi",
+				"File: New View into File"
+			],
+			[
+				"latexing us",
+				"Preferences: LaTeXing Settings - User"
 			],
 			[
 				"remov",
@@ -135,10 +179,6 @@
 				"LaTeXing: Clean up (Remove) all Nonessential Files"
 			],
 			[
-				"sol to",
-				"SolarizedToggle: Toggle"
-			],
-			[
 				"Snippet: tabl",
 				"Snippet: New table"
 			],
@@ -169,10 +209,6 @@
 			[
 				"Snippet: ",
 				"Snippet: Tabular"
-			],
-			[
-				"sol",
-				"SolarizedToggle: Toggle"
 			],
 			[
 				"solar",
@@ -287,10 +323,6 @@
 				"Preferences: Key Bindings - User"
 			],
 			[
-				"mini",
-				"View: Toggle Minimap"
-			],
-			[
 				"sidebar",
 				"View: Toggle Open Files in Side Bar"
 			],
@@ -341,10 +373,6 @@
 			[
 				"USER ",
 				"Preferences: Settings - User"
-			],
-			[
-				"new vi",
-				"File: New View into File"
 			],
 			[
 				"new vie",
@@ -549,33 +577,39 @@
 	},
 	"file_history":
 	[
-		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
-		"/Users/Adriaan/Documents/MasterThesis/svg.sty",
-		"/Users/Adriaan/Documents/MasterThesis/Bell_state_tomography.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Electronic_spin_in_diamond.tex",
-		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
-		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
 		"/Users/Adriaan/Documents/MasterThesis/Addressing_weakly_coupled_carbon_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/team_diamond_logo-color.svg",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
+		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
+		"/Users/Adriaan/Documents/MasterThesis/abstract.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/cover.ai",
+		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
+		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
+		"/Users/Adriaan/Documents/MasterThesis/question.tex",
+		"/Users/Adriaan/Documents/MasterThesis",
+		"/Users/Adriaan/Documents/MasterThesis/svg.sty",
+		"/Users/Adriaan/Documents/MasterThesis/Outlook_QEC.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo without colourtrap (~)/logo/TU_P1~full color.eps",
+		"/Users/Adriaan/Documents/MasterThesis/bloch_entangling_gate.svg",
+		"/Users/Adriaan/Documents/MasterThesis/Bell_state_tomography.tex",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Adriaan/Documents/MasterThesis/Img/FigureDevelopment/coupling_regimes.ai",
+		"/Users/Adriaan/Documents/MasterThesis/Deterministic_MBE.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/acknowledgements.tex",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Users/Adriaan/Documents/MasterThesis/Electronic_spin_in_diamond.tex",
 		"/Users/Adriaan/Documents/MasterThesis/library.bib",
 		"/Users/Adriaan/Documents/MasterThesis/Qcircuit.tex",
-		"/Users/Adriaan/Documents/MasterThesis/question.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex",
 		"/Users/Adriaan/Documents/MasterThesis/3Month_report.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P2#rgb.eps",
-		"/Users/Adriaan/Documents/MasterThesis/Deterministic_MBE.tex",
-		"/Users/Adriaan/Documents/MasterThesis/acknowledgements.tex",
 		"/Users/Adriaan/Documents/MasterThesis/main.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Introduction.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Outlook_QEC.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Entanglement_wittness.tex",
-		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P5#white.eps",
-		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
-		"/Users/Adriaan/Documents/MasterThesis/abstract.tex",
 		"/Users/Adriaan/Documents/MasterThesis/erratum.tex",
 		"/Users/Adriaan/Documents/MasterThesis/MasterThesis.sublime-project",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P1#full color.eps",
@@ -585,8 +619,6 @@
 		"/Users/Adriaan/Documents/MasterThesis/Output/main.toc",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor erachter/TU_d_line_P1#full color.eps",
-		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo without colourtrap (~)/logo/TU_P1~full color.eps",
-		"/Users/Adriaan/Documents/MasterThesis/Cover/team_diamond_logo-color.svg",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo/TU_P4#black.eps",
 		"/Users/Adriaan/Documents/MasterThesis/front.tex",
 		"/Users/Adriaan/Documents/MasterThesis/.gitignore",
@@ -669,6 +701,124 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"{0}",
+			"}",
+			" ",
+			"&\\qw&\\qw&\\qw&",
+			"&\\qw&\\",
+			"&\\qw&\\qw& ",
+			"&\\qw&\\qw&",
+			"\\rho_\\mathrm{m}}",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"                        ",
+			"subfigure",
+			"\\caption",
+			"0.49 \\textwidth",
+			"\\begin{figure}[t]{0.49 \\textwidth }",
+			"width",
+			"widht",
+			"\\tau = ",
+			"equation",
+			"2\\mu",
+			"2 \\mu",
+			"2\\mu",
+			"equation",
+			"bm",
+			"uation",
+			"\\hat{",
+			"0.49",
+			"subsection*",
+			"subsection",
+			"\\subsection",
+			"n_{\\mathrm",
+			"n_\\mathrm{hf",
+			"electronic",
+			"where",
+			"ESR",
+			"\\footn",
+			"and acts",
+			"Note",
+			" & $",
+			"e",
+			"$\\g",
+			"$",
+			"\\ga",
+			"FWHM",
+			"for a typical",
+			"coupling to ",
+			"dESR",
+			"dark",
+			"$;",
+			"frequency",
+			"highligh",
+			"C",
+			"Nitrogen",
+			"tiny",
+			": $",
+			"small",
+			"4.4",
+			"small",
+			"tiny",
+			"tex",
+			"4.5",
+			"5)",
+			",1",
+			"[draw,circle]",
+			");",
+			"label{fig:",
+			"fig:c",
+			"fig:CR",
+			"T_{",
+			"small",
+			"tiny",
+			"bm",
+			"mathbb",
+			"tiny",
+			"mathfr",
+			"{N}",
+			"footnotesize",
+			"small",
+			"tiny",
+			"8",
+			"subfigur",
+			"subfig",
+			"/10",
+			"fig:label",
+			"_z",
+			"eq:carbon_",
+			"coupled",
+			"Coupled",
+			"coupled",
+			"Coupled",
+			"kHz,",
+			". ",
+			".",
+			"{  }",
+			"}12",
+			"     ",
+			"{ }-",
+			"\\cdot $",
+			"\\quad",
+			"\\cdot$",
+			"_L",
+			"_l",
+			"_L",
+			"_l",
+			"_L",
+			"\\mathrm{C}",
+			"quantization axis",
+			"_z",
+			"includegraphics",
+			"ics{}",
+			"Cover/photon.pdf",
+			"ICover",
+			"Nuclear",
+			"49",
 			"svg",
 			"build",
 			"pdflatex",
@@ -678,125 +828,7 @@
 			"_C",
 			"_c",
 			"_C",
-			"_c",
-			"_C",
-			"_c",
-			"_C",
-			"\\cdot",
-			"$\\cdot 2 \\pi$",
-			"quad",
-			"&",
-			"-",
-			"\\cdot $",
-			"cdot",
-			"& ",
-			":",
-			"e3",
-			"hyperfine_params",
-			"calcul",
-			"\\cref{eq",
-			"mz",
-			"beta",
-			"alpha",
-			"*",
-			"np.",
-			"paralel",
-			"mz",
-			"beta",
-			"alpha",
-			"close",
-			"cite",
-			"20",
-			"strong",
-			"20 kHz",
-			"20kHz",
-			"20",
-			"subsection",
-			"fig:FP",
-			"htbp",
-			"figure",
-			"Carbon--13",
-			"carbon",
-			"\\autoref",
-			"ref",
-			"addressable_carbon_sims",
-			"\\~",
-			"we ",
-			"we",
-			"n_i",
-			"\\tilde{n",
-			"electron state",
-			"n_i",
-			"m_s",
-			"mathbf",
-			"m_s",
-			"ms =",
-			"quantisation",
-			"omega",
-			"omega_L",
-			"HF",
-			"hf",
-			"HF",
-			"hf",
-			"HF",
-			"todo",
-			"1994",
-			"qubit",
-			"\\cite{",
-			"cite",
-			"centre",
-			"\\citep",
-			"\\ref",
-			"ref",
-			"\\ref",
-			"[t]",
-			"sub",
-			"0.45",
-			"b]",
-			"b",
-			"tex",
-			"Img/",
-			"\\begin{subfigure}",
-			"htbp",
-			"figure",
-			"\\begin{figure}",
-			"section",
-			"kHz",
-			"kH",
-			"kHz",
-			" & ",
-			"\\orth",
-			"\\par",
-			"par",
-			" & ",
-			"spell",
-			"Taminiau2012",
-			"biblio",
-			"quant",
-			"biblio",
-			"\\input",
-			"next_view",
-			"section",
-			"\\sec",
-			"auto",
-			"back",
-			",",
-			"		\"",
-			"+k",
-			"cmd+k+b",
-			"color_theme",
-			"scheme",
-			"self",
-			"self.params[",
-			"mode =",
-			"success",
-			"CR_Check",
-			"CR_check",
-			"el_after_init = '1'",
-			"'passive_elt'",
-			"type =='passive",
-			"initialize_carb",
-			"init_state"
+			"_c"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -814,7 +846,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -823,15 +855,102 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2637,
+						"buffer_size": 2671,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								252,
-								252
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "learn_for_defence/useful_values.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								495,
+								532
+							]
+						],
+						"settings":
+						{
+							"_anf_new": "",
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Controlling_weakly_coupled_carbon_spins.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1400,
+								1400
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "abstract.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1416,
+								1416
 							]
 						],
 						"settings":
@@ -843,96 +962,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1271,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 440.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 888,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								869,
-								869
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 65.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Controlling_weakly_coupled_carbon_spins.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								567,
-								567
-							]
-						],
-						"settings":
-						{
-							"_anf_new": "",
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"wrap_width": 78
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -989,8 +1018,80 @@
 		"selected_items":
 		[
 			[
+				"abst",
+				"abstract.tex"
+			],
+			[
+				"cov",
+				"Cover/cover_file.tex"
+			],
+			[
+				"cover",
+				"Cover/cover_file.tex"
+			],
+			[
 				"prea",
 				"preamble.tex"
+			],
+			[
+				"addres",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"contr",
+				"Controlling_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"covertex",
+				"Cover/cover_file.tex"
+			],
+			[
+				"adres",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"addressin",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"add",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"ques",
+				"question.tex"
+			],
+			[
+				"appendi",
+				"Fingerprint_data_appendix.tex"
+			],
+			[
+				"qu",
+				"question.tex"
+			],
+			[
+				"abs",
+				"abstract.tex"
+			],
+			[
+				"pre",
+				"preamble.tex"
+			],
+			[
+				"ackn",
+				"acknowledgements.tex"
+			],
+			[
+				"app",
+				"Fingerprint_data_appendix.tex"
+			],
+			[
+				"electr",
+				"Electronic_spin_in_diamond.tex"
+			],
+			[
+				"address",
+				"Addressing_weakly_coupled_carbon_spins.tex"
 			],
 			[
 				"preamb",
@@ -1005,20 +1106,12 @@
 				"~/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings"
 			],
 			[
-				"pre",
-				"preamble.tex"
-			],
-			[
 				"qci",
 				"Qcircuit.tex"
 			],
 			[
 				"elec",
 				"Electronic_spin_in_diamond.tex"
-			],
-			[
-				"app",
-				"Fingerprint_data_appendix.tex"
 			],
 			[
 				"deter",
@@ -1055,10 +1148,6 @@
 			[
 				"control",
 				"Controlling_weakly_coupled_carbon_spins.tex"
-			],
-			[
-				"abs",
-				"abstract.tex"
 			],
 			[
 				"spin",
@@ -1138,7 +1227,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 142.0,
+	"side_bar_width": 312.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
