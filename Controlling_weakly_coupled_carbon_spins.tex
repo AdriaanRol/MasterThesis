@@ -42,7 +42,7 @@ A $\pm{\mathrm{y}}$-gate is implemented by letting the phase evolve before imple
         \label{fig:gate_circuit_carbon_phase}
     \end{subfigure}
     \label{fig:basic_carbon_gates}
-    \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_C$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
+    \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_\mathrm{C}$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
 \end{figure}
 
 % \subsubsection{A phase gate}
@@ -86,47 +86,56 @@ The effect of the $\pm{\mathrm{x}}$-gate can be made explicit by treating the ca
         \caption{MBI-swap initialization.}
         \label{fig:gate_circuit_mbi_swap-init}
     \end{subfigure}
-    \caption{\Cref{fig:gate_circuit_mbi_x-init} MBI-based initialization into $\pm \ket{\mathrm{X}}$. Initializes the carbon into $\ket{X}_C $ when $\ket{0}_e$ is measured and into $\ket{-X}_C $ when $\ket{1}_e$ is measured for the electron.
-    \Cref{fig:gate_circuit_mbi_swap-init} MBI-swap initialization into $ \ket{\mathrm{0}}$. Initializes the carbon into $\ket{0}_C $ regardless of the electronic spin-state measured.}
+    \caption{\Cref{fig:gate_circuit_mbi_x-init} MBI-based initialization into $\pm \ket{\mathrm{X}}$. Initializes the carbon into $\ket{X}_\mathrm{C} $ when $\ket{0}_e$ is measured and into $\ket{-X}_\mathrm{C} $ when $\ket{1}_e$ is measured for the electron.
+    \Cref{fig:gate_circuit_mbi_swap-init} MBI-swap initialization into $ \ket{\mathrm{0}}$. Initializes the carbon into $\ket{0}_\mathrm{C} $ regardless of the electronic spin-state measured.}
     \label{fig:gate_circuit_initialization}
 \end{figure}
 
 The sequence can also be extended to swap type initialization by implementing an additional $\pm{\mathrm{y}}$-gate.
-The effect of the extra y-gate is that both the  $\ket{X}_C $ and the  $\ket{-X}_C $-state are rotated to the  $\ket{0}_C $-state, effectively swapping the mixed state from the carbon to the electron. By applying a readout the electron can be reinitialized.
+The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron. By applying a readout the electron can be reinitialized.
 
 
 \subsection{Carbon Ramsey experiment }
 Some sentence giving motivation for why this is first experiment.
 
 In an ordinary Ramsey experiment a qubit is brought to the equator of the Bloch-sphere where it precesses for a time $\tau $ before it is read out along the x-direction.
-A carbon-Ramsey experiment is similar.
-The carbon is brought into the $\ket{X}$ state by a $\pm{\mathrm{x}}$-gate and is left to precess before a second $\pm{\mathrm{x}}$
+A carbon-Ramsey experiment is similar but slightly more complicated as the nuclear spin cannot be controlled and read-out directly.
+An uninitialized and an initialized version are depicted in \cref{fig:gate_circuit_nuclear_ramsey}.
+
+In the initialized version of the carbon-Ramsey experiment the system is first initialized in the $\ket{0}_e\ket{X}_\mathrm{C}$-state.
+
+
+In a carbon-Ramsey experiment the nuclear-spin starts
+
+The carbon is brought into the $\ket{X}$ state by a $\pm{\mathrm{x}}$-gate and is left to precess before a second $\pm{\mathrm{x}}$-gate is used to rotate the the carbon out of the equator.
+
+Depending on the phase picked up during the free evolution the
 
 In an uninitialized carbon experiment we let the state evolve after the $\pm\mathrm{x}$-gate.
 As the electronic spin-state is in a coherent superposition of $\ket{0}_e$ and $\ket{1}_e$ the nuclear spin-state will precess with two different frequencies, $\omega_L$ for $\ket{0}_e$ and $\tilde{\omega}$ for $\ket{1}_e$.
 
 
 \begin{figure}[htbp]
+\begin{subfigure}[t]{\textwidth}
+\centering
+    \mbox{
+    \Qcircuit @C=1em @R=.7em {
+    \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}   &\gate{\mathrm{x}}   & \meter & & & \lstick{\ket{0}}  & \multigate{1}{\tau}       &  \gate{\mathrm{y}} &\ctrl{1}          & \gate{\mathrm{x}} &\qw          &  \meter \\
+    \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}  &\qw &\qw &\qw &\qw  & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
+\caption{Carbon Ramsey experiment with initialization. }
+\label{fig:gate_circuit_nuclear_ramsey_init}
+\end{subfigure}
+\\
+\\
+\\
     \begin{subfigure}[t]{\textwidth}
     \centering
         \mbox{
         \Qcircuit @C=1em @R=.7em {
-        \lstick{\ket{0}}          & \gate{\pi/2}  & \ctrl{1}      & \qw & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
+        \lstick{\ket{0}}          & \gate{\mathrm{x}}  & \ctrl{1}      & \qw & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\mathrm{x}} &\qw          &  \meter \\
         \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
     \caption{Carbon Ramsey experiment without initialization.}
     \label{fig:gate_circuit_nuclear_ramsey_no_init}
-    \end{subfigure}
-\\
-\\
-\\
-    \begin{subfigure}[t]{\textwidth}
-    \centering
-        \mbox{
-        \Qcircuit @C=1em @R=.7em {
-        \lstick{\ket{0}}          & \gate{\pi/2}  & \ctrl{1}      & \meter && & \lstick{\ket{0}}  & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
-        \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}  &\qw  &\qw &\qw  & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
-    \caption{Carbon Ramsey experiment with initialization. }
-    \label{fig:gate_circuit_nuclear_ramsey_init}
     \end{subfigure}
     \caption{Gate circuit depicting a carbon Ramsey with and without initialization of the nuclear and electronic spin. }
     \label{fig:gate_circuit_nuclear_ramsey}
@@ -163,32 +172,6 @@ Results: look here is a carbon ramsey result. Aiding us in estimating the phase
 \section{Controlling multiple-carbons}
 \subsection{The parity measurement}
 \subsection{MBE}
-
-
-When on resonance (\cref{eq:res_dip_loc} ) the carbon rotates around on of two distinct anti-parallel axes based on the state the electron is in.
-[Need some statement that puts the axis in the equator when on resonance. Look in appendix again ]
-We define the
-
-Figure of Bloch sphere whoing n0 and n1 axis.
-A state starting of in 0 being rotated to +y and -y ($\pm $ x operation).
-Different arrow
-
-
-adf
-
-\subsection{Carbon Ramsey experiment }
-
-
-
-\subsection{Measuring Precession Frequencies/Carbon Ramsey experiment}
-% Ramsey experiment to measure coupling strengths
-% Needs relation between frequency and parralel component
-% spins 1 and 4 best
-Idea explain init with swap init. And from there go back to X-init. Refer to appendix for more rigorous derivation.
-
-
-
-
 
 \begin{figure}[htbp]
     \centering
