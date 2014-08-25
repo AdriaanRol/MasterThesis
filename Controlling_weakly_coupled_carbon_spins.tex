@@ -13,12 +13,15 @@ We will then show
 \section{Controlling a single-carbon}
 This section will explain how a weakly-coupled spin can be controlled using the conditional rotation of the carbon spin that occurs when on resonance (\cref{eq:res_dip_loc}).
 It will start by explaining how to do basic gate operations in the ideal case of being perfectly on resonant and not interacting with any nuclear spins.
-After that we will explain
-
-\subsection{Carbon Rabi?}
+After that we will explain how a carbon-spin in a mixed state can be initialized
 
 \subsection{Basic gates}
-As was explained in section \cref{controllingacarbonthroughdynamicaldecoupling}
+As was explained in \cref{sec:controllingacarbonthroughdynamicaldecoupling} nuclear spins perform a rotation along two anti-parallel axes when subjected to a dynamical decoupling sequence on a resonant condition given by \cref{eq:res_dip_loc}. The angle of this rotation can be controlled by choosing the number of pulses of the decoupling sequence. By choosing the number of pulses such that all coherence is lost when performing a dynamical decoupling spectroscopy measurement on the resonance a rotation of $+\pi/2$ along the x-direction is performed when the electron is in the $\ket{0}$-state and a $-\pi/2$-rotation along the x-axis is performed when the electron is in the $\ket{0}$-state.
+
+We call this conditional rotation the $\pm \mathrm{x}$-gate and it forms the basis of our control over weakly coupled spins. \Cref{fig:gate_circuit_pm-x} shows how we depict the $\pm \mathrm{x}$-gate in a circuit-diagram.
+An unconditional gate can be implemented by placing the electron in an eigenstate before performing the $\pm\mathrm{x}$-operation.
+A $\pm{\mathrm{y}}$-gate is implemented by letting the phase evolve before implementing a $\pm{\mathrm{x}}$-gate (\cref{fig:gate_circuit_carbon_phase}).
+
 \begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}
     \centering
@@ -35,22 +38,125 @@ As was explained in section \cref{controllingacarbonthroughdynamicaldecoupling}
         \Qcircuit @C=1em @R=.7em {
           &\ctrl{1}  &\qw &\dstick{=} &&\qw& \ctrl{1} &\qw \\
           &\gate{\pm \mathrm{y} }  &\qw &&& \gate{\mathrm{z}}  &\gate{\pm \mathrm{x} } &\qw}}
-        \caption{The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
+        \caption{The conditional y-gate ($\pm\mathrm{y}$).}
         \label{fig:gate_circuit_carbon_phase}
     \end{subfigure}
     \label{fig:basic_carbon_gates}
-    \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_C$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} Phases in carbon gates are implemented by letting the phase of the carbon evolve before applying a conditional x-gate.}
+    \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_C$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
 \end{figure}
 
-\subsubsection{$\pm$x gate }
-\subsubsection{An unconditional gate }
-\subsubsection{A phase gate}
+% \subsubsection{A phase gate}
+\subsection{Initializing a carbon-spin}
+We can use the $\pm\mathrm{x}$-gate to initialize a carbon-spin in the $ \ket{X}$-state.
+For this we implement the gate-circuit as depicted in \cref{fig:gate_circuit_mbi_x-init}.
+After the electron is brought in the $\ket{X}$ the state can be described by the tensor product of two density matrices.
+\begin{equation}
+    \rho_X \otimes \rho_m = \rho_X \otimes \rho_{X} +\rho_X \otimes \rho_{-X}
+\end{equation}
+Where the electron picks up a phase due to the $\pm{\mathrm{x}}$-gate depending on the nuclear spin-state.
+\begin{equation}
+    \rho_X \otimes \rho_m = \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{X}
+    \label{eq:density_after_Ren}
+\end{equation}
 
-\subsection{Addressing an uninitialized carbon (carbon Ramsey) }
+The effect of the $\pm{\mathrm{x}}$-gate can be made explicit by treating the carbon-spin as being either in the $\ket{X}$ or $\ket{-X}$-state.
+\begin{align}
+    \ket{X}\ket{X} \quad \vee  \quad\ket{X}\ket{-X}\\
+    \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{-X} \\
+    \frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{e^{-\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
+    \ket{Y}\ket{X} \quad \vee \quad \ket{-Y}\ket{X}
+\end{align}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+    \mbox{
+        \Qcircuit @C=1em @R=.7em {
+        \lstick{\ket{0}_e}                        & \gate{\mathrm{y}}  & \ctrl{1}       & \gate{x} &\qw          &  \meter &\qw\\
+        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw    & \qw   & \qw       &\qw&}}
+    \caption{MBI-based initialization into $\pm \ket{\mathrm{X}}$.}
+    \label{fig:gate_circuit_mbi_x-init}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+            \lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} & \gate{x} &\ctrl{1} &  \meter &\qw\\
+            \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}     & \qw    & \gate{\pm \mathrm{y}}    & \qw       &\qw&}}
+        \caption{MBI-swap initialization.}
+        \label{fig:gate_circuit_mbi_swap-init}
+    \end{subfigure}
+    \caption{\Cref{fig:gate_circuit_mbi_x-init} MBI-based initialization into $\pm \ket{\mathrm{X}}$. Initializes the carbon into $\ket{X}_C $ when $\ket{0}_e$ is measured and into $\ket{-X}_C $ when $\ket{1}_e$ is measured for the electron.
+    \Cref{fig:gate_circuit_mbi_swap-init} MBI-swap initialization into $ \ket{\mathrm{0}}$. Initializes the carbon into $\ket{0}_C $ regardless of the electronic spin-state measured.}
+    \label{fig:gate_circuit_initialization}
+\end{figure}
+
+The sequence can also be extended to swap type initialization by implementing an additional $\pm{\mathrm{y}}$-gate.
+The effect of the extra y-gate is that both the  $\ket{X}_C $ and the  $\ket{-X}_C $-state are rotated to the  $\ket{0}_C $-state, effectively swapping the mixed state from the carbon to the electron. By applying a readout the electron can be reinitialized.
+
+
+\subsection{Carbon Ramsey experiment }
+Some sentence giving motivation for why this is first experiment.
+
+In an ordinary Ramsey experiment a qubit is brought to the equator of the Bloch-sphere where it precesses for a time $\tau $ before it is read out along the x-direction.
+A carbon-Ramsey experiment is similar.
+The carbon is brought into the $\ket{X}$ state by a $\pm{\mathrm{x}}$-gate and is left to precess before a second $\pm{\mathrm{x}}$
+
+In an uninitialized carbon experiment we let the state evolve after the $\pm\mathrm{x}$-gate.
+As the electronic spin-state is in a coherent superposition of $\ket{0}_e$ and $\ket{1}_e$ the nuclear spin-state will precess with two different frequencies, $\omega_L$ for $\ket{0}_e$ and $\tilde{\omega}$ for $\ket{1}_e$.
+
+
+\begin{figure}[htbp]
+    \begin{subfigure}[t]{\textwidth}
+    \centering
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+        \lstick{\ket{0}}          & \gate{\pi/2}  & \ctrl{1}      & \qw & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
+        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
+    \caption{Carbon Ramsey experiment without initialization.}
+    \label{fig:gate_circuit_nuclear_ramsey_no_init}
+    \end{subfigure}
+\\
+\\
+\\
+    \begin{subfigure}[t]{\textwidth}
+    \centering
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+        \lstick{\ket{0}}          & \gate{\pi/2}  & \ctrl{1}      & \meter && & \lstick{\ket{0}}  & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
+        \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}  &\qw  &\qw &\qw  & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
+    \caption{Carbon Ramsey experiment with initialization. }
+    \label{fig:gate_circuit_nuclear_ramsey_init}
+    \end{subfigure}
+    \caption{Gate circuit depicting a carbon Ramsey with and without initialization of the nuclear and electronic spin. }
+    \label{fig:gate_circuit_nuclear_ramsey}
+\end{figure}
+
+
+Results: look here is a carbon ramsey result. Aiding us in estimating the phase
+\begin{figure}[htbp]
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+    \includegraphics{Img/CarbonRamsey_C1.pdf}
+    \caption{Nuclear Ramsey of Carbon 1} \label{fig:CR_C1}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \includegraphics{Img/CarbonRamsey_C4.pdf}
+        \caption{Nuclear Ramsey of Carbon 4}
+        \label{fig:CR_C4}
+    \end{subfigure}
+    \caption{Nuclear Ramsey experiment wit}
+\end{figure}
+
+
 \subsubsection{Theory, what happens if }
 \subsubsection{Experiment}
 
+
+
 \subsection{Controlling a single carbon}
+
+
+
 \subsubsection{Theory, initialization and readout}
 \subsubsection{Single qubit tomography and T2*}
 
@@ -81,35 +187,7 @@ adf
 Idea explain init with swap init. And from there go back to X-init. Refer to appendix for more rigorous derivation.
 
 
-\begin{figure}[htbp]
-    \centering
-\mbox{
-\Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}}          & \gate{\pi/2}  & \ctrl{1}      & \qw & \multigate{1}{T}       &  \qw &\ctrl{1}          & \gate{\pi/2} &\qw          &  \meter \\
-\lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{T}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
-    \caption{Carbon Ramsey experiment. }
-    \label{fig:gate_circuit_nuclear_ramsey}
-\end{figure}
 
-\begin{figure}[htbp]
-    \centering
-\mbox{
-\Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}_e}                        & \gate{\mathrm{y}}  & \ctrl{1}       & \gate{x} &\qw          &  \meter &\qw\\
-\lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw    & \qw   & \qw       &\qw&}}
-    \caption{MBI-based initialization into $\pm \ket{\mathrm{X}}$. Initializes the carbon into $\ket{X}_C $ when $\ket{0}_e$ is measured and into $\ket{-X}_C $ when $\ket{1}_e$ is measured for the electron.}
-    \label{fig:gate_circuit_mbi_x-init}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-\mbox{
-\Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} & \gate{x} &\ctrl{1} &  \meter &\qw\\
-\lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}     & \qw    & \gate{\pm \mathrm{y}}    & \qw       &\qw&}}
-    \caption{MBI-swap initialization into $\pm \ket{\mathrm{0}}$. Initializes the carbon into $\ket{0}_C $ when $\ket{0}_e$ is measured and into $\ket{1}_C $ when $\ket{1}_e$ is measured for the electron.}
-    \label{fig:gate_circuit_mbi_swap-init}
-\end{figure}
 
 
 \begin{figure}[htbp]
@@ -135,18 +213,7 @@ Idea explain init with swap init. And from there go back to X-init. Refer to app
 \end{figure}
 
 
-\begin{figure}[htbp]
-    \begin{subfigure}[t]{0.49\textwidth}\centering
-    \includegraphics{Img/CarbonRamsey_C1.pdf}
-    \caption{Nuclear Ramsey of Carbon 1} \label{fig:CR_C1}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}\centering
-        \includegraphics{Img/CarbonRamsey_C4.pdf}
-        \caption{Nuclear Ramsey of Carbon 4}
-        \label{fig:CR_C4}
-    \end{subfigure}
-    \caption{Nuclear Ramsey experiment wit}
-\end{figure}
+
 
 
 

@@ -1,5 +1,6 @@
 \chapter{State Initialization}
-
+\label{app:State Initialization}
+% Appendix chapter
 \section{Gates used}
 Gates are implemented according to \citet{Nielsen2010Quantum}.
 \begin{equation}
@@ -48,12 +49,35 @@ An unconditional rotation is given by\cref{eq:tensor_identity}.
     \label{eq:tensor_identity}
 \end{equation}
 
-\section{MBI-x initialization of a carbon-spin}
+\section{Initialization of the carbon-spin}
 
-Where in order to initialize into the $\ket{X}_\mathrm{C}$-state we apply the circuit depicted in \cref{fig:gate_circuit_mbi_x-init}. In density matrix language this is can be represented up to the measurement in the following way
+Where in order to initialize into the $\ket{X}_\mathrm{C}$-state we apply the circuit depicted in \cref{fig:gate_circuit_mbi_x-init}.
+The electron starts in the $\ket{0}$-state and the carbon starts in a mixed state.
+We treat the mixed state of the carbon as a 50/50 mixture of $\ket{+X}$ and $\ket{-X}$.
+
+Density matrices describing initial state:
 \begin{equation}
-    \rho = R_x(\pi/2) \bm{\mathrm{Ren}} R_y(\pi/2)_e \rho_{0,\mathrm{mix}}
+    \rho_0\otimes \rho_X \quad + \quad \rho_0\otimes \rho_{-X}
+    \end{equation}
+After applying initial y-pulse
+    \begin{equation}
+    \rho_X\otimes \rho_X \quad + \quad \rho_X\otimes \rho_{-X}
+    \end{equation}
+Critical step: applying the conditional $\pm{\mathrm{x}}$-gate.
+    \begin{equation}
+    \rho_Y\otimes \rho_X \quad + \quad \rho_{-Y}\otimes \rho_{-X}
+    \end{equation}
+After applying the final x-pulse
+    \begin{equation}
+    \rho_0\otimes \rho_X \quad + \quad \rho_1\otimes \rho_{-X}
+    \end{equation}
+Conventionalizing upon reading out $\ket{0}$ for the electron projects the nucleus in the $\ket{X}$-state.
+
+This sequence can be extended to unconditionally initialize the carbon in $\ket{0}$. By applying a $\pm{\mathrm{y}}$-gate after the final x-pulse, we arrive at the following density matrix. NOTE: it would make more sense to do $\mp \mathrm{y}$
+\begin{equation}
+\rho_0\otimes \rho_0 \quad + \quad \rho_1\otimes \rho_{0}
 \end{equation}
+
 % Furthermore, we assume that a conditional gate between the electron spin and a C13 spin always rotates the C13 spin along its $\pm\hat{x}-$axis, such that the so-called $\bm{\mathrm{Ren}}$ gate does the following to the system:
 % \be
 % \bm{\mathrm{Ren}} = \rho_{0,e}\otimes R_x(\pi/2)_n\rho_{1,e}\otimes R_x(-\pi/2)_n
