@@ -65,7 +65,7 @@ The effect of the $\pm{\mathrm{x}}$-gate can be made more easily understood by t
     \frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{e^{i\pi/4}\ket{0}+e^{-i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
     \ket{Y}\ket{X} \quad \vee \quad \ket{-Y}\ket{-X}
 \end{align}
-The final x-pulse is used to read out the electron.
+The final x-pulse is used to read out the electron. By conditionalizing the experiment on getting the outcome $\ket{0}_e$ the carbon is initialized in the $\ket{X}_C$-state.
 \begin{equation}
     \rho_0 \otimes \rho_{\mathrm{X}} + \rho_1 \otimes \rho_{\mathrm{-X}}
 \end{equation}
@@ -94,7 +94,7 @@ The final x-pulse is used to read out the electron.
     \label{fig:gate_circuit_initialization}
 \end{figure}
 
-The sequence can be extended to swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate\footnore{! In the circuits we use a Y-gate, need to check if I made a mistake here.}.
+The sequence can be extended to swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate\footnote{! In the circuits we use a Y-gate, need to check if I made a mistake here.}.
 The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron.
 By applying a readout the electron can be reinitialized.
 
