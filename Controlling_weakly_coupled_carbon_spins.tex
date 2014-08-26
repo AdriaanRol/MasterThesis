@@ -16,33 +16,24 @@ It will start by explaining how to do basic gate operations in the ideal case of
 After that we will explain how a carbon-spin in a mixed state can be initialized
 
 \subsection{Basic gates}
-As was explained in \cref{sec:controllingacarbonthroughdynamicaldecoupling} nuclear spins perform a rotation along two anti-parallel axes when subjected to a dynamical decoupling sequence on a resonant condition given by \cref{eq:res_dip_loc}. The angle of this rotation can be controlled by choosing the number of pulses of the decoupling sequence. By choosing the number of pulses such that all coherence is lost when performing a dynamical decoupling spectroscopy measurement on the resonance a rotation of $+\pi/2$ along the x-direction is performed when the electron is in the $\ket{0}$-state and a $-\pi/2$-rotation along the x-axis is performed when the electron is in the $\ket{0}$-state.
+As was explained in \cref{sec:controllingacarbonthroughdynamicaldecoupling} nuclear spins perform a rotation along two anti-parallel axes when subjected to a dynamical decoupling sequence on a resonant condition given by \cref{eq:res_dip_loc}.
+The angle of rotation can be controlled by choosing the number of pulses of the decoupling sequence.
+
+By choosing the number of pulses such that all coherence is lost when performing a dynamical decoupling spectroscopy measurement on the resonance, a rotation of $\pi/2$ in the clockwise direction is performed when the electron is in the $\ket{0}$-state and a $\pi/2$-rotation in the counterclockwise direction when the electron is in the $\ket{1}$-state.
+We define the axis of rotation of this operation as the X-axis.
 
 We call this conditional rotation the $\pm \mathrm{x}$-gate and it forms the basis of our control over weakly coupled spins. \Cref{fig:gate_circuit_pm-x} shows how we depict the $\pm \mathrm{x}$-gate in a circuit-diagram.
+By letting the phase of the carbon evolve we are able to apply operations on the carbon-spin with arbitrary phase.
 An unconditional gate can be implemented by placing the electron in an eigenstate before performing the $\pm\mathrm{x}$-operation.
-A $\pm{\mathrm{y}}$-gate is implemented by letting the phase evolve before implementing a $\pm{\mathrm{x}}$-gate (\cref{fig:gate_circuit_carbon_phase}).
 
 \begin{figure}[htbp]
-    \begin{subfigure}[t]{0.49\textwidth}
     \centering
         \mbox{
         \Qcircuit @C=1em @R=.7em {
          \lstick{\ket{\Psi}_e} &\ctrl{1}  &\qw\\
           \lstick{\ket{\Psi}_\mathrm{C}} &\gate{\pm \mathrm{x} }  &\qw}}
-        \caption{The conditional x-gate ($\pm\mathrm{x}$).}
-        \label{fig:gate_circuit_pm-x}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \centering
-        \mbox{
-        \Qcircuit @C=1em @R=.7em {
-          &\ctrl{1}  &\qw &\dstick{=} &&\qw& \ctrl{1} &\qw \\
-          &\gate{\pm \mathrm{y} }  &\qw &&& \gate{\mathrm{z}}  &\gate{\pm \mathrm{x} } &\qw}}
-        \caption{The conditional y-gate ($\pm\mathrm{y}$).}
-        \label{fig:gate_circuit_carbon_phase}
-    \end{subfigure}
-    \label{fig:basic_carbon_gates}
-    \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_\mathrm{C}$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
+    \caption{The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_\mathrm{C}$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state.}
+    \label{fig:gate_circuit_pm-x}
 \end{figure}
 
 \subsection{Initializing a carbon-spin}
@@ -54,7 +45,7 @@ After the electron is brought in the $\ket{X}$ the state can be described by the
 \end{equation}
 Where the electron picks up a phase due to the $\pm{\mathrm{x}}$-gate depending on the nuclear spin-state:
 \begin{equation}
-     \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{X}
+     \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
     \label{eq:density_after_Ren}
 \end{equation}
 
@@ -94,7 +85,7 @@ The final x-pulse is used to read out the electron. By conditionalizing the expe
     \label{fig:gate_circuit_initialization}
 \end{figure}
 
-The sequence can be extended to swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate\footnote{! In the circuits we use a Y-gate, need to check if I made a mistake here.}.
+The sequence can be extended to swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate.
 The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron.
 By applying a readout the electron can be reinitialized.
 
@@ -107,6 +98,11 @@ A carbon-Ramsey experiment is similar but slightly more complicated as the nucle
 An uninitialized and an initialized version are depicted in \cref{fig:gate_circuit_nuclear_ramsey}.
 
 In the initialized version of the carbon-Ramsey experiment the system is first initialized in the $\ket{0}_e\ket{X}_\mathrm{C}$-state.
+The carbon is let to precess for a time $\tau$ before the $\ket{X}_\mathrm{C}$-state is read out.
+During the free evolution the carbon rotates with a frequency of $\omega_L$ because the electron is in $\ket{0}_e$ and there is no coupling between them.
+
+A conceptually much more interesting variety is the uninitialized carbon-Ramsey experiment depicted in \cref{fig:gate_circuit_nuclear_ramsey_no_init}.
+In the uninitialized version the system is described by \cref{eq:density_after_Ren}.
 
 
 In a carbon-Ramsey experiment the nuclear-spin starts
