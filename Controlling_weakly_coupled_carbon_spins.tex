@@ -101,26 +101,12 @@ In the initialized version of the carbon-Ramsey experiment the system is first i
 The carbon is let to precess for a time $\tau$ before the $\ket{X}_\mathrm{C}$-state is read out.
 During the free evolution the carbon rotates with a frequency of $\omega_L$ because the electron is in $\ket{0}_e$ and there is no coupling between them.
 
-A conceptually much more interesting variety is the uninitialized carbon-Ramsey experiment depicted in \cref{fig:gate_circuit_nuclear_ramsey_no_init}.
-In the uninitialized version the system is described by \cref{eq:density_after_Ren}.
-
-
-In a carbon-Ramsey experiment the nuclear-spin starts
-
-The carbon is brought into the $\ket{X}$ state by a $\pm{\mathrm{x}}$-gate and is left to precess before a second $\pm{\mathrm{x}}$-gate is used to rotate the the carbon out of the equator.
-
-Depending on the phase picked up during the free evolution the
-
-In an uninitialized carbon experiment we let the state evolve after the $\pm\mathrm{x}$-gate.
-As the electronic spin-state is in a coherent superposition of $\ket{0}_e$ and $\ket{1}_e$ the nuclear spin-state will precess with two different frequencies, $\omega_L$ for $\ket{0}_e$ and $\tilde{\omega}$ for $\ket{1}_e$.
-
-
 \begin{figure}[htbp]
 \begin{subfigure}[t]{\textwidth}
 \centering
     \mbox{
     \Qcircuit @C=1em @R=.7em {
-    \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}   &\gate{\mathrm{x}}   & \meter & & & \lstick{\ket{0}}  & \multigate{1}{\tau}       &  \gate{\mathrm{y}} &\ctrl{1}          & \gate{\mathrm{x}} &\qw          &  \meter \\
+    \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}   &\gate{\mathrm{x}}   & \meter & & & \lstick{\ket{0}}  & \multigate{1}{\tau}       &  \gate{\mathrm{y}} &\ctrl{1}          & \gate{\mathrm{x}}   &  \meter \\
     \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}  &\qw &\qw &\qw &\qw  & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
 \caption{Carbon Ramsey experiment with initialization. }
 \label{fig:gate_circuit_nuclear_ramsey_init}
@@ -132,7 +118,7 @@ As the electronic spin-state is in a coherent superposition of $\ket{0}_e$ and $
     \centering
         \mbox{
         \Qcircuit @C=1em @R=.7em {
-        \lstick{\ket{0}}          & \gate{\mathrm{x}}  & \ctrl{1}      & \qw & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\mathrm{x}} &\qw          &  \meter \\
+        \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}      & \qw & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\mathrm{-y}}  &  \meter \\
         \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
     \caption{Carbon Ramsey experiment without initialization.}
     \label{fig:gate_circuit_nuclear_ramsey_no_init}
@@ -141,32 +127,60 @@ As the electronic spin-state is in a coherent superposition of $\ket{0}_e$ and $
     \label{fig:gate_circuit_nuclear_ramsey}
 \end{figure}
 
+\subsubsection{The uninitialized carbon-Ramsey}
 
-Results: look here is a carbon ramsey result. Aiding us in estimating the phase
+A conceptually much more interesting variety is the uninitialized carbon-Ramsey experiment depicted in \cref{fig:gate_circuit_nuclear_ramsey_no_init}.
+In the uninitialized version the system is described by \cref{eq:density_after_Ren} before the free evolution starts.
+Because the electron is in a superposition of $\ket{0}$ and $\ket{1}$ the carbon-spin while evolve with two frequencies; $\omega_L$ for $\ket{0}_e$ and $\tilde{\omega} = \bm{|\omega_L + A |} $ for $\ket{1}_e$.
+
+Similar to how the last part of the initialized carbon-Ramsey circuit reads out along the X-direction the last part of the uninitialized carbon-Ramsey reads out along the X-direction for the $\ket{Y}_e$ and along the -X-direction for the $\ket{-Y}_e$.
+If the carbon has picked up no phase the the electron will point towards $\ket{1}$ in the readout.
+The phase picked up while show up as an oscillation between the $\ket{0}$ and $\ket{1}$ in the readout.
+Because the uninitialized carbon-Ramsey evolves with two frequencies we expect the measured oscillation to be the sum of two cosines as described by \cref{eq:carbon_ramsey_expected}.
+\begin{equation}
+    \tfrac{1}{4} \cos(\omega_L \tau ) +\tfrac{1}{4}  \cos (\tilde{\omega} \tau ) + \tfrac{1}{2}
+    \label{eq:carbon_ramsey_expected}
+\end{equation}
+
 \begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}\centering
     \includegraphics{Img/CarbonRamsey_C1.pdf}
-    \caption{Nuclear Ramsey of Carbon 1} \label{fig:CR_C1}
+    \caption{Uninitialized carbon-Ramsey of carbon-1.}
+    \label{fig:CR_C1}
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \includegraphics{Img/CarbonRamsey_C4.pdf}
-        \caption{Nuclear Ramsey of Carbon 4}
+        \caption{Uninitialized carbon-Ramsey of carbon-4.}
         \label{fig:CR_C4}
     \end{subfigure}
-    \caption{Nuclear Ramsey experiment wit}
+    \caption{The uninitialized carbon-Ramsey experiment shows an oscillation that is the sum of two cosines due to the phase picked up during free evolution.}
+    \label{fig:Uninitialized_carbon_ramsey}
 \end{figure}
 
+\Cref{fig:Uninitialized_carbon_ramsey} shows the results for an uninitialized carbon-Ramsey experiment.
+The data was fitted to a sum of two cosines in order to determine the frequencies.
+% \begin{equation}
+%     \left(A \cos(2\pi f_a \tau +\phi_a) + B \cos (2\pi f_b \tau +\phi_b)\right)/2 + a_0
+%     \label{eq:carbon_ramsey_fitfunc}
+% \end{equation}
+The Larmor frequencies are $\omega_L = 2\pi\cdot 325.81 \pm 0.25$kHz  for carbon-1 and  $\omega_L =  2\pi\cdot 325.94 \pm 0.40$kHz for carbon-4.
+Both the measured Larmor frequencies agree with the magnetic field of 304G within two standard deviations.
 
-\subsubsection{Theory, what happens if }
-\subsubsection{Experiment}
+For $\tilde{\omega}$ the following frequencies were measured: $\tilde \omega= 2\pi\cdot 364.41 \pm 0.23$kHz for carbon-1
+and $\tilde \omega = 2\pi\cdot 371.52 \pm 0.39 $kHz for carbon-4.
+Based on the estimated hyperfine parameters of \cref{tbl:HF_par} we expect $\tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2}  \approx 364.7\mathrm{kHz}$ for carbon-1 and $\tilde \omega \approx 371.4 \mathrm{kHz}$ for carbon-4.
+Both these values are in excellent agreement with experiment indicating that our hyperfine estimation based on the fingerprint is accurate. \footnote{Need a better sentence for this. }
 
+\subsubsection{Measuring $T_{2,\mathrm{C}}^* $}
+% Lange carbon ramseys van Hans sil01 140506 #53 en 56 +T2* analyse.
+
+\subsubsection{Single carbon tomography (ramsey met phase langs as en z init) }
 
 
 \subsection{Controlling a single carbon}
 
-
-
 \subsubsection{Theory, initialization and readout}
+
 \subsubsection{Single qubit tomography and T2*}
 
 \section{Controlling multiple-carbons}
