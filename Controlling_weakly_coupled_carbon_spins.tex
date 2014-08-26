@@ -45,35 +45,38 @@ A $\pm{\mathrm{y}}$-gate is implemented by letting the phase evolve before imple
     \caption{\Cref{fig:gate_circuit_pm-x} The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_\mathrm{C}$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state. \Cref{fig:gate_circuit_carbon_phase} The conditional y-gate ($\pm\mathrm{y}$) is implemented by letting the phase evolve before performing a conditional x rotation ($\pm\mathrm{x}$) on the carbon.}
 \end{figure}
 
-% \subsubsection{A phase gate}
 \subsection{Initializing a carbon-spin}
 We can use the $\pm\mathrm{x}$-gate to initialize a carbon-spin in the $ \ket{X}$-state.
 For this we implement the gate-circuit as depicted in \cref{fig:gate_circuit_mbi_x-init}.
-After the electron is brought in the $\ket{X}$ the state can be described by the tensor product of two density matrices.
+After the electron is brought in the $\ket{X}$ the state can be described by the tensor product of two density matrices:
 \begin{equation}
     \rho_X \otimes \rho_m = \rho_X \otimes \rho_{X} +\rho_X \otimes \rho_{-X}
 \end{equation}
-Where the electron picks up a phase due to the $\pm{\mathrm{x}}$-gate depending on the nuclear spin-state.
+Where the electron picks up a phase due to the $\pm{\mathrm{x}}$-gate depending on the nuclear spin-state:
 \begin{equation}
-    \rho_X \otimes \rho_m = \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{X}
+     \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{X}
     \label{eq:density_after_Ren}
 \end{equation}
 
-The effect of the $\pm{\mathrm{x}}$-gate can be made explicit by treating the carbon-spin as being either in the $\ket{X}$ or $\ket{-X}$-state.
+The effect of the $\pm{\mathrm{x}}$-gate can be made more easily understood by treating the carbon-spin as being either in the $\ket{X}$ or $\ket{-X}$-state.
 \begin{align}
     \ket{X}\ket{X} \quad \vee  \quad\ket{X}\ket{-X}\\
     \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{-X} \\
-    \frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{e^{-\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
-    \ket{Y}\ket{X} \quad \vee \quad \ket{-Y}\ket{X}
+    \frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{e^{i\pi/4}\ket{0}+e^{-i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
+    \ket{Y}\ket{X} \quad \vee \quad \ket{-Y}\ket{-X}
 \end{align}
+The final x-pulse is used to read out the electron.
+\begin{equation}
+    \rho_0 \otimes \rho_{\mathrm{X}} + \rho_1 \otimes \rho_{\mathrm{-X}}
+\end{equation}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[t]{0.49\textwidth}
     \mbox{
         \Qcircuit @C=1em @R=.7em {
-        \lstick{\ket{0}_e}                        & \gate{\mathrm{y}}  & \ctrl{1}       & \gate{x} &\qw          &  \meter &\qw\\
-        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw    & \qw   & \qw       &\qw&}}
+        \lstick{\ket{0}_e}                        & \gate{\mathrm{y}}  & \ctrl{1}       & \gate{\mathrm{x}} &\qw          &  \meter \\
+        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw    & \qw   & \qw}}
     \caption{MBI-based initialization into $\pm \ket{\mathrm{X}}$.}
     \label{fig:gate_circuit_mbi_x-init}
     \end{subfigure}
@@ -81,8 +84,8 @@ The effect of the $\pm{\mathrm{x}}$-gate can be made explicit by treating the ca
         \centering
         \mbox{
         \Qcircuit @C=1em @R=.7em {
-            \lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} & \gate{x} &\ctrl{1} &  \meter &\qw\\
-            \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}     & \qw    & \gate{\pm \mathrm{y}}    & \qw       &\qw&}}
+            \lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} & \gate{\mathrm{x}} &\ctrl{1} &  \meter \\
+            \lstick{\rho_\mathrm{m}}& \qw&  \gate{\pm \mathrm{x}}     & \qw    & \gate{\mp \mathrm{y}}    & \qw}}
         \caption{MBI-swap initialization.}
         \label{fig:gate_circuit_mbi_swap-init}
     \end{subfigure}
@@ -91,8 +94,9 @@ The effect of the $\pm{\mathrm{x}}$-gate can be made explicit by treating the ca
     \label{fig:gate_circuit_initialization}
 \end{figure}
 
-The sequence can also be extended to swap type initialization by implementing an additional $\pm{\mathrm{y}}$-gate.
-The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron. By applying a readout the electron can be reinitialized.
+The sequence can be extended to swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate\footnore{! In the circuits we use a Y-gate, need to check if I made a mistake here.}.
+The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron.
+By applying a readout the electron can be reinitialized.
 
 
 \subsection{Carbon Ramsey experiment }
