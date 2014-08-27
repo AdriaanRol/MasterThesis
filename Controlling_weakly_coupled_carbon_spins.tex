@@ -37,13 +37,14 @@ An unconditional gate can be implemented by placing the electron in an eigenstat
 \end{figure}
 
 \subsection{Initializing a carbon-spin}
-We can use the $\pm\mathrm{x}$-gate to initialize a carbon-spin in the $ \ket{X}$-state.
-For this we implement the gate-circuit as depicted in \cref{fig:gate_circuit_mbi_x-init}.
-After the electron is brought in the $\ket{X}$ the state can be described by the tensor product of two density matrices:
+The $\pm\mathrm{x}$-gate can be used to initialize a carbon-spin.
+To initialize a carbon-spin  in the $ \ket{X}$-state the gate-circuit as depicted in \cref{fig:gate_circuit_mbi_x-init} is implemented.
+
+After the electronic-spin is brought in the $\ket{X}$-state the two-qubit system can be described by the tensor product of two density matrices:
 \begin{equation}
     \rho_X \otimes \rho_m = \rho_X \otimes \rho_{X} +\rho_X \otimes \rho_{-X}
 \end{equation}
-Where the electron picks up a phase due to the $\pm{\mathrm{x}}$-gate depending on the nuclear spin-state:
+By applying the $\pm{\mathrm{x}}$-gate  the electronic-spin picks up a phase depending on the nuclear spin-state:
 \begin{equation}
      \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
     \label{eq:density_after_Ren}
@@ -85,13 +86,16 @@ The final x-pulse is used to read out the electron. By conditionalizing the expe
     \label{fig:gate_circuit_initialization}
 \end{figure}
 
-The sequence can be extended to swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate.
+The sequence can be extended to a swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate.
 The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron.
 By applying a readout the electron can be reinitialized.
 
 
 \subsection{Carbon Ramsey experiment }
-Some sentence giving motivation for why this is first experiment.
+By performing a Ramsey experiment we can determine the precession of the carbon-spin and its dephasing-time $T_2^*$.
+By determining the precession frequencies it is possible to track phase evolution and use that to implement operations with arbitrary phase.
+By measuring the precession frequency it is also possible to disprove our estimation for the hyperfine parameters.
+We require the dephasing time in order to determine if enough operations can be applied to implement quantum algorithms \footnote{Change this sentence}.
 
 In an ordinary Ramsey experiment a qubit is brought to the equator of the Bloch-sphere where it precesses for a time $\tau $ before it is read out along the x-direction.
 A carbon-Ramsey experiment is similar but slightly more complicated as the nuclear spin cannot be controlled and read-out directly.
@@ -168,15 +172,19 @@ Both the measured Larmor frequencies agree with the magnetic field of 304G withi
 
 For $\tilde{\omega}$ the following frequencies were measured: $\tilde \omega= 2\pi\cdot 364.41 \pm 0.23$kHz for carbon-1
 and $\tilde \omega = 2\pi\cdot 371.52 \pm 0.39 $kHz for carbon-4.
-Based on the estimated hyperfine parameters of \cref{tbl:HF_par} we expect $\tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2}  \approx 364.7\mathrm{kHz}$ for carbon-1 and $\tilde \omega \approx 371.4 \mathrm{kHz}$ for carbon-4.
+These frequencies can be used to disprove the estimations for the hyperfine parameters of \cref{tbl:HF_par}, however if the measured values agree with the hyperfine estimation we cannot conclude that they are correct.
+
+Based on the estimated hyperfine parameters we expect $\tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2}  \approx 364.7\mathrm{kHz}$ for carbon-1 and $\tilde \omega \approx 371.4 \mathrm{kHz}$ for carbon-4.
 Both these values are in good agreement with experiment indicating that our hyperfine estimation is reasonably accurate. \footnote{Need a better sentence for this. }
 
 \subsubsection{Measuring $T_{2,\mathrm{C}}^* $}
 % Lange carbon ramseys van Hans sil01 140506 #53 en 56 +T2* analyse.
+% hoeveel pulses voor de lange tau? belangrijk voor T2*
 In order to know how many operations we can perform on a qubit we must know how long the signal stays coherent under normal operation.
 In the case of controlling weakly carbons that is while decoupling the electron.
-We again perform the uninitialized carbon-Ramsey experiment with the small change that we now decouple the electronic-spin during the free-evolution time.
 
+An uninitialized carbon-Ramsey experiment is performed with the small change that the electronic-spin is decoupled during the free-evolution time.
+By undersampling with a frequency slightly offset from the precession frequency ($\omega_{\mathrm{DD}} = (\omega_L +\tilde{\omega} )/2$) a decaying cosine can be observed where the 1/e time of the envelope is equal to $T_2^*$.
 
 
 \begin{figure}[htbp]
@@ -190,9 +198,12 @@ We again perform the uninitialized carbon-Ramsey experiment with the small chang
         \caption{$T_2^*$-measurement for carbon 4.   }
         \label{fig:T2star_carbon4}
     \end{subfigure}
-    \caption{Initialized carbon-Ramsey experiment to determine $T_2^*$ for nuclei. }
+    \caption{Carbon-Ramsey experiment to determine $T_2^*$ for nuclei while decoupling the electron. The decays are fitted with a generalized normal distribution to determine $T_2^*$ and the exponent $n$. For carbon-1, $T_{2,\mathrm{C}}^* =9.85 \pm   0.39 \mathrm{ms}$ and $n= 1.83 \pm 0.19$. For carbon-4,  $T_{2,\mathrm{C}}^* =6.68 \pm   0.22 \mathrm{ms}$ and $n= 2.31 \pm 0.31$. }
+    % NOTE: Would like to add that it is not limited by electron coherence.
     \label{fig:T2star_carbon}
 \end{figure}
+
+
 
 Expected power N for ramsey type experiment
 Expected T2 range ~ ms
@@ -202,6 +213,7 @@ Why electron decoherence is of no concern while determining T2* carbon?
 
 
 \subsubsection{Single carbon tomography (ramsey met phase langs as en z init) }
+
 
 
 \subsection{Controlling a single carbon}

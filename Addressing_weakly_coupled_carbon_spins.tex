@@ -78,11 +78,16 @@ The FWHM of the dark ESR is given by \cref{eq:FWHM}.
 \end{equation}
 
 We define a spin to be strongly coupled when it is possible to readily resolve its transition.
-For a carbon-spin that is when twice the interaction strength $A$ [NOTE: $|A|$? A par? shift due to A? ] is larger than the FWHM of the transition:
-\begin{equation}
-     2\pi \cdot A> 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}
+
+An estimation of when spins can be resolved can be made by looking at the strength of the hyperfine interaction.
+The splitting caused by a carbon spin is equal to twice the total interaction strength $A$ at low magnetic field ($\gamma_e B \ll A$). In the limit of high magnetic field ($\gamma_e B \gg A$) only the parallel component of the interaction $A_\parallel$ contributes to the splitting.
+We can readily resolve a transition when the shift due to the corresponding interaction is larger than the FWHM of the transition.
+
+\begin{align}
+     2\pi \cdot |\bm{A}|\gg 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*} , \quad \mathrm{for } \quad \gamma_e B \ll A  \\
+     2\pi \cdot A_\parallel \gg 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}, \quad \mathrm{for } \quad \gamma_e B \gg A
      \label{eq:def_strongly_coupled}
- \end{equation}
+ \end{align}
 
 NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$\footnote{At a natural concentration of $1.1 \%$ carbon-13.} that depends on the exact configuration of the spin-environment.
 On the sample used for the experiments $T_{2,e}^* = 4.54 \pm 14 \mu\mathrm{s}$ was measured, see \cref{fig:electron_T2*}.
@@ -366,6 +371,7 @@ The parameters of the 4 strongest coupled carbons are listed in \cref{tbl:HF_par
 All estimated hyperfine parameters and a link to the full fingerprint measurements can be found in \cref{chap:Fingerprint_data_appendix}.
 
 \begin{table}[htbp]
+\centering
     \begin{tabular}{cllll}
     Carbon & \quad \quad  $A_{\parallel} $ & \quad \quad $A_{\perp}$ \\ \hline
     1         & $2 \pi \cdot${ }30.0 kHz             & $2 \pi \cdot${ }80.0 kHz                \\
