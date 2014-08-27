@@ -49,12 +49,12 @@ Where the electron picks up a phase due to the $\pm{\mathrm{x}}$-gate depending 
     \label{eq:density_after_Ren}
 \end{equation}
 
-The effect of the $\pm{\mathrm{x}}$-gate can be made more easily understood by treating the carbon-spin as being either in the $\ket{X}$ or $\ket{-X}$-state.
+The effect of the $\pm{\mathrm{x}}$-gate can be made more easily understood by treating the carbon-spin as being either in the $\ket{X}$ or $\ket{-X}$-state. Treating both as separate cases below.
 \begin{align}
-    \ket{X}\ket{X} \quad \vee  \quad\ket{X}\ket{-X}\\
-    \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{-X} \\
-    \frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} \quad \vee \quad \frac{e^{i\pi/4}\ket{0}+e^{-i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
-    \ket{Y}\ket{X} \quad \vee \quad \ket{-Y}\ket{-X}
+    \quad &\ket{X}\ket{X} &\vee \quad &  \quad\ket{X}\ket{-X}\\
+    \quad &\frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{X} &\vee \quad & \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{-X} \\
+    \quad &\frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} &\vee \quad & \quad \frac{e^{i\pi/4}\ket{0}+e^{-i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
+    \quad &\ket{Y}\ket{X} &\vee \quad & \quad \ket{-Y}\ket{-X}
 \end{align}
 The final x-pulse is used to read out the electron. By conditionalizing the experiment on getting the outcome $\ket{0}_e$ the carbon is initialized in the $\ket{X}_C$-state.
 \begin{equation}
@@ -178,16 +178,19 @@ Both these values are in good agreement with experiment indicating that our hype
     \begin{subfigure}[t]{0.49\textwidth}\centering
     \includegraphics{Img/Carbon1_T2star.pdf}
     \caption{$T_2^*$-measurement for carbon 1.}
-    \label{fig:CR_C1}
+    \label{fig:T2star_carbon1}
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \includegraphics{Img/Carbon4_T2star.pdf}
         \caption{$T_2^*$-measurement for carbon 4.   }
-        \label{fig:CR_C4}
+        \label{fig:T2star_carbon4}
     \end{subfigure}
     \caption{Initialized carbon-Ramsey experiment to determine $T_2^*$ for nuclei. }
-    \label{fig:Uninitialized_carbon_ramsey}
+    \label{fig:T2star_carbon}
 \end{figure}
+
+Expected power N for ramsey type experiment
+Expected T2 range ~ ms
 
 
 \subsubsection{Single carbon tomography (ramsey met phase langs as en z init) }
