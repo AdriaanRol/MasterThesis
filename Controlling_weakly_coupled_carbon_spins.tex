@@ -103,7 +103,7 @@ An uninitialized and an initialized version are depicted in \cref{fig:gate_circu
 
 In the initialized version of the carbon-Ramsey experiment the system is first initialized in the $\ket{0}_e\ket{X}_\mathrm{C}$-state.
 The carbon is let to precess for a time $\tau$ before the $\ket{X}_\mathrm{C}$-state is read out.
-During the free evolution the carbon rotates with a frequency of $\omega_L$ because the electron is in $\ket{0}_e$ and there is no coupling between them.
+During the free evolution the carbon rotates with a frequency of $\omega_L$ because the electron is in $\ket{0}_e$ and there is no coupling.
 
 \begin{figure}[htbp]
 \begin{subfigure}[t]{\textwidth}
@@ -131,16 +131,16 @@ During the free evolution the carbon rotates with a frequency of $\omega_L$ beca
     \label{fig:gate_circuit_nuclear_ramsey}
 \end{figure}
 
-\subsubsection{The uninitialized carbon-Ramsey}
+\subsubsection{Determining the precession frequency}
 
-A conceptually much more interesting variety is the uninitialized carbon-Ramsey experiment depicted in \cref{fig:gate_circuit_nuclear_ramsey_no_init}.
+A conceptually more interesting variety is the uninitialized carbon-Ramsey experiment depicted in \cref{fig:gate_circuit_nuclear_ramsey_no_init}.
 In the uninitialized version the system is described by \cref{eq:density_after_Ren} before the free evolution starts.
 Because the electron is in a superposition of $\ket{0}$ and $\ket{1}$ the carbon-spin while evolve with two frequencies; $\omega_L$ for $\ket{0}_e$ and $\tilde{\omega} = \bm{|\omega_L + A |} $ for $\ket{1}_e$.
 
-Similar to how the last part of the initialized carbon-Ramsey circuit reads out along the X-direction the last part of the uninitialized carbon-Ramsey reads out along the X-direction for the $\ket{Y}_e$ and along the -X-direction for the $\ket{-Y}_e$.
-If the carbon has picked up no phase the the electron will point towards $\ket{1}$ in the readout.
+Similar to how the last part of the initialized carbon-Ramsey circuit reads out along the X-direction the last part of the uninitialized carbon-Ramsey reads out along the X-direction for the $\ket{Y}_e$ and along the $-$X-direction for the $\ket{-Y}_e$.
 The phase picked up while show up as an oscillation between the $\ket{0}$ and $\ket{1}$ in the readout.
-Because the uninitialized carbon-Ramsey evolves with two frequencies we expect the measured oscillation to be the sum of two cosines as described by \cref{eq:carbon_ramsey_expected}.
+If the carbon has picked up no phase the the electron will point towards $\ket{1}$ in the readout.
+Because the uninitialized carbon-Ramsey evolves with two frequencies we expect the measured oscillation to be the sum of two cosines as described by \cref{eq:carbon_ramsey_expected}. Where $ \tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2} $
 \begin{equation}
     \tfrac{1}{4} \cos(\omega_L \tau ) +\tfrac{1}{4}  \cos (\tilde{\omega} \tau ) + \tfrac{1}{2}
     \label{eq:carbon_ramsey_expected}
@@ -157,7 +157,7 @@ Because the uninitialized carbon-Ramsey evolves with two frequencies we expect t
         \caption{Uninitialized carbon-Ramsey of carbon-4.}
         \label{fig:CR_C4}
     \end{subfigure}
-    \caption{The uninitialized carbon-Ramsey experiment shows an oscillation that is the sum of two cosines due to the phase picked up during free evolution.}
+    \caption{The uninitialized carbon-Ramsey experiment shows an oscillation that is the sum of two cosines due to the phase picked up during free evolution. The measured frequencies were, for carbon-1: $\omega_{L,C1} = 2\pi\cdot 325.81 \pm 0.25$ and  $\tilde \omega_{\mathrm{C1}}= 2\pi\cdot 364.41 \pm 0.23$, and for carbon-4: $\omega_{L,C4} =  2\pi\cdot 325.94 \pm 0.40$ and $\tilde \omega_{\mathrm{C4}} = 2\pi\cdot 371.52 \pm 0.39 $.}
     \label{fig:Uninitialized_carbon_ramsey}
 \end{figure}
 
@@ -167,15 +167,15 @@ The data was fitted to a sum of two cosines in order to determine the frequencie
 %     \left(A \cos(2\pi f_a \tau +\phi_a) + B \cos (2\pi f_b \tau +\phi_b)\right)/2 + a_0
 %     \label{eq:carbon_ramsey_fitfunc}
 % \end{equation}
-The Larmor frequencies are $\omega_L = 2\pi\cdot 325.81 \pm 0.25$kHz  for carbon-1 and  $\omega_L =  2\pi\cdot 325.94 \pm 0.40$kHz for carbon-4.
+The Larmor frequencies are $\omega_{L,C1} = 2\pi\cdot 325.81 \pm 0.25$kHz  for carbon-1 and  $\omega_{L,C4} =  2\pi\cdot 325.94 \pm 0.40$kHz for carbon-4.
 Both the measured Larmor frequencies agree with the magnetic field of 304G within two standard deviations.
 
-For $\tilde{\omega}$ the following frequencies were measured: $\tilde \omega= 2\pi\cdot 364.41 \pm 0.23$kHz for carbon-1
-and $\tilde \omega = 2\pi\cdot 371.52 \pm 0.39 $kHz for carbon-4.
-These frequencies can be used to disprove the estimations for the hyperfine parameters of \cref{tbl:HF_par}, however if the measured values agree with the hyperfine estimation we cannot conclude that they are correct.
+The $\tilde{\omega}$ frequency can be used to disprove the estimations for the hyperfine parameters of \cref{tbl:HF_par}, however if the measured values agree with the hyperfine estimation we cannot conclude that the estimations are correct.
 
-Based on the estimated hyperfine parameters we expect $\tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2}  \approx 364.7\mathrm{kHz}$ for carbon-1 and $\tilde \omega \approx 371.4 \mathrm{kHz}$ for carbon-4.
-Both these values are in good agreement with experiment indicating that our hyperfine estimation is reasonably accurate. \footnote{Need a better sentence for this. }
+For $\tilde{\omega}$ the following frequencies were measured: $\tilde \omega_{\mathrm{C1}}= 2\pi\cdot 364.41 \pm 0.23$kHz for carbon-1
+and $\tilde \omega_{\mathrm{C4}} = 2\pi\cdot 371.52 \pm 0.39 $kHz for carbon-4.
+Based on the estimated hyperfine parameters we expect $\tilde\omega_{\mathrm{C1}} \approx 364.7\mathrm{kHz}$ for carbon-1 and $\tilde \omega_{\mathrm{C4}} \approx 371.4 \mathrm{kHz}$ for carbon-4.
+Both these values are in good agreement with experiment, a good indication that our hyperfine estimation is accurate.
 
 \subsubsection{Measuring $T_{2,\mathrm{C}}^* $}
 % Lange carbon ramseys van Hans sil01 140506 #53 en 56 +T2* analyse.
@@ -198,7 +198,7 @@ By undersampling with a frequency slightly offset from the precession frequency 
         \caption{$T_2^*$-measurement for carbon 4.   }
         \label{fig:T2star_carbon4}
     \end{subfigure}
-    \caption{Carbon-Ramsey experiment to determine $T_2^*$ for nuclei while decoupling the electron. The decays are fitted with a generalized normal distribution to determine $T_2^*$ and the exponent $n$. For carbon-1, $T_{2,\mathrm{C}}^* =9.85 \pm   0.39 \mathrm{ms}$ and $n= 1.83 \pm 0.19$. For carbon-4,  $T_{2,\mathrm{C}}^* =6.68 \pm   0.22 \mathrm{ms}$ and $n= 2.31 \pm 0.31$. }
+    \caption{Carbon-Ramsey experiment to determine $T_2^*$ for nuclei while decoupling the electron. The decays are fitted with a generalized normal distribution to determine $T_2^*$ and the exponent $n$. For carbon-1, $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ and $n= 1.83 \pm 0.19$. For carbon-4,  $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ and $n= 2.31 \pm 0.31$. }
     % NOTE: Would like to add that it is not limited by electron coherence.
     \label{fig:T2star_carbon}
 \end{figure}
