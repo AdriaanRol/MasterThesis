@@ -47,10 +47,18 @@ The time before a transition shifts out of resonance, or a signal decoheres, is 
 
 \begin{figure}[htbp]
     \centering
+    \begin{subfigure}[t]{0.49\textwidth}\centering
     \includegraphics{Img/Ramsey_Gijs.pdf}
-    \caption{In a Ramsey experiment a qubit in initialized along the z-axis before being subjected to a $\pi/2$-pulse that moves it into the xy plane of the Bloch-sphere. It freely evolves for a time $\tau$ before being subjected to a final $\pi/2$ pulse and read out along the z-direction.
-The final pulse will rotate the spin towards the poles depending on the phase picked up during free evolution. This manifests itself as an oscillation. This oscillation will slowly decay because the final pulse will be more out of resonance with the transition the longer the free evolution time. Figure from \citep{Lange2012Quantum}.}
+    \caption{Schematic representation of Ramsey experiment. Figure from \citep{Lange2012Quantum}}
     \label{fig:Ramsey_gijs}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \includegraphics{Img/electron_T2star.pdf}
+    \caption{$T_2^*$ decay of the electronic-spin.}
+    \label{fig:electron_T2*}
+    \end{subfigure}
+        \caption{In a Ramsey experiment a qubit in initialized along the z-axis before being subjected to a $\pi/2$-pulse that moves it into the xy plane of the Bloch-sphere. It freely evolves for a time $\tau$ before being subjected to a final $\pi/2$ pulse and read out along the z-direction.
+The final pulse will rotate the spin towards the poles depending on the phase picked up during free evolution. This manifests itself as an oscillation. This oscillation will slowly decay because the final pulse will be more out of resonance with the transition the longer the free evolution time. A $T_{2,e}^*$ of $4.54 \pm 0.14 \mu\mathrm{s}$ was measured for the electronic spin. The decay follows a Gaussian profile within uncertainty $n = 1.81 \pm 0.14$. }
 \end{figure}
 
 The decay of the amplitude $K$ in an electron Ramsey experiment is given by \cref{eq:Ramsey_decay}.
@@ -76,8 +84,10 @@ For a carbon-spin that is when twice the interaction strength $A$ [NOTE: $|A|$? 
      \label{eq:def_strongly_coupled}
  \end{equation}
 
-NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$\footnote{At a natural concentration of $1.1 \%$ carbon-13.} that depends on the exact configuration of the spin-environment. Increasing the carbon-13 concentration generally reduces $T_{2e}^*$.
-For a typical NV-center this means that the coupling between the carbon and the NV-center must be larger than $2\pi\cdot$130kHz for the carbon to be directly addressable.
+NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$\footnote{At a natural concentration of $1.1 \%$ carbon-13.} that depends on the exact configuration of the spin-environment.
+On the sample used for the experiments $T_{2,e}^* = 4.54 \pm 14 \mu\mathrm{s}$ was measured, see \cref{fig:electron_T2*}.
+Increasing the carbon-13 concentration generally reduces $T_{2e}^*$.
+For a typical NV-center this means that the coupling between the carbon and the NV-center must be larger than $2\pi\cdot$130kHz for the carbon to be directly addressable for a typical NV-center and larger than $2\pi\cdot$ 58kHz for our sample.
 
 
 \subsection{The Hyperfine Interaction}
