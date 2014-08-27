@@ -36,6 +36,23 @@ An unconditional gate can be implemented by placing the electron in an eigenstat
     \label{fig:gate_circuit_pm-x}
 \end{figure}
 
+Basic gates can be calibrated by sweeping the number of pulses $N$ when on resonance $\tau$.
+In this manner carbon-1 and carbon-4 were found to perform the best $\pm\mathrm{x}$-gates.
+The parameters used to implement $\pm\mathrm{x}$-gates are listed in \cref{tbl:gate_parameters}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccc}
+    Carbon &  $ N $ &  $\tau$ & total gate time\\ \hline
+    1 &  18 & { }9.420 $\mu$s & 339 $\mu$s \\
+    2 & 26 & { }6.620 $\mu$s & 344 $\mu$s \\
+    3 & 14 & 18.564 $\mu$s & 520 $\mu$s \\
+    4 &  40 & { }6.456 $\mu$s & 516 $\mu$s
+    \end{tabular}
+    \caption{Parameters used to implement $\pm\mathrm{x}$-gates.}
+    \label{tbl:gate_parameters}
+\end{table}
+
 \subsection{Initializing a carbon-spin}
 The $\pm\mathrm{x}$-gate can be used to initialize a carbon-spin.
 To initialize a carbon-spin  in the $ \ket{X}$-state the gate-circuit as depicted in \cref{fig:gate_circuit_mbi_x-init} is implemented.
@@ -140,7 +157,7 @@ Because the electron is in a superposition of $\ket{0}$ and $\ket{1}$ the carbon
 Similar to how the last part of the initialized carbon-Ramsey circuit reads out along the X-direction the last part of the uninitialized carbon-Ramsey reads out along the X-direction for the $\ket{Y}_e$ and along the $-$X-direction for the $\ket{-Y}_e$.
 The phase picked up while show up as an oscillation between the $\ket{0}$ and $\ket{1}$ in the readout.
 If the carbon has picked up no phase the the electron will point towards $\ket{1}$ in the readout.
-Because the uninitialized carbon-Ramsey evolves with two frequencies we expect the measured oscillation to be the sum of two cosines as described by \cref{eq:carbon_ramsey_expected}. Where $ \tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2} $
+Because the uninitialized carbon-Ramsey evolves with two frequencies we expect the measured oscillation to be the sum of two cosines as described by \cref{eq:carbon_ramsey_expected}. Where $ \tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2} $.
 \begin{equation}
     \tfrac{1}{4} \cos(\omega_L \tau ) +\tfrac{1}{4}  \cos (\tilde{\omega} \tau ) + \tfrac{1}{2}
     \label{eq:carbon_ramsey_expected}
@@ -163,10 +180,6 @@ Because the uninitialized carbon-Ramsey evolves with two frequencies we expect t
 
 \Cref{fig:Uninitialized_carbon_ramsey} shows the results for an uninitialized carbon-Ramsey experiment.
 The data was fitted to a sum of two cosines in order to determine the frequencies.
-% \begin{equation}
-%     \left(A \cos(2\pi f_a \tau +\phi_a) + B \cos (2\pi f_b \tau +\phi_b)\right)/2 + a_0
-%     \label{eq:carbon_ramsey_fitfunc}
-% \end{equation}
 The Larmor frequencies are $\omega_{L,C1} = 2\pi\cdot 325.81 \pm 0.25$kHz  for carbon-1 and  $\omega_{L,C4} =  2\pi\cdot 325.94 \pm 0.40$kHz for carbon-4.
 Both the measured Larmor frequencies agree with the magnetic field of 304G within two standard deviations.
 
@@ -181,61 +194,51 @@ Both these values are in good agreement with experiment, a good indication that 
 % Lange carbon ramseys van Hans sil01 140506 #53 en 56 +T2* analyse.
 % hoeveel pulses voor de lange tau? belangrijk voor T2*
 In order to know how many operations we can perform on a qubit we must know how long the signal stays coherent under normal operation.
-In the case of controlling weakly carbons that is while decoupling the electron.
+In the case of controlling weakly carbons this is while decoupling the electron.
 
-An uninitialized carbon-Ramsey experiment is performed with the small change that the electronic-spin is decoupled during the free-evolution time.
-By undersampling with a frequency slightly offset from the precession frequency ($\omega_{\mathrm{DD}} = (\omega_L +\tilde{\omega} )/2$) a decaying cosine can be observed where the 1/e time of the envelope is equal to $T_2^*$.
-
+In order to determine carbon dephasing while decoupling the electron an uninitialized carbon-Ramsey was performed where the electron is decoupled during the free evolution time.
+Because the electron is constantly flipped the carbon will precess with an average frequency of $\omega_{\mathrm{DD}} = (\omega_L +\tilde{\omega} )/2$.
+By undersampling with a frequency slightly detuned from the precession frequency ($\omega_{\mathrm{DD}}$) a decaying cosine can be observed where the 1/e time of the envelope is equal to $T_2^*$.
 
 \begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}\centering
-    \includegraphics{Img/Carbon1_T2star.pdf}
-    \caption{$T_2^*$-measurement for carbon 1.}
-    \label{fig:T2star_carbon1}
+        \includegraphics{Img/Carbon1_T2star.pdf}
+        \caption{$T_2^*$-measurement for carbon 1.}
+        \label{fig:T2star_carbon1}
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \includegraphics{Img/Carbon4_T2star.pdf}
         \caption{$T_2^*$-measurement for carbon 4.   }
         \label{fig:T2star_carbon4}
     \end{subfigure}
-    \caption{Carbon-Ramsey experiment to determine $T_2^*$ for nuclei while decoupling the electron. The decays are fitted with a generalized normal distribution to determine $T_2^*$ and the exponent $n$. For carbon-1, $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ and $n= 1.83 \pm 0.19$. For carbon-4,  $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ and $n= 2.31 \pm 0.31$. }
-    % NOTE: Would like to add that it is not limited by electron coherence.
+    \caption{Carbon-Ramsey experiment to determine $T_2^*$ for nuclei while decoupling the electron.
+    The decays are fitted with a generalized normal distribution to determine $T_2^*$ and the exponent $n$.
+    For carbon-1, $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ and $n= 1.83 \pm 0.19$.
+    For carbon-4,  $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ and $n= 2.31 \pm 0.31$. } %would like to add that not limited by electron coherence due to DD.
     \label{fig:T2star_carbon}
 \end{figure}
 
+The decay for both carbons follows a Gaussian profile within uncertainty.
+The coherence times measured were $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ for carbon-1 and $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ for carbon-4.
+% Want to explain here how frequency is determined down to Hz accuracy.
+\subsection{Initialization and readout of arbitrary states.}
+Some text that will explain the following.
+Figure of gate circuit that shows how to read out along arbitrary axes. Analogue of inverting the Init sequence. Change phase to RO either X or Y. Add swap to RO-z.
 
+Explain that the contrast is lower and explain what can cause a lower contrast Rabi.
+Correspondence to lifted z-RO?
 
-Expected power N for ramsey type experiment
-Expected T2 range ~ ms
-
-Coherence time during operations/while addressing other gates.
-Why electron decoherence is of no concern while determining T2* carbon?
-
-
-\subsubsection{Single carbon tomography (ramsey met phase langs as en z init) }
-
-
-
-\subsection{Controlling a single carbon}
-
-\subsubsection{Theory, initialization and readout}
-
-\subsubsection{Single qubit tomography and T2*}
-
-\section{Controlling multiple-carbons}
-\subsection{The parity measurement}
-\subsection{MBE}
 
 \begin{figure}[htbp]
     \centering
-\mbox{
-\Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{y}  &  \meter &\qw\\
-\lstick{\ket{0}_{C1}} & \qw&  \gate{\pm \mathrm{x}}  &\qw  & \qw       &\qw&\qw& \\
-\lstick{\ket{0}_{C2}}& \qw& \qw  & \gate{\pm \mathrm{x}}    & \qw      &\qw&\qw&}}
-    \caption{XX-parity-measurement}
-    \label{fig:gate_circuit_XX-parity-measurement}
+    \includegraphics{Img/RO_and_init_C1.pdf}
+    \caption{Demonstration of carbon control. Figure shows carbon-1 }
+    \label{fig:control_demo}
 \end{figure}
+
+\section{Controlling multiple-carbons}
+\subsection{The parity measurement}
+Initialization by conditionalizing on parity measurement and Readout parities.
 
 \begin{figure}[htbp]
     \centering
@@ -248,27 +251,21 @@ Why electron decoherence is of no concern while determining T2* carbon?
     \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 
+\subsection{Entanglement}
+
+% \begin{figure}[htbp]
+%     \centering
+% \mbox{
+% \Qcircuit @C=1em @R=.7em {
+% \lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{y}  &  \meter &\qw\\
+% \lstick{\ket{0}_{C1}} & \qw&  \gate{\pm \mathrm{x}}  &\qw  & \qw       &\qw&\qw& \\
+% \lstick{\ket{0}_{C2}}& \qw& \qw  & \gate{\pm \mathrm{x}}    & \qw      &\qw&\qw&}}
+%     \caption{XX-parity-measurement}
+%     \label{fig:gate_circuit_XX-parity-measurement}
+% \end{figure}
 
 
 
-
-
-\section{Controlling weakly coupled carbons trough the electronic spin}
-% Section containing theory (Gate circuits) on how to initialize and readout carbons
-
-Explain how carbon control works in theory.
-Explain how a conditional and unconditional gate can be performed.
-Explain initialization on gate level, refer to appendix for calculations.
-Explain Readout.
-
-\subsection{Initialized Carbon Ramsey}
-
-
-\section{Carbon Initialization \& Readout}
-% TODO_MAR: Discuss naming of sec: Carbon Init&RO and Carbon Tomo
-%  Section containing experimental results (Tomographies)
 %  Should emphasize difficulty in seperating initialization and RO fidelity, what is not working? Is it working?
-Show results that demonstrate carbon control.
-
 
 
