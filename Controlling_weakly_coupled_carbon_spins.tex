@@ -82,6 +82,7 @@ The final x-pulse is used to read out the electron. By conditionalizing the expe
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[t]{0.49\textwidth}
+    \centering
     \mbox{
         \Qcircuit @C=1em @R=.7em {
         \lstick{\ket{0}_e}                        & \gate{\mathrm{y}}  & \ctrl{1}       & \gate{\mathrm{x}} &\qw          &  \meter \\
@@ -239,7 +240,7 @@ Correspondence to lifted z-RO?
 \section{Controlling multiple-carbons}
 \subsection{The parity measurement}
 Initialization by conditionalizing on parity measurement and Readout parities.
-
+Measurement projects into parity or no parity.
 \begin{figure}[htbp]
     \centering
 \mbox{
@@ -251,8 +252,37 @@ Initialization by conditionalizing on parity measurement and Readout parities.
     \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 
+
+
+
 \subsection{Entanglement}
 
+\subsubsection{Tomography result}
+
+\begin{figure}[htbp]
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \includegraphics{Img/ZZ-init.pdf}
+        \caption{Tomography of initialization into $\ket{0}\ket{0}$}
+        \label{fig:ZZ-init }
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \includegraphics{Img/XX-parity.pdf}
+        \caption{Tomography of state prepared into XX-parity}
+        \label{fig:T2star_carbon4}
+    \end{subfigure}
+    \caption{Somecaption}
+    \label{fig:2qubitTomos}
+\end{figure}
+
+% What bars to include?
+% Experiment that initializes both carbons + bar graph? -> to explain how to read + to explain
+
+
+\subsubsection{What do we expect for the bars}
+\subsubsection{How high should the bars be}
+% 20140810 122740 Z Z init
+%  20140810 132412  YYparity
+%
 % \begin{figure}[htbp]
 %     \centering
 % \mbox{
