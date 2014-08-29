@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Thesis_MA_Rol.aux
 The style file: plainnat.bst
 Database file #1: Remote.bib
-Warning--empty journal in Doherty2013NitrogenVacancy
 You've used 20 entries,
             2773 wiz_defined-function locations,
-            758 strings with 9787 characters,
-and the built_in function-call counts, 10298 in all, are:
+            762 strings with 9878 characters,
+and the built_in function-call counts, 10283 in all, are:
 = -- 917
 > -- 694
-< -- 11
+< -- 10
 + -- 237
 - -- 216
-* -- 937
-:= -- 1668
-add.period$ -- 90
+* -- 945
+:= -- 1672
+add.period$ -- 91
 call.type$ -- 20
 change.case$ -- 127
 chr.to.int$ -- 19
-cite$ -- 41
-duplicate$ -- 414
-empty$ -- 721
+cite$ -- 40
+duplicate$ -- 407
+empty$ -- 722
 format.name$ -- 240
-if$ -- 2112
+if$ -- 2104
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 17
-newline$ -- 137
+newline$ -- 138
 num.names$ -- 80
-pop$ -- 212
+pop$ -- 206
 preamble$ -- 1
 purify$ -- 112
 quote$ -- 0
-skip$ -- 316
+skip$ -- 308
 stack$ -- 0
-substring$ -- 287
-swap$ -- 51
-text.length$ -- 2
+substring$ -- 293
+swap$ -- 45
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 215
-warning$ -- 1
+warning$ -- 0
 while$ -- 76
 width$ -- 0
-write$ -- 324
-(There was 1 warning)
+write$ -- 327
