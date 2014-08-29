@@ -39,10 +39,13 @@ Because the states of these spins fluctuate the transitions of the NV-center are
 We call these very-weakly-coupled spins the spin-bath.
 
 If the coupling between a spin and the NV-center is strong enough it is possible to resolve and address its transitions.
-Transitions between energy levels can be resolved if the difference between them is larger than the width of transition.
+Transitions between energy levels can be resolved if the difference between them is larger than the width of the transition.
 
-
-The width of the transitions is related to the rate at which the transitions shift out of resonance.
+How narrow a transition is is related to how accurately it can be addressed.
+The largest variations in the spin-bath, that determine the position of the transition, occur between experiments.
+!
+Need to add some sentences here about why T2 star is measurement for this
+!
 The time before a transition shifts out of resonance, or a signal decoheres, is usually expressed by $T_2^*$ and is measured by a Ramsey experiment, see \cref{fig:Ramsey_gijs}.
 
 \begin{figure}[htbp]
@@ -58,22 +61,23 @@ The time before a transition shifts out of resonance, or a signal decoheres, is 
         \label{fig:electron_T2*}
     \end{subfigure}
         \caption{
-        Figure from \citep{Lange2012Quantum}.
-        In a Ramsey experiment a qubit in initialized along the z-axis before being subjected to a $\pi/2$-pulse that moves it into the XY-plane of the Bloch-sphere. It freely evolves for a time $\tau$ before being subjected to a final $\pi/2$ pulse and read out along the z-direction.
+        \Cref{fig:Ramsey_gijs}, schematic representation of a Ramsey experiment. Figure from \citet{Lange2012Quantum}.
+        In a Ramsey experiment a qubit is initialized along the z-axis before being subjected to a $\pi/2$-pulse that moves it into the XY-plane of the Bloch-sphere.
+        It freely evolves for a time $\tau$ before being subjected to a final $\pi/2$ pulse and read out along the z-direction.
         By applying a detuning to the rotating frame the spin will pick up a phase $\phi = \omega_d \tau$ during free evolution.
         The final pulse will rotate the spin towards the poles depending on the phase picked up during free evolution.
         This manifests itself as an oscillation.
         Because the configuration of the spin-bath is slightly different from experiment to experiment the frequency of the oscillation will vary from repetition to repetition.
-        This oscillation will slowly decay because the final pulse will be more out of resonance with the transition the longer the free evolution time.
+        \Cref{fig:electron_T2*} shows a Ramsey experiment for the electronic spin.
         A $T_{2,e}^*$ of $4.54 \pm 0.14 \mu\mathrm{s}$ was measured for the electronic spin. The decay follows a Gaussian profile within uncertainty $n = 1.81 \pm 0.14$. }
 \end{figure}
 
 The decay of the amplitude $K$ in an electron Ramsey experiment is given by \cref{eq:Ramsey_decay}.
 \begin{equation}
-    K(t) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
+    K(\tau) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
     \label{eq:Ramsey_decay}
 \end{equation}
-We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The dark Electron-Spin-Resonance (ESR)\footnote{See \cref{fig:HF_split_levels} for an example of a dark ESR.} frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
+We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The Electron-Spin-Resonance (ESR)\footnote{See \cref{fig:HF_split_levels} for an example of a dark ESR.} frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
 \begin{equation}
     \mathcal{F} \{ K(\tau) \} =  T_2^* \sqrt{\pi} e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
 \end{equation}
@@ -135,7 +139,7 @@ The contact term results from an overlap between the electronic- and nuclear- wa
         \draw[latex-latex, font=\small] (A) -- node[label =270: $A_\mathrm{N}$] {} (B);
         \draw[latex-latex, font=\small] (B) -- node[label =270: $A_\mathrm{N}$] {} (C);
     \end{tikzpicture}
-    \caption{dark Electron Spin Resonance (ESR) for uninitialized (top) and initialized nitrogen spin (bottom) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.}
+    \caption{ Electron Spin Resonance (ESR) for uninitialized (top) and initialized nitrogen spin (bottom) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.}
     \label{fig:HF_split_levels}
 \end{figure}
 
@@ -145,7 +149,7 @@ The strength of the coupling between the nitrogen and the electronic spin is $A_
 \Cref{fig:HF_split_levels} clearly shows the $m_s =0 \rightarrow m_s=+1$ transitions being split due to hyperfine-coupling to the nitrogen.
 This splitting can be used to control the nitrogen.
 By first initializing in the $m_s =+1$-state and then applying a slow pulse that turns only one of the three nitrogen spin-states back to $m_s=0$ and reading out the nitrogen-spin can be initialized. By only continuing on a positive outcome the spin is initialized in the state that was rotated back to $m_s =0$. We call this measurement-based-initialization (MBI).
-The lower panel of \cref{fig:HF_split_levels} shows a dark Electron-Spin-Resonance (ESR) after nitrogen-MBI.
+The lower panel of \cref{fig:HF_split_levels} shows a Electron-Spin-Resonance (ESR) after nitrogen-MBI.
 
 In a similar way strongly-coupled carbon-13 atoms can be controlled\citep{Robledo2011HighFidelity}.
 For most strongly-coupled carbons the contact term in the hyperfine is not negligible.

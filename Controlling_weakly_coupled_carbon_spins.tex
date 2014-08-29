@@ -1,6 +1,10 @@
 \chapter{Controlling Weakly-coupled Carbon Spins}
 [Note intro needs to be rewritten once chapter is done]\\
 Now that we have identified several promising carbon spins we will go into controlling them.
+
+In order to demonstrate entanglement we must be able to initialize the system, perform a parity measurement to create the entanglement and make a tomography to demonstrate it.
+This chapter will explain what operations need to be performed.
+
 This chapter attempts to explain first how we can control a carbon by explaining how the two different rotation axes from the last chapter can be used to implement a conditional +-X gate. A gate similar to a CNOT gate.
 Now that we understand how to implement a cnot gate we will use this to perform an experiment that we call a carbon ramsey on an unitialized state.
 AFterwards we will use this to show that we can initialize and readout by showing an initialized carbon ramsey. (1buit tomo (ramsey with more T +Z-RO?).
@@ -224,7 +228,10 @@ By undersampling with a frequency slightly detuned from the precession frequency
 The decay for both carbons follows a Gaussian profile within uncertainty.
 The coherence times measured were $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ for carbon-1 and $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ for carbon-4.
 % Want to explain here how frequency is determined down to Hz accuracy.
-\subsection{Initialization and readout of arbitrary states.}
+\subsection{Initialization and readout of arbitrary states}
+
+
+
 Some text that will explain the following.
 Figure of gate circuit that shows how to read out along arbitrary axes. Analogue of inverting the Init sequence. Change phase to RO either X or Y. Add swap to RO-z.
 
@@ -291,14 +298,11 @@ Measurement projects into parity or no parity.
     }
     \label{fig:2qubitTomos}
 \end{figure}
-
+If Fidelity is higher than
 
 % What bars to include?
 % Experiment that initializes both carbons + bar graph? -> to explain how to read + to explain
 
-
-\subsubsection{What do we expect for the bars}
-\subsubsection{How high should the bars be}
 % 20140810 122740 Z Z init
 %  20140810 132412  YYparity
 %
