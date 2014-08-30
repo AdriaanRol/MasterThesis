@@ -1,0 +1,148 @@
+\section{Characterizing weakly-coupled carbon spins}
+
+This section will explain how a weakly-coupled spin can be controlled using the conditional rotation of the carbon spin that occurs when on resonance (\cref{eq:res_dip_loc}).
+It will start by explaining how to do basic gate operations in the ideal case of being perfectly on resonant and not interacting with any nuclear spins.
+After that we will explain how a carbon-spin in a mixed state can be initialized
+
+\subsection{Basic operations}
+As was explained in \cref{sec:controllingacarbonthroughdynamicaldecoupling} nuclear spins perform a rotation along two anti-parallel axes when subjected to a dynamical decoupling sequence on a resonant condition given by \cref{eq:res_dip_loc}.
+The angle of rotation can be controlled by choosing the number of pulses of the decoupling sequence.
+
+By choosing the number of pulses such that all coherence is lost when performing a dynamical decoupling spectroscopy measurement on the resonance, a rotation of $\pi/2$ in the clockwise direction is performed when the electron is in the $\ket{0}$-state and a $\pi/2$-rotation in the counterclockwise direction when the electron is in the $\ket{1}$-state.
+We define the axis of rotation of this operation as the X-axis.
+
+We call this conditional rotation the $\pm \mathrm{x}$-gate and it forms the basis of our control over weakly coupled spins. \Cref{fig:gate_circuit_pm-x} shows how we depict the $\pm \mathrm{x}$-gate in a circuit-diagram.
+By letting the phase of the carbon evolve we are able to apply operations on the carbon-spin with arbitrary phase.
+An unconditional gate can be implemented by placing the electron in an eigenstate before performing the $\pm\mathrm{x}$-operation.
+
+\begin{figure}[htbp]
+    \centering
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+         \lstick{\ket{\Psi}_e} &\ctrl{1}  &\qw\\
+          \lstick{\ket{\Psi}_\mathrm{C}} &\gate{\pm \mathrm{x} }  &\qw}}
+    \caption{The conditional x-gate ($\pm\mathrm{x}$). Performs an x-rotation on the carbon state ($\ket{\Psi }_\mathrm{C}$) when the electron is in the $\ket{0}_e$-state. It performs a $-\mathrm{x}$ rotation when the electron is in the $\ket{1}_e$-state.}
+    \label{fig:gate_circuit_pm-x}
+\end{figure}
+
+Basic gates can be calibrated by sweeping the number of pulses $N$ when on resonance $\tau$.
+In this manner carbon-1 and carbon-4 were found to perform the best $\pm\mathrm{x}$-gates.
+The parameters used to implement $\pm\mathrm{x}$-gates are listed in \cref{tbl:gate_parameters}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccc}
+    Carbon &  $ N $ &  $\tau$ & total gate time\\ \hline
+    1 &  18 & { }9.420 $\mu$s & 339 $\mu$s \\
+    2 & 26 & { }6.620 $\mu$s & 344 $\mu$s \\
+    3 & 14 & 18.564 $\mu$s & 520 $\mu$s \\
+    4 &  40 & { }6.456 $\mu$s & 516 $\mu$s
+    \end{tabular}
+    \caption{Parameters used to implement $\pm\mathrm{x}$-gates.}
+    \label{tbl:gate_parameters}
+\end{table}
+
+
+
+\subsection{Carbon Ramsey experiment }
+By performing a Ramsey experiment we can determine the precession of the carbon-spin and its dephasing-time $T_2^*$.
+By determining the precession frequencies it is possible to track phase evolution and use that to implement operations with arbitrary phase.
+By measuring the precession frequency it is also possible to disprove our estimation for the hyperfine parameters.
+We require the dephasing time in order to determine if enough operations can be applied to implement quantum algorithms \footnote{Change this sentence}.
+
+In an ordinary Ramsey experiment a qubit is brought to the equator of the Bloch-sphere where it precesses for a time $\tau $ before it is read out along the x-direction.
+A carbon-Ramsey experiment is similar but slightly more complicated as the nuclear spin cannot be controlled and read-out directly.
+An uninitialized and an initialized version are depicted in \cref{fig:gate_circuit_nuclear_ramsey}.
+
+In the initialized version of the carbon-Ramsey experiment the system is first initialized in the $\ket{0}_e\ket{X}_\mathrm{C}$-state.
+The carbon is let to precess for a time $\tau$ before the $\ket{X}_\mathrm{C}$-state is read out.
+During the free evolution the carbon rotates with a frequency of $\omega_L$ because the electron is in $\ket{0}_e$ and there is no coupling.
+
+\begin{figure}[htbp]
+        \centering
+        \mbox{
+        \Qcircuit @C=1em @R=.7em {
+        \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}      & \qw & \multigate{1}{\tau}       &  \qw &\ctrl{1}          & \gate{\mathrm{-y}}  &  \meter \\
+        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{\tau}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
+    \caption{Gate circuit depicting a carbon Ramsey with}
+    \label{fig:gate_circuit_nuclear_ramsey}
+\end{figure}
+
+
+\subsubsection{Determining the precession frequency}
+
+A conceptually more interesting variety is the uninitialized carbon-Ramsey experiment depicted in \cref{fig:gate_circuit_nuclear_ramsey_no_init}.
+In the uninitialized version the system is described by \cref{eq:density_after_Ren} before the free evolution starts.
+Because the electron is in a superposition of $\ket{0}$ and $\ket{1}$ the carbon-spin while evolve with two frequencies; $\omega_L$ for $\ket{0}_e$ and $\tilde{\omega} = \bm{|\omega_L + A |} $ for $\ket{1}_e$.
+
+Similar to how the last part of the initialized carbon-Ramsey circuit reads out along the X-direction the last part of the uninitialized carbon-Ramsey reads out along the X-direction for the $\ket{Y}_e$ and along the $-$X-direction for the $\ket{-Y}_e$.
+The phase picked up while show up as an oscillation between the $\ket{0}$ and $\ket{1}$ in the readout.
+If the carbon has picked up no phase the the electron will point towards $\ket{1}$ in the readout.
+Because the uninitialized carbon-Ramsey evolves with two frequencies we expect the measured oscillation to be the sum of two cosines as described by \cref{eq:carbon_ramsey_expected}. Where $ \tilde\omega =   \sqrt{(\omega_L+A_\parallel) ^2 + A_\perp^2} $.
+\begin{equation}
+    \tfrac{1}{4} \cos(\omega_L \tau ) +\tfrac{1}{4}  \cos (\tilde{\omega} \tau ) + \tfrac{1}{2}
+    \label{eq:carbon_ramsey_expected}
+\end{equation}
+
+\begin{figure}[htbp]
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \caption{}
+        \includegraphics{Img/CarbonRamsey_C1.pdf}
+        \label{fig:CR_C1}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \caption{}
+        \includegraphics{Img/CarbonRamsey_C4.pdf}
+        \label{fig:CR_C4}
+    \end{subfigure}
+    \caption{The uninitialized carbon-Ramsey experiment shows an oscillation that is the sum of two cosines due to the phase picked up during free evolution.
+    \Cref{fig:CR_C1} depicts carbon-1 and \cref{fig:CR_C4} carbon-4.
+    The measured frequencies were, for carbon-1: $\omega_{L,C1} = 2\pi\cdot 325.81 \pm 0.25$ and  $\tilde \omega_{\mathrm{C1}}= 2\pi\cdot 364.41 \pm 0.23$, and for carbon-4: $\omega_{L,C4} =  2\pi\cdot 325.94 \pm 0.40$ and $\tilde \omega_{\mathrm{C4}} = 2\pi\cdot 371.52 \pm 0.39 $.}
+    \label{fig:Uninitialized_carbon_ramsey}
+\end{figure}
+
+\Cref{fig:Uninitialized_carbon_ramsey} shows the results for an uninitialized carbon-Ramsey experiment.
+The data was fitted to a sum of two cosines in order to determine the frequencies.
+The Larmor frequencies are $\omega_{L,C1} = 2\pi\cdot 325.81 \pm 0.25$kHz  for carbon-1 and  $\omega_{L,C4} =  2\pi\cdot 325.94 \pm 0.40$kHz for carbon-4.
+Both the measured Larmor frequencies agree with the magnetic field of 304G within two standard deviations.
+
+The $\tilde{\omega}$ frequency can be used to disprove the estimations for the hyperfine parameters of \cref{tbl:HF_par}, however if the measured values agree with the hyperfine estimation we cannot conclude that the estimations are correct.
+
+For $\tilde{\omega}$ the following frequencies were measured: $\tilde \omega_{\mathrm{C1}}= 2\pi\cdot 364.41 \pm 0.23$kHz for carbon-1
+and $\tilde \omega_{\mathrm{C4}} = 2\pi\cdot 371.52 \pm 0.39 $kHz for carbon-4.
+Based on the estimated hyperfine parameters we expect $\tilde\omega_{\mathrm{C1}} \approx 364.7\mathrm{kHz}$ for carbon-1 and $\tilde \omega_{\mathrm{C4}} \approx 371.4 \mathrm{kHz}$ for carbon-4.
+Both these values are in good agreement with experiment, a good indication that our hyperfine estimation is accurate.
+
+
+\subsubsection{Measuring $T_{2,\mathrm{C}}^* $}
+% Lange carbon ramseys van Hans sil01 140506 #53 en 56 +T2* analyse.
+% hoeveel pulses voor de lange tau? belangrijk voor T2*
+In order to know how many operations we can perform on a qubit we must know how long the signal stays coherent under normal operation.
+In the case of controlling weakly carbons this is while decoupling the electron.
+
+In order to determine carbon dephasing while decoupling the electron an uninitialized carbon-Ramsey was performed where the electron is decoupled during the free evolution time.
+Because the electron is constantly flipped the carbon will precess with an average frequency of $\omega_{\mathrm{DD}} = (\omega_L +\tilde{\omega} )/2$.
+By undersampling with a frequency slightly detuned from the precession frequency ($\omega_{\mathrm{DD}}$) a decaying cosine can be observed where the 1/e time of the envelope is equal to $T_2^*$.
+
+\begin{figure}[htbp]
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \caption{}
+        \includegraphics{Img/Carbon1_T2star.pdf}
+        \label{fig:T2star_carbon1}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \caption{}
+        \includegraphics{Img/Carbon4_T2star.pdf}
+        \label{fig:T2star_carbon4}
+    \end{subfigure}
+    \caption{Carbon-Ramsey experiment to determine $T_2^*$ for nuclei while decoupling the electron.
+    The decays are fitted with a generalized normal distribution to determine $T_2^*$ and the exponent $n$.
+    \Cref{fig:T2star_carbon1}, for carbon-1, $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ and $n= 1.83 \pm 0.19$.
+    \Cref{fig:T2star_carbon4}, for carbon-4,  $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ and $n= 2.31 \pm 0.31$. } %would like to add that not limited by electron coherence due to DD.
+    \label{fig:T2star_carbon}
+\end{figure}
+
+The decay for both carbons follows a Gaussian profile within uncertainty.
+The coherence times measured were $T_{2,\mathrm{C1}}^* =9.85 \pm   0.39 \mathrm{ms}$ for carbon-1 and $T_{2,\mathrm{C4}}^* =6.68 \pm   0.22 \mathrm{ms}$ for carbon-4.
+
+

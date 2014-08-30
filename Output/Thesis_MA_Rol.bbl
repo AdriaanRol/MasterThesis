@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -88,12 +88,6 @@ F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
 M.A. Nielsen and I.L. Chuang.
 \newblock \emph{Quantum Computation and Quantum Information}.
 \newblock Cambridge University Press, 2010.
-
-\bibitem[Pfaff(2013)]{Pfaff2013Quantum}
-W.~Pfaff.
-\newblock \emph{Quantum Measurement and Entanglement of Spin Quantum Bits in
-  Diamond}.
-\newblock PhD thesis, Delft University of Technology, 2013.
 
 \bibitem[Robledo et~al.(2011)Robledo, Childress, Bernien, Hensen, Alkemade, and
   Hanson]{Robledo2011HighFidelity}
