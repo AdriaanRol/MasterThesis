@@ -13,7 +13,7 @@ This forms the basis of our qubit.
 
 The electronic ground state can be described by the Hamiltonian \citep{Bernien2014Control}:
  \begin{equation}
-H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \mathbf{B} \cdot \bm{S}
+H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \bm{B} \cdot \bm{S}
 \end{equation}
 
 Where $\bm{S}_i$ are the pauli-spin operators,  $\gamma_e  = 2.802$ MHz/G  the gyro-magnetic ratio and $\Delta \approx 2.88 \mathrm{GHz}$ the zero-field splitting.
@@ -41,6 +41,7 @@ We define our electronic qubit  as the two level system  $m_s=0:=|0\rangle$ and 
 \subsection{Initialization and readout of the electronic-spin state}
 The transitions between the electronic ground-state and excited state are spin dependent and lie in the optical domain (637nm).
 At low temperatures these transitions can be resonantly excited using a laser of the corresponding frequency.
+For this reason, experiments were performed at cryogenic temperatures (4K).
 The frequencies of these transitions depend on magnetic field and strain \citep{Hensen2011MeasurementBased}.
 
 \Cref{fig:readoutRobledo} shows the optical transitions used to initialize and read-out the electronic spin.
@@ -62,8 +63,8 @@ Using these methods the experiments were performed at a readout fidelity $F= 90.
 
 \subsection{Controlling the electronic-spin state}
 The state of a qubit can be represented as a vector on the Bloch-sphere where the $\ket{0}$-state lies at the north pole and the $\ket{1}$-state at the south pole.
-On the Bloch-sphere the state vector rotates around the quantization-axis with a frequency depending on the energy splitting between the two states; the Larmor frequency.
-For the NV-electronic spin the Larmor frequency is given by \cref{eq:larmor_electronic_spin} and the quantization axis lies in the z-direction (towards $\ket{0}$).
+On the Bloch-sphere the state vector rotates around the quantization-axis with a frequency depending on the energy splitting between the two states: the Larmor frequency.
+For the NV-electronic spin the Larmor frequency is given by \cref{eq:larmor_electronic_spin} and the quantization axis points in the z-direction (towards $\ket{0}$).
 \begin{equation}
     \omega_L =\Delta + \gamma_e {B_\mathrm{z}}
     \label{eq:larmor_electronic_spin}
@@ -105,67 +106,94 @@ The Larmor frequency for a nucleus is given by  \cref{eq:nuclear_larmor}.
 The hyperfine ($H_{\mathrm{HF}}$) term consists of a contact term and a dipole term.
 The contact term results from an overlap between the electronic- and nuclear- wave-functions.
 The contact term is negligible for all but the nuclear-spins closest to the NV-center.
-For close-by carbon spins hyperfine couplings have been  calculated\citep{Gali2008Ab,Gali2009Identification} and measured measured\citep{Smeltzer201113}.
+For close-by carbon spins hyperfine couplings have been  calculated\citep{Gali2008Ab,Gali2009Identification} and measured\citep{Smeltzer201113}.
 
-For carbons where the contact term is negligible the hyperfine-term is equal to the dipole term and is given by \cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum}.
-$\hat{\bm{n_{\mathrm{HF}}}}$ is a unit vector pointing from the electronic spin to the nucleus, $r$ is the distance between the electronic and nuclear spin, and $\mu_0$ the magnetic permeability.
+The dipole term and is given by \cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum} and can be split into a parallel and orthogonal component.
+$\hat{\bm{n_{\mathrm{HF}}}}$ is a unit vector pointing from the electronic spin to the nucleus, $r$ is the distance between the electronic and nuclear spin, and $\mu_0$ the magnetic constant.
 
 \begin{equation}
 \label{eq:dipole_component_of_hyperfine}
 H_{\mathrm{dip}} = \frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3} [ \bm{S \cdot I} - 3 (\bm S \cdot \hat{\bm{n_{\mathrm{HF}}}})(\bm I \cdot \hat{\bm{n_{\mathrm{HF}}}})]
 \end{equation}
 
-From \cref{eq:dipole_component_of_hyperfine}  the parallel and orthogonal components of the Hyperfine interaction, with respect to the NV-axis along the z-direction, can be derived to be:
+From \cref{eq:dipole_component_of_hyperfine}  the parallel and orthogonal components of the hyperfine interaction, with respect to the NV-axis along the z-direction, can be derived to be:
  \begin{align}
 A_\parallel= - \frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3} \left(3\cdot \frac{z^2}{r^2}-1\right)\\
  A_\perp =  -\frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
 \end{align}
-Where $H_{\mathrm{HF}} = A_\parallel I_\mathrm{z} + A_\perp I_x $.
 
-\begin{figure}[htbp]
-\centering
-    \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/DarkESR_2.pdf}};
-        \node (A) at (2.6,4.4) {};
-        \node (B) at (3.92,4.4) { };
-        \node (C) at (5.3,4.4) { };
-        \draw[latex-latex, font=\small] (A) -- node[label =270: $A_\mathrm{N}$] {} (B);
-        \draw[latex-latex, font=\small] (B) -- node[label =270: $A_\mathrm{N}$] {} (C);
-    \end{tikzpicture}
-    \caption{ Electron Spin Resonance (ESR) for uninitialized (top) and initialized nitrogen spin (bottom) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.}
-    \label{fig:HF_split_levels}
-\end{figure}
+So that in the case where the contact term is negligible $H_{\mathrm{HF}} = A_\parallel I_\mathrm{z} + A_\perp I_x $.
 
 \subsection{Controlling the nitrogen nuclear spin}
-An example of a strongly coupled spin is the NV-nitrogen spin.
-The strength of the coupling between the nitrogen and the electronic spin is $A_\mathrm{N} = 2\pi \cdot 2.186\quad \mathrm{MHz} $\citep{Bernien2014Control} and it acts along the NV-axis.
-\Cref{fig:HF_split_levels} clearly shows the $m_s =0 \rightarrow m_s=+1$ transitions being split due to hyperfine-coupling to the nitrogen.
-This splitting can be used to control the nitrogen.
-By first initializing in the $m_s =+1$-state and then applying a slow pulse that turns only one of the three nitrogen spin-states back to $m_s=0$ and reading out the nitrogen-spin can be initialized. By only continuing on a positive outcome the spin is initialized in the state that was rotated back to $m_s =0$. We call this measurement-based-initialization (MBI).
-The lower panel of \cref{fig:HF_split_levels} shows a Electron-Spin-Resonance (ESR) after nitrogen-MBI.
+The nitrogen-spin adjacent to the vacancy can be controlled using the spin-dependent hyperfine interaction.
+Because both the zero-field splitting $\Delta$ of the electronic-spin and the nuclear quadrupole splitting $Q$ are much larger than the hyperfine coupling between the nuclear and electronic spin ($A_\mathrm{N} = 2\pi \cdot 2.186\quad \mathrm{MHz} $), the secular approximation can be used, leading to the following system Hamiltonian:
+\begin{equation}
+        H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \bm{B} \cdot \bm{S} -  -Q\bm{I}_{\mathrm{z}}^2+\gamma_{n} B_\mathrm{z} I_\mathrm{z} - A_\mathrm{N} \bm{S_z}\cdot \bm{I_z}
+\end{equation}
 
-In a similar way strongly-coupled carbon-13 atoms can be controlled\citep{Robledo2011HighFidelity}.
+The hyperfine interaction between the nitrogen and electronic spin causes the transition between $m_s=0$ and $m_s =1$ to be split.
+This splitting is clearly visible in the Electron Spin Resonance (ESR) showed in the top panel of \cref{fig:HF_split_levels}.
+
+
+    \begin{figure}[htbp]
+    \centering
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/DarkESR_2.pdf}};
+            \node (A) at (2.6,4.4) {};
+            \node (B) at (3.92,4.4) { };
+            \node (C) at (5.3,4.4) { };
+            \draw[latex-latex, font=\small] (A) -- node[label =270: $A_\mathrm{N}$] {} (B);
+            \draw[latex-latex, font=\small] (B) -- node[label =270: $A_\mathrm{N}$] {} (C);
+        \end{tikzpicture}
+        \caption{ Electron Spin Resonance (ESR) for uninitialized (top) and initialized nitrogen spin (bottom) of the $m_s =0 \rightarrow m_s = +1$ transition. In a dark ESR the spin is prepared in $\ket{0}$, a microwave pulse is applied and then the $\ket{0}$ state is read-out again. This is done for a range of frequencies. When the microwave is on resonance with a transition the spin will be rotated and a dip will be visible in the signal. In the top figure the transition is split due to the interaction with the nearby nitrogen atom. In the lower figure the nitrogen state is initialized and the splitting disappears.}
+        \label{fig:HF_split_levels}
+    \end{figure}
+
+Because the interaction is spin-dependent it can be used to measure the nitrogen.
+Every time an experiment is started the nitrogen starts out in a mixed state.
+This means that every time an uninitialized nitrogen is measured it is equally likely to end up in one of its three states.
+The nitrogen state can be measured by initializing the electron in the split $m_s = +1$ state and driving one of the transitions to $m_s=0$.
+Only if the nitrogen was in the state corresponding to the transition being driven will a measurement of the $m_s =0$ state give a positive result.
+
+By resetting and repeating this procedure until a positive result is measured the nitrogen-spin can be initialized.
+This procedure is known as Measurement Based Initialization (MBI) and is used in our experiments.
+The lower panel of \cref{fig:HF_split_levels} shows an ESR after nitrogen-MBI.
+
+\subsection{Strongly coupled spins}
+The ability to control spin states relies on being able to selectively address its spin dependent transitions.
+When two transitions can be resolved in an ESR they can be addressed by applying microwave pulses of the corresponding frequencies.
+However if two transitions overlap in an ESR, applying a microwave pulse at the corresponding frequency will address both transitions and it is not possible to control its spin state.
+
+Two transitions cannot be resolved when the splitting between them is smaller than the width of the transition.
+The magnitude of the splitting is determined by the strength of the interaction and the broadening of the transitions is caused by decoherence.
+We define a spin to be strongly coupled when it is possible to readily resolve it's transitions in an ESR experiment with negligible power broadening.
+Conversely a spin is weakly coupled when it is not possible to readily resolve its transitions in an ESR.
+
+Strongly coupled spins can be controlled by applying microwaves directly at the transition frequency, weakly coupled spins can not.
+Using this method strongly-coupled carbon-13 spins have been controlled and initialized\citep{Robledo2011HighFidelity}.
 
 \section{Decoherence}
+The ESR signal is broadened because the NV-center interacts with an environment known as the spin bath.
+The spin bath consists of a very large number of spins that are all very weakly coupled to the NV-center.
+Just like the uninitialized nitrogen spin these are in a mixed state.
+This means that for every iteration of an experiment the spin bath can have a different configuration.
+These different configurations of the spin bath slightly shift the addressed transition around causing the broadening of the transition.
 
+\subsection{Decoherence time}
+These variations in the spin-bath configuration can be measured with a Ramsey experiment.
+In a Ramsey experiment (\cref{fig:Ramsey_gijs}) the electronic spin is brought into a superposition between the $\ket{0}$ and $\ket{1}$-state where it freely evolves for a time $\tau$.
+A final pulse brings the state back into $\ket{0}$ where it is read out.
+By applying a slight detuning to the rotating frame used to keep the phase fixed an oscillation can be seen in the signal.
+Because the evolution frequency varies slightly between experiments, due to the different spin-bath configurations, the measured signal will slowly decay as the oscillations move out of phase with each other.
+The decay is known as decoherence and the $1/e$-time of the decay is known as the decoherence time.
 
-When addressing a spin qubit we usually drive transitions between energy levels.
-When the electronic-spin couples to a nuclear-spin these energy levels are shifted depending on the state of the nucleus.
-In this way each spin has an individual back-action on the electronic-spin.
+For a Ramsey experiment the decay follows a Gaussian profile \cref{eq:Ramsey_decay}.
+$T_2^*$ is defined as the $1/e$ time of the decay as measured by a Ramsey experiment.
 
-Most of these spins only shift the spin by a tiny amount making it hard to distinguish them from each other.
-Because the states of these spins fluctuate the transitions of the NV-center are continuously shifting around, effectively causing a broadening of the transitions.
-We call these very-weakly-coupled spins the spin-bath.
-
-If the coupling between a spin and the NV-center is strong enough it is possible to resolve and address its transitions.
-Transitions between energy levels can be resolved if the difference between them is larger than the width of the transition.
-
-How narrow a transition is is related to how accurately it can be addressed.
-The largest variations in the spin-bath, that determine the position of the transition, occur between experiments.
-!
-Need to add some sentences here about why T2 star is measurement for this
-!
-The time before a transition shifts out of resonance, or a signal decoheres, is usually expressed by $T_2^*$ and is measured by a Ramsey experiment, see \cref{fig:Ramsey_gijs}.
+\begin{equation}
+    K(\tau) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
+    \label{eq:Ramsey_decay}
+\end{equation}
 
 \begin{figure}[htbp]
     \centering
@@ -191,12 +219,16 @@ The time before a transition shifts out of resonance, or a signal decoheres, is 
         A $T_{2,e}^*$ of $4.54 \pm 0.14 \mu\mathrm{s}$ was measured for the electronic spin. The decay follows a Gaussian profile within uncertainty $n = 1.81 \pm 0.14$. }
 \end{figure}
 
-The decay of the amplitude $K$ in an electron Ramsey experiment is given by \cref{eq:Ramsey_decay}.
-\begin{equation}
-    K(\tau) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
-    \label{eq:Ramsey_decay}
-\end{equation}
-We define $T_{2e}^*$ as the $1/e$ value of the Gaussian decay. The Electron-Spin-Resonance (ESR)\footnote{See \cref{fig:HF_split_levels} for an example of a dark ESR.} frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
+
+\subsection{Relation between decoherence and transition broadening}
+
+The ramsey experimnet measures variations between experiments in the time domain
+The ESR measures variations between experiments in the frequency domain.
+They are related by a Fourier transform.
+
+The Electron-Spin-Resonance (ESR)\footnote{See \cref{fig:HF_split_levels} for an example of a dark ESR.} frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
+
+
 \begin{equation}
     \mathcal{F} \{ K(\tau) \} =  T_2^* \sqrt{\pi} e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
 \end{equation}
@@ -208,7 +240,7 @@ The FWHM of the dark ESR is given by \cref{eq:FWHM}.
 \end{equation}
 
 \subsection{Definition of strongly coupled }
-We define a spin to be strongly coupled when it is possible to readily resolve its transition.
+
 
 An estimation of when spins can be resolved can be made by looking at the strength of the hyperfine interaction.
 The splitting caused by a carbon spin is equal to twice the total interaction strength $A$ at low magnetic field ($\gamma_e B \ll A$). In the limit of high magnetic field ($\gamma_e B \gg A$) only the parallel component of the interaction $A_\parallel$ contributes to the splitting.
@@ -234,97 +266,7 @@ For a typical NV-center this means that the coupling between the carbon and the 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% ------------------------------------------------------------
-% ------------------------------------------------------------
-% ------------------------------------------------------------
-
-
-% % TODO_MAR: Rewrite introduction of diamond spin control chapter
-
-% %Explain here how general experiment looks
-% \section{OLD CHAPTER NV }
-% It has been shown that the nuclear- and electron- spin-state of the NV- center can be initialized, controlled and read-out using microwave- and laser- pulses\citep{Robledo2011HighFidelity}. In these experiments two lasers that are resonant with transitions in the NV- center are used to initialize the electronic spin state.
-% One of these two lasers is used to read out the electronic spin state and an off-resonant laser is used to reset the system. Microwaves are used to drive transitions between the different nuclear and electronic spin states.
-% %Add figure explaining read out en init.
-
-% Strongly coupled nuclear spins can be initialized by conditionally rotating the electronic state to a state that is read out only if the Carbon is in the desired state, when the electronic state readout has a positive result the system is projected into the desired state. We call this Measurement Based Initialization (MBI).
-% %
-% %
-% %%%%%%%%%%%%%%%%%%%
-% %TODO_MAR: add picture of Sil, schematic (with laser only hits one line)
-% %%%%%%%%%%%%%%%%%%%
-% %
-% %
-% % Explain pump laser and excitation laser,
-% % Explain experiment starts with checking if Lasers are on resonance
-% % Explain Nitrogen initialization to remove term from the Hamiltonian
-% %
-% % Explain structure of typical experiment and experimental setup
-% % Setup, same as in old papers. State temperature 4K, state that magnetic field is used.
-% %Structure.
-% %CR-check , Init electron with lasers, Init Nitrogen, do fancy pulse sequence, readout, possibly feed forward, more pulses, RO again.
-% %
-% Our experiments are build around the same basic tools\comment{As the Robledo experiment? }.
 % Each experiment starts with a Charge-Resonance check \comment{Explain how CR-Check works? Ref?}that verifies if the lasers are still on resonance.
 % After that the Nitrogen spin state is initialized using MBI.\comment{In what state is the Nitrogen initialized?}
 % Once the system is initialized the actual experiment is performed.
 % An experiment consists of one or multiple blocks of microwave pulses and optical readouts.
-
-% All experiments were performed on a custom-build cryostat setup operating at liquid helium temperatures described in detail in \citet[chap.~3]{Bernien2014Control}. The setup was additionally outfitted with a movable neodymium magnet that applied a magnetic field of ~300G to the sample.
-
-
-
-% % \section{Dynamical decoupling}
-% % DONT need to explain general dynamical decoupling?
-% %Explain what dynamical decoupling is, decoupling from environment by 'inverting' the enviroment thus reducing influence of decoherence causing carbons.
-% %Show figure from Tim's paper showing extended electron coherence times.
-% % Make bridge to next chapter by refering paper again showing that it's possible to control carbons in this way by resonantly doing this
