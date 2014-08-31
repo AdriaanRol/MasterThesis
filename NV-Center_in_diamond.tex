@@ -15,7 +15,6 @@ The electronic ground state can be described by the Hamiltonian \citep{Bernien20
  \begin{equation}
 H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \bm{B} \cdot \bm{S}
 \end{equation}
-
 Where $\bm{S}_i$ are the pauli-spin operators,  $\gamma_e  = 2.802$ MHz/G  the gyro-magnetic ratio and $\Delta \approx 2.88 \mathrm{GHz}$ the zero-field splitting.
 In this expression the interactions with the nitrogen nucleus and the carbon spin bath are not included.
 In the experiments a magnetic field $B_z = 304G$ is applied along the NV-axis\footnote{The NV-axis is the axis going trough both the nitrogen and the vacancy. }.
@@ -49,14 +48,16 @@ The $A_1$ transition excites both the $m_s =+1$ and the $m_s=-1$ states to the e
 The $E_\mathrm{x}$ transition excites the $m_s = 0$ state to the excited state.
 When the spin falls back to the ground state there is a small probability that the spin is flipped, denoted by the dashed line.
 
-Optically pumping one off these transitions will cause the spin-population to end up in the state that is not addressed and can be used to initialize the spin-state \citep{Robledo2011HighFidelity}.
+The spin can be initialized by pumping one of these transitions\citep{Robledo2011HighFidelity}.
+This will cause the population to cycle between the ground and excited state with a small probability of the spin flipping.
+When the spin flips it ends up in the state that is not being addressed and stays there.
 
 The optical transitions can also be used to read-out the spin state.
 By applying a pulse to the $E_x$ transition a photon can be detected when the state falls back to the ground state.
 Because the $E_x$ only excites the $m_s=0$ state photons can only be detected when when the system is in the $\ket{0}$-state.
 By keeping the pulse short the probability that the spin flips is kept low.
 
-Because the number of pumping cycles before the spin flips is limited the fidelity is limited by how well the few photons that are emitted are detected.
+Because the number of pumping cycles before the spin flips is limited the fidelity with which the spin can be read-out is limited by how well the few photons that are emitted are detected.
 A solid immersion lens (SIL), visible in \cref{fig:Sil_Robledo}, is milled onto the sample to maximize the detection efficiency.
 
 Using these methods the experiments were performed at a readout fidelity $F= 90.55 \pm 0.40 \%$.
@@ -71,7 +72,7 @@ For the NV-electronic spin the Larmor frequency is given by \cref{eq:larmor_elec
 \end{equation}
 
 By applying an external field a term is added to the Hamiltonian, changing the quantization-axis and thereby its evolution.
-By applying microwaves with the right frequency this can be used to selectively drive the transition from the  $|0\rangle$ state to the $|1\rangle$ state\citep{Jelezko2004Observation}.
+By applying microwaves with a frequency equal to $\omega_L$ the transition between $\ket{0}$ and $\ket{1}$ can be driven \citep{Jelezko2004Observation}.
 Resonant microwave pulses are applied to the sample trough on-chip lead, visible in \cref{fig:Sil_Robledo} as the light area just below the SIL.
 
 \section{Controlling nuclear spins}
@@ -80,12 +81,12 @@ Close-by spins have a strong hyperfine interaction and can be controlled directl
 When the interaction is too weak the spins cannot be readily resolved and are a source of decoherence.
 
 \subsection{The Hyperfine Interaction}
-The coupling between the NV-centers electronic spin and a nuclear-spin is given by the hyperfine-interaction.
+The coupling between the electronic spin of the NV-center and a nuclear-spin is given by the hyperfine-interaction.
 The hyperfine-interaction is a spin dependent interaction that is not present for spin-0 particles such as carbon-12.
 
 For nuclear spins the Hamiltonian depends on the electronic spin-state of the NV-center.
 For a magnetic field ($B_\mathrm{z}$) in the z-direction the Hamiltonian is given by \cref{eq:nuclear_hamiltonian_0} when the electronic-spin is in the $m_s = 0$ state, and by \cref{eq:nuclear_hamiltonian_1} when in the $m_s = +1$ state\citep{Taminiau2014Universal}.
-Where $\bm{I}$ and $\bm{S}$ are the nuclear and electronic spin operators, $\gamma_n$ is the gyro-magnetic ratio of the nucleus and $Q= 2\pi \cdot 4.946 \mathrm{ MHz}$ is the nuclear quadrupole splitting of the nitrogen.
+Where $\bm{I}$ and $\bm{S}$ are the nuclear and electronic spin operators, $\gamma_n$ is the gyro-magnetic ratio of the nucleus and $Q= 2\pi \cdot 4.946 \mathrm{ MHz}$ \citep{Bernien2014Control} is the nuclear quadrupole splitting of the nitrogen.
 The quadrupole term is not present when the nuclear spin is not a Nitrogen.
 
 \begin{equation}
@@ -106,10 +107,11 @@ The Larmor frequency for a nucleus is given by  \cref{eq:nuclear_larmor}.
 The hyperfine ($H_{\mathrm{HF}}$) term consists of a contact term and a dipole term.
 The contact term results from an overlap between the electronic- and nuclear- wave-functions.
 The contact term is negligible for all but the nuclear-spins closest to the NV-center.
-For close-by carbon spins hyperfine couplings have been  calculated\citep{Gali2008Ab,Gali2009Identification} and measured\citep{Smeltzer201113}.
+For close-by carbon spins hyperfine couplings have been  calculated \citep{Gali2008Ab,Gali2009Identification} and measured \citep{Smeltzer201113}.
 
-The dipole term and is given by \cref{eq:dipole_component_of_hyperfine}\citep{Lange2012Quantum} and can be split into a parallel and orthogonal component.
-$\hat{\bm{n_{\mathrm{HF}}}}$ is a unit vector pointing from the electronic spin to the nucleus, $r$ is the distance between the electronic and nuclear spin, and $\mu_0$ the magnetic constant.
+The dipole term is given by \cref{eq:dipole_component_of_hyperfine} \citep{Lange2012Quantum}
+Where $\hat{\bm{n_{\mathrm{HF}}}}$ is a unit vector pointing from the electronic spin to the nucleus, $r$ is the distance between the electronic and nuclear spin, and $\mu_0$ the magnetic constant.
+The dipole term can be split into a parallel and orthogonal component such that $H_{\mathrm{HF}} = A_\parallel I_\mathrm{z} + A_\perp I_x $ when the contact term is negligible.
 
 \begin{equation}
 \label{eq:dipole_component_of_hyperfine}
@@ -122,17 +124,16 @@ A_\parallel= - \frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3} \le
  A_\perp =  -\frac{\mu_0 \gamma_e \gamma_{\mathrm{C}} \hbar^2 }{4 \pi r^3}\left( 3\cdot\frac{\sqrt{x^2+y^2}\cdot z}{r^2}\right)
 \end{align}
 
-So that in the case where the contact term is negligible $H_{\mathrm{HF}} = A_\parallel I_\mathrm{z} + A_\perp I_x $.
 
 \subsection{Controlling the nitrogen nuclear spin}
 The nitrogen-spin adjacent to the vacancy can be controlled using the spin-dependent hyperfine interaction.
 Because both the zero-field splitting $\Delta$ of the electronic-spin and the nuclear quadrupole splitting $Q$ are much larger than the hyperfine coupling between the nuclear and electronic spin ($A_\mathrm{N} = 2\pi \cdot 2.186\quad \mathrm{MHz} $), the secular approximation can be used, leading to the following system Hamiltonian:
 \begin{equation}
-        H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \bm{B} \cdot \bm{S} -  -Q\bm{I}_{\mathrm{z}}^2+\gamma_{n} B_\mathrm{z} I_\mathrm{z} - A_\mathrm{N} \bm{S_z}\cdot \bm{I_z}
+        H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \bm{B} \cdot \bm{S} -Q\bm{I}_{\mathrm{z}}^2+\gamma_{n} B_\mathrm{z} I_\mathrm{z} - A_\mathrm{N} \bm{S_z}\cdot \bm{I_z}
 \end{equation}
 
 The hyperfine interaction between the nitrogen and electronic spin causes the transition between $m_s=0$ and $m_s =1$ to be split.
-This splitting is clearly visible in the Electron Spin Resonance (ESR) showed in the top panel of \cref{fig:HF_split_levels}.
+This magnitude of the splitting is equal to $A_N$ and  is clearly visible in the Electron Spin Resonance (ESR) showed in the top panel of \cref{fig:HF_split_levels}.
 
 
     \begin{figure}[htbp]
@@ -149,15 +150,16 @@ This splitting is clearly visible in the Electron Spin Resonance (ESR) showed in
         \label{fig:HF_split_levels}
     \end{figure}
 
-Because the interaction is spin-dependent it can be used to measure the nitrogen.
+Because the interaction is spin-dependent it can be used to measure the nitrogen's spin state.
 Every time an experiment is started the nitrogen starts out in a mixed state.
 This means that every time an uninitialized nitrogen is measured it is equally likely to end up in one of its three states.
 The nitrogen state can be measured by initializing the electron in the split $m_s = +1$ state and driving one of the transitions to $m_s=0$.
 Only if the nitrogen was in the state corresponding to the transition being driven will a measurement of the $m_s =0$ state give a positive result.
 
 By resetting and repeating this procedure until a positive result is measured the nitrogen-spin can be initialized.
+The system can be reset into a mixed state by applying a high-energy off-resonant laser pulse.
 This procedure is known as Measurement Based Initialization (MBI) and is used in our experiments.
-The lower panel of \cref{fig:HF_split_levels} shows an ESR after nitrogen-MBI.
+The lower panel of \cref{fig:HF_split_levels} shows an ESR after the nitrogen has been initialized using MBI.
 
 \subsection{Strongly coupled spins}
 The ability to control spin states relies on being able to selectively address its spin dependent transitions.
@@ -183,12 +185,15 @@ These different configurations of the spin bath slightly shift the addressed tra
 These variations in the spin-bath configuration can be measured with a Ramsey experiment.
 In a Ramsey experiment (\cref{fig:Ramsey_gijs}) the electronic spin is brought into a superposition between the $\ket{0}$ and $\ket{1}$-state where it freely evolves for a time $\tau$.
 A final pulse brings the state back into $\ket{0}$ where it is read out.
-By applying a slight detuning to the rotating frame used to keep the phase fixed an oscillation can be seen in the signal.
-Because the evolution frequency varies slightly between experiments, due to the different spin-bath configurations, the measured signal will slowly decay as the oscillations move out of phase with each other.
+
+By applying a slight detuning to the rotating frame used to keep the phase fixed an oscillation can be seen in the signal (\cref{fig:electron_T2*}).
+Due to the different spin-bath configureations the evolution frequency varies slightly between experiments, this causes the measured signal to decay as the different oscillations move out of phase with each other.
 The decay is known as decoherence and the $1/e$-time of the decay is known as the decoherence time.
 
 For a Ramsey experiment the decay follows a Gaussian profile \cref{eq:Ramsey_decay}.
 $T_2^*$ is defined as the $1/e$ time of the decay as measured by a Ramsey experiment.
+The $T_2^*$ of our sample was measured to be $T_{2,e}^* = 4.54 \pm 14 \mu\mathrm{s}$ with initialized nitrogen-spin.
+The decay follows a gaussian profile within two $\sigma$: $n = 1.81 \pm 0.14$
 
 \begin{equation}
     K(\tau) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
@@ -221,52 +226,29 @@ $T_2^*$ is defined as the $1/e$ time of the decay as measured by a Ramsey experi
 
 
 \subsection{Relation between decoherence and transition broadening}
-
-The ramsey experimnet measures variations between experiments in the time domain
-The ESR measures variations between experiments in the frequency domain.
-They are related by a Fourier transform.
-
-The Electron-Spin-Resonance (ESR)\footnote{See \cref{fig:HF_split_levels} for an example of a dark ESR.} frequency spectrum for negligible power broadening is given by the Fourier transform of \cref{eq:Ramsey_decay}. Where $\omega = 2\pi \cdot f$\footnote{For clarity the factor of $2\pi$ is stated explicitly throughout this thesis to distinguish real and angular frequency. }.
-
+The decay in a Ramsey experiment is a measure for variations of the spin-bath in the time-domain while the broadening of transitions in an ESR is a measure for variations of the spin-bath in the frequency domain.
+The decay of the Ramsey and the shape of the ESR are related trough a Fourier transform and described by \cref{eq:ESR_dip_shape} \footnote{Assuming negligible power broadening in the ESR, and not driving it all the way trough !? How to pharse last condition clearly?!? }.
+Where $C$ is a constant that depends on the duration and power of the ESR microwave pulse.
+Because the decay of the Ramsey is Gaussian the shape of a transition in the ESR is also Gaussian.
 
 \begin{equation}
-    \mathcal{F} \{ K(\tau) \} =  T_2^* \sqrt{\pi} e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
+    \mathcal{F} \{ K(\tau) \} =  C e^{-\tfrac{(2\pi \cdot f) ^2 \cdot T_{2e}^{*2}}{ 4}}
+    \label{eq:ESR_dip_shape}
 \end{equation}
-Two identical Gaussians can be readily resolved if the separation between their maxima is larger than their full-width-half-maximum (FWHM).
-The FWHM of the dark ESR is given by \cref{eq:FWHM}.
+
+Two identical Gaussians can be readily resolved when the separation between their maxima is larger than their full-width-half-maximum (FWHM).
+The FWHM (in Hz) of the ESR is given by \cref{eq:FWHM}.
 \begin{equation}
-    2\pi \cdot \mathrm{FWHM} = 2\pi \cdot \frac{2\sqrt{\ln{2}}}{\pi T_{2e}^*}
+    \mathrm{FWHM} =  \frac{2\sqrt{\ln{2}}}{\pi T_{2e}^*}
     \label{eq:FWHM}
 \end{equation}
 
-\subsection{Definition of strongly coupled }
-
-
-An estimation of when spins can be resolved can be made by looking at the strength of the hyperfine interaction.
-The splitting caused by a carbon spin is equal to twice the total interaction strength $A$ at low magnetic field ($\gamma_e B \ll A$). In the limit of high magnetic field ($\gamma_e B \gg A$) only the parallel component of the interaction $A_\parallel$ contributes to the splitting.
+An estimation of when carbon spins can be resolved can be made by looking at the strength of the hyperfine interaction.
+The splitting caused by a carbon spin is equal to twice the total interaction strength $A$ at low magnetic field ($\gamma_e B \ll A$).
+At high field ($\gamma_e B \gg A$) the secular approximation is valid and the splitting is twice the parallel component of the hyperfine $A_\parallel$.
 We can readily resolve a transition when the shift due to the corresponding interaction is larger than the FWHM of the transition.
 
-\begin{align}
-     2\pi \cdot |\bm{A}|\gg 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*} , \quad \mathrm{for } \quad \gamma_e B \ll A  \\
-     2\pi \cdot A_\parallel \gg 2\pi \cdot \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}, \quad \mathrm{for } \quad \gamma_e B \gg A
-     \label{eq:def_strongly_coupled}
- \end{align}
-
-NV-centers have a typical electron $T_{2e}^* \approx 2\mu \mathrm{s}$\footnote{At a natural concentration of $1.1 \%$ carbon-13.} that depends on the exact configuration of the spin-environment.
-On the sample used for the experiments $T_{2,e}^* = 4.54 \pm 14 \mu\mathrm{s}$ was measured, see \cref{fig:electron_T2*}.
+At a natural concentration of carbon-13 NV-centers have a typical  electron $T_{2e}^* \approx 2\mu \mathrm{s}$ that depends on the exact configuration of the spin-environment.
 Increasing the carbon-13 concentration generally reduces $T_{2e}^*$.
-For a typical NV-center this means that the coupling between the carbon and the NV-center must be larger than $2\pi\cdot$130kHz for the carbon to be directly addressable for a typical NV-center and larger than $2\pi\cdot$ 58kHz for our sample.
-
-
-
-
-
-
-
-
-
-
-% Each experiment starts with a Charge-Resonance check \comment{Explain how CR-Check works? Ref?}that verifies if the lasers are still on resonance.
-% After that the Nitrogen spin state is initialized using MBI.\comment{In what state is the Nitrogen initialized?}
-% Once the system is initialized the actual experiment is performed.
-% An experiment consists of one or multiple blocks of microwave pulses and optical readouts.
+On the sample used for the experiments $T_{2e}^*=4.54 \pm 0.14 \mu\mathrm{s}$ was measured.
+This means that the hyperfine coupling must be larger than $2\pi\cdot$130kHz for a typical carbon, and larger than $2\pi\cdot$ 58kHz for a carbon for the sample used in this thesis.
