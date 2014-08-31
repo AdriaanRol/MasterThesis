@@ -1,11 +1,11 @@
 \chapter{The Nitrogen-Vacancy center in Diamond}
 The Nitrogen-Vacancy (NV) center in diamond provides a natural occurring qubit register in a solid state environment.
-This chapter will explain how the electronic-spin can be initialized, controlled and read-out and how the control over the electronic spin can be used to control nuclear spins.
-The control of nuclear spins is however limited by decoherence.
+This chapter will explain how the electronic and nuclear spins can be initialized, controlled and read-out using optical and microwave pulses.
+The methods described in this chapter are limited to spins for which transitions can be addressed selectively.
+The control of other spins is limited by decoherence.
 
-%Introduce definition of system.
 \section{The electronic spin}
-The NV-center is a naturally occurring impurity in diamond consisting of a substitutional nitrogen and an adjacent lattice vacancy (\cref{fig:Sil_Robledo}). %Note: try to make first sentence summarize section.
+The NV-center is a naturally occurring impurity in diamond consisting of a substitutional nitrogen and an adjacent lattice vacancy (\cref{fig:Sil_Robledo}).
 The NV-center can be in a neutral charge state ($\mathrm{NV}^0$) and a negatively charged state ($\mathrm{NV}^-$).
 In this thesis we are mainly interested in the negatively charged state, where an additional electron is captured from the environment.
 In the $\mathrm{NV}^-$ state a spin-triplet is formed in the band gap by two electrons.
@@ -15,7 +15,7 @@ The electronic ground state can be described by the Hamiltonian \citep{Bernien20
  \begin{equation}
 H_\mathrm{GS} = \Delta {\bm{S}_\mathrm{z}}^2 + \gamma_e \bm{B} \cdot \bm{S}
 \end{equation}
-Where $\bm{S}_i$ are the pauli-spin operators,  $\gamma_e  = 2.802$ MHz/G  the gyro-magnetic ratio and $\Delta \approx 2.88 \mathrm{GHz}$ the zero-field splitting.
+Where $\bm{S}_i$ are the Pauli-spin operators,  $\gamma_e  = 2.802$ MHz/G  the gyro-magnetic ratio and $\Delta \approx 2.88 \mathrm{GHz}$ the zero-field splitting.
 In this expression the interactions with the nitrogen nucleus and the carbon spin bath are not included.
 In the experiments a magnetic field $B_z = 304G$ is applied along the NV-axis\footnote{The NV-axis is the axis going trough both the nitrogen and the vacancy. }.
 The magnetic field lifts the degeneracy of the $m_s = \pm 1$ states through the Zeeman effect.
@@ -38,7 +38,7 @@ We define our electronic qubit  as the two level system  $m_s=0:=|0\rangle$ and 
 \end{figure}
 
 \subsection{Initialization and readout of the electronic-spin state}
-The transitions between the electronic ground-state and excited state are spin dependent and lie in the optical domain (637nm).
+The transitions between the electronic ground-state and excited state are spin dependent and lie in the optical domain (637 nm).
 At low temperatures these transitions can be resonantly excited using a laser of the corresponding frequency.
 For this reason, experiments were performed at cryogenic temperatures (4K).
 The frequencies of these transitions depend on magnetic field and strain \citep{Hensen2011MeasurementBased}.
@@ -187,13 +187,13 @@ In a Ramsey experiment (\cref{fig:Ramsey_gijs}) the electronic spin is brought i
 A final pulse brings the state back into $\ket{0}$ where it is read out.
 
 By applying a slight detuning to the rotating frame used to keep the phase fixed an oscillation can be seen in the signal (\cref{fig:electron_T2*}).
-Due to the different spin-bath configureations the evolution frequency varies slightly between experiments, this causes the measured signal to decay as the different oscillations move out of phase with each other.
+Due to the different spin-bath configurations the evolution frequency varies slightly between experiments, this causes the measured signal to decay as the different oscillations move out of phase with each other.
 The decay is known as decoherence and the $1/e$-time of the decay is known as the decoherence time.
 
 For a Ramsey experiment the decay follows a Gaussian profile \cref{eq:Ramsey_decay}.
 $T_2^*$ is defined as the $1/e$ time of the decay as measured by a Ramsey experiment.
 The $T_2^*$ of our sample was measured to be $T_{2,e}^* = 4.54 \pm 14 \mu\mathrm{s}$ with initialized nitrogen-spin.
-The decay follows a gaussian profile within two $\sigma$: $n = 1.81 \pm 0.14$
+The decay follows a Gaussian profile within two $\sigma$: $n = 1.81 \pm 0.14$
 
 \begin{equation}
     K(\tau) = e^{-(\tfrac{\tau}{T_{2e}^*})^2}
@@ -251,4 +251,8 @@ We can readily resolve a transition when the shift due to the corresponding inte
 At a natural concentration of carbon-13 NV-centers have a typical  electron $T_{2e}^* \approx 2\mu \mathrm{s}$ that depends on the exact configuration of the spin-environment.
 Increasing the carbon-13 concentration generally reduces $T_{2e}^*$.
 On the sample used for the experiments $T_{2e}^*=4.54 \pm 0.14 \mu\mathrm{s}$ was measured.
-This means that the hyperfine coupling must be larger than $2\pi\cdot$130kHz for a typical carbon, and larger than $2\pi\cdot$ 58kHz for a carbon for the sample used in this thesis.
+This means that the hyperfine coupling must be larger than $2\pi\cdot$130kHz in a typical NV-center, and larger than $2\pi\cdot$ 58kHz in the sample used in this thesis for a carbon to be strongly coupled.
+
+As the presence of strongly coupled carbons close to the NV-center is governed by probability and the probability of getting 3-5 strongly coupled carbons is very low it is necessary to develop methods to address weakly coupled carbons.
+The next chapter will demonstrate methods to extend the coherence time and address weakly coupled carbons, thereby enlarging the spin-register.
+

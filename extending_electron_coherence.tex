@@ -1,10 +1,39 @@
 \section{Extending Electron Coherence}
 
+To be able to resolve and address weakly coupled carbons it is necessary to extend the coherence of the NV-spin.
+By using a technique known as a spin-echo variations between experiments can be eliminated, making variations during experiments the main source of decoherence.
+By dynamical decoupling the effect of these variations on the coherence can be minimized and the dynamics of the spin-bath exposed.
+
+
 \subsection{Spin-Echo}
-In a spin-echo experiment a Ramsey experiment is performed with a small difference. An additional $\pi$ pulse is applied in the middle of the experiment exactly between the $\pi/2$ pulses. This pulse effectively turns the nuclear-spin environment upside-down halfway trough the experiment, making the qausi-static-part of the dephasing during the first and the second part of the free evolution cancel each other out, substantially increasing coherence on short-timescales ($\tau \ll T_2 $)
-\footnote{ $T_2$ is a measure for decoherence. It is similar to $T_2^*$ but does not include variations between experiments. $T_2$ is defined as the $1/e$ time of the decay of a spin-echo experiment.}.
-On longer timescales the difference between the initial part of the evolution and the final part of the evolution becomes larger making the initial and final part no longer cancel each other out.
+
+
+
+A spin echo experiment (\cref{fig:spin_echo_gijs}) is very similar to a Ramsey experiment.
+An additional $\pi$ pulse is added in the middle of the experiment exactly between the $\pi/2$ pulses of the Ramsey sequence.
+In a spin echo the state is brought into the XY-plane where it evolves for a time $\tau/2$ before a $\pi$-pulse, along the y-direction in the rotating frame, is applied.
+It evolves for another $\tau/2$ before a final $\pi/2$-pulse rotates it back to $\ket{0}$ and it is read out.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{Img/SpinEcho_Gijs.pdf}
+    \caption{Spin Echo experiment }
+    \label{fig:spin_echo_gijs}
+\end{figure}
+
+The $\pi$-pulse can be seen as turning the reference frame of the NV-spin upside down.
+If the environment does not change during the experiment the detuning of the evolution frequency with respect to the central frequency during the first part will be exactly opposite to the detuning during the second part.
+This means that any phase difference picked up during the first half of the evolution is canceled out perfectly during the second half of the evolution.
+
+Because the spin-bath does not remain static during experiments the cancellation is not perfect causing some phase to be picked up causing decoherence.
+Similar to a Ramsey experiment this can be measured by applying a detuning to the rotating frame and measuring the decay of the oscillation.
+$T_2$ is defined as the $1/e$ value of the decay of a spin echo experiment and measures decoherence due to variations in the spin-bath during an experiment.
+$T_2$ was measured to be $1.10 \pm 0.01 ms$.
+% Data from exp:  20140405/123712
+
 \subsection{Dynamical Decoupling}
+
+
 A natural way of extending the short timescale behavior of the spin-echo to longer timescales is by applying more $\pi$-pulses. This procedure known as dynamical-decoupling can dramatically improve coherence times by decoupling the central-spin from the environment\citep{Lange2010Universal}.
 
 Although dynamical-decoupling improves the coherence of the central spin by decoupling from the environment, the central spin is also decoupled from other spins preventing direct two-qubit gates. It was demonstrated by \citet{Sar2012DecoherenceProtected} how to incorporate dynamical decoupling in a universal gate design by implementing Grover's algorithm.

@@ -1,22 +1,18 @@
 
 \chapter{Addressing Weakly-coupled Carbon Spins}
+The spin register can be extended by addressing weakly-coupled spins.
+This chapter will explain how coherence can be extended trough dynamical decoupling and how this can be used to address single carbon-spins.
+The methods will be used to identify and characterize individual nuclear spins.
 
-In order to be less dependent on the presence of strongly coupled nuclear spins weakly coupled spins can be addressed.
-This chapter will demonstrate how to extend electron coherence time so that weakly coupled spins can be resolved.
-Identify nuclear spins in the environment of our NV-center and characterize these spins.
+[NOTE: Maybe remove following paragraph and figure?]
 
+\Cref{fig:coupling regimes} shows a schematic representation of different coupling regimes.
+Carbons in region $\mathbb{I} $ are in the strong coupling regime, transitions of these spins can be readily resolved and they can be controlled using the methods described in the previous chapter.
+By extending the coherence of the electronic spin certain weakly coupled spins can be controlled \citep{Taminiau2012Detection}.
+These can be found in region $\mathbb{II}$
+Control of spins in region $\mathbb{III}$ is not limited by the coherence of the electronic-spin but by that of the nucleus.
+These spins cannot be addressed without inventing new methods that significantly improve both electronic- and nuclear- spin coherence.
 
-
-
-
-
-
-The electronic-spin of the NV-center does not live in a vacuum but in an environment full of nuclear spins.
-To some of these spins the NV-center couples strongly, these spins can be controlled and can serve as qubits.
-To others it couples weakly these spins are a source of decoherence and cannot be controlled directly.
-
-In this chapter I will first explain what strong and weakly coupled spins are, how this relates to coherence and how coherence can be extended trough dynamical decoupling.
-In the second part of this chapter I will explain how dynamical dynamical decoupling can be used to identify and control some of these weakly coupled spins, transforming them from a source of decoherence to a resource for qubits.
 
 \begin{figure}[htbp]
 \centering
@@ -35,3 +31,6 @@ In the second part of this chapter I will explain how dynamical dynamical decoup
     \caption{ Schematic representation of different coupling regimes. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.}
     \label{fig:coupling regimes}
 \end{figure}
+\input{extending_electron_coherence.tex}
+\input{identifying_weakly_coupled_spins.tex}
+\input{characterizing_weakly_coupled_spins.tex}
