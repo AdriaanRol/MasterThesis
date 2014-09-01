@@ -5,6 +5,14 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Bar-Gill et~al.(2013)Bar-Gill, Pham, Jarmola, Budker, and
+  Walsworth]{Gill2013SolidState}
+N~Bar-Gill, L~M Pham, A~Jarmola, D~Budker, and R~L Walsworth.
+\newblock Solid-state electronic spin coherence time approaching one second.
+\newblock \emph{Nature communications}, 4:\penalty0 1743, 1 2013.
+\newblock ISSN 2041-1723.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/23612284}.
+
 \bibitem[Bernien(2014)]{Bernien2014Control}
 H.~Bernien.
 \newblock \emph{Control, Measurement and Entanglement of Remote Quantum Spin
@@ -36,11 +44,13 @@ G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
 
 \bibitem[Doherty et~al.(2013)Doherty, Manson, Delaney, Jelezko, Wrachtrup, and
   Hollenberg]{Doherty2013NitrogenVacancy}
-M.W. Doherty, N.B. Manson, P.~Delaney, F.~Jelezko, J.~Wrachtrup, and L.C.L.
-  Hollenberg.
+Marcus~W. Doherty, Neil~B. Manson, Paul Delaney, Fedor Jelezko, Jörg
+  Wrachtrup, and Lloyd~C.L. Hollenberg.
 \newblock The nitrogen-vacancy colour centre in diamond.
-\newblock page 101, 2 2013.
-\newblock URL \url{http://arxiv.org/abs/1302.3288}.
+\newblock \emph{Physics Reports}, 528\penalty0 (1):\penalty0 1--45, 7 2013.
+\newblock ISSN 03701573.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0370157313000562}.
 
 \bibitem[Feynman(1982)]{Feynman1982Simulating}
 Richard~P. Feynman.
@@ -150,17 +160,6 @@ T.~H.~TH Taminiau, J.~Cramer, T.~van~der Sar, V.~V. Dobrovitski, and R.~Hanson.
 \newblock ISSN 1748-3387.
 \newblock URL \url{http://arxiv.org/abs/1309.5452
   http://www.nature.com/doifinder/10.1038/nnano.2014.2}.
-
-\bibitem[van~der Sar et~al.(2012)van~der Sar, Wang, Blok, Bernien, Taminiau,
-  Toyli, Lidar, Awschalom, Hanson, and
-  Dobrovitski]{Sar2012DecoherenceProtected}
-T.~van~der Sar, Z.H. Wang, M.S. Blok, H.~Bernien, T.H. Taminiau, D.M. Toyli,
-  D.A. Lidar, D.D. Awschalom, R.~Hanson, and V.V. Dobrovitski.
-\newblock Decoherence-protected quantum gates for a hybrid solid-state spin
-  register.
-\newblock \emph{Nature}, 484\penalty0 (7392):\penalty0 82--6, 4 2012.
-\newblock ISSN 1476-4687.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/22481361}.
 
 \bibitem[Vandersypen et~al.(2001)Vandersypen, Steffen, Breyta, Yannoni,
   Sherwood, and Chuang]{Vandersypen2001Experimental}

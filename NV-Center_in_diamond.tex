@@ -214,12 +214,12 @@ The decay follows a Gaussian profile within two $\sigma$: $n = 1.81 \pm 0.14$
     \end{subfigure}
         \caption{
         \Cref{fig:Ramsey_gijs}, schematic representation of a Ramsey experiment. Figure from \citet{Lange2012Quantum}.
-        In a Ramsey experiment a qubit is initialized along the z-axis before being subjected to a $\pi/2$-pulse that moves it into the XY-plane of the Bloch-sphere.
-        It freely evolves for a time $\tau$ before being subjected to a final $\pi/2$ pulse and read out along the z-direction.
+        In a Ramsey experiment a qubit is brought into the $xy$-plane by a $\pi/2$-pulse where it evolves freely for a time $\tau$ before being subjected to a final $\pi/2$ pulse to read out its $x$-component.
         By applying a detuning to the rotating frame the spin will pick up a phase $\phi = \omega_d \tau$ during free evolution.
         The final pulse will rotate the spin towards the poles depending on the phase picked up during free evolution.
         This manifests itself as an oscillation.
-        Because the configuration of the spin-bath is slightly different from experiment to experiment the frequency of the oscillation will vary from repetition to repetition.
+        Because the configuration of the spin-bath is slightly different between experiments the frequency of the oscillation will vary with each iteration.
+        This variation in frequency between iterations will cause the oscillation to decay.
         \Cref{fig:electron_T2*} shows a Ramsey experiment for the electronic spin.
         A $T_{2,e}^*$ of $4.54 \pm 0.14 \mu\mathrm{s}$ was measured for the electronic spin. The decay follows a Gaussian profile within uncertainty $n = 1.81 \pm 0.14$. }
 \end{figure}
@@ -227,7 +227,7 @@ The decay follows a Gaussian profile within two $\sigma$: $n = 1.81 \pm 0.14$
 
 \subsection{Relation between decoherence and transition broadening}
 The decay in a Ramsey experiment is a measure for variations of the spin-bath in the time-domain while the broadening of transitions in an ESR is a measure for variations of the spin-bath in the frequency domain.
-The decay of the Ramsey and the shape of the ESR are related trough a Fourier transform and described by \cref{eq:ESR_dip_shape} \footnote{Assuming negligible power broadening in the ESR, and not driving it all the way trough !? How to pharse last condition clearly?!? }.
+The decay of the Ramsey and the shape of the ESR are related trough a Fourier transform and described by \cref{eq:ESR_dip_shape} \footnote{Assuming negligible power broadening in the ESR, and linear response (How do i explain clearly that in low power regime, not driving all the way trough?)}.
 Where $C$ is a constant that depends on the duration and power of the ESR microwave pulse.
 Because the decay of the Ramsey is Gaussian the shape of a transition in the ESR is also Gaussian.
 

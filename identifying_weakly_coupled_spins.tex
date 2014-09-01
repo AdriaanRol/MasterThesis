@@ -1,10 +1,20 @@
 \section{Identifying weakly-coupled carbon-pins}
-In order to understand how the features in the fingerprint from \cref{fig:FP} relate to the different spins and how this knowledge can be used to control these carbons it is necessary to understand what dynamical decoupling does to these atoms.
+To be able to control nuclear spins the dynamics must be understood and suitable spins must be identified.
+This section will discuss the effect dynamical decoupling has on nuclear spins.
+This knowledge is then used to explain the features in the fingerprint \cref{fig:FP} and identify several nuclear spins.
 
 \subsection{The effect of dynamical decoupling}
 
 \begin{figure}[htbp]
 \centering
+
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[keepaspectratio,width=0.15\textwidth]{./img/QuantizationAxis.png}
+};
+            \node[font=\small, text = blue] at (4.05,1.7)  {1};
+        \end{tikzpicture}
+
+
 \includegraphics[keepaspectratio,width=0.15\textwidth]{./img/QuantizationAxis.png}
 \caption{Flipping the electron spin from the  $m_s=0$ to the $m_s= +1$ state changes the quantization axis of nuclear spins. For  $m_s=0$ all nuclear spins precess about $\bm{\omega_L}$. For  $m_s=+1$ each spin precesses about a distinct axis $\bm{\tilde{\omega}}=\bm{\omega_L} +\bm{A}$.}
 \label{fig:quantax}
@@ -61,7 +71,7 @@ If  $\hat{n_0}$ and $\hat{n_1}$ are not parallel, the resulting conditional rota
 \subsection{Response of a carbon-spin to dynamical decoupling spectroscopy}
 
 As a result the electronic spin, starting out in $\ket{X}$, entangles with the nuclear spin for specific values of $\tau$ during a dynamical decoupling spectroscopy. %NOTE DOES NOT ENTANGLE NECCESARILY
-When reading out the electronic spin along the X-axis this creates a dip in the signal.
+When reading out the electronic spin along the $x$-axis this creates a dip in the signal.
 The probability that the initial state is preserved is given by \cref{eq:contrast_to_probability}. Where the contrast $M_j$ for a single nuclear spin is given by \cref{eq:contrast_single_carbon_spin}\citep{Taminiau2012Detection}.
 
 \begin{equation}
