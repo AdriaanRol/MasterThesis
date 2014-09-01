@@ -92,11 +92,6 @@ F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
 \newblock ISSN 0031-9007.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.92.076401}.
 
-\bibitem[Nielsen and Chuang(2010)]{Nielsen2010Quantum}
-M.A. Nielsen and I.L. Chuang.
-\newblock \emph{Quantum Computation and Quantum Information}.
-\newblock Cambridge University Press, 2010.
-
 \bibitem[Robledo et~al.(2011)Robledo, Childress, Bernien, Hensen, Alkemade, and
   Hanson]{Robledo2011HighFidelity}
 L.~Robledo, L.~Childress, H.~Bernien, B.~Hensen, P.F.A. Alkemade, and
@@ -160,6 +155,17 @@ T.~H.~TH Taminiau, J.~Cramer, T.~van~der Sar, V.~V. Dobrovitski, and R.~Hanson.
 \newblock ISSN 1748-3387.
 \newblock URL \url{http://arxiv.org/abs/1309.5452
   http://www.nature.com/doifinder/10.1038/nnano.2014.2}.
+
+\bibitem[van~der Sar et~al.(2012)van~der Sar, Wang, Blok, Bernien, Taminiau,
+  Toyli, Lidar, Awschalom, Hanson, and
+  Dobrovitski]{Sar2012DecoherenceProtected}
+T.~van~der Sar, Z.H. Wang, M.S. Blok, H.~Bernien, T.H. Taminiau, D.M. Toyli,
+  D.A. Lidar, D.D. Awschalom, R.~Hanson, and V.V. Dobrovitski.
+\newblock Decoherence-protected quantum gates for a hybrid solid-state spin
+  register.
+\newblock \emph{Nature}, 484\penalty0 (7392):\penalty0 82--6, 4 2012.
+\newblock ISSN 1476-4687.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/22481361}.
 
 \bibitem[Vandersypen et~al.(2001)Vandersypen, Steffen, Breyta, Yannoni,
   Sherwood, and Chuang]{Vandersypen2001Experimental}
