@@ -8,18 +8,26 @@
 	"buffers":
 	[
 		{
-			"file": "main.tex",
+			"file": "extending_electron_coherence.tex",
 			"settings":
 			{
-				"buffer_size": 2673,
-				"line_ending": "Windows"
+				"buffer_size": 6499,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "State_initialization_and_readout.tex",
+			"file": "NV-Center_in_diamond.tex",
 			"settings":
 			{
-				"buffer_size": 2960,
+				"buffer_size": 19846,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "identifying_weakly_coupled_spins.tex",
+			"settings":
+			{
+				"buffer_size": 12183,
 				"line_ending": "Unix"
 			}
 		},
@@ -27,25 +35,15 @@
 			"file": "Controlling_weakly_coupled_carbon_spins.tex",
 			"settings":
 			{
-				"buffer_size": 7847,
+				"buffer_size": 7894,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 35 files for \"eqnarray\"\n\n/Users/Adriaan/Documents/MasterThesis/3Month_report.tex:\n   95:  \\begin{eqnarray}\n   98: \\end{eqnarray}\n  107:  \\begin{eqnarray}\n  110: \\end{eqnarray}\n  216: \\begin{eqnarray}\n  219: \\end{eqnarray}\n\n/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex:\n   17: \\begin{eqnarray}\n   21: \\end{eqnarray}\n   31: \\begin{eqnarray}\n   34: \\end{eqnarray}\n   41: \\begin{eqnarray}\n   44: \\end{eqnarray}\n   46: % \\begin{eqnarray}\n   49: % \\end{eqnarray}\n\n/Users/Adriaan/Documents/MasterThesis/Addressing_weakly_coupled_carbon_spins.tex:\n  144:  \\begin{eqnarray}\n  147: \\end{eqnarray}\n\n/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex:\n   18: \\begin{eqnarray}\n   32: \\end{eqnarray}\n\n18 matches across 4 files\n",
+			"file": "Outlook_QEC.tex",
 			"settings":
 			{
-				"buffer_size": 768,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "Addressable_carbon_sims.tex",
-			"settings":
-			{
-				"buffer_size": 2490,
+				"buffer_size": 548,
 				"line_ending": "Unix"
 			}
 		}
@@ -53,19 +51,27 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 181.0,
+		"height": 115.0,
 		"selected_items":
 		[
+			[
+				"pack control in",
+				"Package Control: Install Package"
+			],
+			[
+				"sol t",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"keyb ",
+				"Preferences: Key Bindings - User"
+			],
 			[
 				"stogl",
 				"SolarizedToggle: Toggle"
 			],
 			[
 				"sol to",
-				"SolarizedToggle: Toggle"
-			],
-			[
-				"sol t",
 				"SolarizedToggle: Toggle"
 			],
 			[
@@ -283,10 +289,6 @@
 			[
 				"latexi cle",
 				"LaTeXing: Clean Temporary Output Dictionary"
-			],
-			[
-				"keyb ",
-				"Preferences: Key Bindings - Default"
 			],
 			[
 				"Snippet: lor",
@@ -563,10 +565,6 @@
 			[
 				"pref",
 				"Preferences: Settings - User"
-			],
-			[
-				"pac inst",
-				"Package Control: Install Package"
 			]
 		],
 		"width": 453.0
@@ -589,26 +587,43 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/Adriaan/Documents/MasterThesis"
+	],
 	"file_history":
 	[
-		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Addressing_weakly_coupled_carbon_spins.tex",
-		"/Users/Adriaan/Documents/MasterThesis/3Month_report.tex",
-		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
-		"/Users/Adriaan/Documents/MasterThesis/learn_for_defence/useful_values.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
-		"/Users/Adriaan/Documents/MasterThesis/svg.sty",
-		"/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex",
+		"/Users/Adriaan/Documents/MasterThesis/NV-Center_in_diamond.tex",
+		"/Users/Adriaan/Documents/MasterThesis/main.tex",
 		"/Users/Adriaan/Documents/MasterThesis/abstract.tex",
+		"/Users/Adriaan/Documents/MasterThesis/learn_for_defence/question.tex",
+		"/Users/Adriaan/Documents/MasterThesis/learn_for_defence/useful_values.tex",
+		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Qcircuit.tex",
+		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
+		"/Users/Adriaan/Documents/MasterThesis/svg.sty",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Introduction.tex",
+		"/Users/Adriaan/Documents/MasterThesis/identifying_weakly_coupled_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Outlook_QEC.tex",
+		"/Users/Adriaan/Documents/MasterThesis/extending_electron_coherence.tex",
+		"/Users/Adriaan/Documents/MasterThesis/characterizing_weakly_coupled_spins.tex",
+		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Adriaan/Documents/MasterThesis/Entanglement_wittness.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Output/Thesis_MA_Rol.bbl",
+		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
+		"/Users/Adriaan/Documents/MasterThesis/bloch_entangling_gate.svg",
+		"/Users/Adriaan/Documents/MasterThesis/Img/bloch_entangling_gate.svg",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/Cover_fig.eps",
+		"/Users/Adriaan/Documents/MasterThesis/3Month_report.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/team_diamond_logo-color.svg",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/cover.ai",
-		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
-		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
 		"/Users/Adriaan/Documents/MasterThesis/question.tex",
 		"/Users/Adriaan/Documents/MasterThesis",
-		"/Users/Adriaan/Documents/MasterThesis/Outlook_QEC.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo without colourtrap (~)/logo/TU_P1~full color.eps",
-		"/Users/Adriaan/Documents/MasterThesis/bloch_entangling_gate.svg",
 		"/Users/Adriaan/Documents/MasterThesis/Bell_state_tomography.tex",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/Adriaan/Documents/MasterThesis/Img/FigureDevelopment/coupling_regimes.ai",
@@ -618,11 +633,7 @@
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
 		"/Users/Adriaan/Documents/MasterThesis/Electronic_spin_in_diamond.tex",
 		"/Users/Adriaan/Documents/MasterThesis/library.bib",
-		"/Users/Adriaan/Documents/MasterThesis/Qcircuit.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P2#rgb.eps",
-		"/Users/Adriaan/Documents/MasterThesis/main.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Introduction.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Entanglement_wittness.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/EPS/Logo with colourtrap (#)/logo met descriptor eronder/TU_d_stack_P5#white.eps",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/Adriaan/Documents/MasterThesis/erratum.tex",
@@ -642,7 +653,6 @@
 		"/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/Solarized Toggle/SolarizedToggle.sublime-settings",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/SolarizedToggle.sublime-settings",
-		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/ToggleTheme.py",
 		"/Users/Adriaan/Documents/teamdiamond/measurement/lib/measurement2/adwin_ssro/dynamicaldecoupling.py",
 		"/Users/Adriaan/Documents/teamdiamond/measurement/scripts/teleportation/parameters.py",
@@ -716,6 +726,78 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"plane",
+			"where C",
+			"Q",
+			"where",
+			"n =",
+			"n=",
+			"by appl",
+			"defin",
+			"the hamilton",
+			"\\cdot",
+			"optical",
+			"hat",
+			"hf",
+			"calculated",
+			"mathrmz",
+			" \n",
+			"Solid immersion ",
+			"state",
+			"S",
+			"the width ",
+			"Pfaff2013Quantum",
+			"dark El",
+			"ramse",
+			"gray",
+			"blue",
+			"subfi",
+			"caption",
+			"textwidth",
+			"subf",
+			"Fide",
+			"0.",
+			"ty",
+			"table",
+			"_{C",
+			"lde\\omega",
+			"\\ga",
+			"qaud",
+			"&",
+			"A$",
+			"quad",
+			"equation",
+			"swap",
+			"defin",
+			"textwidth",
+			"vee",
+			"\\vee",
+			"304.",
+			"B =",
+			"Carbon",
+			"carbon",
+			"Ramsey",
+			"2\\pi",
+			"\\tfrac{1}{2}",
+			"e{x}",
+			"}_C",
+			"_c",
+			"_C",
+			"_c",
+			"_C",
+			"_c",
+			"_C",
+			"_c",
+			"_C",
+			"\\pi/2",
+			"\\ghost{T}",
+			"multigate{1}{T}",
+			"0.49",
+			"qaud",
+			"align",
+			"ket",
+			"equation",
+			"tensor",
 			"equation",
 			"Ren",
 			"sigma",
@@ -771,79 +853,7 @@
 			"ESR",
 			"\\footn",
 			"and acts",
-			"Note",
-			" & $",
-			"e",
-			"$\\g",
-			"$",
-			"\\ga",
-			"FWHM",
-			"for a typical",
-			"coupling to ",
-			"dESR",
-			"dark",
-			"$;",
-			"frequency",
-			"highligh",
-			"C",
-			"Nitrogen",
-			"tiny",
-			": $",
-			"small",
-			"4.4",
-			"small",
-			"tiny",
-			"tex",
-			"4.5",
-			"5)",
-			",1",
-			"[draw,circle]",
-			");",
-			"label{fig:",
-			"fig:c",
-			"fig:CR",
-			"T_{",
-			"small",
-			"tiny",
-			"bm",
-			"mathbb",
-			"tiny",
-			"mathfr",
-			"{N}",
-			"footnotesize",
-			"small",
-			"tiny",
-			"8",
-			"subfigur",
-			"subfig",
-			"/10",
-			"fig:label",
-			"_z",
-			"eq:carbon_",
-			"coupled",
-			"Coupled",
-			"coupled",
-			"Coupled",
-			"kHz,",
-			". ",
-			".",
-			"{  }",
-			"}12",
-			"     ",
-			"{ }-",
-			"\\cdot $",
-			"\\quad",
-			"\\cdot$",
-			"_L",
-			"_l",
-			"_L",
-			"_l",
-			"_L",
-			"\\mathrm{C}",
-			"quantization axis",
-			"_z",
-			"includegraphics",
-			"ics{}"
+			"Note"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -861,80 +871,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "main.tex",
+					"file": "extending_electron_coherence.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2673,
+						"buffer_size": 6499,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2228,
-								2228
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 289.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "State_initialization_and_readout.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2960,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1291,
-								1291
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 286.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Controlling_weakly_coupled_carbon_spins.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7847,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5138,
-								5173
+								2160,
+								2160
 							]
 						],
 						"settings":
@@ -944,7 +898,67 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1240.0,
+						"translation.y": 81.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "NV-Center_in_diamond.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19846,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15588,
+								15611
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3454.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "identifying_weakly_coupled_spins.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4932,
+								4932
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -952,111 +966,26 @@
 				},
 				{
 					"buffer": 3,
+					"file": "Controlling_weakly_coupled_carbon_spins.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 768,
+						"buffer_size": 7894,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										107,
-										115
-									],
-									[
-										129,
-										137
-									],
-									[
-										154,
-										162
-									],
-									[
-										176,
-										184
-									],
-									[
-										200,
-										208
-									],
-									[
-										222,
-										230
-									],
-									[
-										314,
-										322
-									],
-									[
-										336,
-										344
-									],
-									[
-										360,
-										368
-									],
-									[
-										382,
-										390
-									],
-									[
-										406,
-										414
-									],
-									[
-										428,
-										436
-									],
-									[
-										454,
-										462
-									],
-									[
-										478,
-										486
-									],
-									[
-										586,
-										594
-									],
-									[
-										608,
-										616
-									],
-									[
-										709,
-										717
-									],
-									[
-										731,
-										739
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
 							[
-								714,
-								714
+								415,
+								415
 							]
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1067,60 +996,30 @@
 				},
 				{
 					"buffer": 4,
-					"file": "Addressable_carbon_sims.tex",
+					"file": "Outlook_QEC.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2490,
+						"buffer_size": 548,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								837,
-								837
-							],
-							[
-								1035,
-								1035
-							],
-							[
-								1488,
-								1488
-							],
-							[
-								1579,
-								1579
-							],
-							[
-								2023,
-								2023
-							],
-							[
-								2175,
-								2175
-							],
-							[
-								2248,
-								2248
-							],
-							[
-								2372,
-								2372
+								548,
+								548
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1177,12 +1076,120 @@
 		"selected_items":
 		[
 			[
-				"control",
-				"Controlling_weakly_coupled_carbon_spins.tex"
+				"nv",
+				"NV-Center_in_diamond.tex"
+			],
+			[
+				"ext",
+				"extending_electron_coherence.tex"
+			],
+			[
+				"main",
+				"main.tex"
+			],
+			[
+				"abst",
+				"abstract.tex"
+			],
+			[
+				"us",
+				"learn_for_defence/useful_values.tex"
+			],
+			[
+				"identi",
+				"identifying_weakly_coupled_spins.tex"
+			],
+			[
+				"addressi",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"que",
+				"learn_for_defence/question.tex"
+			],
+			[
+				"use",
+				"learn_for_defence/useful_values.tex"
 			],
 			[
 				"prea",
 				"preamble.tex"
+			],
+			[
+				"intr",
+				"Introduction.tex"
+			],
+			[
+				"out",
+				"Outlook_QEC.tex"
+			],
+			[
+				"contr",
+				"Controlling_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"add",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"ab",
+				"abstract.tex"
+			],
+			[
+				"char",
+				"characterizing_weakly_coupled_spins.tex"
+			],
+			[
+				"elec",
+				"extending_electron_coherence.tex"
+			],
+			[
+				"outl",
+				"Outlook_QEC.tex"
+			],
+			[
+				"control",
+				"Controlling_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"ide",
+				"identifying_weakly_coupled_spins.tex"
+			],
+			[
+				"abs",
+				"abstract.tex"
+			],
+			[
+				"e",
+				"Electronic_spin_in_diamond.tex"
+			],
+			[
+				"addressing",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"cover",
+				"Cover/cover_file.tex"
+			],
+			[
+				"adressing",
+				"Addressing_weakly_coupled_carbon_spins.tex"
+			],
+			[
+				"apend",
+				"Fingerprint_data_appendix.tex"
+			],
+			[
+				"question",
+				"learn_for_defence/question.tex"
+			],
+			[
+				"ini",
+				"State_initialization_and_readout.tex"
+			],
+			[
+				"addres",
+				"Addressing_weakly_coupled_carbon_spins.tex"
 			],
 			[
 				"state",
@@ -1197,28 +1204,8 @@
 				"Cover/cover_file.tex"
 			],
 			[
-				"addressing",
-				"Addressing_weakly_coupled_carbon_spins.tex"
-			],
-			[
 				"ad",
 				"Addressable_carbon_sims.tex"
-			],
-			[
-				"abst",
-				"abstract.tex"
-			],
-			[
-				"cover",
-				"Cover/cover_file.tex"
-			],
-			[
-				"addres",
-				"Addressing_weakly_coupled_carbon_spins.tex"
-			],
-			[
-				"contr",
-				"Controlling_weakly_coupled_carbon_spins.tex"
 			],
 			[
 				"covertex",
@@ -1226,10 +1213,6 @@
 			],
 			[
 				"adres",
-				"Addressing_weakly_coupled_carbon_spins.tex"
-			],
-			[
-				"add",
 				"Addressing_weakly_coupled_carbon_spins.tex"
 			],
 			[
@@ -1243,10 +1226,6 @@
 			[
 				"qu",
 				"question.tex"
-			],
-			[
-				"abs",
-				"abstract.tex"
 			],
 			[
 				"pre",
@@ -1285,16 +1264,8 @@
 				"Qcircuit.tex"
 			],
 			[
-				"elec",
-				"Electronic_spin_in_diamond.tex"
-			],
-			[
 				"deter",
 				"Deterministic_MBE.tex"
-			],
-			[
-				"main",
-				"main.tex"
 			],
 			[
 				"pream",
@@ -1387,6 +1358,7 @@
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},
