@@ -6,3 +6,39 @@ It will also discuss the feasibility of using weakly-coupled carbon spins as a m
 \section{Direct outlook, deterministic operations/what needs to be done/can be done}
 
 \section{Simulations, how many carbon can we control? }
+
+
+
+Moved from identification section:
+\subsection{Effect of the magnetic field}
+
+There are significant advantages to increasing the magnetic field when attempting to address weakly coupled carbons.
+By increasing the magnetic field the Larmor frequency can be increased, reducing the number of carbons that are in the complex regime.
+This causes the broad oscillating resonances to disappear allowing more carbons to be addressed.
+
+Although increasing the magnetic field can improve the situation it is not always possible or desired.
+When the magnetic field becomes too strong too strong the resonances become narrower than the resolution of the Arbitrary Waveform Generator used to generate the pulses that address the resonances, making it impossible to address these resonances effectively.
+Simulations were performed (see \cref{chap:addressable_carbon_sims}) that indicate that for a natural carbon-13 concentration there is a range between 400G and 1400G where the magnetic field is optimal for controlling weakly coupled spins.
+
+Besides the spin environment there are other factors affecting the choice for magnetic field.
+Because the optical transitions used for readout and initialization depend on strain and magnetic field field\citep{Hensen2011MeasurementBased}, care must be taken when measuring that states do not mix in the excited state.
+This combined with the fact that few experiments have been performed at high magnetic field and low temperature make it more practical to settle for a more moderate magnetic field of 300G.
+
+
+%%%%%%%%%
+Idem:
+
+Spins that have a stronger than average hyperfine-interaction show up outside or at the edge of the spin-bath collapse.
+Spins that are in the basic regime show up as a narrow dip.
+Going to larger $\tau$ separates these dips further as the order of the resonance $k$ increases.
+By looking at larger $\tau$ it is possible to resolve and address more resonances.
+Several spins in the basic regime have been identified 3 of these are visible as colored lines in \cref{fig:FP}.
+As computations are fundamentally limited by the coherence time there is a limit to the resonance-order that can be used to address carbons, making it impossible to resolve all weakly coupled spins.
+
+Besides the carbons in the basic regime there are also weakly-coupled carbons that are more strongly coupled.
+When a carbon in the complex regime is present in the NV-center this manifests itself as a resonance with strong oscillations on the side. Such a feature is also clearly visible in \cref{fig:FP}. We have identified the oscillations in the fingerprint as belong to a single spin which is denoted by the red line.
+
+When a weakly coupled carbon in the complex regime is present a significant part of the fingerprint spectrum is inaccessible for controlling other carbons making them an undesired feature when attempting to control weakly coupled carbon spins.
+
+
+

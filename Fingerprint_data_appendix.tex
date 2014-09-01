@@ -1,4 +1,39 @@
-\chapter{Fingerprintdata}
+\chapter{Dynamical Decoupling Spectroscopy}
+
+\section{Mathematical description of dynamical decoupling spectroscopy}
+\label{sec:mathematical_description_dd_spectro}
+
+
+The response of a single carbon to a dynamical decoupling spectroscopy experiment is given by \cref{eq:contrast_to_probability,eq:contrast_single_carbon_spin,eq:vec_term,eq:angle_term} \citep{Taminiau2012Detection}. Where $P_x$ is the probability that the initial spin-state is preserved and $M_j$ the contrast.
+\begin{equation}
+\label{eq:contrast_to_probability}
+P_x = (M+1)/2
+\end{equation}
+
+\begin{equation}
+\label{eq:contrast_single_carbon_spin}
+M_j = 1-(1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}}) \sin^2 \frac{N\phi}{2}
+\end{equation}
+
+%alpha = \tilde{\omega} \tau
+%beta = (\omega_L \tau)
+% mz = (\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}})
+\begin{equation}
+\label{eq:vec_term}
+    1 - \hat{\bm{\mathrm{n_0}}} \cdot \hat{\bm{\mathrm{n_1}}} =  \frac{A_\perp ^2}{\tilde{\omega^2}} \frac{(1- \cos{(\tilde{\omega} \tau)})(1-\cos{(\omega_L \tau)})} {1 +\cos{(\tilde{\omega} \tau)}\cos{(\omega_L \tau)} - (\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}}) \sin{(\tilde{\omega} \tau)}\sin{(\omega_L \tau)}}
+\end{equation}
+\begin{equation}
+\label{eq:angle_term}
+    \phi =  \cos^{-1}\left(\cos(\tilde{\omega} \tau) \cos(\omega_L \tau)-\left(\frac{ A_ \parallel + \omega_L }{ \tilde{ \omega}}\right) \sin(\tilde{\omega} \tau)\sin(\omega_L \tau)\right)
+\end{equation}
+
+\begin{equation}
+\label{eq:prod_multiple_spins}
+    M = \prod_{j}{M_j}
+\end{equation}
+
+
+\section{Fingerprint analysis}
 \label{chap:Fingerprint_data_appendix}
 The estimated hyperfine paramters of all 13 identified spins can be found in \cref{tbl:HF_par_appendix}. Due to the size of the fingerprint analysis it is not possible to include with this thesis. A pdf file containing the fingerprint analysis can be found here: \url{https://www.dropbox.com/s/gieji9e86bfvsf1/fingerprinting.pdf}.
 
