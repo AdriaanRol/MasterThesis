@@ -63,7 +63,7 @@ The blue points correspond to $x$-readout, the green points to $y$-readout and t
 The phase is sweeped to demonstrate that the readouts function as intended.
 For a qubit in the $\ket{0}$-state the initial phase is undefined.
 
-The combined fidelity of readout and initialization to the desired state is: $F(\ket{X}) = 80.11 \pm 1.69\% $ for the $\ket{X}$-state and $F(\ket{Z}) = 85.99 \pm 0.62\%$ for the $\ket{Z}$-state.
+The combined fidelity of readout and initialization to the desired state is: $F(\ket{X}) = 90.57 \pm 0.85 \% $ for the $\ket{X}$-state and $F(\ket{Z}) = 93.00 \pm 0.31 \%$ for the $\ket{Z}$-state.
 
 \begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}\centering
@@ -85,36 +85,49 @@ The combined fidelity of readout and initialization to the desired state is: $F(
 Entanglement can be created by performing a parity measurement.
 
 A parity measurement does not measure the state of two qubits but measures if the two qubits are the same in a certain basis.
-An example is the ZZ-parity measurement.
-The ZZ-parity measurement returns a positive result if the the two qubits are the same in the $z$-basis and a negative result if the two are opposite.
-That is it returns a positive result if the state is $\ket{00}$ or $\ket{11}$ and a negative result if the state is $\ket{01}$ or $\ket{10}$.
+An example is the XX-parity measurement.
+The XX-parity measurement returns a positive result if the the two qubits are the same in the $x$-basis and a negative result if the two are opposite.
+That is it returns a positive result if the state is $\ket{X,X}$ or $\ket{-X,-X}$ and a negative result if the state is $\ket{X,-X}$ or $\ket{-X,X}$.
 In general a two qubit parity operator has 2 eigenvalues, both are twofold degenerate.
 
+A parity measurement can be implemented on a weakly coupled spin using the circuit depicted in \cref{fig:gate_circuit_general_Parity_RO}.
 
+The XX-parity measurement is very similar to the regular readout depicted in \cref{fig:gate_circuit_mbi_x-init}.
+Once the electron is brought into a superposition the electron picks up phase when the $\mp \mathrm{x}$-gate is applied.
+$+\pi/2$-phase when the carbon is in $\ket{+X}$ and $-\pi/2$-phase when the carbon is in $\ket{-X}$.
+This is done for both carbons, when both carbons are in the same $x$-state the electron will pick up $\pi$-phase but when they do not give the same result the phase cancels.
+By reading out the electronic-spin along $x$ the parity is measured.
 
-Implemented by circuit x
-(explain circuit)
-
-
-Initialization by conditionalizing on parity measurement and Readout parities.
-Measurement projects into parity or no parity.
 \begin{figure}[htbp]
     \centering
 \mbox{
 \Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}_e} &\dashedCtrl{1} &  \dashedCtrl{2} &  \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{\mathrm{y}}  &  \meter &\qw\\
-\lstick{\ket{\psi}_{C1}} & \dashedGate{\pm \mathrm{y}} &\qw& \qw & \gate{\mp \mathrm{x}}  &\qw   &  \qw   &\qw&\qw \\
-\lstick{\ket{\psi}_{C2}}&\qw &  \dashedGate{\pm \mathrm{y}}   & \qw   & \qw    & \gate{\mp \mathrm{x}}   &\qw & \qw &\qw}}
-    \caption{Gate circuit for a parity measurement. Without the dotted gates  }
+\lstick{\ket{0}_e} &  \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{\mathrm{y}}  &  \meter &\qw\\
+\lstick{\ket{\psi}_{C1}} &  \qw & \gate{\mp \mathrm{x}}  &\qw   &  \qw   &\qw&\qw \\
+\lstick{\ket{\psi}_{C2}}   & \qw   & \qw    & \gate{\mp \mathrm{x}}   &\qw & \qw &\qw}}
+    \caption{Gate circuit for a XX-parity measurement. }
     \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 
 \section{Demonstrating entanglement}
-To demonstrate entanglement a tomography must be performed.
+To demonstrate entanglement it must be verified that the entangled state is created.
+This can be done by performing a state tomography.
+In quantum state tomography a quantum state is reconstructed by repeatedly preparing the same state and gathering measurement statistics on a complete set of bases.
+
+For the complete set of bases we use the Pauli-bases.
+The Pauli-bases is spanned by $\{ \sigma_i \otimes\sigma_j \} $, for all $i,j \in \{ I, x,y,z \}$ where $\sigma_{i}$ are the Identity and the Pauli matrices.
+Single qubit and parity measurements are performed using the
 
 
-\subsection{Tomography}
-\subsection{Result}
+\Cref{fig:2qubitTomos} shows the result
+
+%expected result /gray bars
+Init in state uu
+projected into -XX
+-> state k
+in pauli basis looks like ..
+
+
 \begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \caption{}
@@ -123,14 +136,14 @@ To demonstrate entanglement a tomography must be performed.
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \caption{}
-        \includegraphics{Img/uu-XX-parity.pdf}
-        \label{fig:uu-XX}
+        \includegraphics{Img/ud-no-parity.pdf}
+        \label{fig:ud-init }
     \end{subfigure}
 
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \caption{}
-        \includegraphics{Img/ud-no-parity.pdf}
-        \label{fig:ud-init }
+        \includegraphics{Img/uu-XX-parity.pdf}
+        \label{fig:uu-XX}
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \caption{}
@@ -138,10 +151,10 @@ To demonstrate entanglement a tomography must be performed.
         \label{fig:ud-XX}
     \end{subfigure}
     \caption{ Preliminary data
-    \cref{fig:uu-init } Fidelity to guess  = 0.814256440281 +/- 0.0168202298443\\
-    \cref{fig:uu-XX}  Fidelity to guess  = 0.765954332553 +/- 0.0174228538115\\
-    \cref{fig:ud-init } Fidelity to guess  = 0.809865339578 +/- 0.0168850158243\\
-    \cref{fig:ud-XX}  Fidelity to guess  = 0.760831381733 +/- 0.0174356869379
+    \cref{fig:uu-init } Fidelity to guess  = $81.43 \pm 1.68$ \% \\
+    \cref{fig:uu-XX}  Fidelity to guess  = $76.60 \pm 1.74$ \% \\
+    \cref{fig:ud-init } Fidelity to guess  = $80.99 \pm 1.69$ \% \\
+    \cref{fig:ud-XX}  Fidelity to guess  = $76.08 \pm 1.74$ \%
     }
     \label{fig:2qubitTomos}
 \end{figure}
