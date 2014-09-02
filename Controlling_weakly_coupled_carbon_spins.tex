@@ -1,54 +1,31 @@
 \chapter{Controlling Weakly-coupled Carbon Spins}
-Once the nuclear-spin environment of the NV-center has been characterized it is possible to control it.
-This chapter will demonstrate initialization, control and readout of weakly coupled carbon spins before explaining how an entangled state can be created using parity measurements. We will then demonstrate the created entanglement using quantum state tomography.
+The creation of entanglement is an essential capability for QEC in particular and quantum-computation in general.
+This chapter demonstrates how weakly coupled nuclear spins can be initialized and read-out and how this can be used to generate entanglement between them.
 
 
 
+% In order to demonstrate entanglement we must be able to initialize the system, perform a parity measurement to create the entanglement and make a tomography to demonstrate it.
+% This chapter will explain what operations need to be performed.
 
+% This chapter attempts to explain first how we can control a carbon by explaining how the two different rotation axes from the last chapter can be used to implement a conditional +-X gate. A gate similar to a CNOT gate.
+% Now that we understand how to implement a cnot gate we will use this to perform an experiment that we call a carbon ramsey on an unitialized state.
+% AFterwards we will use this to show that we can initialize and readout by showing an initialized carbon ramsey. (1buit tomo (ramsey with more T +Z-RO?).
+% From this we will also determine $T_{2 \mathrm{C}}^*$.
 
-[Note intro needs to be rewritten once chapter is done]\\
-Now that we have identified several promising carbon spins we will go into controlling them.
-
-In order to demonstrate entanglement we must be able to initialize the system, perform a parity measurement to create the entanglement and make a tomography to demonstrate it.
-This chapter will explain what operations need to be performed.
-
-This chapter attempts to explain first how we can control a carbon by explaining how the two different rotation axes from the last chapter can be used to implement a conditional +-X gate. A gate similar to a CNOT gate.
-Now that we understand how to implement a cnot gate we will use this to perform an experiment that we call a carbon ramsey on an unitialized state.
-AFterwards we will use this to show that we can initialize and readout by showing an initialized carbon ramsey. (1buit tomo (ramsey with more T +Z-RO?).
-From this we will also determine $T_{2 \mathrm{C}}^*$.
-
-The next section will consider two qubit control.
-It will start by explaining how we can perform a parity measurement. This measurement allows us to perform a two qubit tomography and create entanglement by projection.
-We will then show
+% The next section will consider two qubit control.
+% It will start by explaining how we can perform a parity measurement. This measurement allows us to perform a two qubit tomography and create entanglement by projection.
+% We will then show
 
 
 
 \section{Initialization and readout}
-The $\pm\mathrm{x}$-gate can be used to initialize a carbon-spin.
-To initialize a carbon-spin  in the $ \ket{X}$-state the gate-circuit as depicted in \cref{fig:gate_circuit_mbi_x-init} is implemented.
+A weakly coupled spin can be initialized by conditionalizing on a certain readout result, similar to how nitrogen-MBI works.
+A weakly coupled carbon spin can be read-out by using the $\pm \mathrm{x}$-gate to entangle the phase of the electronic-spin with the state of the nuclear spin and reading out the phase of the electronic spin.
 
-After the electronic-spin is brought in the $\ket{X}$-state the two-qubit system can be described by the tensor product of two density matrices:
-\begin{equation}
-    \rho_X \otimes \rho_m = \rho_X \otimes \rho_{X} +\rho_X \otimes \rho_{-X}
-\end{equation}
-By applying the $\pm{\mathrm{x}}$-gate  the electronic-spin picks up a phase depending on the nuclear spin-state:
-\begin{equation}
-     \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
-    \label{eq:density_after_Ren}
-\end{equation}
 
-The effect of the $\pm{\mathrm{x}}$-gate can be made more easily understood by treating the carbon-spin as being either in the $\ket{X}$ or $\ket{-X}$-state. Treating both as separate cases below.
-\begin{align}
-    \quad &\ket{X}\ket{X} &\vee \quad &  \quad\ket{X}\ket{-X}\\
-    \quad &\frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{X} &\vee \quad & \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{-X} \\
-    \quad &\frac{e^{-i\pi/4}\ket{0}+e^{i\pi/4}\ket{1}}{\sqrt{2}}\ket{X} &\vee \quad & \quad \frac{e^{i\pi/4}\ket{0}+e^{-i\pi/4}\ket{1}}{\sqrt{2}}\ket{-X}\\
-    \quad &\ket{Y}\ket{X} &\vee \quad & \quad \ket{-Y}\ket{-X}
-\end{align}
-The final x-pulse is used to read out the electron. By conditionalizing the experiment on getting the outcome $\ket{0}_e$ the carbon is initialized in the $\ket{X}_C$-state.
-\begin{equation}
-    \rho_0 \otimes \rho_{\mathrm{X}} + \rho_1 \otimes \rho_{\mathrm{-X}}
-\end{equation}
-
+%Explain Readout.
+The gates used to read-out a weakly coupled nuclear spin are depicted in \cref{fig:gate_circuit_initialization}. The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} is used to read out along the $x$-axis and the one depicted in \cref{fig:gate_circuit_mbi_swap-init} is used to read out along the $z$-axis.
+%Explain Initialization.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[t]{0.49\textwidth}
@@ -74,20 +51,59 @@ The final x-pulse is used to read out the electron. By conditionalizing the expe
     \label{fig:gate_circuit_initialization}
 \end{figure}
 
-The sequence can be extended to a swap type initialization by implementing an additional $\mp{\mathrm{y}}$-gate.
-The effect of the extra y-gate is that both the  $\ket{X}_\mathrm{C} $ and the  $\ket{-X}_\mathrm{C} $-state are rotated to the  $\ket{0}_\mathrm{C} $-state, effectively swapping the mixed state from the carbon to the electron.
-By applying a readout the electron can be reinitialized.
+
+% To initialize the nuclear spin
+The initial pulse brings the electronic spin in $\ket{X}_e$.
+When the nuclear spin starts in the mixed state the system can be described by the tensor product of two density matrices:
+\begin{equation}
+    \rho_X \otimes \rho_m = \rho_X \otimes \rho_{X} +\rho_X \otimes \rho_{-X}
+\end{equation}
+By applying the $\pm{\mathrm{x}}$-gate  the electronic-spin picks up a phase depending on the nuclear spin-state:
+\begin{equation}
+     \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
+    \label{eq:density_after_Ren}
+\end{equation}
+By reading out the electronic spin along the $y$-axis the nuclear spin is projected into the $\ket{X}_C$ or $\ket{-X}_C$-state.
+By conditionalizing on a positive readout result the state can be initialized into the $\ket{X}_C$-state.
+
+By adding a second conditional gate (\cref{fig:gate_circuit_mbi_swap-init}) the nuclear spin is brought into the $\ket{0}_C$-state regardless of the measurement outcome.
+
+\paragraph{}
+\Cref{fig:single_qubit_initialization} demonstrates initialization and readout.
+In \cref{fig:carbon_init_x} carbon-1 is initialized into the $\ket{X}_C$-state and in \cref{fig:carbon_init_Z} it is initialized into the $\ket{0}_C$-state.
+This is done by implementing the circuits depicted in \cref{fig:gate_circuit_initialization} and conditionalizing on a positive electron readout.
+
+The carbon is read out using the same circuits.
+The blue points correspond to $x$-readout, the green points to $y$-readout and the red-points to the $z$-readout.
+The phase is sweeped to demonstrate that the readouts function as intended.
+For a qubit in the $\ket{0}$-state the initial phase is undefined.
+
+The combined fidelity of readout and initialization to the desired state is: $F(\ket{X}) = 80.11 \pm 1.69\% $ for the $\ket{X}$-state and $F(\ket{Z}) = 85.99 \pm 0.62\%$ for the $\ket{Z}$-state.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics{Img/RO_and_init_C1.pdf}
+    \begin{subfigure}[t]{0.49\textwidth}\centering
+        \caption{}
+        \includegraphics{Img/RO_and_init_C1_X.pdf}
+        \label{fig:carbon_init_x}
+    \end{subfigure}
+        \begin{subfigure}[t]{0.49\textwidth}\centering
+        \caption{}
+        \includegraphics{Img/RO_and_init_C1_Z.pdf}
+        \label{fig:carbon_init_Z}
+    \end{subfigure}
     \caption{Demonstration of carbon control. Figure shows carbon-1 }
-    \label{fig:control_demo}
+    \label{fig:single_qubit_initialization}
 \end{figure}
 
 
-% Want to explain here how frequency is determined down to Hz accuracy.
 \section{Parity measurement}
+Entanglement can be created by performing a parity measurement.
+
+A parity measurement measures the parity of two qubits. Does not measure state
+
+Implemented by circuit x
+(explain circuit)
+
 
 Initialization by conditionalizing on parity measurement and Readout parities.
 Measurement projects into parity or no parity.
@@ -103,6 +119,8 @@ Measurement projects into parity or no parity.
 \end{figure}
 
 \section{Demonstrating entanglement}
+To demonstrate entanglement a tomography must be performed.
+
 
 \subsection{Tomography}
 \subsection{Result}
