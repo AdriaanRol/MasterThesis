@@ -2,29 +2,15 @@
 The creation of entanglement is an essential capability for QEC in particular and quantum-computation in general.
 This chapter demonstrates how weakly coupled nuclear spins can be initialized and read-out and how this can be used to generate entanglement between them.
 
-
-
-% In order to demonstrate entanglement we must be able to initialize the system, perform a parity measurement to create the entanglement and make a tomography to demonstrate it.
-% This chapter will explain what operations need to be performed.
-
-% This chapter attempts to explain first how we can control a carbon by explaining how the two different rotation axes from the last chapter can be used to implement a conditional +-X gate. A gate similar to a CNOT gate.
-% Now that we understand how to implement a cnot gate we will use this to perform an experiment that we call a carbon ramsey on an unitialized state.
-% AFterwards we will use this to show that we can initialize and readout by showing an initialized carbon ramsey. (1buit tomo (ramsey with more T +Z-RO?).
-% From this we will also determine $T_{2 \mathrm{C}}^*$.
-
-% The next section will consider two qubit control.
-% It will start by explaining how we can perform a parity measurement. This measurement allows us to perform a two qubit tomography and create entanglement by projection.
-% We will then show
-
-
-
 \section{Initialization and readout}
-A weakly coupled spin can be initialized by conditionalizing on a certain readout result, similar to how nitrogen-MBI works.
+A weakly coupled spin can be initialized by conditionalizing on a readout result, similar to how nitrogen-MBI works.
 A weakly coupled carbon spin can be read-out by using the $\pm \mathrm{x}$-gate to entangle the phase of the electronic-spin with the state of the nuclear spin and reading out the phase of the electronic spin.
 
 
 %Explain Readout.
-The gates used to read-out a weakly coupled nuclear spin are depicted in \cref{fig:gate_circuit_initialization}. The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} is used to read out along the $x$-axis and the one depicted in \cref{fig:gate_circuit_mbi_swap-init} is used to read out along the $z$-axis.
+The gates used to read-out a weakly coupled nuclear spin are depicted in \cref{fig:gate_circuit_initialization}. The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} is used to read out along the $x$-axis.
+By applying a $\pm y$-gate on the carbon before the initial $y$-pulse the state can be read out along the $z$-axis.
+
 %Explain Initialization.
 \begin{figure}[htbp]
     \centering
@@ -61,12 +47,11 @@ When the nuclear spin starts in the mixed state the system can be described by t
 By applying the $\pm{\mathrm{x}}$-gate  the electronic-spin picks up a phase depending on the nuclear spin-state:
 \begin{equation}
      \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
-    \label{eq:density_after_Ren}
 \end{equation}
 By reading out the electronic spin along the $y$-axis the nuclear spin is projected into the $\ket{X}_C$ or $\ket{-X}_C$-state.
 By conditionalizing on a positive readout result the state can be initialized into the $\ket{X}_C$-state.
 
-By adding a second conditional gate (\cref{fig:gate_circuit_mbi_swap-init}) the nuclear spin is brought into the $\ket{0}_C$-state regardless of the measurement outcome.
+By adding a second conditional gate (\cref{fig:gate_circuit_mbi_swap-init}) the nuclear spin is brought into the $\ket{0}_C$-state regardless of the measurement outcome for the electronic spin.
 
 \paragraph{}
 \Cref{fig:single_qubit_initialization} demonstrates initialization and readout.
@@ -91,7 +76,7 @@ The combined fidelity of readout and initialization to the desired state is: $F(
         \includegraphics{Img/RO_and_init_C1_Z.pdf}
         \label{fig:carbon_init_Z}
     \end{subfigure}
-    \caption{Demonstration of carbon control. Figure shows carbon-1 }
+    \caption{Demonstration of carbon initialization and readout. In \cref{fig:carbon_init_x} carbon-1 is initialized in $\ket{X}$ and read-out. In \cref{fig:carbon_init_Z} carbon-1 is initialized in $\ket{0}$. Colored points correspond to readouts in different bases, blue to $x$-readout, green to $y$-readout and red to $z$-readout.}
     \label{fig:single_qubit_initialization}
 \end{figure}
 
@@ -99,7 +84,13 @@ The combined fidelity of readout and initialization to the desired state is: $F(
 \section{Parity measurement}
 Entanglement can be created by performing a parity measurement.
 
-A parity measurement measures the parity of two qubits. Does not measure state
+A parity measurement does not measure the state of two qubits but measures if the two qubits are the same in a certain basis.
+An example is the ZZ-parity measurement.
+The ZZ-parity measurement returns a positive result if the the two qubits are the same in the $z$-basis and a negative result if the two are opposite.
+That is it returns a positive result if the state is $\ket{00}$ or $\ket{11}$ and a negative result if the state is $\ket{01}$ or $\ket{10}$.
+In general a two qubit parity operator has 2 eigenvalues, both are twofold degenerate.
+
+
 
 Implemented by circuit x
 (explain circuit)
@@ -111,10 +102,10 @@ Measurement projects into parity or no parity.
     \centering
 \mbox{
 \Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} &  \meter &\qw\\
-\lstick{\ket{0}_{C1}} & \qw&  \gate{\pm \mathrm{x}}  &\qw  &\qw  & \gate{\pm \mathrm{x}} & \qw   &\qw&\qw& \\
-\lstick{\ket{0}_{C2}}& \qw& \qw  & \gate{\pm \mathrm{x}}    & \qw    &\qw& \gate{\pm \mathrm{x}}    & \qw &\qw&}}
-    \caption{General parity RO}
+\lstick{\ket{0}_e} &\dashedCtrl{1} &  \dashedCtrl{2} &  \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{\mathrm{y}}  &  \meter &\qw\\
+\lstick{\ket{\psi}_{C1}} & \dashedGate{\pm \mathrm{y}} &\qw& \qw & \gate{\mp \mathrm{x}}  &\qw   &  \qw   &\qw&\qw \\
+\lstick{\ket{\psi}_{C2}}&\qw &  \dashedGate{\pm \mathrm{y}}   & \qw   & \qw    & \gate{\mp \mathrm{x}}   &\qw & \qw &\qw}}
+    \caption{Gate circuit for a parity measurement. Without the dotted gates  }
     \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 

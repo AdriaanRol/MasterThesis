@@ -64,9 +64,9 @@ A carbon-Ramsey experiment is similar but slightly more complicated as the nucle
         \centering
         \mbox{
         \Qcircuit @C=1em @R=.7em {
-        \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}      & \qw & \multigate{1}{T}       &  \qw &\ctrl{1}          & \gate{\mathrm{-y}}  &  \meter \\
-        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}     & \qw& \ghost{T}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
-    \caption{Gate circuit depicting an uninitialized carbon Ramsey. $T$ is the free evolution time.}
+        \lstick{\ket{0}}          & \gate{\mathrm{y}}  & \ctrl{1}    & \dashedGate{\mathrm{x}}  & \multigate{1}{T}  & \dashedGate{\mathrm{-x}}      &\ctrl{1}          & \gate{\mathrm{-y}}  &  \meter \\
+        \lstick{\rho_\mathrm{m}}         & \qw              &  \gate{\pm \mathrm{x}}    &  \qw& \ghost{T}        & \qw & \gate{\pm \mathrm{x}}      & \qw       &\qw&}}
+    \caption{Gate circuit depicting an uninitialized carbon Ramsey. $T$ is the free evolution time. $\mathrm{x}$ and $\mathrm{y}$ are $\pi/2$ pulses along the $x$ and $y$ axis respectively. The dotted gates are not present when the electron is protected against decoherence by dynamical decoupling during the free evolution time $T$.}
     \label{fig:gate_circuit_nuclear_ramsey}
 \end{figure}
 
@@ -81,8 +81,16 @@ By applying the $\pm{\mathrm{x}}$-gate  the electronic-spin picks up a phase dep
      \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
     \label{eq:density_after_Ren}
 \end{equation}
-In this state it is left to freely evolve for a time $T$.
-The last part of the uninitialized carbon-Ramsey reads out along the $x$-direction for $\ket{Y}_e$ and along the $-x$-direction for $\ket{-Y}_e$.
+In this state it is either left to freely evolve for a time $T$ while the electronic spin is protected against decoherence trough dynamical decoupling, or a $\pi/2$-pulse is applied to bring the electron back to the poles of the bloch sphere.
+If the extra $\pi/2$-pulse is applied the system is in the following state before the free evolution.
+\begin{equation}
+     \rho_0 \otimes \rho_{X} +\rho_{1} \otimes \rho_{-X}
+    \label{eq:density_after_Ren}
+\end{equation}
+Because the electronic spin is in a different state for $\rho_{X}$ and $\rho_{-X}$ they evolve with different frequencies.
+After the free evolution another $\pi/2$-pulse is applied to bring the electronic spin back into the $xy$-plane.
+
+The final part of the circuit reads out the nuclear spin along the $x$-direction for $\ket{Y}_e$ and along the $-x$-direction for $\ket{-Y}_e$.
 The phase picked up during free evolution show up as an oscillation between $\ket{0}_e$ and $\ket{1}_e$ in the readout.
 
 \subsubsection{Determining the precession frequency}
