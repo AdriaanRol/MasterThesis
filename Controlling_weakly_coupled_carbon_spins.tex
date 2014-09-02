@@ -83,8 +83,8 @@ The combined fidelity of readout and initialization to the desired state is: $F(
 \end{figure}
 
 
-\section{Parity measurement}
-Entanglement can be created by performing a parity measurement.
+\section{The parity measurement}
+Entanglement can be created by performing a parity measurement and conditionalizing on its outcome.
 
 A parity measurement does not measure the state of two qubits but measures if  two qubits are the same in a certain basis.
 An example is the XX-parity measurement.
@@ -92,11 +92,12 @@ The XX-parity measurement returns a positive result if the the two qubits are th
 That is it returns a positive result if the state is $\ket{X,X}$ or $\ket{-X,-X}$ and a negative result if the state is $\ket{X,-X}$ or $\ket{-X,X}$.
 In general a two qubit parity operator has 2 eigenvalues, both are twofold degenerate.
 
-The XX-parity measurement can be implemented on a weakly coupled spin using the circuit depicted in \cref{fig:gate_circuit_general_Parity_RO}.
+The XX-parity measurement can be implemented on a weakly coupled carbon spins using the circuit depicted in \cref{fig:gate_circuit_general_Parity_RO}.
 A parity measurement is very similar to the regular readout depicted in \cref{fig:gate_circuit_mbi_x-init}.
 Once the electron is brought into a superposition the electron picks up phase when the $\mp \mathrm{x}$-gate is applied.
 $+\pi/2$-phase when the carbon is in $\ket{+X}$ and $-\pi/2$-phase when the carbon is in $\ket{-X}$.
-This is done for both carbons, when both carbons are in the same $x$-state the electron will pick up $\pi$-phase but when they do not give the same result the phase cancels.
+This is done for both carbons, when both carbons are in the same $x$-state the electron will pick up $\pi$-phase.
+When they do not give the same result the phase cancels.
 By reading out the electronic-spin along $x$ the parity is measured.
 It should be noted that because we use a $\pm \mathrm{x}$-gate instead of a CNOT-gate an additional $\pi/2$-phase is added to the carbon states compared to a regular parity measurement.
 
@@ -111,7 +112,7 @@ It should be noted that because we use a $\pm \mathrm{x}$-gate instead of a CNOT
     \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 
-\section{Demonstrating entanglement}
+\section{Quantum state tomography}
 To demonstrate entanglement it must be verified that the entangled state is created.
 This can be done by performing a state tomography.
 In quantum state tomography the density matrix of a quantum state is reconstructed by repeatedly preparing the same state and gathering measurement statistics.
@@ -127,12 +128,12 @@ By measuring the coefficients of \cref{eq:pauli}  the density matrix $\rho$ can 
 \subsection{Readout}
 To measure the Pauli matrix single and multi qubit measurements are needed.
 Single qubit measurements were described in \cref{sec:carbon_init_and_readout}.
-The two qubit measurements that are required are similar to parity measurements.
-These measurements have to measure the parity but it is not important whether the measurement preserves the state.
+The two qubit measurements required are similar to parity measurements but do not need to preserve the state after the measurement.
 
-\Cref{fig:gate_circuit_general_RO} shows a schematic representation of a general two-qubit readout that determines the parity.
-By choosing the phase of gate $c$ and $d$ the parity with respect to X or Y can be read out.
-By adding the dotted gates $a$ or $b$ the parity with respect to Z can be read out. When these gates are added however the phase difference between $a$ and $c$, and $b$ and $d$ must be ensured to be $90^\circ$.
+\Cref{fig:gate_circuit_general_RO} shows a schematic representation for such two qubit measurements.
+Gate $c$ and $d$ make sure the electronic spin picks up phase depending on the carbon state.
+By choosing their phase the parity with respect to X or Y can be read out.
+By adding the dotted gates $a$ or $b$ the parity with respect to Z can be read out. When these gates are added care must be taken that the phase difference between $a$ and $c$, and between $b$ and $d$ is $90^\circ$.
 As an example to measure the YZ , gate $a$ is not implemented, gate $b$ is implemented, gate $c$ is $\pm \mathrm{y}$ and gate $d$ is also $\pm \mathrm{y}$
 
 \begin{figure}[htbp]
@@ -147,63 +148,20 @@ As an example to measure the YZ , gate $a$ is not implemented, gate $b$ is imple
 \end{figure}
 
 % How readout is implemented
-\subsection{Expectation Initialized states? }
-To create entanglement we first verify that we have correctly initialized our qubits.
-To demonstrate entanglement we first verify that our tomography is working correctly on a simple initalized state.
-We then perform a parity measurement on these states and compare that to the ideal case.
+\subsection{Initialization and tomography of multiple weakly coupled spins}
+Before entanglement can be created the system must be initialized.
+We verify that we have correctly initialized the qubits by performing a tomography.
+The results are compared to the expected coefficients for the ideal case.
 
 \Cref{fig:uu-init } shows a tomography of carbon-1 and carbon-4 initialized in the $\ket{00}$-state.
-For this state we expect in the ideal case the single qubit Z-measurements (IZ and ZI) and the ZZ parity to be 1 and all others to be 0.
-The ideal case is represented by the gray bars in the tomography.
-The fidelity to ideal case prediction is $F = 81.43 \pm 1.68$ \%.
+In the ideal case the single qubit Z-measurements and the ZZ parity are 1 and all other coefficients are 0.
+The ideal case is represented by the gray bars in the \cref{fig:uu-init }.
+The fidelity to the ideal case is $F = 81.43 \pm 1.68$ \%.
 
 \Cref{fig:ud-init } shows a tomography of carbon-1 and carbon-4 initialized in the $\ket{01}$-state.
-For this state we expect in the ideal case ZI =1, IZ = -1 and ZZ = -1. All other measurements should give 0 contrast.
-The ideal case is represented by the gray bars in the tomography.
+In the ideal case ZI =1 and IZ and ZZ are -1, all other coefficients are 0.
+The ideal case is represented by the gray bars in the \cref{fig:ud-init }.
 The fidelity to the ideal case prediction is $80.99 \pm 1.69$ \%.
-
-\paragraph{ }
-After initializing the qubits we perform an XX-parity measurement on the qubits and conditionalize on the negative readout result.
-This projects the state into the negative parity eigenstates of the XX-parity.
-These are $\ket{-X,X}$ and $\ket{-X,X}$.
-The result of the XX-parity in the tomography is trivially -1. The other coefficients however depend on the initial state the parity was performed on.
-
-\Cref{fig:uu-XX} shows the tomography for the negative XX parity of the $\ket{00}$-state.
-$\ket{00}$ can be written in the X-basis as:
-\begin{equation}
-      \tfrac{1}{2} \left( \ket{X,X} + \ket{X,-X} +\ket{X,-X} + \ket{-X,-X} \right)
- \end{equation}
-By measuring the negative XX-parity the state is projected onto:
-\begin{equation}
-    \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} +\ket{X,-X} \right)
-\end{equation}
-The fidelity to the ideal case prediction is $76.60 \pm 1.74$ \%.
-
-
-\Cref{fig:ud-XX} shows the tomography for the negative XX parity of the $\ket{01}$-state.
-$\ket{01}$ can be written in the X-basis as:
-\begin{equation}
-    \tfrac{1}{2} \left( \ket{X,X} - \ket{X,-X} +\ket{X,-X} - \ket{-X,-X} \right)
- \end{equation}
-By measuring the negative XX-parity the state is projected onto:
-\begin{equation}
-    \tfrac{1}{\sqrt{2}} \left( -\ket{X,-X} +\ket{X,-X} \right)
-\end{equation}
-This obviously
-The fidelity to the ideal case prediction is  $76.08 \pm 1.74$ \%
-
-% Results of two qubit initialization uu + expectation.
-\subsection{Parity in pauli}
-%Expectation for
-
-
-
-%expected result /gray bars
-Init in state uu
-projected into -XX
--> state k
-in pauli basis looks like ..
-
 
 \begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}\centering
@@ -216,7 +174,49 @@ in pauli basis looks like ..
         \includegraphics{Img/ud-no-parity.pdf}
         \label{fig:ud-init }
     \end{subfigure}
+    \caption{ Quantum state tomographies of two initialized carbons. In \cref{fig:uu-init } the carbons are initialized into $\ket{00}$ with a fidelity of  $81.43 \pm 1.68$ \%.
+    In \cref{fig:ud-init } the carbons are initialized into $\ket{10}$ with a fidelity of $80.99 \pm 1.69$ \%.
+    }
+    \label{fig:2qubitTomos}
+\end{figure}
 
+\section{Demonstrating entanglement between weakly coupled carbons}
+Now that we are able to initialize multiple weakly coupled carbon spins and verify this with a tomography it is possible to demonstrate entanglement.
+After the qubits are initialized an XX-parity is performed and the tomography is conditionalized on the negative readout result.
+
+By conditionalizing on the negative readout result the carbons are projected into the negative-parity eigenstates of the XX-parity operator.
+These are $\ket{-X,X}$ and $\ket{-X,X}$.
+The tomography coefficient for the XX-parity is trivially -1.
+The other coefficients depend on the initial state the parity was performed on.
+The expected coefficients can be found as the expectation values of the operators on the state: $\bra{\Psi} \sigma_i \otimes \sigma_j \ket{\Psi}$ and are again depicted as gray bars.
+
+\Cref{fig:uu-XX} shows the tomography for the negative XX parity of the $\ket{00}$-state.
+$\ket{00}$ can be written in the X-basis as:
+\begin{equation}
+      \tfrac{1}{2} \left( \ket{X,X} + \ket{X,-X} +\ket{X,-X} + \ket{-X,-X} \right)
+ \end{equation}
+By measuring the negative XX-parity the state is projected onto:
+\begin{equation}
+    \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} +\ket{X,-X} \right)
+\end{equation}
+The expectation for the ideal case is represented by the gray bars.
+The fidelity to the ideal case prediction is $76.60 \pm 1.74$ \%.
+
+
+\Cref{fig:ud-XX} shows the tomography for the negative XX parity of the $\ket{01}$-state.
+$\ket{01}$ can be written in the X-basis as:
+\begin{equation}
+    \tfrac{1}{2} \left( \ket{X,X} - \ket{X,-X} +\ket{X,-X} - \ket{-X,-X} \right)
+ \end{equation}
+By measuring the negative XX-parity the state is projected onto:
+\begin{equation}
+    \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} -\ket{X,-X} \right)
+\end{equation}
+The expectation for the ideal case is represented by the gray bars.
+The fidelity to the ideal case prediction is  $76.08 \pm 1.74$ \%
+
+
+\begin{figure}[htbp]
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \caption{}
         \includegraphics{Img/uu-XX-parity.pdf}
@@ -227,34 +227,13 @@ in pauli basis looks like ..
         \includegraphics{Img/ud-XX-parity.pdf}
         \label{fig:ud-XX}
     \end{subfigure}
-    \caption{ Preliminary data
-    \cref{fig:uu-init } Fidelity to theoretical prediction  = $81.43 \pm 1.68$ \% \\
-    \cref{fig:ud-init } Fidelity to theoretical prediction  = $80.99 \pm 1.69$ \% \\
-    \cref{fig:uu-XX}  Fidelity to theoretical prediction  = $76.60 \pm 1.74$ \% \\
-    \cref{fig:ud-XX}  Fidelity to theoretical prediction  = $76.08 \pm 1.74$ \%
+    \caption{ Quantum state tomographies for entangled states created by measuring a negative XX parity.
+    \Cref{fig:uu-XX} is the negative XX-parity of the state prepared in \cref{fig:uu-init }. It is in the $    \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} +\ket{X,-X} \right)
+$ with  $76.60 \pm 1.74\%$ fidelity.
+    \Cref{fig:ud-XX} is the negative XX-parity of the state prepared in \cref{fig:ud-init }. It is in the $\tfrac{1}{\sqrt{2}} \left( \ket{X,-X} -\ket{X,-X} \right)$  with  $76.08 \pm 1.74$ \% fidelity.
     }
-    \label{fig:2qubitTomos}
+    \label{fig:2qubit_parity_Tomos}
 \end{figure}
 
-% What bars to include?
-% Experiment that initializes both carbons + bar graph? -> to explain how to read + to explain
-
-% 20140810 122740 Z Z init
-%  20140810 132412  YYparity
-%
-% \begin{figure}[htbp]
-%     \centering
-% \mbox{
-% \Qcircuit @C=1em @R=.7em {
-% \lstick{\ket{0}_e} & \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{y}  &  \meter &\qw\\
-% \lstick{\ket{0}_{C1}} & \qw&  \gate{\pm \mathrm{x}}  &\qw  & \qw       &\qw&\qw& \\
-% \lstick{\ket{0}_{C2}}& \qw& \qw  & \gate{\pm \mathrm{x}}    & \qw      &\qw&\qw&}}
-%     \caption{XX-parity-measurement}
-%     \label{fig:gate_circuit_XX-parity-measurement}
-% \end{figure}
-
-
-
-%  Should emphasize difficulty in seperating initialization and RO fidelity, what is not working? Is it working?
-
+Some conclusion...
 
