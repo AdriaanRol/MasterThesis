@@ -1,6 +1,7 @@
 \chapter{Controlling Weakly-coupled Carbon Spins}
 The creation of entanglement is an essential capability for QEC in particular and quantum-computation in general.
 This chapter demonstrates how weakly coupled nuclear spins can be initialized and read-out and how this can be used to generate entanglement between them.
+The creation of entanglement is demonstrated with a quantum state tomography.
 
 \section{Initialization and readout of single spins}
 \label{sec:carbon_init_and_readout}
@@ -84,7 +85,7 @@ The combined fidelity of readout and initialization to the desired state is: $F(
 
 
 \section{The parity measurement}
-Entanglement can be created by performing a parity measurement and conditionalizing on its outcome.
+Entanglement between two qubits can be created by performing a parity measurement on them and conditionalizing on the outcome.
 
 A parity measurement does not measure the state of two qubits but measures if  two qubits are the same in a certain basis.
 An example is the XX-parity measurement.
@@ -106,16 +107,16 @@ It should be noted that because we use a $\pm \mathrm{x}$-gate instead of a CNOT
 \mbox{
 \Qcircuit @C=1em @R=.7em {
 \lstick{\ket{0}_e} &  \gate{\mathrm{y}}  & \ctrl{1} &  \ctrl{2} & \gate{\mathrm{y}}  &  \meter &\qw\\
-\lstick{\ket{\psi}_{C1}} &  \qw & \gate{\mp \mathrm{x}}  &\qw   &  \qw   &\qw&\qw \\
-\lstick{\ket{\psi}_{C2}}   & \qw   & \qw    & \gate{\mp \mathrm{x}}   &\qw & \qw &\qw}}
+\lstick{\ket{\psi}_{C1}} &  \qw & \gate{\pm \mathrm{x}}  &\qw   &  \qw   &\qw&\qw \\
+\lstick{\ket{\psi}_{C2}}   & \qw   & \qw    & \gate{\pm \mathrm{x}}   &\qw & \qw &\qw}}
     \caption{Gate circuit for a XX-parity measurement. }
     \label{fig:gate_circuit_general_Parity_RO}
 \end{figure}
 
 \section{Quantum state tomography}
-To demonstrate entanglement it must be verified that the entangled state is created.
-This can be done by performing a state tomography.
-In quantum state tomography the density matrix of a quantum state is reconstructed by repeatedly preparing the same state and gathering measurement statistics.
+To demonstrate entanglement, entanglement must not only be created but it must also be verified that the entangled state is created.
+This can be done by performing a quantum state tomography.
+In a quantum state tomography the density matrix of a quantum state is reconstructed by repeatedly preparing the same state and gathering measurement statistics in different bases.
 
 An arbitrary matrix can be described as a weighted sum of the Pauli-matrices and the Identity as in: \cref{eq:pauli}.
 \begin{equation}
@@ -126,26 +127,13 @@ By measuring the coefficients of \cref{eq:pauli}  the density matrix $\rho$ can 
 
 
 \subsection{Readout}
-To measure the Pauli matrix single and multi qubit measurements are needed.
+To measure the coefficients of \cref{eq:pauli} single and multi qubit measurements are needed.
 Single qubit measurements were described in \cref{sec:carbon_init_and_readout}.
-The two qubit measurements required are similar to parity measurements but do not need to preserve the state after the measurement.
+The two qubit measurements required are very similar to parity measurements but do not need to preserve the state after the measurement.
 
-\Cref{fig:gate_circuit_general_RO} shows a schematic representation for such two qubit measurements.
-Gate $c$ and $d$ make sure the electronic spin picks up phase depending on the carbon state.
-By choosing their phase the parity with respect to X or Y can be read out.
-By adding the dotted gates $a$ or $b$ the parity with respect to Z can be read out. When these gates are added care must be taken that the phase difference between $a$ and $c$, and between $b$ and $d$ is $90^\circ$.
-As an example to measure the YZ , gate $a$ is not implemented, gate $b$ is implemented, gate $c$ is $\pm \mathrm{y}$ and gate $d$ is also $\pm \mathrm{y}$
-
-\begin{figure}[htbp]
-    \centering
-\mbox{
-\Qcircuit @C=1em @R=.7em {
-\lstick{\ket{0}_e} &  \dashedCtrl{1} &   \dashedCtrl{2} &  \gate{\mathrm{-y}}  &  \ctrl{1} &   \ctrl{2} & \gate{\mathrm{y}}  &  \meter &\qw\\
-\lstick{\ket{\psi}_{C1}} &  \dashedGate{\pm \mathrm{x}_a}   &\qw &  \qw & \gate{\pm \mathrm{\pi/2}_c}  &\qw   &  \qw   &\qw&\qw \\
-\lstick{\ket{\psi}_{C2}}  & \qw    & \dashedGate{\pm \mathrm{x}_b}  & \qw   & \qw    & \gate{\pm \mathrm{\pi/2}_d}   &\qw & \qw &\qw}}
-    \caption{Gate circuit for a general two qubit readout. }
-    \label{fig:gate_circuit_general_RO}
-\end{figure}
+The parity measurement depicted in \cref{fig:gate_circuit_general_Parity_RO} can be used to measure the XX-parity.
+By changing the phase of one or two of the two $\pm \mathrm{x}$ gates Y-parities can be measured.
+By applying a $\mp \mathrm{y}$ to one of the two carbons before the initial Y-pulse a Z-parity can be measured, care must be taken however that the phase difference between this gate and the $\pm \mathrm{x}$ on the corresponding carbon is $90^\circ$.
 
 % How readout is implemented
 \subsection{Initialization and tomography of multiple weakly coupled spins}
@@ -202,7 +190,7 @@ By measuring the negative XX-parity the state is projected onto:
 The expectation for the ideal case is represented by the gray bars.
 The fidelity to the ideal case prediction is $76.60 \pm 1.74$ \%.
 
-
+\paragraph{ }
 \Cref{fig:ud-XX} shows the tomography for the negative XX parity of the $\ket{01}$-state.
 $\ket{01}$ can be written in the X-basis as:
 \begin{equation}
