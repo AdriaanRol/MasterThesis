@@ -17,9 +17,9 @@
 %    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 % Thanks to the Xy-pic guys, Kristoffer H Rose, Ross Moore, and Daniel Müllner,
-% for their help in making Qcircuit work with Xy-pic version 3.8.  
+% for their help in making Qcircuit work with Xy-pic version 3.8.
 % Thanks also to Dave Clader, Andrew Childs, Rafael Possignolo, Tyson Williams,
-% Sergio Boixo, Cris Moore, Jonas Anderson, and Stephan Mertens for helping us test 
+% Sergio Boixo, Cris Moore, Jonas Anderson, and Stephan Mertens for helping us test
 % and/or develop the new version.
 
 \usepackage{xy}
@@ -129,4 +129,11 @@
 \newcommand{\link}[2]{\ar @{-} [#1,#2]}
     % Draws a wire or connecting line to the element #1 rows down and #2 columns forward.
 \newcommand{\pureghost}[1]{*+<1em,.9em>{\hphantom{#1}}}
-    % Same as \ghost except it omits the wire leading to the left. 
+    % Same as \ghost except it omits the wire leading to the left.
+
+%%%%%%%%%%%%%% CUSTOM COMMANDS BY MA Rol %%%%%%%%%%%%%%%%%%
+\newcommand{\dashedQwx}[1][-1]{\ar @{.} [#1,0]}
+\newcommand{\dashedQw}[1][-1]{\ar @{.} [0,#1]}
+\newcommand{\dashedCtrl}[1]{\control \dashedQwx[#1] \qw}
+\newcommand{\dashedGate}[1]{*+<.6em>{#1} \POS ="i","i"+UR;"i"+UL **\dir{.};"i"+DL **\dir{.};"i"+DR **\dir{.};"i"+UR **\dir{.},"i" \qw}
+
