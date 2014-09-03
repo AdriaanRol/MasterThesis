@@ -14,6 +14,7 @@
 \usepackage{pdfpages}
 \usepackage{amssymb}
 \usepackage[position=t,singlelinecheck=off]{subcaption}
+\captionsetup{subrefformat=parens}
 \usepackage{amsthm}
 \usepackage{rotating}
 \include{qcircuit} % Package used for typesetting quantum circuits. Included in directory
@@ -30,7 +31,6 @@
 \ChNumVar{\fontsize{76}{80}\usefont{OT1}{phv}{m}{n}\selectfont}
 %%%\setlength{\parindent}{0in}
 \newcommand{\comment}[1]{} %Creates a command that does nothing in order to allow in-line comments
-
 \setlength{\marginparwidth}{0pt}
 \hfuzz=10pt %disables warnings for overfull hbox upto 10pt. Used for chapter headings
 % \pdfsuppresswarningpagegroup=1 % Disables warnings for multiple pdfs with grouping on same page

@@ -1,6 +1,9 @@
-\chapter{Outlook: towards Quantum Error Correction}
+\chapter{Towards Quantum Error Correction}
 This thesis has demonstrated the creation of entanglement between weakly coupled carbon spins.
-This project was motivated by
+This project was motivated by the use of
+
+
+
 A crucial steps towards a scalable quantum computer.
 next step implementing QEC.
 This will
@@ -14,23 +17,75 @@ What is required to do detrministic gates?
 Branching
 FFFWD
 
+Motivation for feed forward/conditional operations.
+Currently conditionalizing on outcome, NOT post selecting.
+
+Extra required, calculate what operations must be done to correct for opposite measurement outcome.
+Integrate into experiment.
 
 
-\section{Simulations, how many carbon can we control? More qubits !  }
-
-\subsection{How many needed ?}
-\subsection{Why simulations? }
-Give handwavy explanation, state there is an optimum B-Field. To determine how many can be controlled simulations needed.
-
-\subsection{What does the simulation predict (enough qubits)}
-\subsection{When is a carbon considered to be controllable? }
-Minimum F = 90
-Reject sample if strongly coupled (implies higher statistics)
-
-\subsection{What are the assumptions in the model? }
-T2* predictions
+How to do deterministic?
+By implementing feed forward it is possible to perform deterministic operations.
+An entangled state can be deterministically created by
 
 
+Advantages of deterministic
+An additional advantage of performing deterministic operations is that it can significantly speed up the rate at which experiments can be performed.
+There is a limit as all branches of an experiment
+
+
+\section{Simulations}
+In order to implement QEC control more than the two qubits that can be addressed now are required.
+To correct for a single type of quantum error 3 qubits are required.
+To implement any type of quantum error at least 5 qubits are required.
+By having more qubits more elegant algorithms exist for correcting quantum errors.
+
+
+To determine what the optimal conditions are with respect to the number of addressable carbons simulations were performed.
+To determine if enough carbons can be controlled to implement QEC simulations were performed.
+
+In the simulations it was determined how many weakly coupled carbons can be addressed using dynamical decoupling for a range of magnetic fields and several different concentrations.
+
+This was done by collecting statistics on 1000 simulated NV-centers.
+All these simulated NV-centers had an environment with randomly placed carbons.
+For all these carbons the hyperfine interaction with the NV-center and its resonance conditions were calculated.
+For these resonant conditions it was determined if a carbon could be controlled.
+
+In the simulations a carbon is considered to be controllable if it matches certain conditions.
+To be considered controllable it must be possible to implement two consecutive $\pm \mathrm{x}$ gates with 90\% fidelity, where the total gate time must be shorter than $T_{\mathrm{max}}$ using a resonance located at a time shorter than $\tau_{\mathrm{max}}$.
+
+$T_max$ to simulate coherence time.  assumptions for coherence times (10 gates within)
+
+Reject sample if big  coupled (implies higher statistics)
+Max resonance time (to look for) (optional argument electron coherence).
+
+Samples can be fabricated at different
+Additional parameter that can be varied, carbon-13 concentration.
+Longer coherence times for lower C
+Weaker coupled carbons -> optimum at lower field.
+Also non trivial.
+
+
+
+In order to address weakly coupled carbons using dynamical decoupling their resonances must not overlap.
+It is clear to see that it does not work at low field (?) because of the presence of multiple spins in the complex regime.
+By increasing the magnetic field these can be moved to the simple regime.
+As the field is increased the resonance become both narrower and move closer to the origin.
+There are limits to how narrow a resonance can be and still be addressable.
+If to close to origing (higher order) .
+Not trivial, clear there is an optimum.
+
+
+By increasing the magnetic field more carbons move from the complex regime (\cref{fig:coupling regimes}) to the basic regime.
+At the same time all resonances become narrower ($\cref{eq:res_dip_width}$) while moving closer together in $\tau$ (\cref{eq:res_dip_loc}).
+
+Closer -> possible to address higher orders? (because limited by coherence time)
+Less complex regime -> more addressable
+
+narrower -> AWG resolution
+Tau shorter than pulsewidht
+
+Caveat -> Large spread, impossible to predict about an individual carbon. Possible to say about expectation.
 
 \begin{figure}[htbp]
 
@@ -39,8 +94,8 @@ T2* predictions
         \begin{tikzpicture}
             \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/Simulations_avgN_vs_Bfield.pdf}};
             \node[font=\small, text = blue] at (5.0,4.90)  {$\mu = 1.10\%$};
-            \node[font=\small, text = green] at (5.0,4.65)  {$\mu =0.33\%$};
-            \node[font=\small, text = red] at (5.0,4.40)  {$\mu =0.11\%$};
+            \node[font=\small, text = green] at (5.0,4.6)  {$\mu =0.33\%$};
+            \node[font=\small, text = red] at (5.0,4.30)  {$\mu =0.11\%$};
         \end{tikzpicture}
         \label{fig:Simulations_avg_n_vs_bfield}
     \end{subfigure}
@@ -49,6 +104,7 @@ T2* predictions
     \begin{tikzpicture}
         \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/Simulations_Histogram_vs_Bfield.pdf}};
         \node[font=\small, text = black] at (5.4,4.90)  {$B = 700\mathrm{G}$};
+        \node[font=\small, text = black] at (5.4,4.60)  {$\mu = 1.1\%$};
     \end{tikzpicture}
     \label{fig:simulations_histogram_vs_Bfield}
     \end{subfigure}
@@ -56,7 +112,11 @@ T2* predictions
     \label{fig:FP}
 \end{figure}
 
+Simulations only look at samples withiout large (>200kHz) HF couplings  carbon spins.
 
+In the simulations 3 or more carbons can be addressed in 89\% of the occurrences.
+5 or more carbons can be addressed in 57\% of the occurrences
+At a magnetic field of 700G more than 3 carbons can be addressed in 90\% of the occurences
 
 % %%%%%%%%%
 % Idem:
