@@ -9,9 +9,10 @@ A weakly coupled spin can be initialized by conditionalizing on a readout result
 A weakly coupled carbon spin can be read-out by using the $\pm \mathrm{x}$-gate to entangle the phase of the electronic-spin with the state of the nuclear spin and reading out the phase of the electronic spin.
 
 %Explain Readout.
-The gates used to initialize a weakly coupled nuclear spin are depicted in \cref{fig:gate_circuit_initialization}.
-The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} is used to perform a read-out along the $x$-axis.
-By applying a $\pm y$-gate on the carbon before the initial $y$-pulse the state can be read out along the $z$-axis.
+The gates used to initialize and readout a weakly coupled carbon are very similar.
+The gates used to initialize a weakly coupled carbon are depicted in \cref{fig:gate_circuit_initialization}.
+The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} projects the state along the the $x$-axis upon readout of the electronic spin.
+By adding an additional conditional gate, as depicted in \cref{fig:gate_circuit_mbi_swap-init}, the nuclear spin can be brought into the $\ket{0}$-state regardless of the measurement outcome of the electronic spin.
 
 %Explain Initialization.
 \begin{figure}[htbp]
@@ -41,7 +42,7 @@ By applying a $\pm y$-gate on the carbon before the initial $y$-pulse the state 
 
 
 % To initialize the nuclear spin
-The initial pulse in \cref{fig:gate_circuit_mbi_x-init} brings the electronic spin in $\ket{X}_e$.
+To initialize the nuclear spin an initial pulse brings the electronic spin in $\ket{X}_e$.
 When the nuclear spin starts in the mixed state the system can be described by the tensor product of two density matrices:
 \begin{equation}
     \rho_X \otimes \rho_m = \rho_X \otimes \rho_{X} +\rho_X \otimes \rho_{-X}
@@ -51,16 +52,19 @@ By applying the $\pm{\mathrm{x}}$-gate  the electronic-spin picks up a phase dep
      \rho_Y \otimes \rho_{X} +\rho_{-Y} \otimes \rho_{-X}
 \end{equation}
 By reading out the electronic spin along the $y$-axis the nuclear spin is projected into the $\ket{X}_C$ or $\ket{-X}_C$-state.
+This correlates the electronic-spin readout to the $x$-projection of the nuclear spin.
 By conditionalizing on a positive readout result the state can be initialized into the $\ket{X}_C$-state.
+By applying an additional $\mp \mathrm{y}$ gate on the nucleus it can be initialized into $\ket{0}$.
 
-By adding a second conditional gate (\cref{fig:gate_circuit_mbi_swap-init}) the nuclear spin is brought into the $\ket{0}_C$-state regardless of the measurement outcome for the electronic spin.
+A weakly coupled carbon can be read out along the $x$-direction using the same circuit as used to initialize into $\ket{X}$.
+By changing the conditional gate to $\pm \mathrm{y}$ the carbon can be read out along $y$.
+In order to read out the carbon along the $z$-direction an additional $\pm \mathrm{x}$-gate must be added before the initial $y$-pulse and the second conditional gate must be $\pm \mathrm{y}$. It should be noted that the $z$-readout does not leave the nuclear spin in $\ket{0}$ or $\ket{1}$ but in $\ket{Y}$ or $\ket{-Y}$.
 
 \paragraph{}
 \Cref{fig:single_qubit_initialization} demonstrates initialization and readout.
 In \cref{fig:carbon_init_x} carbon-1 is initialized into the $\ket{X}_C$-state and in \cref{fig:carbon_init_Z} it is initialized into the $\ket{0}_C$-state.
-This is done by implementing the circuits depicted in \cref{fig:gate_circuit_initialization} and conditionalizing on a positive electron readout.
+This is done by implementing the circuits depicted in \cref{fig:gate_circuit_initialization} and conditionalizing on a positive electron readout result.
 
-The carbon is read out using the same circuits.
 The blue points correspond to $x$-readout, the green points to $y$-readout and the red-points to the $z$-readout.
 The phase is sweeped to demonstrate that the readouts function as intended.
 For a qubit in the $\ket{0}$-state the initial phase is undefined.
@@ -95,7 +99,7 @@ In general a two qubit parity operator has 2 eigenvalues, both are twofold degen
 
 The XX-parity measurement can be implemented on a weakly coupled carbon spins using the circuit depicted in \cref{fig:gate_circuit_general_Parity_RO}.
 A parity measurement is very similar to the regular readout depicted in \cref{fig:gate_circuit_mbi_x-init}.
-Once the electron is brought into a superposition the electron picks up phase when the $\mp \mathrm{x}$-gate is applied.
+Once the electron is brought into a superposition the electron picks up phase when the $\pm \mathrm{x}$-gate is applied.
 $+\pi/2$-phase when the carbon is in $\ket{+X}$ and $-\pi/2$-phase when the carbon is in $\ket{-X}$.
 This is done for both carbons, when both carbons are in the same $x$-state the electron will pick up $\pi$-phase.
 When they do not give the same result the phase cancels.
@@ -137,9 +141,8 @@ By applying a $\mp \mathrm{y}$ to one of the two carbons before the initial Y-pu
 
 % How readout is implemented
 \subsection{Initialization and tomography of multiple weakly coupled spins}
-Before entanglement can be created the system must be initialized.
-We verify that we have correctly initialized the qubits by performing a tomography.
-The results are compared to the expected coefficients for the ideal case.
+The tomography is tested on two initialized two qubit states.
+The combined fidelity of the initialization and tomography is calculated by comparing to the ideal case.
 
 \Cref{fig:uu-init } shows a tomography of carbon-1 and carbon-4 initialized in the $\ket{00}$-state.
 In the ideal case the single qubit Z-measurements and the ZZ parity are 1 and all other coefficients are 0.
@@ -169,24 +172,34 @@ The fidelity to the ideal case prediction is $80.99 \pm 1.69$ \%.
 \end{figure}
 
 \section{Demonstrating entanglement between weakly coupled carbons}
-Now that we are able to initialize multiple weakly coupled carbon spins and verify this with a tomography it is possible to demonstrate entanglement.
+By combining multi-qubit initialization, parity measurements and the quantum state tomography it is possible to demonstrate entanglement.
 After the qubits are initialized an XX-parity is performed and the tomography is conditionalized on the negative readout result.
+The experiment is done for carbons initialized in $\ket{00}$ and carbons initialized in $\ket{01}$.
 
 By conditionalizing on the negative readout result the carbons are projected into the negative-parity eigenstates of the XX-parity operator.
 These are $\ket{-X,X}$ and $\ket{-X,X}$.
 The tomography coefficient for the XX-parity is trivially -1.
 The other coefficients depend on the initial state the parity was performed on.
-The expected coefficients can be found as the expectation values of the operators on the state: $\bra{\Psi} \sigma_i \otimes \sigma_j \ket{\Psi}$ and are again depicted as gray bars.
+The expected coefficients are again as gray bars.
 
 \Cref{fig:uu-XX} shows the tomography for the negative XX parity of the $\ket{00}$-state.
 $\ket{00}$ can be written in the X-basis as:
 \begin{equation}
-      \tfrac{1}{2} \left( \ket{X,X} + \ket{X,-X} +\ket{X,-X} + \ket{-X,-X} \right)
+      \tfrac{1}{2} \left( \ket{X,X} + \ket{X,-X} +\ket{-X,X} + \ket{-X,-X} \right)
  \end{equation}
 By measuring the negative XX-parity the state is projected onto:
 \begin{equation}
-    \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} +\ket{X,-X} \right)
+    \Psi = \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} +\ket{-X,X} \right)
 \end{equation}
+In the $yy$-basis this state can be written as:
+\begin{equation}
+    \Psi = \tfrac{1}{\sqrt{2}} \left( \ket{Y,Y} +\ket{-Y,-Y} \right)
+\end{equation}
+And in the $zz$-basis this is:
+\begin{equation}
+    \Psi = \tfrac{1}{\sqrt{2}} \left( \ket{00} -\ket{11} \right)
+\end{equation}
+When measured in $yy$ and $zz$ this results in positive parity.
 The expectation for the ideal case is represented by the gray bars.
 The fidelity to the ideal case prediction is $76.60 \pm 1.74$ \%.
 
@@ -194,12 +207,21 @@ The fidelity to the ideal case prediction is $76.60 \pm 1.74$ \%.
 \Cref{fig:ud-XX} shows the tomography for the negative XX parity of the $\ket{01}$-state.
 $\ket{01}$ can be written in the X-basis as:
 \begin{equation}
-    \tfrac{1}{2} \left( \ket{X,X} - \ket{X,-X} +\ket{X,-X} - \ket{-X,-X} \right)
+    \tfrac{1}{2} \left( \ket{X,X} - \ket{X,-X} +\ket{-X,X} - \ket{-X,-X} \right)
  \end{equation}
 By measuring the negative XX-parity the state is projected onto:
 \begin{equation}
-    \tfrac{1}{\sqrt{2}} \left( \ket{X,-X} -\ket{X,-X} \right)
+    \Phi = \tfrac{1}{\sqrt{2}} \left( \ket{-X,X} -\ket{X,-X} \right)
 \end{equation}
+In the $yy$-basis this state can be written as:
+\begin{equation}
+    \Phi = \tfrac{i}{\sqrt{2}} \left( \ket{Y,-Y} -\ket{-Y,Y} \right)
+\end{equation}
+And in the $zz$-basis this is:
+\begin{equation}
+    \Phi = \tfrac{1}{\sqrt{2}} \left( \ket{10} -\ket{01} \right)
+\end{equation}
+When measured in $yy$ and $zz$ this results in negative parity.
 The expectation for the ideal case is represented by the gray bars.
 The fidelity to the ideal case prediction is  $76.08 \pm 1.74$ \%
 
@@ -223,5 +245,6 @@ $ with  $76.60 \pm 1.74\%$ fidelity.
     \label{fig:2qubit_parity_Tomos}
 \end{figure}
 
-Some conclusion...
+\paragraph{ }
+Both measured parities show a fidelity to the entangled state well above 0.5, clearly demonstrating that we have succeeded in creating an entangled state.
 
