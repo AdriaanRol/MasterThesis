@@ -35,60 +35,45 @@ There is a limit as all branches of an experiment
 
 
 \section{Simulations}
-In order to implement QEC control more than the two qubits that can be addressed now are required.
+In order to implement QEC control over more than the two qubits that were addressed in this thesis is required.
 To correct for a single type of quantum error 3 qubits are required.
-To implement any type of quantum error at least 5 qubits are required.
+To correct for any type of quantum error at least 5 qubits are required.
 By having more qubits more elegant algorithms exist for correcting quantum errors.
 
+Simulations were performed to determine how many weakly coupled carbons can be addressed using dynamical decoupling for a range of magnetic fields and three different concentrations of carbon-13 spins.
+In the simulations statistics were collected on 1000 NV-centers with an environment consisting of randomly placed carbon-13 spins.
+For each carbon the hyperfine coupling to the NV-center as well as its resonance conditions were calculated.
+At these resonances it was determined if a carbon is addressable.
 
-To determine what the optimal conditions are with respect to the number of addressable carbons simulations were performed.
-To determine if enough carbons can be controlled to implement QEC simulations were performed.
+A weakly coupled carbon spin is considered addressable if two consecutive $\pm \mathrm{x}$ gates can be implemented with 90\% fidelity and at least 10 such gates can be implemented within the coherence time.
 
-In the simulations it was determined how many weakly coupled carbons can be addressed using dynamical decoupling for a range of magnetic fields and several different concentrations.
+The fidelity is determined by sweeping the number of pulses at the resonance condition and determining with what fidelity the electronic spin state can be inverted.
+The accuracy with which the resonance can be addressed is limited by the resolution of the arbitrary waveform generator of 1ns.
+The fidelity is determined under the assumption of perfect $\pi$ and $\pi/2$-pulses and includes no decoherence effects.
 
-This was done by collecting statistics on 1000 simulated NV-centers.
-All these simulated NV-centers had an environment with randomly placed carbons.
-For all these carbons the hyperfine interaction with the NV-center and its resonance conditions were calculated.
-For these resonant conditions it was determined if a carbon could be controlled.
+When 10 times the gate time ($N\cdot\tau$) is larger than the coherence time the spin is said to be unaddressable.
+The coherence time $T_2^* $ is simplified to be a constant\footnote{It should be noted that this is an oversimplification and a typical coherence time does not exist for a NV-center \citep{Dobrovitski2008Decoherence}} based on the carbon-13 concentration ($\mu$), and is set at the values listed in \cref{tbl:concentration_Tmaxes}.
 
-In the simulations a carbon is considered to be controllable if it matches certain conditions.
-To be considered controllable it must be possible to implement two consecutive $\pm \mathrm{x}$ gates with 90\% fidelity, where the total gate time must be shorter than $T_{\mathrm{max}}$ using a resonance located at a time shorter than $\tau_{\mathrm{max}}$.
-
-$T_max$ to simulate coherence time.  assumptions for coherence times (10 gates within)
-
-Reject sample if big  coupled (implies higher statistics)
-Max resonance time (to look for) (optional argument electron coherence).
-
-Samples can be fabricated at different
-Additional parameter that can be varied, carbon-13 concentration.
-Longer coherence times for lower C
-Weaker coupled carbons -> optimum at lower field.
-Also non trivial.
+The electronic-spin coherence is protected by dynamical decoupling during the gates.
+When the inter pulse delay becomes longer the protection becomes weaker.
+To ensure good protection against decoherence resonances at $\tau$ larger than a certain $\tau_\mathrm{max}$ were not considered.
+$\tau_{\mathrm{max}}$ is set at the values listed in \cref{tbl:concentration_Tmaxes}.
 
 
+\begin{table}[htbp]
+    \centering
+    \caption{Coherence times and maximum resonance time as used in the simulations.}
+    \begin{tabular}{ccc}
+    Concentration &  $  T_{2,C}^* $ & $  \tau_{\mathrm{max} }$ \\ \hline
+    $1.10\% $&  7ms & $10\mu\mathrm{s}$\\
+    $0.33\% $&  45ms & $36.7\mu\mathrm{s}$\\
+    $0.11\% $&  70ms & $100\mu\mathrm{s}$\\
+    \end{tabular}
+    \label{tbl:concentration_Tmaxes}
+\end{table}
 
-In order to address weakly coupled carbons using dynamical decoupling their resonances must not overlap.
-It is clear to see that it does not work at low field (?) because of the presence of multiple spins in the complex regime.
-By increasing the magnetic field these can be moved to the simple regime.
-As the field is increased the resonance become both narrower and move closer to the origin.
-There are limits to how narrow a resonance can be and still be addressable.
-If to close to origing (higher order) .
-Not trivial, clear there is an optimum.
-
-
-By increasing the magnetic field more carbons move from the complex regime (\cref{fig:coupling regimes}) to the basic regime.
-At the same time all resonances become narrower ($\cref{eq:res_dip_width}$) while moving closer together in $\tau$ (\cref{eq:res_dip_loc}).
-
-Closer -> possible to address higher orders? (because limited by coherence time)
-Less complex regime -> more addressable
-
-narrower -> AWG resolution
-Tau shorter than pulsewidht
-
-Caveat -> Large spread, impossible to predict about an individual carbon. Possible to say about expectation.
 
 \begin{figure}[htbp]
-
     \begin{subfigure}[t]{0.49\textwidth}\centering
         \caption{}
         \begin{tikzpicture}
@@ -108,17 +93,58 @@ Caveat -> Large spread, impossible to predict about an individual carbon. Possib
     \end{tikzpicture}
     \label{fig:simulations_histogram_vs_Bfield}
     \end{subfigure}
-    \caption{aapsdfklh }
-    \label{fig:FP}
+    \caption{Simulation results calculating the number of addressable carbons in NV-centers containing no carbons coupled stronger than $|A|>200kHZ$. \subref{fig:Simulations_avg_n_vs_bfield} Average number of addressable carbons at different concentrations. \subref{fig:simulations_histogram_vs_Bfield} Normalized occurrences for $\mu = 1.1\%$ at 700G. The simulation indicates that an NV-center likely has 3 or more addressable carbons($P=89\%$), that there is a good chance that 5 or more carbons can be addressed ($P=57\%$) and that there is even a small probability of getting $\sim 10$ addressable carbon spins. }
+    \label{fig:Simulation_results}
 \end{figure}
-
-Simulations only look at samples withiout large (>200kHz) HF couplings  carbon spins.
 
 In the simulations 3 or more carbons can be addressed in 89\% of the occurrences.
 5 or more carbons can be addressed in 57\% of the occurrences
 At a magnetic field of 700G more than 3 carbons can be addressed in 90\% of the occurences
 
-% %%%%%%%%%
+\section{Concepts no text }
+
+
+
+
+
+
+% To be considered controllable it must be possible to implement two consecutive $\pm \mathrm{x}$ gates with 90\% fidelity, where the total gate time must be shorter than $T_{\mathrm{max}}$ using a resonance located at a time shorter than $\tau_{\mathrm{max}}$.
+
+% $T_max$ to simulate coherence time.  assumptions for coherence times (10 gates within)
+
+% Reject sample if big  coupled (implies higher statistics)
+% Max resonance time (to look for) (optional argument electron coherence).
+
+% Samples can be fabricated at different
+% Additional parameter that can be varied, carbon-13 concentration.
+% Longer coherence times for lower C
+% Weaker coupled carbons -> optimum at lower field.
+% Also non trivial.
+
+
+
+% In order to address weakly coupled carbons using dynamical decoupling their resonances must not overlap.
+% It is clear to see that it does not work at low field (?) because of the presence of multiple spins in the complex regime.
+% By increasing the magnetic field these can be moved to the simple regime.
+% As the field is increased the resonance become both narrower and move closer to the origin.
+% There are limits to how narrow a resonance can be and still be addressable.
+% If to close to origing (higher order) .
+% Not trivial, clear there is an optimum.
+
+
+% By increasing the magnetic field more carbons move from the complex regime (\cref{fig:coupling regimes}) to the basic regime.
+% At the same time all resonances become narrower ($\cref{eq:res_dip_width}$) while moving closer together in $\tau$ (\cref{eq:res_dip_loc}).
+
+% Closer -> possible to address higher orders? (because limited by coherence time)
+% Less complex regime -> more addressable
+
+% narrower -> AWG resolution
+% Tau shorter than pulsewidht
+
+% Caveat -> Large spread, impossible to predict about an individual carbon. Possible to say about expectation.
+
+
+% % %%%%%%%%%
 % Idem:
 
 % Spins that have a stronger than average hyperfine-interaction show up outside or at the edge of the spin-bath collapse.

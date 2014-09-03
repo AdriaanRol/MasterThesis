@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -41,6 +41,14 @@ G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
   10 2010.
 \newblock ISSN 1095-9203.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/20829452}.
+
+\bibitem[Dobrovitski et~al.(2008)Dobrovitski, Feiguin, Awschalom, and
+  Hanson]{Dobrovitski2008Decoherence}
+V.~Dobrovitski, a.~Feiguin, D.~Awschalom, and R.~Hanson.
+\newblock Decoherence dynamics of a single spin versus spin ensemble.
+\newblock \emph{Physical Review B}, 77\penalty0 (24):\penalty0 245212, 6 2008.
+\newblock ISSN 1098-0121.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.77.245212}.
 
 \bibitem[Doherty et~al.(2013)Doherty, Manson, Delaney, Jelezko, Wrachtrup, and
   Hollenberg]{Doherty2013NitrogenVacancy}
