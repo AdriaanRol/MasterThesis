@@ -20,26 +20,26 @@
 			}
 		},
 		{
-			"file": "Controlling_weakly_coupled_carbon_spins.tex",
+			"file": "Outlook_QEC.tex",
 			"settings":
 			{
-				"buffer_size": 13545,
+				"buffer_size": 12189,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Qcircuit.tex",
+			"file": "3Month_report.tex",
 			"settings":
 			{
-				"buffer_size": 9746,
-				"line_ending": "Windows"
+				"buffer_size": 36889,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 203.0,
+		"height": 375.0,
 		"selected_items":
 		[
 			[
@@ -581,33 +581,33 @@
 	],
 	"file_history":
 	[
-		"/Users/Adriaan/Documents/MasterThesis/NV-Center_in_diamond.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
 		"/Users/Adriaan/Documents/MasterThesis/characterizing_weakly_coupled_spins.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
 		"/Users/Adriaan/Documents/MasterThesis/identifying_weakly_coupled_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/3Month_report.tex",
+		"/Users/Adriaan/Documents/MasterThesis/abstract.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Introduction.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
+		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Qcircuit.tex",
+		"/Users/Adriaan/Documents/MasterThesis/extending_electron_coherence.tex",
+		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
+		"/Users/Adriaan/Documents/MasterThesis/NV-Center_in_diamond.tex",
+		"/Users/Adriaan/Documents/MasterThesis/Cover/cover_file.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Outlook_QEC.tex",
 		"/Users/Adriaan/Documents/MasterThesis/learn_for_defence/question.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Addressable_carbon_sims.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Output/Thesis_MA_Rol.aux",
 		"/Users/Adriaan/Documents/MasterThesis/Addressing_weakly_coupled_carbon_spins.tex",
-		"/Users/Adriaan/Documents/MasterThesis/abstract.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Fingerprint_data_appendix.tex",
-		"/Users/Adriaan/Documents/MasterThesis/extending_electron_coherence.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Controlling_weakly_coupled_carbon_spins.tex",
-		"/Users/Adriaan/Documents/MasterThesis/State_initialization_and_readout.tex",
 		"/Users/Adriaan/Documents/MasterThesis/main.tex",
 		"/Users/Adriaan/Documents/MasterThesis/learn_for_defence/useful_values.tex",
-		"/Users/Adriaan/Documents/MasterThesis/preamble.tex",
-		"/Users/Adriaan/Documents/MasterThesis/Qcircuit.tex",
 		"/Users/Adriaan/Documents/MasterThesis/svg.sty",
-		"/Users/Adriaan/Documents/MasterThesis/Introduction.tex",
 		"/Users/Adriaan/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/Adriaan/Documents/MasterThesis/Entanglement_wittness.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Output/Thesis_MA_Rol.bbl",
 		"/Users/Adriaan/Documents/MasterThesis/bloch_entangling_gate.svg",
 		"/Users/Adriaan/Documents/MasterThesis/Img/bloch_entangling_gate.svg",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/Cover_fig.eps",
-		"/Users/Adriaan/Documents/MasterThesis/3Month_report.tex",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/team_diamond_logo-color.svg",
 		"/Users/Adriaan/Documents/MasterThesis/Cover/cover.ai",
 		"/Users/Adriaan/Documents/MasterThesis/question.tex",
@@ -715,6 +715,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"control over ",
+			"begin{table}",
+			"quad",
+			"T_{\\mathrm{max}}",
+			"for",
+			"T_2^*",
+			"ms",
+			"7ms",
+			"mu",
+			"\\caption",
+			"\\tex",
+			"5.",
+			"05",
+			"tikz",
+			"tikz ",
+			"Psi",
+			"rm",
 			"mp",
 			"that det",
 			"taht determine",
@@ -825,24 +842,7 @@
 			"n =",
 			"n=",
 			"by appl",
-			"defin",
-			"the hamilton",
-			"\\cdot",
-			"optical",
-			"hat",
-			"hf",
-			"calculated",
-			"mathrmz",
-			" \n",
-			"Solid immersion ",
-			"state",
-			"S",
-			"the width ",
-			"Pfaff2013Quantum",
-			"dark El",
-			"ramse",
-			"gray",
-			"blue"
+			"defin"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -876,8 +876,8 @@
 						"selection":
 						[
 							[
-								344,
-								344
+								431,
+								431
 							]
 						],
 						"settings":
@@ -893,29 +893,27 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Controlling_weakly_coupled_carbon_spins.tex",
+					"file": "Outlook_QEC.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13545,
+						"buffer_size": 12189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12063,
-								12063
+								5647,
+								5647
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2744.0,
+						"translation.y": 1100.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -923,29 +921,27 @@
 				},
 				{
 					"buffer": 2,
-					"file": "Qcircuit.tex",
+					"file": "3Month_report.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9746,
+						"buffer_size": 36889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8866,
-								8873
+								28329,
+								29791
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1357.0,
+						"translation.y": 6053.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1005,6 +1001,26 @@
 		"selected_items":
 		[
 			[
+				"3mon",
+				"3Month_report.tex"
+			],
+			[
+				"app",
+				"Fingerprint_data_appendix.tex"
+			],
+			[
+				"pr",
+				"preamble.tex"
+			],
+			[
+				"outl",
+				"Outlook_QEC.tex"
+			],
+			[
+				"introd",
+				"Introduction.tex"
+			],
+			[
 				"nv",
 				"NV-Center_in_diamond.tex"
 			],
@@ -1035,10 +1051,6 @@
 			[
 				"main",
 				"main.tex"
-			],
-			[
-				"outl",
-				"Outlook_QEC.tex"
 			],
 			[
 				"fingerp",
@@ -1175,10 +1187,6 @@
 			[
 				"ackn",
 				"acknowledgements.tex"
-			],
-			[
-				"app",
-				"Fingerprint_data_appendix.tex"
 			],
 			[
 				"electr",
