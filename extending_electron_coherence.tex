@@ -1,8 +1,8 @@
 \section{Extending Electron Coherence}
 
 To be able to resolve weakly coupled carbons it is necessary to extend the coherence of the NV-spin.
-By using a technique known as a spin-echo the effect of variations in the environment \emph{between} experiments can be eliminated, making variations \emph{during} experiments the main source of decoherence.
-By dynamical decoupling the effect of these variations on the coherence can be minimized and the dynamics of the spin-bath can be exposed.
+By using a technique known as a spin-echo the effect of variations in the environment \emph{between} experiments can be eliminated, making dynamics \emph{during} experiments the main source of decoherence.
+By dynamical decoupling the effect of these dynamics on the coherence can be minimized and the dynamics of the spin-bath can be exposed.
 
 
 \subsection{Spin-Echo}
@@ -10,12 +10,12 @@ By dynamical decoupling the effect of these variations on the coherence can be m
 A spin echo experiment (\cref{fig:spin_echo_gijs}) is very similar to a Ramsey experiment.
 The difference is an additional $\pi$ pulse that is added in the middle of the experiment exactly between the $\pi/2$ pulses of the Ramsey sequence.
 In a spin echo the state is brought into the $xy$-plane where it evolves for a time $\tau/2$ before a $\pi$-pulse, along the y-direction in the rotating frame, is applied.
-It evolves for another $\tau/2$ before a final $\pi/2$-pulse rotates it back to $\ket{0}$ and it is read out.
+It evolves for another $\tau/2$ before a final $\pi/2$-pulse rotates it back towards $\ket{0}$ and it is read out.
 
 The key component of a spin-echo is the central $\pi$-pulse that cancels out the effect of quasi-static variations in the spin-bath configuration.
 The $\pi$-pulse can be seen as turning the reference frame of the NV-spin upside down.
-If the spin-bath configuration does not change during the experiment, the detuning of the evolution frequency with respect to the central frequency during the first part will be exactly opposite to the detuning during the second part.
-This means that any phase difference picked up during the first half of the evolution is canceled out perfectly during the second half of the evolution.
+If the spin-bath configuration is approximately static during the sequence, the detuning of the evolution frequency with respect to the central frequency during the first part will be exactly opposite to the detuning during the second part.
+This means that any phase difference picked up during the first half of the evolution is canceled out during the second half of the evolution.
 \begin{figure}[htbp]
     \centering
     \includegraphics{Img/SpinEcho_Gijs.pdf}
@@ -27,36 +27,37 @@ This means that any phase difference picked up during the first half of the evol
 
 
 Because the spin-bath does not remain static during experiments the cancellation is not perfect, some phase is picked up causing the signal to decohere.
-Similar to a Ramsey experiment this can be measured by applying a detuning to the rotating frame and measuring the decay of the oscillation.
-$T_2$ is defined as the $1/e$ value of the decay of a spin echo experiment and measures decoherence due to variations in the spin-bath during an experiment.
-$T_2$ was measured to be $1.10 \pm 0.01 \mathrm{ms}$.
+This coherence time ($T_2$) is defined as the $1/e$ value of the decay of a spin echo experiment and measures decoherence due to dynamics in the spin-bath during an experiment.
+$T_2$ was measured to be $1.10 \pm 0.01\, \mathrm{ms}$.
 % Data from exp:  20140405/123712
 
 \subsection{Dynamical Decoupling}
 A natural way to extend the phase cancellation properties of the spin-echo experiment to shorter timescales is by applying more $\pi$-pulses.
-This procedure is known as dynamical-decoupling.
-Similar to how the spin-echo cancels out phase picked up due to any variations that are quasi-static on the time-scale of the experiment, dynamical-decoupling cancels out phase due to variations on the time-scale of the $\pi$-pulses.
-Dynamical-decoupling can dramatically improve coherence times\citep{Lange2010Universal}.
+This procedure is known as dynamical decoupling.
+Similar to how the spin-echo cancels out phase picked up due to any variations that are quasi-static on the time-scale of the experiment, dynamical decoupling cancels out phase due to variations on the time-scale of the $\pi$-pulses.
+Dynamical decoupling can significantly improve coherence times \citep{Lange2010Universal}.
 
-On our sample a coherent signal\footnote{$F\ket{0} > 0.68$} is measured after more than $40 \mu$s for 256 pulses.
-Work on ensembles indicates that that this can be improved even further by applying more pulses: a coherence time of $T_{DD} \approx 0.6 \mathrm{s}$ was reported at 77K \citep{Gill2013SolidState}.
+On the NV-center used in this thesis a coherent signal\footnote{$F\ket{0} > 0.68$} is measured after more than $40 \,\mathrm{ms}$ for 256 pulses.
+Work on ensembles indicates that that this can be improved even further by applying more pulses: a coherence time of $T_{DD} \approx 0.6 \, \mathrm{s}$ was reported at $77\, \mathrm{K}$ \citep{Gill2013SolidState}.
 
 \subsection{Dynamical decoupling spectroscopy}
 
-When discussing the Ramsey and the spin-echo experiment we have treated the NV-center as being affected by the spin-bath but not interacting with it.
-In reality the NV-spin does interact with nuclear spins.
+
+
+When discussing the Ramsey and the spin-echo experiment we have treated the NV-center as being affected by the spin-bath but not affecting it.
+In reality the interaction works both ways and the NV-spin does affect the nuclear spins.
 It is possible to probe these interactions using a dynamical decoupling spectroscopy.
-During a dynamical decoupling spectroscopy a fingerprint of the spin environment is constructed.
+A dynamical decoupling spectroscopy provides a type of fingerprint of the nuclear spin environment from which the the hyperfine interaction for the individual spins can be determined.
 
 In a dynamical decoupling spectroscopy experiment the electron is prepared in the $|X\rangle =\tfrac{1}{\sqrt{2}}\left( |0\rangle +|1\rangle \right) $ state.
 It is subjected to a pulse sequence consisting of $N/2$ blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, where $\tau$ is a wait time and $\pi$ a $\pi$-pulse.
 The experiment is concluded by measuring $\langle X\rangle $.
 The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$.
 
-Part of a dynamical decoupling spectroscopy can be seen in \cref{fig:FP}.
-When the central spin interacts conditionally with a spin in the environment coherence is lost when the central spin is measured.
-In a fingerprint such an interaction is visible as a lowered contrast.
-
+Part of a dynamical decoupling spectroscopy result can be seen in \cref{fig:FP}.
+When the electron spin performs an entangling operation on a spin in the environment coherence is lost when the electron spin is measured.
+In a dynamical decoupling spectroscopy such an interaction is visible as a lowered contrast.
+The physical processes resulting in such a fingerprint will be discussed in the next section.
 % The spectroscopy was performed for N = 8, 16, 32 and 64 pulses. For N = 8, 16 and 32 pulses this was done between $\tau = 2 \mu \mathrm{s}$  and $72 \mu \mathrm{s}$ and for N = 64 this was done up to $\tau = 52 \mu \mathrm{s}$. A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.
 
 \begin{figure}[htbp]
@@ -94,13 +95,18 @@ In a fingerprint such an interaction is visible as a lowered contrast.
     \end{tikzpicture}
     \label{fig:FP32}
     \end{subfigure}
-    \caption{Part of a fingerprint resulting from a dynamical-decoupling-spectroscopy experiment performed at $B_z = 304\mathrm{G}$, $\tau_L =3.07 \mu \mathrm{s} $. Contrast is lowered when the decoupling sequence performs a conditional operation on a spin in the environment.  A reference to the full spectroscopy can be found in \cref{chap:Fingerprint_data_appendix}.  Black lines correspond to data. Colored lines represent computed responses of carbon spins. Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. }
+    \caption{Part of a dynamical decoupling spectroscopy experiment performed at $B_z = 304\,\mathrm{G}$, $\tau_L =3.07 \, \mu \mathrm{s} $.
+    Black lines correspond to data. Colored lines represent computed responses of carbon spins.
+    \subref{fig:FP16} $N = 16$ pulses; \subref{fig:FP32} $N=32$ pulses.
+    Contrast is lowered when the decoupling sequence performs an entangling operation on a spin in the environment.
+    A reference to the full dynamical decoupling dataset can be found in \cref{chap:Fingerprint_data_appendix}.
+    Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. }
     \label{fig:FP}
 \end{figure}
 
 
 
-% Although dynamical-decoupling improves the coherence of the central spin by decoupling from the environment, the central spin is also decoupled from other spins preventing direct two-qubit gates. It was demonstrated by \citet{Sar2012DecoherenceProtected} how to incorporate dynamical decoupling in a universal gate design by implementing Grover's algorithm.
+% Although dynamical decoupling improves the coherence of the central spin by decoupling from the environment, the central spin is also decoupled from other spins preventing direct two-qubit gates. It was demonstrated by \citet{Sar2012DecoherenceProtected} how to incorporate dynamical decoupling in a universal gate design by implementing Grover's algorithm.
 % Using this technique \citet{Taminiau2012Detection} used the extended coherence to detect and control weakly-coupled carbon spins, before implementing three-qubit quantum-error-correction (QEC) \citep{Taminiau2014Universal}.
 
 % As these experiments where performed with NV-centers at Room temperature they lack the option to do single-shot readout required to act on a measurement outcome\footnote{@Tim, I think this can be worded more concisely. Do you have any ideas?}. An essential feature for the parity measurements that form the basis of measurement-based QEC and surface codes.
