@@ -1,7 +1,8 @@
 \chapter{Towards Quantum Error Correction}
-Two more challenges remain to realize quantum error correction based on the parity measurements demonstrated in \cref{chap:control_weakly_carbon}.
+In this thesis we demonstrated the implementation of a parity measurement between two weakly coupled carbons spin.
+Two more challenges remain to realize quantum error correction.
 First, to correct errors, gate operations that are conditional on the parity outcome are required.
-Therefore the parity measurement must be accurate and preserve entangled state for both outcomes, unlike the probabilistic initialization and entanglement in this thesis.
+Therefore the parity measurement must be accurate and preserve entangled state for both outcomes \citep{Riste2013Deterministic}, unlike the probabilistic initialization and entanglement in this thesis.
 
 Second, for error correction encoding in larger entangled states is required: at least three qubits for the simplest error correction and at least five qubits for correction of all types of errors.
 In this chapter I address these two challenges and present simulations that indicate that multi-qubit parity measurements on weakly coupled spins are possible.
@@ -14,7 +15,7 @@ An example of such an experiment is the deterministic creation of entanglement, 
 By applying an extra set of gates when the negative result is measured in a parity measurement the state can be transformed in the state that would have been created had the positive parity been measured.
 This capability is particular important for QEC where the result of a parity measurement determines whether a correcting gate must be applied.
 
-The main challenge when performing such operations is to keep track of the phase of the system while waiting for the readout result that determines which set of gates should be executed.
+The main challenge when performing such operations is to keep track of the phase of the system during the readout that determines which set of gates should be executed.
 The measurement environment developed for the work in this thesis automatically keep track of phases and has been set up to be extendable and compatible with such feed forward capabilities.
 
 %Several challenges -> extra phase, Keeping track of things
@@ -22,19 +23,19 @@ The measurement environment developed for the work in this thesis automatically 
 
 
 \section{Multi Qubit Control}
-In order to implement QEC more than the two qubits that were addressed must be addressed.
+In order to implement QEC more than the two qubits that were addressed are required.
 To correct for a single type of quantum error 3 qubits are required.
 To correct for any type of quantum error at least 5 qubits are required.
 
 
-\subsection{Working of the simulations}
+\subsection{Overview of the simulations}
 Simulations were performed to determine how many weakly coupled carbons can be controlled, on average, for an NV-center using dynamical decoupling.
 In the simulations statistics were collected on 1000 NV-centers for a range of magnetic fields and three different carbon-13 concentrations.
 %HOW MANY FOR EACH
 For all NV-centers an environment of carbon-13 spins randomly placed on lattice points was generated.
 For lower concentrations a larger environment was simulated such that the total number of simulated carbon spins was $\sim 300$ per NV-center for all concentrations.
 
-NV-centers containing a carbon with a hyperfine coupling larger than $200\,\mathrm{kHz}$ were rejected as such spins are prone to decohere during the optical readout of the electron spin and their complex dynamics at moderate field complicate spin control of other spins (\cref{chap:addressing_weakly_coupled_carbons}).
+NV-centers containing a carbon with a hyperfine coupling larger than $200\,\mathrm{kHz}$ were rejected as such spins are prone to decohere during the optical readout of the electron spin \citep{Pfaff2012Demonstration} and their complex dynamics at moderate field complicate spin control of other spins (\cref{chap:addressing_weakly_coupled_carbons}).
 In an experimental setting these carbons can be easily detected and the NV-centers rejected.
 
 On the remaining centers the hyperfine coupling between each carbon and the NV-center as well as the resonance conditions of these carbons were calculated.
@@ -80,9 +81,9 @@ When the Larmor frequency becomes larger than the hyperfine coupling of a carbon
 Because there is less overlap more spins can be addressed.
 This increase drops off because eventually all spins are in the simple regime.
 
-By increasing the magnetic field further the resonances both get narrower (\cref{eq:res_dip_width}) and move to shorter times \cref{eq:res_dip_loc}.
+By increasing the magnetic field further the resonances both get narrower (\cref{eq:res_dip_width}) and move to shorter times (\cref{eq:res_dip_loc}).
 When the field becomes too high a resonance can become too narrow to accurately address.
-This is limited by the 1ns timing resolution of the arbitrary waveform generator.
+This is limited by the $1\, \mathrm{ns}$ timing resolution of the arbitrary waveform generator.
 Therefore the number of addressable spins decreases at high fields.
 
 For lower concentrations there are on average less spins undergoing complex dynamics for the same magnetic field.
@@ -111,7 +112,7 @@ Not rejecting these carbons will lower the number of addressable carbons for low
     \end{tikzpicture}
     \label{fig:simulations_histogram_vs_Bfield}
     \end{subfigure}
-    \caption{Simulation results calculating the number of addressable carbons in NV-centers containing no carbons with hyperfine coupling larger than $200\mathrm{kHz}$. \subref{fig:Simulations_avg_n_vs_bfield} Average number of addressable carbons at different concentrations. \subref{fig:simulations_histogram_vs_Bfield} Normalized occurrences for $\mu = 1.1\,\%$ at $700\,\mathrm{G}$. The simulation indicates that an NV-center likely has 3 or more addressable carbons($P=89\,\%$), that there is a good chance that 5 or more carbons can be addressed ($P=57\,\%$) and that there is even a small probability of getting $\sim 10$ addressable carbon spins. }
+    \caption{Simulation results calculating the number of addressable carbons in NV-centers containing no carbons with hyperfine coupling larger than $200\, \mathrm{kHz}$. \subref{fig:Simulations_avg_n_vs_bfield} Average number of addressable carbons at different concentrations. \subref{fig:simulations_histogram_vs_Bfield} Normalized occurrences for $\mu = 1.1\,\%$ at $700\,\mathrm{G}$. The simulation indicates that an NV-center likely has 3 or more addressable carbons($P=89\,\%$), that there is a good chance that 5 or more carbons can be addressed ($P=57\,\%$) and that there is even a small probability of getting $\sim 10$ addressable carbon spins. }
     \label{fig:Simulation_results}
 \end{figure}
 
