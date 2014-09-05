@@ -6,25 +6,18 @@
 % here we show deterministic generation of entanglement paving the way for measurement based QEC.
 %  Simultations indicate that it is possible to control even more Carbon atoms extending the register and performing full QEC
 
-An essential feature for a scalable quantum computer is the ability to correct for quantum errors.
-The Nitrogen-Vacancy center in diamond is a promising candidate for a scalable quantum computer.
-In order to perform
+% An essential feature for a scalable quantum computer is the ability to correct for quantum errors.
+% The Nitrogen-Vacancy center in diamond is a promising candidate for a scalable quantum computer.
+% In order to perform
 
-This chapter will explain why building a quantum computer is cool/important/essential/someotherbigword
-Explain why quantum error correction is essential in achieving this goal
-Requirements to perform quantum error correction
-Explain NV natural candidate
-Requirements 3-5 qubits + entanglement.
-This thesis will demonstrate how to address weakly coupled carbon spins and create entanglement between them.
-
-
-
-
-
-
+% This chapter will explain why building a quantum computer is cool/important/essential/someotherbigword
+% Explain why quantum error correction is essential in achieving this goal
+% Requirements to perform quantum error correction
+% Explain NV natural candidate
+% Requirements 3-5 qubits + entanglement.
+% This thesis will demonstrate how to address weakly coupled carbon spins and create entanglement between them.
 
 % Paragraph: Quantum is cool because exponential scale up allowing previously unattainable problems
-
 
 %The Nitrogen-Vacancy (NV) center in diamond is a promising candidate for a scalable quantum computer.
 % An essential feature for building a scalable quantum computer is the ability to correct quantum errors.
@@ -32,41 +25,59 @@ This thesis will demonstrate how to address weakly coupled carbon spins and crea
 % A logical next step is to perform QEC based on repeated parity measurements. (needs clarification).
 % In order to perform measurement based QEC one needs to be able to initialize, control, read-out and entangle up-to 5 qubits.
 
-The idea of using a quantum mechanical system to simulate physics was first explored by Feynman\cite{Feynman1982Simulating}. Because the Hilbert space(/state space?)  of a quantum mechanical system scales  exponentially with it's size one would need an exponentially large classical computer to simulate it's behavior. By manipulating a quantum mechanical system directly this scaling problem can be circumvented.
+\section{Quantum Computing}
+The idea of using a quantum mechanical system to simulate physics was first explored by Feynman\cite{Feynman1982Simulating}.
+Because the number of operations required to simulate a quantum system scales exponentially with the number of particles in the system it is not feasible to classically simulate such a system.
+By manipulating a quantum mechanical system directly this scaling problem can be circumvented.
 
-It was quantum simulation that eventually led to the idea of exploiting quantum effects to perform more efficient calculations but it wasn't until Shor's discovery of a remarkably efficient quantum algorithm for prime factorization in 1994\citep{Shor1994Algorithms}\comment{where should the number be placed?} that quantum information science really took off.
+It was the idea of quantum simulation that led to the idea of exploiting quantum effects to perform computations.
+Shor's algorithm \citep{Shor1994Algorithms} is a prime example of how the advantageous scaling of quantum systems can be exploited toe perform more efficient computations.
 
-Shor's algorithm was the first example where a quantum computer can provide an exponential speedup over a classical computer. Shor's and other quantum algorithms allow solving classes of problems that were previously unsolvable, a well known example being the breaking of classical encryption codes.
-
+Shor's algorithm is an algorithm for prime factorization, where the best known classical algorithms for prime factorization scale exponentially Shor's algorithm scales polynomially.
+Because of  the speedup provided by Shor's and other quantum algorithms it is possible to solve classes of problems that were previously unsolvable, such as the breaking of RSA encryption that relies on prime factorization being a computationally hard problem.
 %Look up TJ Ladd et al. 2010 nature. On exponential speedup and entanglement as key resource. Can I link entanglement as resource to the propagation of errors?
-
 % Proof of concept exists (+ examples of basic algorithms) but key challenge is scaling it up
-By now Shor's algorithm has been shown to work on a range of different small scale quantum computers \cite{Vandersypen2001Experimental} [Needs reference to Shor in different systems or basic algorithms in range of systems] but making a scalable quantum computer that can take full advantage of the exponential speedup proves elusive.
-
-% Different systems and approaches, highlight node based and NV-
-
-%  Key ingredients entanglement and dynamical operations (based on outcome of measurements)
-
-%  Highlight Issue with errors as challenge and highlight threshold theorem
+Shor's algorithm has been shown to work on a small scale quantum computer \cite{Vandersypen2001Experimental}.
+However to take full advantage of the efficient scaling behaviour of quantum computations a scalable quantum computer is required.
 
 \section{Quantum Error Correction}
-% Note Stabilizers not in there
-% Explain idea of Quantum Error correction,
+One of the main challenges in creating a scalable quantum computer is the effect of errors.
+Because a quantum computer uses entanglement between multiple qubits as a resource an error an a single qubit can quickly propagate trough the system.
+Using quantum error correction (QEC) it is possible to correct for such errors.
+The threshold theorem states the final error probability of a quantum algorithm on a large register can be made arbitrarily small, if the probability of an error on a single qubit is below a certain threshold and QEC is applied \citep{Mermin1990Extreme}.
+This makes quantum error correction a stepping stone on the way to realizing a scalable quantum computer \citep{Nielsen2010Quantum}.
 
-% Explain that Quantum Error Correction might allow for reaching threshold
+Experiments demonstrating a form of QEC have been demonstrated in a range of systems.
+Codes correcting for one type of quantum error have been implemented with nuclear magentic resonance \citep{Cory1998Experimental,Moussa2011Demonstration}, trapped ions \citep{Schindler2011Experimental}  and superconducting qubits \citep{Reed2012Realization}.
+Recently two groups have implemented three qubit gate based QEC using the nitrogen-vacancy (NV) center in diamond \citep{Taminiau2014Universal,Waldherr2014Quantum}.
 
-% Key ingredients to performing Error Correction; Creating Entanglement and dynamical operations.
+Although schemes exist to implement a scalable quantum computer using a purely gate based architecture most approaches rely on correcting for quantum errors by performing repeated parity measurements. An example of such an approach is surface coding \citep{Fowler2012Surface}.
+For this reason the present work will focus on performing the parity measurements required for such error correcting schemes.
 
-\section{Quantum Computing}
+QEC is similar to classical error correction trough majority voting.
+In classical majority voting a single bit is encoded onto a \emph{logical} bit consisting of multiple regular bits.
+When an error on a bit has occurred the original bit can be recovered by measuring all the individual bits and determining the original state by majority voting.
+
+In QEC the quantum bit (qubit) is encoded onto a logical qubit consisting of multiple regular qubits.
+A consequence of classical majority voting is that it destroys a quantum state because it requires all bits to be measured.
+By measuring the parity of two qubits the difference between two states can be determined without measuring the individual states.
+If two states are parallel in the parity basis the parity measurement will return a positive result, if they are anti-parallel a negative result.
+Performing a parity measurement on multiple qubits allows quantum errors, such as a bit-flip, a phase-flip or the combination of both, to be diagnosed.
+
+\Cref{fig:gate_circuit_3_qubit_QEC} shows a circuit diagram for three qubit measurement based QEC.
+The state $\ket{\psi}_\mathrm{C2}$ is encoded onto a logical qubit consisting of qubits C1, C2 and C3.
+A parity measurement is performed on qubits C1 and C2, and on C2 and C3,  by reading out an ancilla qubit $e$.
+From the result of the parity measurements it can be determined on which qubit an error occurred.
+
 \begin{figure}[htbp]
     \centering
     \mbox{
     \Qcircuit @C=1em @R=.7em {
         &&&& \control &\cw & \cw &\cw & \cw &\cw & \cw &\cw & \control \cw &\\
-        \lstick{\ket{0}_e}         & \qw & \targ &\targ & \meter \cwx &  && \lstick{\ket{0}_e}     &\qw & \targ & \targ & \meter &  \cw \cwx  &\lstick{\ket{0}_e} &\qw&\qw &\qw &\rstick{\ket{0}_e} \\
-        \lstick{\ket{0}_{C1}}     &  \targ \qwx[1]& \ctrl{-1} &\qw & \qw &\qw&\qw& \qw &\qw & \qw &\qw & \qw & \multigate{2}{\mathrm{Corr.}} \cwx &\qw &\qw &  \targ \qwx[1] &\qw &\rstick{\ket{0}_{C1}}\\
-        \lstick{\ket{\psi}_{C2}} &  \ctrl{1} & \qw &\ctrl{-2} & \qw &\qw&\qw&\qw  & \qw&\ctrl{-2} &\qw &\qw &\ghost{\mathrm{Corr.}}&\qw & \qw  &  \ctrl{1}&\qw &\rstick{\ket{\psi}_{C2}}\\
-        \lstick{\ket{0}_{C3}}     & \targ   &\qw &\qw& \qw &\qw&\qw& \qw &\qw & \qw &\ctrl{-3} & \qw &\ghost{\mathrm{Corr.}}& \qw &\qw &  \targ&\qw &\rstick{\ket{0}_{C3}}
+        \lstick{\ket{0}_e }        & \qw & \targ &\targ & \meter \cwx &  && \lstick{\ket{0}_e}     &\qw & \targ & \targ & \meter &  \cw \cwx  &\lstick{\ket{0}_e} &\qw&\qw &\qw &\rstick{\ket{0}_e} \\
+        \lstick{\ket{0}_{\mathrm{C1}}}     &  \targ \qwx[1]& \ctrl{-1} &\qw & \qw &\qw&\qw& \qw &\qw & \qw &\qw & \qw & \multigate{2}{\mathrm{Corr.}} \cwx &\qw &\qw &  \targ \qwx[1] &\qw &\rstick{\ket{0}_{\mathrm{C1}}}\\
+        \lstick{\ket{\psi}_{\mathrm{C2}}} &  \ctrl{1} & \qw &\ctrl{-2} & \qw &\qw&\qw&\qw  & \qw&\ctrl{-2} &\qw &\qw &\ghost{\mathrm{Corr.}}&\qw & \qw  &  \ctrl{1}&\qw &\rstick{\ket{\psi}_{\mathrm{C2}}}\\
+        \lstick{\ket{0}_{\mathrm{C3}}}     & \targ   &\qw &\qw& \qw &\qw&\qw& \qw &\qw & \qw &\ctrl{-3} & \qw &\ghost{\mathrm{Corr.}}& \qw &\qw &  \targ&\qw &\rstick{\ket{0}_{\mathrm{C3}}}
         \gategroup{1}{3}{5}{13}{.7em}{--}  \
         % \gategroup{1}{3}{5}{12}{.7em}{_\}}
         % \gategroup{1}{13}{5}{13}{.7em}{_\}}
@@ -82,9 +93,10 @@ By now Shor's algorithm has been shown to work on a range of different small sca
     \label{fig:gate_circuit_3_qubit_QEC}
 \end{figure}
 
+In order to implement measurement based error correction as depicted in \cref{fig:gate_circuit_3_qubit_QEC} we require control over three qubits and an ancilla that can be read out.
+Furthermore we need to be able to perform parity measurements on these qubits and deterministically perform operations based on the outcome of these parity measurements to correct for errors.
 
-
-\section{Weakly coupled carbons; a naturally occurring register }
+\section{The Nitrogen Vacancy Center in Diamond}
 
 Optical links \citep{Bernien2013Heralded,Pfaff2014Unconditional}
 Nodes \citep{Taminiau2014Universal,Waldherr2014Quantum} (error correction)

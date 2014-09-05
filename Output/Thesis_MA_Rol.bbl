@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -37,6 +37,16 @@ L.~Childress and R.~Hanson.
 \newblock URL
   \url{http://www.journals.cambridge.org/abstract\_S0883769413000201}.
 
+\bibitem[Cory et~al.(1998)Cory, Price, Maas, Knill, Laflamme, Zurek, Havel, and
+  Somaroo]{Cory1998Experimental}
+D.~Cory, M.~Price, W.~Maas, E.~Knill, R.~Laflamme, W.~Zurek, T.~Havel, and
+  S.~Somaroo.
+\newblock Experimental quantum error correction.
+\newblock \emph{Physical Review Letters}, 81\penalty0 (10):\penalty0
+  2152--2155, 9 1998.
+\newblock ISSN 0031-9007.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.81.2152}.
+
 \bibitem[de~Lange(2012)]{Lange2012Quantum}
 G.~de~Lange.
 \newblock \emph{Quantum Control and Coherence of Interacting Spins in Diamond}.
@@ -67,6 +77,14 @@ Richard~P. Feynman.
   (6-7):\penalty0 467--488, 6 1982.
 \newblock ISSN 0020-7748.
 \newblock URL \url{http://link.springer.com/10.1007/BF02650179}.
+
+\bibitem[Fowler et~al.(2012)Fowler, Mariantoni, Martinis, and
+  Cleland]{Fowler2012Surface}
+Austin~G. Fowler, Matteo Mariantoni, John~M. Martinis, and Andrew~N. Cleland.
+\newblock Surface codes: Towards practical large-scale quantum computation.
+\newblock \emph{Physical Review A}, 86\penalty0 (3):\penalty0 032324, 9 2012.
+\newblock ISSN 1050-2947.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevA.86.032324}.
 
 \bibitem[Gali(2009)]{Gali2009Identification}
 Adam Gali.
@@ -100,6 +118,30 @@ F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
 \newblock ISSN 0031-9007.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.92.076401}.
 
+\bibitem[Mermin(1990)]{Mermin1990Extreme}
+N~David Mermin.
+\newblock Extreme quantum entanglement in a superposition of macroscopically
+  distinct states.
+\newblock \emph{Physical Review Letters}, 65\penalty0 (15):\penalty0
+  1838--1840, 10 1990.
+\newblock ISSN 0031-9007.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.65.1838}.
+
+\bibitem[Moussa et~al.(2011)Moussa, Baugh, Ryan, and
+  Laflamme]{Moussa2011Demonstration}
+O.~Moussa, J.~Baugh, C.~A. Ryan, and R.~Laflamme.
+\newblock Demonstration of sufficient control for two rounds of quantum error
+  correction in a solid state ensemble quantum information processor.
+\newblock \emph{Physical Review Letters}, 107\penalty0 (16):\penalty0 160501,
+  10 2011.
+\newblock ISSN 0031-9007.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.107.160501}.
+
+\bibitem[Nielsen and Chuang(2010)]{Nielsen2010Quantum}
+M.A. Nielsen and I.L. Chuang.
+\newblock \emph{Quantum Computation and Quantum Information}.
+\newblock Cambridge University Press, 2010.
+
 \bibitem[Pfaff et~al.(2014)Pfaff, Hensen, Bernien, van Dam, Blok, Taminiau,
   Tiggelman, Schouten, Markham, Twitchen, and Hanson]{Pfaff2014Unconditional}
 W.~Pfaff, B.~Hensen, H.~Bernien, S.~B. van Dam, M.~S. Blok, T.~H. Taminiau,
@@ -109,6 +151,16 @@ W.~Pfaff, B.~Hensen, H.~Bernien, S.~B. van Dam, M.~S. Blok, T.~H. Taminiau,
 \newblock \emph{Science}, 532, 5 2014.
 \newblock ISSN 0036-8075.
 \newblock URL \url{http://www.sciencemag.org/cgi/doi/10.1126/science.1253512}.
+
+\bibitem[Reed et~al.(2012)Reed, DiCarlo, Nigg, Sun, Frunzio, Girvin, and
+  Schoelkopf]{Reed2012Realization}
+M~D Reed, L~DiCarlo, S~E Nigg, L~Sun, L~Frunzio, S~M Girvin, and R~J
+  Schoelkopf.
+\newblock Realization of three-qubit quantum error correction with
+  superconducting circuits.
+\newblock \emph{Nature}, 482\penalty0 (7385):\penalty0 382--5, 2 2012.
+\newblock ISSN 1476-4687.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/22297844}.
 
 \bibitem[Ristè et~al.(2013)Ristè, Dukalski, Watson, de~Lange, Tiggelman,
   Blanter, Lehnert, Schouten, and DiCarlo]{Riste2013Deterministic}
@@ -129,6 +181,16 @@ L.~Robledo, L.~Childress, H.~Bernien, B.~Hensen, P.F.A. Alkemade, and
 \newblock \emph{Nature}, 477\penalty0 (7366):\penalty0 574--8, 9 2011.
 \newblock ISSN 1476-4687.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21937989}.
+
+\bibitem[Schindler et~al.(2011)Schindler, Barreiro, Monz, Nebendahl, Nigg,
+  Chwalla, Hennrich, and Blatt]{Schindler2011Experimental}
+P.~Schindler, J.T. Barreiro, T.~Monz, V.~Nebendahl, D.~Nigg, M.~Chwalla,
+  M.~Hennrich, and R.~Blatt.
+\newblock Experimental repetitive quantum error correction.
+\newblock \emph{Science (New York, N.Y.)}, 332\penalty0 (6033):\penalty0
+  1059--61, 5 2011.
+\newblock ISSN 1095-9203.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21617070}.
 
 \bibitem[Shor(1994)]{Shor1994Algorithms}
 P.W. Shor.
@@ -152,8 +214,8 @@ Benjamin Smeltzer, Lilian Childress, and Adam Gali.
 
 \bibitem[Taminiau et~al.(2012)Taminiau, Wagenaar, van~der Sar, Jelezko,
   Dobrovitski, and Hanson]{Taminiau2012Detection}
-T.~H. Taminiau, J.J.T. J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.V.~V.
-  Dobrovitski, and R.~Hanson.
+T.~H. Taminiau, J.J.T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.V. Dobrovitski,
+  and R.~Hanson.
 \newblock Detection and control of individual nuclear spins using a weakly
   coupled electron spin.
 \newblock \emph{Physical Review Letters}, 109\penalty0 (13):\penalty0 137602, 9
