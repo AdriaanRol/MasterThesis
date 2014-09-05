@@ -18,7 +18,6 @@ Requirements 3-5 qubits + entanglement.
 This thesis will demonstrate how to address weakly coupled carbon spins and create entanglement between them.
 
 
-\section{Quantum Computing}
 
 
 
@@ -58,7 +57,40 @@ By now Shor's algorithm has been shown to work on a range of different small sca
 
 % Key ingredients to performing Error Correction; Creating Entanglement and dynamical operations.
 
+\section{Quantum Computing}
+\begin{figure}[htbp]
+    \centering
+    \mbox{
+    \Qcircuit @C=1em @R=.7em {
+        &&&& \control &\cw & \cw &\cw & \cw &\cw & \cw &\cw & \control \cw &\\
+        \lstick{\ket{0}_e}         & \qw & \targ &\targ & \meter \cwx &  && \lstick{\ket{0}_e}     &\qw & \targ & \targ & \meter &  \cw \cwx  &\lstick{\ket{0}_e} &\qw&\qw &\qw &\rstick{\ket{0}_e} \\
+        \lstick{\ket{0}_{C1}}     &  \targ \qwx[1]& \ctrl{-1} &\qw & \qw &\qw&\qw& \qw &\qw & \qw &\qw & \qw & \multigate{2}{\mathrm{Corr.}} \cwx &\qw &\qw &  \targ \qwx[1] &\qw &\rstick{\ket{0}_{C1}}\\
+        \lstick{\ket{\psi}_{C2}} &  \ctrl{1} & \qw &\ctrl{-2} & \qw &\qw&\qw&\qw  & \qw&\ctrl{-2} &\qw &\qw &\ghost{\mathrm{Corr.}}&\qw & \qw  &  \ctrl{1}&\qw &\rstick{\ket{\psi}_{C2}}\\
+        \lstick{\ket{0}_{C3}}     & \targ   &\qw &\qw& \qw &\qw&\qw& \qw &\qw & \qw &\ctrl{-3} & \qw &\ghost{\mathrm{Corr.}}& \qw &\qw &  \targ&\qw &\rstick{\ket{0}_{C3}}
+        \gategroup{1}{3}{5}{13}{.7em}{--}  \
+        % \gategroup{1}{3}{5}{12}{.7em}{_\}}
+        % \gategroup{1}{13}{5}{13}{.7em}{_\}}
+        % \gategroup{1}{1}{5}{2}{.7em}{_\}}
+        % \gategroup{1}{14}{5}{14}{.7em}{_\}}
+        }
+    }
+    \caption{Gate circuit for three qubit error correction. First the state of $C2$ is encoded onto three qubits.
+    To diagnose an error an ancilla qubit is used to perform two parity measurements on the encoded qubits.
+    The result of these measurements is used to determine what gates to apply to correct for the error if it occurred.
+    These error correcting operations (in the dahsed lines) can be repeated to continuously protect the encoded qubits against quantum errors.
+    The three qubit error correction code can correct for one type of quantum error. }
+    \label{fig:gate_circuit_3_qubit_QEC}
+\end{figure}
+
+
+
 \section{Weakly coupled carbons; a naturally occurring register }
+
+Optical links \citep{Bernien2013Heralded,Pfaff2014Unconditional}
+Nodes \citep{Taminiau2014Universal,Waldherr2014Quantum} (error correction)
+
+Prominent approach to Scalable networks rely on repeated parity measurements (i.e. approach surface code. )
+
 % Normally a source of errors (decoherence) weakly coupled carbons in the environment of the NV provide a naturally occuring register of qubits that can be used for QEC.
 
 % Has been shown that they can be addressed and controlled (paper of Tim)
@@ -72,7 +104,7 @@ By now Shor's algorithm has been shown to work on a range of different small sca
 % Notes, think of use of word parity and entanglement
 
 %TODO_MAR: Revise part below
-The Nitrogen Vacancy centre in diamond is a well investigated system\citep{Doherty2013NitrogenVacancy} and a promising candidate for quantum computation\citep{Childress2013Diamond}. In order to implement three qubit measurement based QEC we need three qubits plus ancillae that we can initialise, measure and conditionally perform operations on. These extra qubits are found in Carbon--13 atoms, which are normally a source of decoherence. These atoms can be addressed using a resonant decoupling sequence\citep{Taminiau2012Detectiona}.
+The Nitrogen Vacancy centre in diamond is a well investigated system\citep{Doherty2013NitrogenVacancy} and a promising candidate for quantum computation\citep{Childress2013Diamond}. In order to implement three qubit measurement based QEC we need three qubits plus ancillae that we can initialise, measure and conditionally perform operations on. These extra qubits are found in Carbon--13 atoms, which are normally a source of decoherence. These atoms can be addressed using a resonant decoupling sequence\citep{Taminiau2012Detection}.
 
 
 \section{Goal of the project}

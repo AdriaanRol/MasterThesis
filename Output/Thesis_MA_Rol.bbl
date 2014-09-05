@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,6 +18,16 @@ H.~Bernien.
 \newblock \emph{Control, Measurement and Entanglement of Remote Quantum Spin
   Registers in Diamond}.
 \newblock PhD thesis, Delft University of Technology, 2014.
+
+\bibitem[Bernien et~al.(2013)Bernien, Hensen, Pfaff, Koolstra, Blok, Robledo,
+  Taminiau, Markham, Twitchen, Childress, and Hanson]{Bernien2013Heralded}
+H.~Bernien, B.~Hensen, W.~Pfaff, G.~Koolstra, M.~S. Blok, L.~Robledo, T.~H.
+  Taminiau, M.~Markham, D.~J. Twitchen, L.~Childress, and R.~Hanson.
+\newblock Heralded entanglement between solid-state qubits separated by three
+  metres.
+\newblock \emph{Nature}, 497\penalty0 (7447):\penalty0 86--90, 5 2013.
+\newblock ISSN 1476-4687.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/23615617}.
 
 \bibitem[Childress and Hanson(2013)]{Childress2013Diamond}
 L.~Childress and R.~Hanson.
@@ -90,6 +100,16 @@ F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
 \newblock ISSN 0031-9007.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.92.076401}.
 
+\bibitem[Pfaff et~al.(2014)Pfaff, Hensen, Bernien, van Dam, Blok, Taminiau,
+  Tiggelman, Schouten, Markham, Twitchen, and Hanson]{Pfaff2014Unconditional}
+W.~Pfaff, B.~Hensen, H.~Bernien, S.~B. van Dam, M.~S. Blok, T.~H. Taminiau,
+  M.~J. Tiggelman, R.~N. Schouten, M.~Markham, D.~J. Twitchen, and R.~Hanson.
+\newblock Unconditional quantum teleportation between distant solid-state
+  quantum bits.
+\newblock \emph{Science}, 532, 5 2014.
+\newblock ISSN 0036-8075.
+\newblock URL \url{http://www.sciencemag.org/cgi/doi/10.1126/science.1253512}.
+
 \bibitem[Ristè et~al.(2013)Ristè, Dukalski, Watson, de~Lange, Tiggelman,
   Blanter, Lehnert, Schouten, and DiCarlo]{Riste2013Deterministic}
 D~Ristè, M~Dukalski, C~a Watson, G~de~Lange, M~J Tiggelman, Ya~M Blanter, K~W
@@ -130,32 +150,21 @@ Benjamin Smeltzer, Lilian Childress, and Adam Gali.
 \newblock URL
   \url{http://stacks.iop.org/1367-2630/13/i=2/a=025021?key=crossref.bdd6956722cde89a36ab3eee44a82724}.
 
-\bibitem[Taminiau et~al.(2012{\natexlab{a}})Taminiau, Wagenaar, van~der Sar,
-  Jelezko, Dobrovitski, and Hanson]{Taminiau2012Detectiona}
-T.~H. Taminiau, J.~J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.~V.
-  Dobrovitski, and R.~Hanson.
-\newblock Detection and control of individual nuclear spins using a weakly
-  coupled electron spin.
-\newblock \emph{Physical Review Letters}, 109\penalty0 (13):\penalty0 137602, 9
-  2012{\natexlab{a}}.
-\newblock ISSN 0031-9007.
-\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.109.137602}.
-
-\bibitem[Taminiau et~al.(2012{\natexlab{b}})Taminiau, Wagenaar, van~der Sar,
-  Jelezko, Dobrovitski, and Hanson]{Taminiau2012Detection}
+\bibitem[Taminiau et~al.(2012)Taminiau, Wagenaar, van~der Sar, Jelezko,
+  Dobrovitski, and Hanson]{Taminiau2012Detection}
 T.~H. Taminiau, J.J.T. J.~T. Wagenaar, T.~van~der Sar, F.~Jelezko, V.V.~V.
   Dobrovitski, and R.~Hanson.
 \newblock Detection and control of individual nuclear spins using a weakly
   coupled electron spin.
 \newblock \emph{Physical Review Letters}, 109\penalty0 (13):\penalty0 137602, 9
-  2012{\natexlab{b}}.
+  2012.
 \newblock ISSN 0031-9007.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.109.137602
   http://arxiv.org/abs/1205.4128}.
 
 \bibitem[Taminiau et~al.(2014)Taminiau, Cramer, van~der Sar, Dobrovitski, and
   Hanson]{Taminiau2014Universal}
-T.~H.~TH Taminiau, J.~Cramer, T.~van~der Sar, V.~V. Dobrovitski, and R.~Hanson.
+T.~H. Taminiau, J.~Cramer, T.~van~der Sar, V.~V. Dobrovitski, and R.~Hanson.
 \newblock Universal control and error correction in multi-qubit spin registers
   in diamond.
 \newblock \emph{Nature Nanotechnology}, 2\penalty0 (February):\penalty0 2--7, 9
@@ -184,5 +193,16 @@ L~M Vandersypen, Matthias Steffen, Gregory Breyta, Costantino~S Yannoni, Mark~H
 \newblock \emph{Nature}, 414\penalty0 (6866):\penalty0 883--7, 2001.
 \newblock ISSN 0028-0836.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/11780055}.
+
+\bibitem[Waldherr et~al.(2014)Waldherr, Wang, Zaiser, Jamali,
+  Schulte-Herbrüggen, Abe, Ohshima, Isoya, Du, Neumann, and
+  Wrachtrup]{Waldherr2014Quantum}
+G~Waldherr, Y~Wang, S~Zaiser, M.~Jamali, T.~Schulte-Herbrüggen, H.~Abe,
+  T.~Ohshima, J.~Isoya, J.~F. Du, P.~Neumann, and J.~Wrachtrup.
+\newblock Quantum error correction in a solid-state hybrid spin register.
+\newblock \emph{Nature}, 1 2014.
+\newblock ISSN 0028-0836.
+\newblock URL \url{http://arxiv.org/abs/1309.6424
+  http://www.nature.com/doifinder/10.1038/nature12919}.
 
 \end{thebibliography}
