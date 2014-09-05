@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -246,16 +246,6 @@ T.~van~der Sar, Z.H. Wang, M.S. Blok, H.~Bernien, T.H. Taminiau, D.M. Toyli,
 \newblock \emph{Nature}, 484\penalty0 (7392):\penalty0 82--6, 4 2012.
 \newblock ISSN 1476-4687.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/22481361}.
-
-\bibitem[Vandersypen et~al.(2001)Vandersypen, Steffen, Breyta, Yannoni,
-  Sherwood, and Chuang]{Vandersypen2001Experimental}
-L.M. Vandersypen, M.~Steffen, G.~Breyta, C.S. Yannoni, M.H. Sherwood, and I.L.
-  Chuang.
-\newblock Experimental realization of shor's quantum factoring algorithm using
-  nuclear magnetic resonance.
-\newblock \emph{Nature}, 414\penalty0 (6866):\penalty0 883--7, 2001.
-\newblock ISSN 0028-0836.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/11780055}.
 
 \bibitem[Waldherr et~al.(2014)Waldherr, Wang, Zaiser, Jamali,
   Schulte-Herbrüggen, Abe, Ohshima, Isoya, Du, Neumann, and

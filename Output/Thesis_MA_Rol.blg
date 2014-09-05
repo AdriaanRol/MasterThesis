@@ -4,45 +4,45 @@ The top-level auxiliary file: Thesis_MA_Rol.aux
 The style file: plainnat.bst
 Database file #1: Remote.bib
 Warning--I didn't find a database entry for "Riste2013Deterministic"
-You've used 29 entries,
+You've used 28 entries,
             2773 wiz_defined-function locations,
-            839 strings with 12713 characters,
-and the built_in function-call counts, 16899 in all, are:
-= -- 1466
-> -- 1324
+            830 strings with 12402 characters,
+and the built_in function-call counts, 16244 in all, are:
+= -- 1410
+> -- 1267
 < -- 10
-+ -- 446
-- -- 417
-* -- 1627
-:= -- 2761
-add.period$ -- 138
-call.type$ -- 29
-change.case$ -- 223
-chr.to.int$ -- 29
-cite$ -- 58
-duplicate$ -- 597
-empty$ -- 1081
-format.name$ -- 450
-if$ -- 3429
++ -- 427
+- -- 399
+* -- 1561
+:= -- 2654
+add.period$ -- 133
+call.type$ -- 28
+change.case$ -- 214
+chr.to.int$ -- 28
+cite$ -- 56
+duplicate$ -- 576
+empty$ -- 1042
+format.name$ -- 431
+if$ -- 3296
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 27
-newline$ -- 203
-num.names$ -- 116
-pop$ -- 359
+missing$ -- 26
+newline$ -- 196
+num.names$ -- 112
+pop$ -- 345
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 189
 quote$ -- 0
-skip$ -- 478
+skip$ -- 460
 stack$ -- 0
-substring$ -- 461
-swap$ -- 61
+substring$ -- 444
+swap$ -- 60
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 314
+type$ -- 303
 warning$ -- 0
-while$ -- 111
+while$ -- 107
 width$ -- 0
-write$ -- 483
+write$ -- 466
 (There was 1 warning)

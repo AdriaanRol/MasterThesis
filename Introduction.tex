@@ -8,67 +8,61 @@ Because the number of operations required to simulate a quantum system scales ex
 By manipulating a quantum mechanical system directly this scaling problem can be circumvented.
 
 It was the idea of quantum simulation that led to the idea of exploiting quantum effects to perform computations.
-Shor's algorithm \citep{Shor1994Algorithms} is a prime example of how the advantageous scaling of quantum systems can be exploited toe perform more efficient computations.
+Shor's algorithm \citep{Shor1994Algorithms} is a prime example of how the advantageous scaling of quantum systems can be exploited to perform more efficient computations.
 
-Shor's algorithm is an algorithm for prime factorization, where the best known classical algorithms for prime factorization scale exponentially Shor's algorithm scales polynomially.
-Because of  the speedup provided by Shor's and other quantum algorithms it is possible to solve classes of problems that were previously unsolvable, such as the breaking of RSA encryption that relies on prime factorization being a computationally hard problem.
-%Look up TJ Ladd et al. 2010 nature. On exponential speedup and entanglement as key resource. Can I link entanglement as resource to the propagation of errors?
-% Proof of concept exists (+ examples of basic algorithms) but key challenge is scaling it up
-Shor's algorithm has been shown to work on a small scale quantum computer \cite{Vandersypen2001Experimental}.
-However to take full advantage of the efficient scaling behaviour of quantum computations a scalable quantum computer is required.
+However to take full advantage of the efficient scaling behavior of quantum computations a large scale quantum computer is required.
 
 \section{Quantum Error Correction}
-One of the main challenges in creating a scalable quantum computer is the effect of errors.
+One of the main challenges in creating a large scale quantum computer is the effect of errors.
 Because a quantum computer uses entanglement between multiple qubits as a resource an error an a single qubit can quickly propagate trough the system.
 Using quantum error correction (QEC) it is possible to correct for such errors.
 The threshold theorem states the final error probability of a quantum algorithm on a large register can be made arbitrarily small, if the probability of an error on a single qubit is below a certain threshold and QEC is applied \citep{Mermin1990Extreme}.
-This makes quantum error correction a stepping stone on the way to realizing a scalable quantum computer \citep{Nielsen2010Quantum}.
+This makes quantum error correction essential to realize a scalable quantum computer \citep{Nielsen2010Quantum}.
 
 Experiments demonstrating a form of QEC have been demonstrated in a range of systems.
 Codes correcting for one type of quantum error have been implemented with nuclear magentic resonance \citep{Cory1998Experimental,Moussa2011Demonstration}, trapped ions \citep{Schindler2011Experimental}  and superconducting qubits \citep{Reed2012Realization}.
 Recently two groups have implemented three qubit gate based QEC using the nitrogen-vacancy (NV) center in diamond \citep{Taminiau2014Universal,Waldherr2014Quantum}.
 
-Although schemes exist to implement a scalable quantum computer using a purely gate based architecture most approaches rely on correcting for quantum errors by performing repeated parity measurements. An example of such an approach is surface coding \citep{Fowler2012Surface}.
+Although schemes exist to implement a scalable quantum computer using purely gate based architectures most approaches rely on correcting for quantum errors by performing repeated parity measurements. An example of such an approach is the surface code \citep{Fowler2012Surface}.
 For this reason the present work will focus on performing the parity measurements required for such error correcting schemes.
 
 QEC is similar to classical error correction trough majority voting.
 In classical majority voting a single bit is encoded onto a \emph{logical} bit consisting of multiple regular bits.
 When an error on a bit has occurred the original bit can be recovered by measuring all the individual bits and determining the original state by majority voting.
 
-In QEC the quantum bit (qubit) is encoded onto a logical qubit consisting of multiple regular qubits.
+In QEC the quantum bit (qubit) is encoded onto a logical qubit consisting of multiple entangled qubits.
 A consequence of classical majority voting is that it destroys a quantum state because it requires all bits to be measured.
 By measuring the parity of two qubits the difference between two states can be determined without measuring the individual states.
 If two states are parallel in the parity basis the parity measurement will return a positive result, if they are anti-parallel a negative result.
 Performing a parity measurement on multiple qubits allows quantum errors, such as a bit-flip, a phase-flip or the combination of both, to be diagnosed.
 
 \Cref{fig:gate_circuit_3_qubit_QEC} shows a circuit diagram for three qubit measurement based QEC.
-The state $\ket{\psi}_\mathrm{C2}$ is encoded onto a logical qubit consisting of qubits C1, C2 and C3.
+The state $\ket{\psi}_\mathrm{C2}$ is encoded onto a an entangled state consisting of qubits C1, C2 and C3.
 A parity measurement is performed on qubits C1 and C2, and on C2 and C3,  by reading out an ancilla qubit $e$.
 From the result of the parity measurements it can be determined on which qubit an error occurred.
 Based on this result the error can be corrected.
 Because the logical qubit does not need to be decoded to correct for the error it is possible to repeat the error correcting part of the circuit, thereby improving the protection of the qubit.
-The original qubit can be recovered by decoding the logical qubit.
 
 \begin{figure}[htbp]
     \centering
     \mbox{
     \Qcircuit @C=1em @R=.7em {
         &&&& \control &\cw & \cw &\cw & \cw &\cw & \cw &\cw & \control \cw &\\
-        \lstick{\ket{0}_e }        & \qw & \targ &\targ & \meter \cwx &  && \lstick{\ket{0}_e}     &\qw & \targ & \targ & \meter &  \cw \cwx  &\lstick{\ket{0}_e} &\qw&\qw &\qw &\rstick{\ket{0}_e} \\
-        \lstick{\ket{0}_{\mathrm{C1}}}     &  \targ \qwx[1]& \ctrl{-1} &\qw & \qw &\qw&\qw& \qw &\qw & \qw &\qw & \qw & \multigate{2}{\mathrm{Corr.}} \cwx &\qw &\qw &  \targ \qwx[1] &\qw &\rstick{\ket{0}_{\mathrm{C1}}}\\
-        \lstick{\ket{\psi}_{\mathrm{C2}}} &  \ctrl{1} & \qw &\ctrl{-2} & \qw &\qw&\qw&\qw  & \qw&\ctrl{-2} &\qw &\qw &\ghost{\mathrm{Corr.}}&\qw & \qw  &  \ctrl{1}&\qw &\rstick{\ket{\psi}_{\mathrm{C2}}}\\
-        \lstick{\ket{0}_{\mathrm{C3}}}     & \targ   &\qw &\qw& \qw &\qw&\qw& \qw &\qw & \qw &\ctrl{-3} & \qw &\ghost{\mathrm{Corr.}}& \qw &\qw &  \targ&\qw &\rstick{\ket{0}_{\mathrm{C3}}}
-        \gategroup{1}{3}{5}{13}{.7em}{--}  \
+        \lstick{\ket{0}_e }        & \qw & \targ &\targ & \meter \cwx &  && \lstick{\ket{0}_e}     &\qw & \targ & \targ & \meter &  \cw \cwx  &\lstick{\ket{0}_e} &\qw \\
+        \lstick{\ket{0}_{\mathrm{C1}}}     &  \targ \qwx[1]& \ctrl{-1} &\qw & \qw &\qw&\qw& \qw &\qw & \qw &\qw & \qw & \multigate{2}{\mathrm{Corr.}} \cwx &\qw &\qw \\
+        \lstick{\ket{\psi}_{\mathrm{C2}}} &  \ctrl{1} & \qw &\ctrl{-2} & \qw &\qw&\qw&\qw  & \qw&\ctrl{-2} &\qw &\qw &\ghost{\mathrm{Corr.}}&\qw & \qw  \\
+        \lstick{\ket{0}_{\mathrm{C3}}}     & \targ   &\qw &\qw& \qw &\qw&\qw& \qw &\qw & \qw &\ctrl{-3} & \qw &\ghost{\mathrm{Corr.}}& \qw &\qw
+        \gategroup{1}{3}{5}{14}{.7em}{--}  \
         % \gategroup{1}{3}{5}{12}{.7em}{_\}}
         % \gategroup{1}{13}{5}{13}{.7em}{_\}}
         % \gategroup{1}{1}{5}{2}{.7em}{_\}}
         % \gategroup{1}{14}{5}{14}{.7em}{_\}}
         }
     }
-    \caption{Gate circuit for three qubit error correction. First the state of $C2$ is encoded onto three qubits.
+    \caption{Gate circuit for three qubit error correction. First the state of $C2$ is encoded onto an entangled state of three qubits.
     To diagnose an error an ancilla qubit is used to perform two parity measurements on the encoded qubits.
     The result of these measurements is used to determine what gates to apply to correct for the error if it occurred.
-    These error correcting operations (in the dahsed lines) can be repeated to continuously protect the encoded qubits against quantum errors.
+    These error correcting operations (in the dashed lines) can be repeated to continuously protect the encoded qubits against quantum errors.
     The three qubit error correction code can correct for one type of quantum error. }
     \label{fig:gate_circuit_3_qubit_QEC}
 \end{figure}
@@ -79,8 +73,8 @@ Furthermore we need to be able to perform parity measurements on these qubits an
 \section{The Nitrogen Vacancy Center in Diamond}
 The NV-center is a promising candidate for quantum computation \citep{Childress2013Diamond}.
 The NV-center is a naturally occurring impurity in diamond of which the electronic spin can be optically addressed and read out.
-By applying microwave pulses to the NV-center it is possible to control and initialize strongly coupled spins in its environment \citep{Robledo2011HighFidelity}.
-This spin register can be extended by addressing weakly coupled spins \citep{Taminiau2014Universal,Waldherr2014Quantum}.
+By applying microwave pulses to the NV-center it is possible to control and initialize nuclear spins in its environment \citep{Robledo2011HighFidelity,Pfaff2012Demonstration}.
+This spin register can be extended by addressing spins that are further away \citep{Taminiau2014Universal,Waldherr2014Quantum}.
 
 Because of optical interface of the NV-center it is possible to link physically independent NV-centers together \citep{Bernien2013Heralded}. This has been used to demonstrate quantum teleportation \citep{Pfaff2014Unconditional}.
 
@@ -88,14 +82,13 @@ This unique combination of a local qubit register with an optical interface make
 
 \section{Goal of the project}
 In order to realize QEC at least three qubits are required to correct for a single type of error and more than five qubits are required to correct for a universal error.
-Because the probability of finding enough strongly coupled carbons to implement QEC is small and goes down rapidly the more spins are required \citep{Waldherr2014Quantum,Taminiau2014Universal} we address weakly coupled spins using the methods developed by \citet{Taminiau2014Universal}.
+Because the probability of finding enough very close by carbons to implement QEC is small and goes down rapidly the more spins are required \citep{Waldherr2014Quantum,Taminiau2014Universal} we address weakly coupled spins using methods developed by \citet{Taminiau2012Detection,Taminiau2014Universal}, these methods are explained in \cref{chap:addressing_weakly_coupled_carbons}.
 
 The goal of this project is to implement  a parity measurement and demonstrate entanglement created by this parity measurement using weakly coupled spins in the environment of the NV-center.
 The parity measurement is required for QEC in particular and measurement based approaches to quantum information in general.
-This is done in a measurement environment that is designed from start to be compatible with the feed forward operations required for QEC.
+This is done in a measurement environment that is designed from start to be compatible with the multi qubit feed forward operations required for QEC.
 
 The next chapter will explain the tools available to control the NV-center and strongly coupled spins.
-\Cref{chap:addressing_weakly_coupled_carbons} will discuss how coherence can be extended
-in order to control weakly coupled carbons.
-In \cref{chap:control_weakly_carbon} these techniques are used to first initialize multiple weakly coupled carbon spins before creating entanglement using the parity measurement.
+\Cref{chap:addressing_weakly_coupled_carbons} will discuss how coherence can be extended in order to control weakly coupled spins.
+In \cref{chap:control_weakly_carbon} these techniques are used to first initialize multiple weakly coupled carbon spins before creating entanglement in order to demonstrate the parity measurement.
 The last chapter will provide an outlook on how the capabilities developed can be extended to perform deterministic parity measurements and show simulations indicating that it is possible to perform multi qubit error correction using weakly coupled spins.
