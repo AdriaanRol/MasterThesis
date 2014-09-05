@@ -2,18 +2,23 @@
 \chapter{Addressing Weakly-coupled Carbon Spins}
 \label{chap:addressing_weakly_coupled_carbons}
 
-The spin register can be extended by addressing weakly-coupled spins.
-This chapter will explain how coherence can be extended trough dynamical decoupling and how this can be used to address single carbon-spins.
-The methods will be used to identify and characterize individual nuclear spins.
+In order to realize quantum error correction we need at least three qubits and at least five to correct for a universal error.
+\Cref{fig:coupling regimes} shows a schematic overview of spins in different coupling regimes.
+Strongly coupled carbon spins can be controlled using the methods described in the previous chapter.
+However the probability of finding enough of these spins to implement QEC is very small.
+Additionally strongly coupled nuclear spins are prone to decohere when the electronic spin is optically addressed.
+A problematic feature for QEC which relies on repeatedly measuring errors to be able to correct for them.
 
-[NOTE: Maybe remove following paragraph and figure?]
+By addressing weakly coupled carbon spins the spin register can be enlarged with spins that are not affected as strongly by the readout of the electron spin.
+However to address weakly coupled carbon spins the coherence of the electron needs to be extended.
+This is done trough dynamical decoupling \citep{Lange2010Universal}.
+Van der Sar et al. \citep{Sar2012DecoherenceProtected} have demonstrated how to integrate regular operations on the NV-spin with a dynamical decoupling sequence.
+To address these weakly coupled carbon spins we use the dynamical decoupling sequence used to extend the coherence \citep{Taminiau2012Detection}.
+In the next chapter it is demonstrated how this control is used to perform parity measurements and create entanglement.
 
-\Cref{fig:coupling regimes} shows a schematic representation of different coupling regimes.
-Carbons in region $\mathbb{I} $ are in the strong coupling regime, transitions of these spins can be readily resolved and they can be controlled using the methods described in the previous chapter.
-By extending the coherence of the electronic spin certain weakly coupled spins can be controlled \citep{Taminiau2012Detection}.
-These can be found in region $\mathbb{II}$
-Control of spins in region $\mathbb{III}$ is not limited by the coherence of the electronic-spin but by that of the nucleus.
-These spins cannot be addressed without inventing new methods that significantly improve both electronic- and nuclear- spin coherence.
+In this chapter it will first be explained how the coherence can be extended trough dynamical decoupling so that weakly coupled carbon spins can be addressed.
+The dynamical decoupling sequence will then be used to identify spins in the environment.
+These spins are characterized so that they can be controlled in the next chapter.
 
 
 \begin{figure}[htbp]
@@ -30,7 +35,9 @@ These spins cannot be addressed without inventing new methods that significantly
         % \foreach \x in {0,1,...,7} { \node [anchor=north] at (\x,0) {\x}; }
         % \foreach \y in {0,1,...,5} { \node [anchor=east] at (0,\y) {\y}; }
     \end{tikzpicture}
-    \caption{ Schematic representation of different coupling regimes. In the strong coupling regime (region $\mathbb{I}$) carbon-spins are coupled to the NV-center stronger than the coupling of the NV-center to the spin-bath. These carbons can be addressed directly. In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be addressed directly. In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot be addressed.}
+    \caption{ Schematic representation of different coupling regimes. Carbons in region $\mathbb{I} $ are in the strong coupling regime, transitions of these spins can be readily resolved and they can be controlled using the methods described in the previous chapter.
+    In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be readily resolvable in an ESR. These spins can be controlled trough dynamical decoupling \citep{Taminiau2012Detection}.
+    In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot presently be addressed.}
     \label{fig:coupling regimes}
 \end{figure}
 \input{extending_electron_coherence.tex}
