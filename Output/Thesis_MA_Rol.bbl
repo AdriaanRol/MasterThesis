@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,7 +7,7 @@
 
 \bibitem[Bar-Gill et~al.(2013)Bar-Gill, Pham, Jarmola, Budker, and
   Walsworth]{Gill2013SolidState}
-N~Bar-Gill, L~M Pham, A~Jarmola, D~Budker, and R~L Walsworth.
+N.~Bar-Gill, L.~M. Pham, A.~Jarmola, D.~Budker, and R.L. Walsworth.
 \newblock Solid-state electronic spin coherence time approaching one second.
 \newblock \emph{Nature communications}, 4:\penalty0 1743, 1 2013.
 \newblock ISSN 2041-1723.
@@ -52,9 +52,9 @@ G.~de~Lange.
 \newblock \emph{Quantum Control and Coherence of Interacting Spins in Diamond}.
 \newblock PhD thesis, Delft University of Technology, 2012.
 
-\bibitem[de~Lange et~al.(2010)de~Lange, Wang, Ristè, Dobrovitski, and
+\bibitem[de~Lange et~al.(2010)de~Lange, Wang, Rist\`{e}, Dobrovitski, and
   Hanson]{Lange2010Universal}
-G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
+G.~de~Lange, Z.H. Wang, D.~Rist\`{e}, V.V. Dobrovitski, and R.~Hanson.
 \newblock Universal dynamical decoupling of a single solid-state spin from a
   spin bath.
 \newblock \emph{Science (New York, N.Y.)}, 330\penalty0 (6000):\penalty0 60--3,
@@ -63,7 +63,7 @@ G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/20829452}.
 
 \bibitem[Feynman(1982)]{Feynman1982Simulating}
-Richard~P. Feynman.
+R.P. Feynman.
 \newblock Simulating physics with computers.
 \newblock \emph{International Journal of Theoretical Physics}, 21\penalty0
   (6-7):\penalty0 467--488, 6 1982.
@@ -72,14 +72,14 @@ Richard~P. Feynman.
 
 \bibitem[Fowler et~al.(2012)Fowler, Mariantoni, Martinis, and
   Cleland]{Fowler2012Surface}
-Austin~G. Fowler, Matteo Mariantoni, John~M. Martinis, and Andrew~N. Cleland.
+A.G. Fowler, M.~Mariantoni, J.M. Martinis, and A.N. Cleland.
 \newblock Surface codes: Towards practical large-scale quantum computation.
 \newblock \emph{Physical Review A}, 86\penalty0 (3):\penalty0 032324, 9 2012.
 \newblock ISSN 1050-2947.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevA.86.032324}.
 
 \bibitem[Gali(2009)]{Gali2009Identification}
-Adam Gali.
+A.~Gali.
 \newblock Identification of individual { extasciicircum}\{13\}c isotopes of
   nitrogen-vacancy center in diamond by combining the polarization studies of
   nuclear spins and first-principles calculations.
@@ -88,7 +88,7 @@ Adam Gali.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.80.241204}.
 
 \bibitem[Gali et~al.(2008)Gali, Fyta, and Kaxiras]{Gali2008Ab}
-Adam Gali, Maria Fyta, and Efthimios Kaxiras.
+A.~Gali, M.~Fyta, and E.~Kaxiras.
 \newblock Ab initio supercell calculations on nitrogen-vacancy center in
   diamond: Electronic structure and hyperfine tensors.
 \newblock \emph{Physical Review B}, 77\penalty0 (15):\penalty0 155206, 4 2008.
@@ -96,14 +96,14 @@ Adam Gali, Maria Fyta, and Efthimios Kaxiras.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.77.155206}.
 
 \bibitem[Hensen(2011)]{Hensen2011MeasurementBased}
-Bas~Jorrit Hensen.
-\newblock \emph{Measurement-based Quantum Computation with the Nitrogen-Vacancy
-  centre in Diamond}.
-\newblock PhD thesis, Delft University of Technology, 2011.
+B.J. Hensen.
+\newblock Measurement-based quantum computation with the nitrogen-vacancy
+  centre in diamond.
+\newblock Master's thesis, Delft University of Technology, 2011.
 
 \bibitem[Jelezko et~al.(2004)Jelezko, Gaebel, Popa, Gruber, and
   Wrachtrup]{Jelezko2004Observation}
-F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
+F.~Jelezko, T.~Gaebel, I.~Popa, A.~Gruber, and J.~Wrachtrup.
 \newblock Observation of coherent oscillations in a single electron spin.
 \newblock \emph{Physical Review Letters}, 92\penalty0 (7):\penalty0 076401, 2
   2004.
@@ -111,7 +111,7 @@ F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.92.076401}.
 
 \bibitem[Mermin(1990)]{Mermin1990Extreme}
-N~David Mermin.
+N.D. Mermin.
 \newblock Extreme quantum entanglement in a superposition of macroscopically
   distinct states.
 \newblock \emph{Physical Review Letters}, 65\penalty0 (15):\penalty0
@@ -165,23 +165,13 @@ W.~Pfaff, B.~Hensen, H.~Bernien, S.~B. van Dam, M.~S. Blok, T.~H. Taminiau,
 
 \bibitem[Reed et~al.(2012)Reed, DiCarlo, Nigg, Sun, Frunzio, Girvin, and
   Schoelkopf]{Reed2012Realization}
-M~D Reed, L~DiCarlo, S~E Nigg, L~Sun, L~Frunzio, S~M Girvin, and R~J
+M.~D. Reed, L.~DiCarlo, S.E. Nigg, L.~Sun, L.~Frunzio, S.M. Girvin, and R.J.
   Schoelkopf.
 \newblock Realization of three-qubit quantum error correction with
   superconducting circuits.
 \newblock \emph{Nature}, 482\penalty0 (7385):\penalty0 382--5, 2 2012.
 \newblock ISSN 1476-4687.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/22297844}.
-
-\bibitem[Ristè et~al.(2013)Ristè, Dukalski, Watson, de~Lange, Tiggelman,
-  Blanter, Lehnert, Schouten, and DiCarlo]{Riste2013Deterministic}
-D~Ristè, M~Dukalski, C~a Watson, G~de~Lange, M~J Tiggelman, Ya~M Blanter, K~W
-  Lehnert, R~N Schouten, and L~DiCarlo.
-\newblock Deterministic entanglement of superconducting qubits by parity
-  measurement and feedback.
-\newblock \emph{Nature}, 502\penalty0 (7471):\penalty0 350--4, 10 2013.
-\newblock ISSN 1476-4687.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/24132292}.
 
 \bibitem[Robledo et~al.(2011)Robledo, Childress, Bernien, Hensen, Alkemade, and
   Hanson]{Robledo2011HighFidelity}
@@ -214,7 +204,7 @@ P.W. Shor.
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=365700}.
 
 \bibitem[Smeltzer et~al.(2011)Smeltzer, Childress, and Gali]{Smeltzer201113}
-Benjamin Smeltzer, Lilian Childress, and Adam Gali.
+B.~Smeltzer, L.~Childress, and A.~Gali.
 \newblock 13 c hyperfine interactions in the nitrogen-vacancy centre in
   diamond.
 \newblock \emph{New Journal of Physics}, 13\penalty0 (2):\penalty0 025021, 2
@@ -259,8 +249,8 @@ T.~van~der Sar, Z.H. Wang, M.S. Blok, H.~Bernien, T.H. Taminiau, D.M. Toyli,
 
 \bibitem[Vandersypen et~al.(2001)Vandersypen, Steffen, Breyta, Yannoni,
   Sherwood, and Chuang]{Vandersypen2001Experimental}
-L~M Vandersypen, Matthias Steffen, Gregory Breyta, Costantino~S Yannoni, Mark~H
-  Sherwood, and Isaac~L Chuang.
+L.M. Vandersypen, M.~Steffen, G.~Breyta, C.S. Yannoni, M.H. Sherwood, and I.L.
+  Chuang.
 \newblock Experimental realization of shor's quantum factoring algorithm using
   nuclear magnetic resonance.
 \newblock \emph{Nature}, 414\penalty0 (6866):\penalty0 883--7, 2001.
@@ -270,7 +260,7 @@ L~M Vandersypen, Matthias Steffen, Gregory Breyta, Costantino~S Yannoni, Mark~H
 \bibitem[Waldherr et~al.(2014)Waldherr, Wang, Zaiser, Jamali,
   Schulte-Herbrüggen, Abe, Ohshima, Isoya, Du, Neumann, and
   Wrachtrup]{Waldherr2014Quantum}
-G~Waldherr, Y~Wang, S~Zaiser, M.~Jamali, T.~Schulte-Herbrüggen, H.~Abe,
+G.~Waldherr, Y.~Wang, S.~Zaiser, M.~Jamali, T.~Schulte-Herbrüggen, H.~Abe,
   T.~Ohshima, J.~Isoya, J.~F. Du, P.~Neumann, and J.~Wrachtrup.
 \newblock Quantum error correction in a solid-state hybrid spin register.
 \newblock \emph{Nature}, 1 2014.
