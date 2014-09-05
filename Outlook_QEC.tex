@@ -1,77 +1,94 @@
 \chapter{Towards Quantum Error Correction}
-This thesis demonstrated the creation of entanglement between weakly coupled carbon spins.
-To implement 3-qubit QEC more spins are required as well as the ability to perform deterministic operations.
+Two more challenges remain to realize quantum error correction based on the parity measurements demonstrated in \cref{chap:control_weakly_carbon}.
+First, to correct errors, gate operations that are conditional on the parity outcome are required.
+Therefore the parity measurement must be accurate and preserve entangled state for both outcomes, unlike the probabilistic initialization and entanglement in this thesis.
 
-\section{Feed Forward}
-Another capability required for QEC is the ability to perform different quantum operations based on a classical readout result.
-An example of such an experiment is the deterministic creation of entanglement.
-By applying an extra set of gates when the negative parity result is measured it can be transformed in the state that would have been created had the positive parity been measured.
-These extra gates can be absorbed into the tomography when desired.
+Second, for error correction encoding in larger entangled states is required: at least three qubits for the simplest error correction and at least five qubits for correction of all types of errors.
+In this chapter I address these two challenges and present simulations that indicate that multi-qubit parity measurements on weakly coupled spins are possible.
 
-Such an experiment can be implemented using current methods.
-The main challenge lies in computing what operations must be done to correct for the negative readout.
+\section{Deterministic Parity Measurements}
 
-An additional advantage of performing deterministic operations is that it can significantly speed up the rate at which experiments can be performed as it is no longer limited by part of the probabilistic initialization.
+An essential capability for QEC is the ability to perform different quantum operations based on a classical readout result.
+An example of such an experiment is the deterministic creation of entanglement, as was demonstrated by \citet{Riste2013Deterministic} in a different system.
+
+By applying an extra set of gates when the negative result is measured in a parity measurement the state can be transformed in the state that would have been created had the positive parity been measured.
+This capability is particular important for QEC where the result of a parity measurement determines whether a correcting gate must be applied.
+
+The main challenge when performing such operations is to keep track of the phase of the system while waiting for the readout result that determines which set of gates should be executed.
+The measurement environment developed for the work in this thesis automatically keep track of phases and has been set up to be extendable and compatible with such feed forward capabilities.
+
+%Several challenges -> extra phase, Keeping track of things
+% An additional advantage of performing deterministic operations is that it can significantly speed up the rate at which experiments can be performed as it is no longer limited by part of the probabilistic initialization.
 
 
-\section{Simulations}
-In order to implement QEC more than the two qubits must be addressed.
+\section{Multi Qubit Control}
+In order to implement QEC more than the two qubits that were addressed must be addressed.
 To correct for a single type of quantum error 3 qubits are required.
 To correct for any type of quantum error at least 5 qubits are required.
-By having more qubits more elegant algorithms exist for correcting quantum errors.
+
 
 \subsection{Working of the simulations}
-Simulations were performed to determine how many weakly coupled carbons can be addressed using dynamical decoupling.
+Simulations were performed to determine how many weakly coupled carbons can be controlled, on average, for an NV-center using dynamical decoupling.
 In the simulations statistics were collected on 1000 NV-centers for a range of magnetic fields and three different carbon-13 concentrations.
-All NV-centers have an environment consisting of randomly placed carbon-13 spins.
-NV-centers containing a carbon with a hyperfine coupling larger than 200kHz were rejected as these are hard to simulate, and are expected to contain few addressable carbons.
-In an experimental setting these carbons can be easily detected and the samples rejected.
-On the remaining 299 samples the hyperfine coupling between each carbon and the NV-center as well as the resonance conditions of these carbons were calculated.
-At these resonances it was determined if a carbon is addressable.
+%HOW MANY FOR EACH
+For all NV-centers an environment of carbon-13 spins randomly placed on lattice points was generated.
+For lower concentrations a larger environment was simulated such that the total number of simulated carbon spins was $\sim 300$ per NV-center for all concentrations.
 
-A weakly coupled carbon is considered addressable if two consecutive $\pm \mathrm{x}$ gates can be implemented with a fidelity of 90\% or higher and at least 10 $\pm \mathrm{x}$ gates can be implemented within the coherence time.
+NV-centers containing a carbon with a hyperfine coupling larger than $200\,\mathrm{kHz}$ were rejected as such spins are prone to decohere during the optical readout of the electron spin and their complex dynamics at moderate field complicate spin control of other spins (\cref{chap:addressing_weakly_coupled_carbons}).
+In an experimental setting these carbons can be easily detected and the NV-centers rejected.
 
-The fidelity is determined by sweeping the number of pulses at the resonance conditions and determining with what fidelity the electronic spin state can be inverted.
-The accuracy with which the resonance can be addressed is limited by the resolution of the arbitrary waveform generator of 1ns.
-The fidelity is determined under the assumption of perfect $\pi$ and $\pi/2$-pulses and includes no decoherence effects.
+On the remaining centers the hyperfine coupling between each carbon and the NV-center as well as the resonance conditions of these carbons were calculated.
+% 299 for \mu = 1.1%, 423 for 0.33% and even more for 0.011% (data loading crashes..).
+At these resonances it was determined if a carbon can be selectively and coherently controlled.
 
-When the gate time ($N\cdot\tau$) is larger than 1/10th the coherence time the spin is said to be unaddressable.
-The coherence time $T_2^* $ is simplified to be a constant\footnote{It should be noted that this is an oversimplification and a typical coherence time does not exist for a NV-center\citep{Dobrovitski2008Decoherence}} based on the carbon-13 concentration ($\mu$), and is set at the values listed in \cref{tbl:concentration_Tmaxes}.
+%Definition addressable
+As a figure of merit we take the fidelity $F$ of the electron spin after two consecutive $\pm \mathrm{x}$ gates.
+The first gate entangles the electron spin with the nuclear spin and the second gate disentangles the two.
+Reduced electron spin fidelity indicates gate imperfections or unwanted entanglement of the electron to the other carbon-13 spins.
+The threshold for a carbon-13 to be considered controllable is set at $F = 90 \, \%$.
 
-The electronic-spin coherence is protected by dynamical decoupling during the gates.
-When the inter pulse delay becomes longer the protection becomes weaker.
-To ensure good protection against decoherence resonances at $\tau$ larger than a certain $\tau_\mathrm{max}$ were not considered.
+The fidelity is determined by sweeping the number of pulses at the resonance conditions and determining with what fidelity two consecutive $\pm \mathrm{x}$-gates can be implemented.
+The accuracy with which the resonance can be addressed is limited by the resolution of the arbitrary waveform generator at $1\,\mathrm{ns}$.
+The fidelity is determined under the assumption of perfect $\pi$ and $\pi/2$ pulses on the electron.
+
+%Decoherence implemented
+Additionally we require to be able to perform 10 such gates within the coherence time.
+For simplicity we do not simulate the nuclear-nuclear interactions and instead set $T_2^*$ as in \cref{tbl:concentration_Tmaxes}.
+% interpulse delay.
+Finally, we set a maximum value for the inter pulse delay $\tau_{\mathrm{max}}$, to take into account the limited coherence for the electron at large $\tau$.
 $\tau_{\mathrm{max}}$ is set at the values listed in \cref{tbl:concentration_Tmaxes}.
+%Table listing times used
 \begin{table}[htbp]
     \centering
     \caption{Coherence times and maximum resonance time as used in the simulations.}
     \begin{tabular}{ccc}
     Concentration &  $  T_{2,C}^* $ & $  \tau_{\mathrm{max} }$ \\ \hline
-    $1.10\% $&  7ms & $10\mu\mathrm{s}$\\
-    $0.33\% $&  45ms & $36.7\mu\mathrm{s}$\\
-    $0.11\% $&  70ms & $100\mu\mathrm{s}$\\
+    $1.10\,\% $&  7ms & $10\,\mu\mathrm{s}$\\
+    $0.33\,\% $&  45ms & $36.7\,\mu\mathrm{s}$\\
+    $0.11\,\% $&  70ms & $100\,\mu\mathrm{s}$\\
     \end{tabular}
     \label{tbl:concentration_Tmaxes}
 \end{table}
 
 \subsection{Results of the simulation}
-\Cref{fig:Simulation_results} shows the results of the simulations.
 \Cref{fig:Simulations_avg_n_vs_bfield} shows the average number of addressable carbon spins as a function of magnetic field.
 The number of addressable carbons increases quickly at first before a slow decay sets in.
 
 The initial increase in the number of addressable carbons can be explained by the Larmor frequency becoming larger than the hyperfine interaction.
-At low magnetic field most spins are in the complex regime, causing their responses to overlap in a dynamical decoupling spectroscopy.
-When the Larmor frequency becomes larger than their hyperfine coupling they move into the simple regime where the resonances are narrow.
+At low magnetic field ($\omega_L \sim A$) most spins undergo complex dynamics.
+When the Larmor frequency becomes larger than the hyperfine coupling of a carbon spin it is in the simple regime where the resonances are narrow.
 Because there is less overlap more spins can be addressed.
 This increase drops off because eventually all spins are in the simple regime.
 
-At lower concentrations there are on average less spins in the complex regime for the same magnetic field.
-This causes the initial increase to be steeper at lower concentrations.
-
 By increasing the magnetic field further the resonances both get narrower (\cref{eq:res_dip_width}) and move to shorter times \cref{eq:res_dip_loc}.
-When the field becomes to high a resonance can become to narrow for the arbitrary waveform generator to accurately address.
+When the field becomes too high a resonance can become too narrow to accurately address.
+This is limited by the 1ns timing resolution of the arbitrary waveform generator.
+Therefore the number of addressable spins decreases at high fields.
 
-There is also a bias due to the rejection of carbons with $|A|>200\mathrm{kHz}$.
+For lower concentrations there are on average less spins undergoing complex dynamics for the same magnetic field.
+This causes the initial increase in addressable carbons to be steeper at lower concentrations.
+
+There is also a bias due to the rejection of carbons with $|A|>200\,\mathrm{kHz}$.
 Not rejecting these carbons will lower the number of addressable carbons for low magnetic fields as the response of these carbons dominates the dynamical decoupling spectroscopy, while the number of addressable carbons will increase slightly in the high field limit were these carbons can be controlled trough dynamical decoupling.
 
 \begin{figure}[htbp]
@@ -79,9 +96,9 @@ Not rejecting these carbons will lower the number of addressable carbons for low
         \caption{}
         \begin{tikzpicture}
             \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/Simulations_avgN_vs_Bfield.pdf}};
-            \node[font=\small, text = blue] at (5.0,4.90)  {$\mu = 1.10\%$};
-            \node[font=\small, text = green] at (5.0,4.6)  {$\mu =0.33\%$};
-            \node[font=\small, text = red] at (5.0,4.30)  {$\mu =0.11\%$};
+            \node[font=\small, text = blue] at (5.0,4.90)  {$\mu = 1.10\,\%$};
+            \node[font=\small, text = green] at (5.0,4.6)  {$\mu =0.33\,\%$};
+            \node[font=\small, text = red] at (5.0,4.30)  {$\mu =0.11\,\%$};
         \end{tikzpicture}
         \label{fig:Simulations_avg_n_vs_bfield}
     \end{subfigure}
@@ -89,12 +106,12 @@ Not rejecting these carbons will lower the number of addressable carbons for low
     \caption{}
     \begin{tikzpicture}
         \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/Simulations_Histogram_vs_Bfield.pdf}};
-        \node[font=\small, text = black] at (5.4,4.90)  {$B = 700\mathrm{G}$};
-        \node[font=\small, text = black] at (5.4,4.60)  {$\mu = 1.1\%$};
+        \node[font=\small, text = black] at (5.4,4.90)  {$B = 700\,\mathrm{G}$};
+        \node[font=\small, text = black] at (5.4,4.60)  {$\mu = 1.1\,\%$};
     \end{tikzpicture}
     \label{fig:simulations_histogram_vs_Bfield}
     \end{subfigure}
-    \caption{Simulation results calculating the number of addressable carbons in NV-centers containing no carbons with hyperfine coupling larger than $200\mathrm{kHz}$. \subref{fig:Simulations_avg_n_vs_bfield} Average number of addressable carbons at different concentrations. \subref{fig:simulations_histogram_vs_Bfield} Normalized occurrences for $\mu = 1.1\%$ at 700G. The simulation indicates that an NV-center likely has 3 or more addressable carbons($P=89\%$), that there is a good chance that 5 or more carbons can be addressed ($P=57\%$) and that there is even a small probability of getting $\sim 10$ addressable carbon spins. }
+    \caption{Simulation results calculating the number of addressable carbons in NV-centers containing no carbons with hyperfine coupling larger than $200\mathrm{kHz}$. \subref{fig:Simulations_avg_n_vs_bfield} Average number of addressable carbons at different concentrations. \subref{fig:simulations_histogram_vs_Bfield} Normalized occurrences for $\mu = 1.1\,\%$ at $700\,\mathrm{G}$. The simulation indicates that an NV-center likely has 3 or more addressable carbons($P=89\,\%$), that there is a good chance that 5 or more carbons can be addressed ($P=57\,\%$) and that there is even a small probability of getting $\sim 10$ addressable carbon spins. }
     \label{fig:Simulation_results}
 \end{figure}
 
@@ -117,9 +134,9 @@ Not rejecting these carbons will lower the number of addressable carbons for low
 
 
 \paragraph{ }
-\Cref{fig:simulations_histogram_vs_Bfield} shows the distribution of addressable carbons for a natural concentration of carbon-13 at the optimal magnetic field.
-It indicates that in most samples (89\%) 3 or more carbons can be addressed and that in a reasonable fraction (57\%) of the samples 5 or more carbons can be addressed.
-There are even rare occurrences where $\sim 10$ carbons can be addressed.
+\Cref{fig:simulations_histogram_vs_Bfield} shows the distribution of addressable carbons for a natural concentration of carbon-13 at the magnetic field that has the highest average number of addressable carbons.
+It indicates that in most NV-centers ($89\,\%$) three or more carbons can be addressed and that in a reasonable fraction ($57\,\%$) of the samples five or more carbons can be addressed.
+There are even rare occurrences where ten or more carbons can be addressed.
 
 % % %%%%%%%%%
 % Idem:

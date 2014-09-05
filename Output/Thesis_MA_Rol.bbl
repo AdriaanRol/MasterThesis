@@ -42,23 +42,13 @@ G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
 \newblock ISSN 1095-9203.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/20829452}.
 
-\bibitem[Dobrovitski et~al.(2008)Dobrovitski, Feiguin, Awschalom, and
-  Hanson]{Dobrovitski2008Decoherence}
-V.~Dobrovitski, a.~Feiguin, D.~Awschalom, and R.~Hanson.
-\newblock Decoherence dynamics of a single spin versus spin ensemble.
-\newblock \emph{Physical Review B}, 77\penalty0 (24):\penalty0 245212, 6 2008.
-\newblock ISSN 1098-0121.
-\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.77.245212}.
-
 \bibitem[Doherty et~al.(2013)Doherty, Manson, Delaney, Jelezko, Wrachtrup, and
   Hollenberg]{Doherty2013NitrogenVacancy}
-Marcus~W. Doherty, Neil~B. Manson, Paul Delaney, Fedor Jelezko, Jörg
-  Wrachtrup, and Lloyd~C.L. Hollenberg.
+M.W. Doherty, N.B. Manson, P.~Delaney, F.~Jelezko, J.~Wrachtrup, and L.C.L.
+  Hollenberg.
 \newblock The nitrogen-vacancy colour centre in diamond.
-\newblock \emph{Physics Reports}, 528\penalty0 (1):\penalty0 1--45, 7 2013.
-\newblock ISSN 03701573.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S0370157313000562}.
+\newblock page 101, 2 2013.
+\newblock URL \url{http://arxiv.org/abs/1302.3288}.
 
 \bibitem[Feynman(1982)]{Feynman1982Simulating}
 Richard~P. Feynman.
@@ -99,6 +89,16 @@ F.~Jelezko, T.~Gaebel, I.~Popa, a.~Gruber, and J.~Wrachtrup.
   2004.
 \newblock ISSN 0031-9007.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.92.076401}.
+
+\bibitem[Ristè et~al.(2013)Ristè, Dukalski, Watson, de~Lange, Tiggelman,
+  Blanter, Lehnert, Schouten, and DiCarlo]{Riste2013Deterministic}
+D~Ristè, M~Dukalski, C~a Watson, G~de~Lange, M~J Tiggelman, Ya~M Blanter, K~W
+  Lehnert, R~N Schouten, and L~DiCarlo.
+\newblock Deterministic entanglement of superconducting qubits by parity
+  measurement and feedback.
+\newblock \emph{Nature}, 502\penalty0 (7471):\penalty0 350--4, 10 2013.
+\newblock ISSN 1476-4687.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/24132292}.
 
 \bibitem[Robledo et~al.(2011)Robledo, Childress, Bernien, Hensen, Alkemade, and
   Hanson]{Robledo2011HighFidelity}
