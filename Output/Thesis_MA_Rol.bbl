@@ -62,14 +62,6 @@ G.~de~Lange, Z.H. Wang, D.~Ristè, V.V. Dobrovitski, and R.~Hanson.
 \newblock ISSN 1095-9203.
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/20829452}.
 
-\bibitem[Doherty et~al.(2013)Doherty, Manson, Delaney, Jelezko, Wrachtrup, and
-  Hollenberg]{Doherty2013NitrogenVacancy}
-M.W. Doherty, N.B. Manson, P.~Delaney, F.~Jelezko, J.~Wrachtrup, and L.C.L.
-  Hollenberg.
-\newblock The nitrogen-vacancy colour centre in diamond.
-\newblock page 101, 2 2013.
-\newblock URL \url{http://arxiv.org/abs/1302.3288}.
-
 \bibitem[Feynman(1982)]{Feynman1982Simulating}
 Richard~P. Feynman.
 \newblock Simulating physics with computers.
@@ -136,6 +128,16 @@ O.~Moussa, J.~Baugh, C.~A. Ryan, and R.~Laflamme.
   10 2011.
 \newblock ISSN 0031-9007.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.107.160501}.
+
+\bibitem[Nickerson et~al.(2013)Nickerson, Li, and
+  Benjamin]{Nickerson2013Topological}
+N.H. Nickerson, Y.~Li, and S.C. Benjamin.
+\newblock Topological quantum computing with a very noisy network and local
+  error rates approaching one percent.
+\newblock \emph{Nature communications}, 4:\penalty0 1756, 1 2013.
+\newblock ISSN 2041-1723.
+\newblock URL
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3644110\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Nielsen and Chuang(2010)]{Nielsen2010Quantum}
 M.A. Nielsen and I.L. Chuang.

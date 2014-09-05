@@ -1,5 +1,16 @@
 \chapter{Introduction}
+Although computers have increasingly become part of daily life they fall short when confronted with difficult problems  such as protein folding or searching a large unsorted database.
+Quantum computers promise an exponential speedup for certain classes of problems making it possible to solve these problems on a human timescale.
 
+A key challenge in building a large scale quantum computer is the presence of quantum errors.
+To correct for these errors parity
+
+
+
+% Qauntum computation is cool
+% Hurdle Errors -> error correction
+% System of choice NV center
+% Goal of project
 
 %weakly coupled carbons in NV- environment provide a naturally occuring spin register making it a promising candidate for QC
 % For large scale larger and  deterministically available spin registers are desirable
@@ -68,6 +79,9 @@ Performing a parity measurement on multiple qubits allows quantum errors, such a
 The state $\ket{\psi}_\mathrm{C2}$ is encoded onto a logical qubit consisting of qubits C1, C2 and C3.
 A parity measurement is performed on qubits C1 and C2, and on C2 and C3,  by reading out an ancilla qubit $e$.
 From the result of the parity measurements it can be determined on which qubit an error occurred.
+Based on this result the error can be corrected.
+Because the logical qubit does not need to be decoded to correct for the error it is possible to repeat the error correcting part of the circuit, thereby improving the protection of the qubit.
+The original qubit can be recovered by decoding the logical qubit.
 
 \begin{figure}[htbp]
     \centering
@@ -93,34 +107,29 @@ From the result of the parity measurements it can be determined on which qubit a
     \label{fig:gate_circuit_3_qubit_QEC}
 \end{figure}
 
-In order to implement measurement based error correction as depicted in \cref{fig:gate_circuit_3_qubit_QEC} we require control over three qubits and an ancilla that can be read out.
+In order to implement measurement based error correction as depicted in \cref{fig:gate_circuit_3_qubit_QEC} we require initialization and control over three qubits and an ancilla that can be used to read out the main qubits.
 Furthermore we need to be able to perform parity measurements on these qubits and deterministically perform operations based on the outcome of these parity measurements to correct for errors.
 
 \section{The Nitrogen Vacancy Center in Diamond}
+The NV-center is a promising candidate for quantum computation \citep{Childress2013Diamond}.
+The NV-center is a naturally occurring impurity in diamond of which the electronic spin can be optically addressed and read out.
+By applying microwave pulses to the NV-center it is possible to control and initialize strongly coupled spins in its environment \citep{Robledo2011HighFidelity}.
+This spin register can be extended by addressing weakly coupled spins \citep{Taminiau2014Universal,Waldherr2014Quantum}.
 
-Optical links \citep{Bernien2013Heralded,Pfaff2014Unconditional}
-Nodes \citep{Taminiau2014Universal,Waldherr2014Quantum} (error correction)
+Because of optical interface of the NV-center it is possible to link physically independent NV-centers together \citep{Bernien2013Heralded}. This has been used to demonstrate quantum teleportation \citep{Pfaff2014Unconditional}.
 
-Prominent approach to Scalable networks rely on repeated parity measurements (i.e. approach surface code. )
-
-% Normally a source of errors (decoherence) weakly coupled carbons in the environment of the NV provide a naturally occuring register of qubits that can be used for QEC.
-
-% Has been shown that they can be addressed and controlled (paper of Tim)
-
-% Gate based QEC has been shown.
-% Q: Why is this not full QEC? Don't need deterministic gates/FFWD?
-
-% In this thesis we will show coherent control of weakly coupled carbons and deterministic entanglement creation.
-
-
-% Notes, think of use of word parity and entanglement
-
-%TODO_MAR: Revise part below
-The Nitrogen Vacancy centre in diamond is a well investigated system\citep{Doherty2013NitrogenVacancy} and a promising candidate for quantum computation\citep{Childress2013Diamond}. In order to implement three qubit measurement based QEC we need three qubits plus ancillae that we can initialise, measure and conditionally perform operations on. These extra qubits are found in Carbon--13 atoms, which are normally a source of decoherence. These atoms can be addressed using a resonant decoupling sequence\citep{Taminiau2012Detection}.
-
+This unique combination of a local qubit register with an optical interface makes the NV-center a suitable system to implement a node based design for a scalable quantum computer\citep{Nickerson2013Topological}.
 
 \section{Goal of the project}
-The Goal of the project is to create entanglement between weakly coupled carbon spins.
-This is important because entanglement creation is a key component for QEC in particular and QI in general.
+In order to realize QEC at least three qubits are required to correct for a single type of error and more than five qubits are required to correct for a universal error.
+Because the probability of finding enough strongly coupled carbons to implement QEC is small and goes down rapidly the more spins are required \citep{Waldherr2014Quantum,Taminiau2014Universal} we address weakly coupled spins using the methods developed by \citet{Taminiau2014Universal}.
 
-For this we need a b and c
+The goal of this project is to implement  a parity measurement and demonstrate entanglement created by this parity measurement using weakly coupled spins in the environment of the NV-center.
+The parity measurement is required for QEC in particular and measurement based approaches to quantum information in general.
+This is done in a measurement environment that is designed from start to be compatible with the feed forward operations required for QEC.
+
+The next chapter will explain the tools available to control the NV-center and strongly coupled spins.
+\Cref{chap:addressing_weakly_coupled_carbons} will discuss how coherence can be extended
+in order to control weakly coupled carbons.
+In \cref{chap:control_weakly_carbon} these techniques are used to first initialize multiple weakly coupled carbon spins before creating entanglement using the parity measurement.
+The last chapter will provide an outlook on how the capabilities developed can be extended to perform deterministic parity measurements and show simulations indicating that it is possible to perform multi qubit error correction using weakly coupled spins.
