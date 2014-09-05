@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -143,6 +143,15 @@ N.H. Nickerson, Y.~Li, and S.C. Benjamin.
 M.A. Nielsen and I.L. Chuang.
 \newblock \emph{Quantum Computation and Quantum Information}.
 \newblock Cambridge University Press, 2010.
+
+\bibitem[Pfaff et~al.(2012)Pfaff, Taminiau, Robledo, Bernien, Markham,
+  Twitchen, and Hanson]{Pfaff2012Demonstration}
+W.~Pfaff, T.~H. Taminiau, L.~Robledo, H.~Bernien, M.~Markham, D.~J. Twitchen,
+  and R.~Hanson.
+\newblock Demonstration of entanglement-by-measurement of solid-state qubits.
+\newblock \emph{Nature Physics}, 9\penalty0 (1):\penalty0 29--33, 10 2012.
+\newblock ISSN 1745-2473.
+\newblock URL \url{http://www.nature.com/doifinder/10.1038/nphys2444}.
 
 \bibitem[Pfaff et~al.(2014)Pfaff, Hensen, Bernien, van Dam, Blok, Taminiau,
   Tiggelman, Schouten, Markham, Twitchen, and Hanson]{Pfaff2014Unconditional}

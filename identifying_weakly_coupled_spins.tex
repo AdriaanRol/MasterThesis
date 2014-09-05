@@ -1,6 +1,82 @@
 \section{Identifying weakly-coupled carbon-pins}
-This section will discuss the effect of dynamical decoupling on the interaction between the NV-center and weakly coupled nuclear spins.
-This is used to explain the features in the fingerprint of \cref{fig:FP} and identify several nuclear spins.
+When discussing the Ramsey and the spin-echo experiment we have treated the NV-center as being affected by the spin-bath but not affecting it.
+In reality the interaction works both ways and the NV-spin does affect the nuclear spins.
+It is possible to probe these interactions using a dynamical decoupling spectroscopy.
+A dynamical decoupling spectroscopy provides a type of fingerprint of the nuclear spin environment from which the the hyperfine interaction for the individual spins can be determined \citep{Taminiau2012Detection,Taminiau2014Universal}.
+
+This section will discuss the effect of dynamical decoupling on the electron-nucleus dynamics.
+This is used to explain the features in the fingerprint of \cref{fig:FP} and identify several individual nuclear spins.
+
+
+\subsection{Dynamical decoupling spectroscopy}
+
+In a dynamical decoupling spectroscopy experiment the electron is prepared in the $|X\rangle =\tfrac{1}{\sqrt{2}}\left( |0\rangle +|1\rangle \right) $ state.
+It is subjected to a pulse sequence consisting of $N/2$ blocks of the form {$\tau - \pi -2\tau-\pi-\tau$}, where $\tau$ is a wait time and $\pi$ a $\pi$-pulse.
+The experiment is concluded by measuring $\langle X\rangle $.
+The fingerprint is the result of many repetitions for a range of inter-pulse delays $2\tau$.
+
+Part of a dynamical decoupling spectroscopy result can be seen in \cref{fig:FP}.
+When the electron spin performs an entangling operation on a spin in the environment coherence is lost when the electron spin is measured.
+In a dynamical decoupling spectroscopy such an interaction is visible as a a decrease in the expectation value $\langle X\rangle$.
+
+A broad collapse of the signal is clearly visible around $\tau/(4\tau_L) = m$ for odd $m$.
+This broad collapse is caused by the electron performing an entangling gate on multiple spins.
+
+At the edges of this collapse several sharp dips are visible.
+These correspond to individual spins.
+
+Between the broad collapses there alternately appears an oscillation.
+This oscillation is caused by a spin in the complex regime.
+
+The physical processes resulting in such a fingerprint will be discussed in the next section.
+
+\begin{figure}[htbp]
+
+    \begin{subfigure}[t]{\textwidth}\centering
+        \caption{}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/fingerprint16.pdf}};
+            \node[font=\small, text = blue] at (4.05,1.7)  {1};
+            \node[font=\small, text = green] at (9.3,2.9) {2};
+            \node[font=\small, text = red] at (5.3,2.5) {3};
+            \node[font=\small, text = cyan] at (4.0,3.35) {4};
+            \node[font=\small, text = black] at (14.0,4.0) {$N=16$};
+            % \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,3);
+            % \foreach \x in {1,2,...,10} { \node [anchor=north] at (\x,0) {\x}; }
+            % \foreach \y in {1,2,...,3} { \node [anchor=east] at (0,\y) {\y}; }
+        \end{tikzpicture}
+        \label{fig:FP16}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{\textwidth}\centering
+
+    \caption{}
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/fingerprint32.pdf}};
+        \node[font=\small, text = blue] at (11.2,1.9) {1};
+        \node[font=\small, text = blue] at (4.0,2.8)  {1};
+        \node[font=\small, text = green] at (6.6,1.8) {2};
+        \node[font=\small, text = red] at (7.4,1.8) {3};
+        \node[font=\small, text = cyan] at (4.05,2.5) {4};
+        \node[font=\small, text = black] at (14.0,4.0) {$N=32$};
+        % \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,3);
+        % \foreach \x in {1,2,...,10} { \node [anchor=north] at (\x,0) {\x}; }
+        % \foreach \y in {1,2,...,3} { \node [anchor=east] at (0,\y) {\y}; }
+    \end{tikzpicture}
+    \label{fig:FP32}
+    \end{subfigure}
+    \caption{Part of a dynamical decoupling spectroscopy experiment performed at $B_z = 304\,\mathrm{G}$, $\tau_L =3.07 \, \mu \mathrm{s} $.
+    Black lines correspond to data. Colored lines represent computed responses of carbon spins.
+    \subref{fig:FP16} $N = 16$ pulses; \subref{fig:FP32} $N=32$ pulses.
+    Contrast is lowered when the decoupling sequence performs an entangling operation on a spin in the environment.
+    A reference to the full dynamical decoupling dataset can be found in \cref{chap:Fingerprint_data_appendix}.
+    Responses were calculated using \cref{eq:contrast_single_carbon_spin} with hyperfine parameters from \cref{tbl:HF_par}. }
+    \label{fig:FP}
+\end{figure}
+
+
+
+
 
 \subsection{The effect of dynamical decoupling on nuclear spins}
 
@@ -43,13 +119,8 @@ $\bm{\hat{\mathrm{n}}_i} =\bm{\hat{\mathrm{n}}_0}$ when the electron starts in $
 
 When the net rotation axes point in a different direction a conditional operation is executed during dynamical decoupling (\cref{fig:conditional_and_unconditional_rotation}).
 In a dynamical decoupling spectroscopy contrast is lowered when a conditional operation is executed.
-To understand when this occurs it is useful to consider three different cases.
-A weakly coupled carbon spin in: the trivial regime where $A_\perp=0$, the basic regime where $A_\perp \ll \omega_L$ and the complex regime where $A_\perp \sim \omega_L$.
+To understand when this occurs it is useful to consider two different regimes for carbon spins: the basic regime where $A_\perp \ll \omega_L$ and the complex regime where $A_\perp \sim \omega_L$.
 For a mathematical description of the result of a dynamical decoupling spectroscopy the reader is referred to \cref{sec:mathematical_description_dd_spectro}.
-
-\subsubsection{The trivial regime ($A_\perp=0$)}
-Because there is no orthogonal component of the hyperfine the spin will precess around the $z$-axis independent of the initial electronic spin-state.
-Therefore the operation not conditional and no signal for such spins is observed in a dynamical decoupling spectroscopy.
 
 \subsubsection{The basic regime ($A_\perp \ll \omega_L$)}
 In the basic regime the net rotation axes are practically parallel and point in the $z$-direction for almost every $\tau$ except for a specific resonant condition for which the axes are anti-parallel.
@@ -80,21 +151,10 @@ This makes it hard to resolve individual spins when a spin has a broad response,
 
 
 \subsection{Identifying Individual Carbon-spins}
-Using the previous section we will look at \cref{fig:FP} in greater detail.
-
-A broad collapse of the signal is clearly visible around $\tau/(4\tau_L) = m$ for odd $m$.
-This broad collapse is caused by the response of multiple spins overlapping.
-
-At the edges of this collapse several sharp dips are visible.
-These correspond to individual spins.
-A first estimate of the hyperfine coupling to these spins can be made based on their location and width using \cref{eq:res_dip_loc,eq:res_dip_width}.
-
-Between the broad collapses there alternately appears an oscillation.
-This oscillation is caused by a spin in the complex regime.
-Its position can be used to get a rough estimate for its hyperfine coupling.
-
-By computing the responses for the hyperfine parameters using \cref{eq:contrast_single_carbon_spin} a more accurate estimation was made.
-13 distinct carbon spins were identified.
+Using the previous section it is possible to identify individual spins.
+A first estimate of the hyperfine coupling to these spins can be made based on the location and width of dips in the dynamical decoupling spectroscopy using \cref{eq:res_dip_loc,eq:res_dip_width}.
+By computing the responses for the hyperfine parameters using \cref{eq:contrast_single_carbon_spin} the estimation can be improved.
+Using this method 13 distinct carbon spins were identified.
 
 The parameters of the 4 strongest coupled carbons are listed in \cref{tbl:HF_par} and their computed responses are visible as colored lines in \cref{fig:FP}.
 All estimated hyperfine parameters and a link to the full dynamical decoupling dataset can be found in \cref{chap:Fingerprint_data_appendix}.

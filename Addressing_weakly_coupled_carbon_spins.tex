@@ -2,18 +2,17 @@
 \chapter{Addressing Weakly-coupled Carbon Spins}
 \label{chap:addressing_weakly_coupled_carbons}
 
-In order to realize quantum error correction we need at least three qubits and at least five to correct for a universal error.
-\Cref{fig:coupling regimes} shows a schematic overview of spins in different coupling regimes.
-Strongly coupled carbon spins can be controlled using the methods described in the previous chapter.
+In order to realize quantum error correction at least three qubits and at least five to correct for a universal error will be needed.
+Strongly coupled carbon spins can be controlled as explained in the previous chapter \citep{Robledo2011HighFidelity,Waldherr2014Quantum}.
 However the probability of finding enough of these spins to implement QEC is very small.
 The probability of finding three or more strongly coupled carbons spins in an NV-center is low and goes down the more carbons are required \citep{Waldherr2014Quantum,Taminiau2014Universal}.
-Additionally strongly coupled nuclear spins are prone to decohere when the electronic spin is optically addressed.
+Additionally strongly coupled nuclear spins are prone to decohere when the electronic spin is optically addressed\citep{Pfaff2012Demonstration}.
 A problematic feature for QEC which relies on repeatedly measuring errors to be able to correct for them.
 
 By addressing weakly coupled carbon spins the spin register can be enlarged with spins that are not affected as strongly by the readout of the electron spin.
 However to address weakly coupled carbon spins the coherence of the electron needs to be extended.
 This is done trough dynamical decoupling \citep{Lange2010Universal}.
-Van der Sar et al. \citep{Sar2012DecoherenceProtected} have demonstrated how to integrate regular operations on the NV-spin with a dynamical decoupling sequence.
+Van der Sar et al. \citep{Sar2012DecoherenceProtected} have demonstrated how to integrate gates on the nitrogen spin with dynamical decoupling sequences.
 To address these weakly coupled carbon spins we use the dynamical decoupling sequence used to extend the coherence \citep{Taminiau2012Detection}.
 In the next chapter it is demonstrated how this control is used to perform parity measurements and create entanglement.
 
@@ -22,25 +21,6 @@ The dynamical decoupling sequence will then be used to identify spins in the env
 These spins are characterized so that they can be controlled in the next chapter.
 
 
-\begin{figure}[htbp]
-\centering
-    \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[scale = 0.5]{Img/coupling_regimes.eps}};
-        \node[font=\tiny] at (5,4) {$A \approx \frac{\sqrt{\ln{2}}}{\pi T_{2\mathrm{C}}^*}$};
-        \node[font=\tiny] at (4,3.1) {$A\approx \frac{\sqrt{\ln{2}}}{\pi T_{2e}^*}$};
-        \node[font=\small] at (3.8,1.9) {$\mathbb{I}$};
-        \node[font=\small] at (4.75,1.2) {$\mathbb{II}$};
-        \node[font=\small] at (5.6,0.5) {$\mathbb{III}$};
-        %Help grid for drawing
-        % \draw[help lines,xstep=1,ystep=1] (0,0) grid (7,5);
-        % \foreach \x in {0,1,...,7} { \node [anchor=north] at (\x,0) {\x}; }
-        % \foreach \y in {0,1,...,5} { \node [anchor=east] at (0,\y) {\y}; }
-    \end{tikzpicture}
-    \caption{ Schematic representation of different coupling regimes. Carbons in region $\mathbb{I} $ are in the strong coupling regime, transitions of these spins can be readily resolved and they can be controlled using the methods described in the previous chapter.
-    In the weak coupling regime (region $\mathbb{II}$) carbon-spins are coupled more strongly to the NV-center than to the spin-bath but not strong enough to be readily resolvable in an ESR. These spins can be controlled trough dynamical decoupling \citep{Taminiau2012Detection}.
-    In the very-weak coupling regime (region $\mathbb{III}$) the coupling to the spin-bath is stronger than the coupling to the NV-center. These spins cannot presently be addressed.}
-    \label{fig:coupling regimes}
-\end{figure}
 \input{extending_electron_coherence.tex}
 \input{identifying_weakly_coupled_spins.tex}
 \input{characterizing_weakly_coupled_spins.tex}

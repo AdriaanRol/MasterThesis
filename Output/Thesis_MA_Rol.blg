@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Thesis_MA_Rol.aux
 The style file: plainnat.bst
 Database file #1: Remote.bib
-You've used 29 entries,
+You've used 30 entries,
             2773 wiz_defined-function locations,
-            837 strings with 12762 characters,
-and the built_in function-call counts, 17002 in all, are:
-= -- 1472
-> -- 1342
+            845 strings with 13061 characters,
+and the built_in function-call counts, 17709 in all, are:
+= -- 1531
+> -- 1408
 < -- 10
-+ -- 452
-- -- 423
-* -- 1641
-:= -- 2779
-add.period$ -- 138
-call.type$ -- 29
-change.case$ -- 224
-chr.to.int$ -- 29
-cite$ -- 58
-duplicate$ -- 598
-empty$ -- 1081
-format.name$ -- 456
-if$ -- 3447
++ -- 474
+- -- 444
+* -- 1715
+:= -- 2895
+add.period$ -- 143
+call.type$ -- 30
+change.case$ -- 234
+chr.to.int$ -- 30
+cite$ -- 60
+duplicate$ -- 619
+empty$ -- 1120
+format.name$ -- 478
+if$ -- 3589
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 27
-newline$ -- 203
-num.names$ -- 116
-pop$ -- 363
+missing$ -- 28
+newline$ -- 210
+num.names$ -- 120
+pop$ -- 379
 preamble$ -- 1
-purify$ -- 199
+purify$ -- 208
 quote$ -- 0
-skip$ -- 480
+skip$ -- 498
 stack$ -- 0
-substring$ -- 461
-swap$ -- 62
+substring$ -- 478
+swap$ -- 64
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 314
+type$ -- 325
 warning$ -- 0
-while$ -- 111
+while$ -- 115
 width$ -- 0
-write$ -- 483
+write$ -- 500
