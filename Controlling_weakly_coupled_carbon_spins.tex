@@ -1,17 +1,19 @@
 \chapter{Entangling Weakly-coupled Carbon Spins}
 \label{chap:control_weakly_carbon}
-The creation of entanglement is an essential capability for QEC in particular and quantum-computation in general.
-This chapter demonstrates how weakly coupled carbon spins can be initialized and read-out and how this is used to generate entanglement between two weakly coupled carbon spins.
+The capability to perform parity measurements is essential for QEC in particular and quantum-computation in general.
+This chapter demonstrates how weakly coupled carbon spins can be initialized and read-out and creates entanglement between two weakly coupled spins trough a parity measurement.
+The creation of entanglement serves to demonstrate that the parity measurement was successfully implemented.
 
 \section{Initialization and readout of single spins}
 \label{sec:carbon_init_and_readout}
-A weakly coupled spin can be initialized by conditioning on a measurement result, similar to how the nitrogen initialization works (\cref{sec:nitrogen_spin_control}).
+We initialize spins by measurements.
 A weakly coupled carbon spin can be measured by entangling the phase of the electronic-spin with the state of the carbon spin and reading out the phase of the electronic spin.
 
 %Explain Readout.
 The gates used to initialize a weakly coupled carbon are depicted in \cref{fig:gate_circuit_initialization}.
-The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} projects the carbon spin along the the $x$-axis upon readout of the electronic spin.
+The circuit depicted in \cref{fig:gate_circuit_mbi_x-init} projects the carbon spin along the $x$-axis upon readout of the electronic spin.
 By adding an additional conditional gate, as depicted in \cref{fig:gate_circuit_mbi_swap-init}, the carbon spin is brought into the $\ket{0}$-state regardless of the measurement outcome of the electronic spin.
+In that case the electron measurement is used to reinitialize the electron.
 
 %Explain Initialization.
 \begin{figure}[htbp]
@@ -64,8 +66,8 @@ In order to read out the carbon along the $z$-direction an additional $\pm \math
         \Qcircuit @C=1em @R=.7em {
         \lstick{\ket{0}_e}                        &\ctrl{1}& \gate{\mathrm{y}}  & \ctrl{1}       & \gate{\mathrm{x}} &\qw          &  \meter \\
         \lstick{\ket{\psi_\mathrm{C}}}         &\gate{\pm \mathrm{y}}     & \qw              &  \gate{\pm \mathrm{x}}     & \qw    & \qw   & \qw}}
-    \label{fig:gate_circuit_z_readout}
     \caption{Gate circuit used to read out a carbon spin along $z$. The initial  $\pm \mathrm{y}$ rotates the state onto the $x$-basis. The rest of the circuit is identical to the circuit in \cref{fig:gate_circuit_mbi_x-init} and is used to read out the carbon spin along $x$. }
+    \label{fig:gate_circuit_z_readout}
 \end{figure}
 
 
@@ -100,7 +102,7 @@ The combined fidelity of readout and initialization to the desired state is: $F(
         \caption{}
         % \includegraphics{Img/RO_and_init_C1_Z.pdf}
         \begin{tikzpicture}
-            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/RO_and_init_C1_X.pdf}};
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics{Img/RO_and_init_C1_Z.pdf}};
             \node[mark size=1.5pt,color=blue] at (5.05,2.1) {\pgfuseplotmark{*}};
             \node[mark size=1.5pt,color=green] at (5.05,1.8) {\pgfuseplotmark{*}};
             \node[mark size=1.5pt,color=red] at (5.05,1.5) {\pgfuseplotmark{*}};
@@ -110,7 +112,7 @@ The combined fidelity of readout and initialization to the desired state is: $F(
         \end{tikzpicture}
         \label{fig:carbon_init_Z}
     \end{subfigure}
-    \caption{Demonstration of carbon initialization and readout. In \subref{fig:carbon_init_x} carbon-1 is initialized in $\ket{X}$. In \subref{fig:carbon_init_Z} carbon-1 is initialized in $\ket{0}$. Colored points correspond to readouts in different bases, blue to $x$-readout, green to $y$-readout and red to $z$-readout. The red lines are fits to the data with a cosine: $a+A \cos(\omega \phi + \phi_0 )$.}
+    \caption{Demonstration of carbon initialization and readout. In \subref{fig:carbon_init_x} carbon-1 is initialized in $\ket{X}$. In \subref{fig:carbon_init_Z} carbon-1 is initialized in $\ket{0}$. Colored points correspond to readouts in different bases, blue to $x$-readout, green to $y$-readout and red to $z$-readout. The red lines are fits to the data with a cosine: $a+A \cos(\phi + \phi_0 )$.}
     \label{fig:single_qubit_initialization}
 \end{figure}
 
@@ -118,10 +120,10 @@ The combined fidelity of readout and initialization to the desired state is: $F(
 \section{Parity measurements}
 Entanglement between two qubits can be created by performing a parity measurement on them and conditioning on the outcome.
 
-A parity measurement measures if  two qubits are the same in a certain basis.
+A parity measurement measures if  two qubits are correlated in a certain basis.
 An example is the XX-parity measurement.
 The XX-parity measurement returns a positive result if the the two qubits are the parallel along $x$ and a negative result if the two are anti-parallel.
-That is it returns a positive result if the state is a linear combination of $\ket{X,X}$ and $\ket{-X,-X}$ and a negative result if the state is a linear combination $\ket{X,-X}$ of $\ket{-X,X}$.
+That is it returns a positive result if the state is a linear combination of $\ket{X,X}$ and $\ket{-X,-X}$ and a negative result if the state is a linear combination $\ket{X,-X}$ and $\ket{-X,X}$.
 In general a two qubit parity operator has 2 eigenvalues, both are twofold degenerate.
 
 The XX-parity measurement can be implemented on a weakly coupled carbon spins using the circuit depicted in \cref{fig:gate_circuit_general_Parity_RO}.
@@ -154,7 +156,7 @@ An arbitrary density matrix can be described as a weighted sum of the Pauli-matr
     \rho = \tfrac{1}{4} \sum_{i,j} a_{i,j} \sigma_i \otimes \sigma_j, \quad \mathrm{for} \quad \sigma_i,\sigma_j \in \{ I, X, Y, Z\}
     \label{eq:pauli}
 \end{equation}
-By measuring the coefficients $a_{i,j}$ which correspond to experimental values the density matrix $\rho$ can be reconstructed completely.
+By measuring the coefficients $a_{i,j} =\langle \sigma_i, \sigma_j \rangle $ the density matrix $\rho$ can be reconstructed completely.
 
 
 \subsection{Readout}
@@ -283,5 +285,4 @@ $ with  $76.60 \pm 1.74\%$ fidelity.
 \paragraph{ }
 Both measured parities show a fidelity to respective Bell-state well above 0.5, demonstrating that the states are entangled and that the parity measurement is successfully implemented.
 
-we have successfully created an entangled state between weakly coupled carbon-spins.
 
